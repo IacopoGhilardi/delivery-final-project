@@ -25,7 +25,9 @@
             <td> {{$restaurant->business_name}} </td>
             <td> {{$restaurant->address}} </td>
             <td> {{$restaurant->PIVA}} </td>
-            <td> <img src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{$restaurant->business_name}}"> </td>
+            <td> 
+                  <img class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
+            </td>
             <td>  <a href="btn btn-info"></a> </td>
             <td>  <a href="btn btn-success"></a> </td>
             <td>  <a href="btn btn-danger"></a> </td>
