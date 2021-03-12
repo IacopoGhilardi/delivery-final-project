@@ -12,6 +12,7 @@ class Restaurant extends Model
         'business_name',
         'address',
         'PIVA',
+        'img_path'
     ];
 
     public function user() {

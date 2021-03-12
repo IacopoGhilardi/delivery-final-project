@@ -43,17 +43,15 @@ class RestaurantController extends Controller
     {
         $data = $request->all();
 
+        $newRestaurant = new Restaurant();
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['business_name']);
 
-        $newRestaurant = new Restaurant();
-        $newRestaurant->fill($data);
-        if (!array_key_exists("img_path", $data)) {
-            $newRestaurant->img_path = asset('images/defaultRestaurant.jpg');
-        } else {
-            $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
-            $newRestaurant->img_path = $data["img_path"];
+        if (!empty($data["img_path"])) {
+            $data["img_path"] = Storage::disk('public')->put('images', $data["img_path"]);
         }
+
+        $newRestaurant->fill($data);
         $newRestaurant->save();
         
         return redirect()->route('admin.deliverboo.index');
