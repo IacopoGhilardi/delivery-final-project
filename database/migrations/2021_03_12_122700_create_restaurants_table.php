@@ -20,7 +20,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('slug');
             $table->string('address');
             $table->string('PIVA', 11);
-            $table->string('img_path');
+            $table->string('img_path')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -5,6 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Restaurant;
+
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -58,6 +66,19 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+       // $this->guard()->login($user);
+    //this commented to avoid register user being auto logged in
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath())->with('status', 'Account Created!');
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -66,12 +87,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'firstName' => $data['firstName'],
-            'lastName' => $data['lastName'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            // 'avatar_path' => da vedere ??????????
-        ]);
+        // dd($data);
+        // return User::create([
+        //     'firstName' => $data['firstName'],
+        //     'lastName' => $data['lastName'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        //     // 'avatar_path' => da vedere ??????????
+        // ]);
+        
+        //Creo il nuovo Ristoratore
+        $newUser = new User();
+
+        $newUser->fill($data);
+        $newUser->password = Hash::make($data['password']);
+        $newUser->avatar_path = 'images/user.png';
+        //Salvo nel db il ristoratore
+        $newUser->save();
+        
+        //Creo il nuovo ristorante
+        $newRestaurant = new Restaurant();
+
+        $newRestaurant->fill($data);
+        $newRestaurant->user_id = $newUser->id;
+        $newRestaurant->slug = Str::slug($newRestaurant->business_name);
+        //Salvo nel db il ristorante
+        $newRestaurant->save();
+
+        return redirect()->route('login');
+        
     }
 }
