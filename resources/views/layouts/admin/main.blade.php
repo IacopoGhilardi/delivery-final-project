@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Deliverboo</title>
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    </head>
+    <body>
+        
+        <main>
+            <aside class="side_menu">
+                <div class="logo_box">
+                    <a class="logo" href="{{route('admin.deliverboo.index')}}"><img src="https://www.maredentrosicilia.com/wp-content/uploads/2016/12/PREFERRED-VERSION-Deliveroo-Logo_Full_CMYK_Teal-2.png" alt="" style="width: 150px"></a>
+                </div>
+
+                <div class="nav_bar">
+                    <ul class="nav_list">
+                        <li><a href="">I miei Ristoranti</a></li>
+                        <li><a href="">Aggiungi Nuovo Ristorante</a></li>
+                        <li><a href="">Visualizza Statistiche</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="body_pannel">
+                @yield('content')
+            </section>
+        </main>
+
+    </body>
+</html>
