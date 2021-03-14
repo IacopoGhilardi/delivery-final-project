@@ -1,8 +1,16 @@
 @extends('layouts.admin.main')
 
 @section('content')
-  
+
+
   <div class="container">
+    {{-- gestisco il messaggio status update e destroy --}}
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
+
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -26,9 +34,15 @@
                 <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
               @endif
             </td>
-            <td> <a href="btn btn-info"></a> </td>
-            <td> <a href="btn btn-success"></a> </td>
-            <td> <a href="btn btn-danger"></a> </td>
+            <td> <a href="{{ route('admin.deliverboo.show', $restaurant->id) }}" class="btn btn-info">Info</a> </td>
+            <td> <a href="{{ route('admin.deliverboo.edit', $restaurant->id) }}" class="btn btn-success">Edit</a> </td>
+            <td>
+              <form action="{{ route('admin.deliverboo.destroy', $restaurant->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" class="btn btn-danger" value="Destroy">
+              </form>
+            </td>
           </tr>          
         @endforeach      
       </tbody>
