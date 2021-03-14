@@ -23,7 +23,7 @@
               @if (!empty($restaurant->img_path))
                 <img class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
               @else
-                <img class="img-fluid" src="{{ asset('images/user.png') }}" alt="{{ $restaurant->business_name }}">
+                <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
               @endif
             </td>
             <td> <a href="btn btn-info"></a> </td>

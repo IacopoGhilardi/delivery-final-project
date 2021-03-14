@@ -18,9 +18,16 @@
 
                 <div class="nav_bar">
                     <ul class="nav_list">
-                        <li><a href="">I miei Ristoranti</a></li>
-                        <li><a href="">Aggiungi Nuovo Ristorante</a></li>
+                        <li><a href="{{ route('admin.deliverboo.index') }}">I miei Ristoranti</a></li>
+                        <li><a href="{{ route('admin.deliverboo.create') }}">Aggiungi Nuovo Ristorante</a></li>
                         <li><a href="">Visualizza Statistiche</a></li>
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                                <input type="submit" value="Log Out">
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </aside>
