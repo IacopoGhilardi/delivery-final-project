@@ -65,7 +65,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.deliverboo.show', ['restaurant' => Restaurant::findOrFail($id)]);
     }
 
     /**
@@ -76,7 +76,7 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.deliverboo.edit', ['restaurant' => Restaurant::findOrFail($id)]);
     }
 
     /**
@@ -88,7 +88,11 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $restaurant = Restaurant::find($id);
+        $restaurant->update($data);
+
+        return redirect()->route('admin.deliverboo.index')->with('status', $restaurant->business_name .' updated!');
     }
 
     /**
@@ -98,7 +102,10 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        $restaurant = Restaurant::find($id);
+        $restaurant->delete();
+
+        return redirect()->route('admin.deliverboo.index')->with('status', $restaurant->business_name .' deleted!');
     }
 }
