@@ -37,7 +37,7 @@
             <td> <a href="{{ route('admin.deliverboo.show', $restaurant->id) }}" class="btn btn-info">Info</a> </td>
             <td> <a href="{{ route('admin.deliverboo.edit', $restaurant->id) }}" class="btn btn-success">Edit</a> </td>
             <td>
-              <form action="{{ route('admin.deliverboo.destroy', $restaurant->id) }}" method="post">
+              <form action="{{ route('admin.deliverboo.destroy', $restaurant->id) }}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo ristorante?')">
                 @csrf
                 @method('DELETE')
                 <input type="submit" class="btn btn-danger" value="Destroy">
