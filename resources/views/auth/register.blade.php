@@ -122,8 +122,8 @@
 
                             <div class="col-md-6">
                                 <select name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
-                                    @foreach (config('types') as $type)
-                                        <option value="{{ $type }}">{{ $type }}</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{ $type->id }}">{{ $type->name }}</option>
                                     @endforeach
 
                                 </select>

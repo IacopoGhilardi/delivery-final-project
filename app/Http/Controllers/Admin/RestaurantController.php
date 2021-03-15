@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
+use App\Dish;
+use App\Type;
 use Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -30,7 +32,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.deliverboo.create');
+        $types = Type::all();
+        return view('admin.deliverboo.create', compact('types'));
     }
 
     /**
@@ -53,6 +56,10 @@ class RestaurantController extends Controller
 
         $newRestaurant->fill($data);
         $newRestaurant->save();
+
+        if(!empty($data["types"])) {
+            $newRestaurant->types()->attach($data["types"]);
+        };
         
         return redirect()->route('admin.deliverboo.index');
     }
@@ -76,7 +83,10 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.deliverboo.edit', ['restaurant' => Restaurant::findOrFail($id)]);
+        $restaurant = Restaurant::findOrFail($id);
+        $types = Type::all();
+
+        return view('admin.deliverboo.edit', compact('restaurant', 'types'));
     }
 
     /**
@@ -91,6 +101,12 @@ class RestaurantController extends Controller
         $data = $request->all();
         $restaurant = Restaurant::find($id);
         $restaurant->update($data);
+
+        if (empty($data['types'])) {
+            $restaurant->types()->detach($data['types']);
+        } else {
+            $restaurant->types()->sync($data['types']);
+        }
 
         return redirect()->route('admin.deliverboo.index')->with('status', $restaurant->business_name .' updated!');
     }

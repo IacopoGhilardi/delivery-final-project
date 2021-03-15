@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use App\Restaurant;
+use App\Type;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
@@ -114,7 +115,17 @@ class RegisterController extends Controller
         //Salvo nel db il ristorante
         $newRestaurant->save();
 
+        if(!empty($data["types"])) {
+            $newRestaurant->types()->attach($data["types"]);
+        };
+
         return redirect()->route('login');
         
+    }
+
+    public function showRegistrationForm()
+    {
+        $types=Type::all();
+        return view('auth.register', compact('types'));
     }
 }

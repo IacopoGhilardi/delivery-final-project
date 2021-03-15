@@ -34,7 +34,26 @@
           <input type="file" class="" name="img_path" id="img_path"  accept="image/*">
         </div>
       </div>
+
+      <div class="form-group row">
+          <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Select cuisine style') }}</label>
+
+          <div class="col-md-6">
+              <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
+                  @foreach ($types as $type)
+                      <option value="{{ $type->id }}">{{ $type->name }}</option>
+                  @endforeach
+              </select>
+          </div>
+      </div>
       
       <input class="btn btn-success" type="submit" value="Modifica">
     </form> 
+
+    <script>
+      // In your Javascript (external .js resource or <script> tag)
+      $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+      });
+    </script>
 @endsection

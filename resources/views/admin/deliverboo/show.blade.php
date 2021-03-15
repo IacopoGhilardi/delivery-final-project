@@ -11,6 +11,11 @@
         <h1>{{ $restaurant->business_name }}</h1>
         <p>{{ $restaurant->address }}</p>
         <p>{{ $restaurant->PIVA }}</p>
+        <ul>
+            @foreach ($restaurant->types as $type)
+                <li>{{ $type->name }}</li>
+            @endforeach
+        </ul>
 
 
         <div class="menu">
