@@ -24,10 +24,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')
     ->namespace('Admin')
-    //->middleware('auth')
+    ->middleware('auth')
     ->name('admin.') 
     ->group(function () {
         Route::resource('deliverboo', 'RestaurantController');
 
-        Route::resource('menu', 'DishController');
+        // Route::resource('menu', 'DishController');
+        Route::get('menu/{slug}', 'DishController@index')->name('menu.index');
+        Route::get('menu/create/{slug}', 'DishController@create')->name('menu.create');
+        Route::post('menu/create/{slug}/store', 'DishController@store')->name('menu.store');
+        // Route::get('menu/2/{id}', 'DishController@indexDishes')->name('menu.index');
+        // Route::get('menu/2/{id}', 'DishController@indexDishes')->name('menu.index');
  });    

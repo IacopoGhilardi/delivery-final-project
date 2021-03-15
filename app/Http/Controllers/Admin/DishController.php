@@ -10,33 +10,17 @@ use App\Restaurant;
 
 class DishController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {  
-        $user_id = Auth::user()->id;
-        $dishes = Dish::where('restaurant_id' , $user_id )->get();
-        
-         /*
-        $restaurant = Restaurant::where('user_id', 'id')->get();
-        
+
+    public function index($slug) {
+
+        $restaurant = Restaurant::where('slug', $slug)->first();
 
         return view('admin.menu.index', compact('restaurant'));
-        */
-        return view('admin.menu.index', compact('dishes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create($slug)
     {
-        return view('admin.menu.create');
+        return view('admin.menu.create', compact('slug'));
     }
 
     /**
@@ -45,16 +29,18 @@ class DishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $slug)
     {
+        $restaurant = Restaurant::where('slug', $slug)->first();
+
         $data = $request->all();
-        $data['restaurant_id'] = Auth::id();
+        $data['restaurant_id'] = $restaurant->id;
         $newDish = new Dish();
 
         $newDish->fill($data);
         $newDish->save();
 
-        return redirect()->route('admin.menu.index');
+        return redirect()->route('admin.menu.index', $restaurant->slug);
     }
 
     /**
@@ -68,39 +54,5 @@ class DishController extends Controller
         
         $restaurant = Restaurant::findOrFail($id);
         return view('admin.menu.show', 'restaurant');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

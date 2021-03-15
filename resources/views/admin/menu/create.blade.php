@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container mt-4">
-    <form action="{{route('admin.menu.store')}}" method="post">
+    <form action="{{ route('admin.menu.store', $slug) }}" method="post">
       @csrf
       @method('POST')
       <div class="form-group row">
