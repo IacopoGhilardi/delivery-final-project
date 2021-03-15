@@ -49,10 +49,35 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    // public function show($id)
+    // {
         
-        $restaurant = Restaurant::findOrFail($id);
-        return view('admin.menu.show', 'restaurant');
+    //     $restaurant = Restaurant::findOrFail($id);
+    //     return view('admin.menu.show', 'restaurant');
+    // }
+
+    public function edit($id) { 
+        $dish = Dish::findOrFail($id);
+        return view('admin.menu.edit', compact('dish'));
+    }
+
+    public function update(Request $request, $id) {
+        $data = $request->all();
+
+        $dish = Dish::find($id);
+        $dish->update($data);
+
+        $slug = $dish->restaurant->slug;
+        return redirect()->route('admin.menu.index', compact('slug'))->with('status', $dish->name .' updated!');
+    }
+
+    public function destroy($id) {
+        $dish = Dish::findOrFail($id);
+        $name = $dish->name;
+        $slug = $dish->restaurant->slug;
+        $dish->delete();
+
+
+        return redirect()->route('admin.menu.index', compact('slug'))->with('status', $name .' deleted successfully!');;
     }
 }

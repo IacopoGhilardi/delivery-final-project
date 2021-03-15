@@ -35,12 +35,12 @@
   
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" name="visibility" class="form-check-input" value="0"> NO
+          <input type="radio" name="visibility" class="form-check-input" value="0"> NO
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" name="visibility" class="form-check-input" value="1"> Si
+          <input type="radio" name="visibility" class="form-check-input" value="1"> Si
         </label>
       </div>
       

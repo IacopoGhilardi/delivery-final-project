@@ -33,6 +33,7 @@ Route::prefix('admin')
         Route::get('menu/{slug}', 'DishController@index')->name('menu.index');
         Route::get('menu/create/{slug}', 'DishController@create')->name('menu.create');
         Route::post('menu/create/{slug}/store', 'DishController@store')->name('menu.store');
-        // Route::get('menu/2/{id}', 'DishController@indexDishes')->name('menu.index');
-        // Route::get('menu/2/{id}', 'DishController@indexDishes')->name('menu.index');
+        Route::match(['put', 'patch'],'menu/update/{id}', 'DishController@update')->name('menu.update');
+        Route::get('menu/edit/{id}', 'DishController@edit')->name('menu.edit');
+        Route::delete('menu/destroy/{id}', 'DishController@destroy')->name('menu.destroy');
  });    
