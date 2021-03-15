@@ -16,7 +16,7 @@ class RestaurantController extends Controller
     private $restaurantValidation = [
         'business_name' => 'required|max:50',
         'address' => 'required|max:50',
-        'PIVA' => 'required|string|max:11',
+        'PIVA' => 'required|string|max:11|min:11',
         'img_path' => 'image'
     ];
     /**
