@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
+    private $restaurantValidation = [
+        'business_name' => 'required|max:50',
+        'address' => 'required|max:50',
+        'PIVA' => 'required|numeric|11',
+        'img_path' => 'string'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -45,6 +51,8 @@ class RestaurantController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $request->validate($this->restaurantValidation);
 
         $newRestaurant = new Restaurant();
         $data['user_id'] = Auth::id();
@@ -99,11 +107,16 @@ class RestaurantController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
+
+        $request->validate($this->restaurantValidation);
+
         $restaurant = Restaurant::find($id);
+
         if (!empty($data["img_path"])) {
             Storage::disk('public')->delete($restaurant->img_path);
             $data["img_path"] = Storage::disk('public')->put('images', $data["img_path"]);
         }
+
         $restaurant->update($data);
 
         if (empty($data['types'])) {
