@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
 use Auth;
+use App\Restaurant;
 
 class DishController extends Controller
 {
@@ -15,11 +16,17 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-       $dishes = Dish::where('restaurant_id', Auth::id())->get();
+    {  
+        $user_id = Auth::user()->id;
+        $dishes = Dish::where('restaurant_id' , $user_id )->get();
+        
+         /*
+        $restaurant = Restaurant::where('user_id', 'id')->get();
+        
 
-       return view('admin.menu.index', compact('dishes'));
-
+        return view('admin.menu.index', compact('restaurant'));
+        */
+        return view('admin.menu.index', compact('dishes'));
     }
 
     /**
@@ -58,7 +65,9 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $restaurant = Restaurant::findOrFail($id);
+        return view('admin.menu.show', 'restaurant');
     }
 
     /**
