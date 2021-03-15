@@ -2,6 +2,15 @@
 
 @section('content')
   <div class="container my-5">
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+            @endForeach
+          </ul>
+        </div>
+      @endif
 
       <form action="{{route('admin.deliverboo.store')}}" method="post" enctype="multipart/form-data">
         @csrf

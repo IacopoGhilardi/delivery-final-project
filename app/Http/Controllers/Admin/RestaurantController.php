@@ -16,8 +16,8 @@ class RestaurantController extends Controller
     private $restaurantValidation = [
         'business_name' => 'required|max:50',
         'address' => 'required|max:50',
-        'PIVA' => 'required|numeric|max:11',
-        'img_path' => 'string'
+        'PIVA' => 'required|string|max:11',
+        'img_path' => 'image'
     ];
     /**
      * Display a listing of the resource.
@@ -51,8 +51,11 @@ class RestaurantController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        
+        //@dd($data );
 
         $request->validate($this->restaurantValidation);
+        //@dd($data );
 
         $newRestaurant = new Restaurant();
         $data['user_id'] = Auth::id();
