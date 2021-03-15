@@ -2,8 +2,7 @@
 
 @section('content')
 
-
-  <div class="container">
+  <div>
     {{-- gestisco il messaggio status update e destroy --}}
     @if (session('status'))
     <div class="alert alert-success">
@@ -18,7 +17,7 @@
           <th scope="col"> Indirizzo </th>
           <th scope="col"> PIVA </th>
           <th style="width: 150px"> Immagine </th>
-          <th colspan="3"></th>
+          <th colspan="4"></th>
         </tr>
       </thead>
       <tbody>

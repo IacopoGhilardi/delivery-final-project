@@ -45,7 +45,7 @@
                 </div>
             </aside>
 
-            <section class="body_pannel">
+            <section class="body_pannel container">
                 @yield('content')
             </section>
         </main>

@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  <title>Document</title>
-</head>
-<body>
+@extends('layouts.admin.main')
+
+@section('content')
+
   <div class="container mt-4">
     <form action="{{ route('admin.menu.store', $slug) }}" method="post">
       @csrf
@@ -48,5 +42,4 @@
     </form>  
   </div>
   
-</body>
-</html>
+@endsection

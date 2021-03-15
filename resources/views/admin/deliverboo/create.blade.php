@@ -1,7 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('content')
-  <div class="container my-5">
+  <div class="my-5">
       @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group row">
-          <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Select cuisine style') }}</label>
+          <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Select cuisine style') }}</label>
 
           <div class="col-md-6">
               <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">

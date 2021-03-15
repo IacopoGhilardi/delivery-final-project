@@ -1,8 +1,7 @@
 @extends('layouts.admin.main')
 
-
 @section('content')
-    <div class="container">
+    <div>
         @if (!empty($restaurant->img_path))
         <img class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
         @else

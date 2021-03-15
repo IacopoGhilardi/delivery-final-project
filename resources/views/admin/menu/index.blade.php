@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <title>Menu</title>
-</head>
-<body>
+@extends('layouts.admin.main')
+
+@section('content')
+
   <h1>Il mio menu</h1>
   {{-- gestisco il messaggio status update e destroy --}}
   @if (session('status'))
@@ -26,7 +20,7 @@
             <p>{{$dish->ingredients}}</p>
             <p>Visible? {{ $dish->visibility == 1 ? 'Si' : 'No' }}</p>
             <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica Piatto</a>
-            <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post">
+            <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
               @csrf
               @method('DELETE')
               <input type="submit" class="btn btn-danger" value="Elimina Piatto">
@@ -35,5 +29,5 @@
         </div>
     @endforeach
   </div>
-</body>
-</html>
+
+@endsection
