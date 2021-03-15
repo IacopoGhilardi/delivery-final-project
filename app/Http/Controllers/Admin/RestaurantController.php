@@ -100,6 +100,9 @@ class RestaurantController extends Controller
     {
         $data = $request->all();
         $restaurant = Restaurant::find($id);
+        if (!empty($data["img_path"])) {
+            $data["img_path"] = Storage::disk('public')->put('images', $data["img_path"]);
+        }
         $restaurant->update($data);
 
         if (empty($data['types'])) {

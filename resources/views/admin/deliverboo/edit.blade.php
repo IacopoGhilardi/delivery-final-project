@@ -41,7 +41,13 @@
           <div class="col-md-6">
               <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
                   @foreach ($types as $type)
-                      <option value="{{ $type->id }}">{{ $type->name }}</option>
+                      <option value="{{ $type->id }}" 
+                        @foreach ($restaurant->types as $restaurantType)
+                            @if ($restaurantType->id == $type->id)
+                                selected
+                            @endif
+                        @endforeach
+                        >{{ $type->name }}</option>
                   @endforeach
               </select>
           </div>

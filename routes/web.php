@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DishController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,6 @@ Route::prefix('admin')
     ->name('admin.') 
     ->group(function () {
         Route::resource('deliverboo', 'RestaurantController');
+
+        Route::get('menu', 'DishController@show')->name('deliverboo.menu.show');
  });    
