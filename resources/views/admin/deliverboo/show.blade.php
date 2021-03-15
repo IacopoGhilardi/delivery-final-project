@@ -16,17 +16,11 @@
                 <li>{{ $type->name }}</li>
             @endforeach
         </ul>
-
-
         <div class="menu">
             <h2>Menu</h2>
             @foreach ($restaurant->dishes as $dish)
                 <p>{{ $dish->name }}</p>
             @endforeach
-            <h5>Aggiungi un piatto</h5>
-            <form action="">
-                <input type="text">
-            </form>
         </div>
     </div>
 @endsection
