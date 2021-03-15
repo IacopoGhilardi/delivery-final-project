@@ -101,6 +101,7 @@ class RestaurantController extends Controller
         $data = $request->all();
         $restaurant = Restaurant::find($id);
         if (!empty($data["img_path"])) {
+            Storage::disk('public')->delete($restaurant->img_path);
             $data["img_path"] = Storage::disk('public')->put('images', $data["img_path"]);
         }
         $restaurant->update($data);
@@ -123,6 +124,7 @@ class RestaurantController extends Controller
     public function destroy($id)
     {   
         $restaurant = Restaurant::find($id);
+        Storage::disk('public')->delete($restaurant->img_path);
         $restaurant->delete();
 
         return redirect()->route('admin.deliverboo.index')->with('status', $restaurant->business_name .' deleted!');
