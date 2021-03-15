@@ -29,5 +29,5 @@ Route::prefix('admin')
     ->group(function () {
         Route::resource('deliverboo', 'RestaurantController');
 
-        Route::get('menu', 'DishController@show')->name('deliverboo.menu.show');
+        Route::resource('menu', 'DishController');
  });    

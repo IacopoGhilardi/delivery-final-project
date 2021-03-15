@@ -43,6 +43,8 @@
                 <input type="submit" class="btn btn-danger" value="Destroy">
               </form>
             </td>
+            <td> <a href="{{ route('admin.menu.show', $restaurant->id) }}" class="btn btn-success">Menu</a> </td>
+
           </tr>          
         @endforeach      
       </tbody>
