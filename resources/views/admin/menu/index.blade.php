@@ -1,5 +1,9 @@
 @extends('layouts.admin.main')
 
+@section('links')
+   <link rel="stylesheet" href="{{asset('css/dishLayout.scss')}}"> 
+@endsection
+
 @section('content')
 
   <h1>Il mio menu</h1>
@@ -11,9 +15,9 @@
   @endif
   <a href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
 
-  <div style="width: 18rem;">
+  <div class="d-flex justify-content-around mt-3 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
-        <div class="card">
+        <div class="card mt-5 ">
           <div class="card-body">
             <h4>{{$dish->name}}</h4>
             <p>{{$dish->price}}&euro;</p>

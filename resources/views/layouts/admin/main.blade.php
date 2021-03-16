@@ -26,7 +26,7 @@
         <main>
             <aside class="side_menu">
                 <div class="logo_box">
-                    <a class="logo" href="{{route('admin.deliverboo.index')}}"><img src="https://www.maredentrosicilia.com/wp-content/uploads/2016/12/PREFERRED-VERSION-Deliveroo-Logo_Full_CMYK_Teal-2.png" alt="" style="width: 150px"></a>
+                    <a class="logo" href="{{route('guest.homepage')}}"><img src="https://www.maredentrosicilia.com/wp-content/uploads/2016/12/PREFERRED-VERSION-Deliveroo-Logo_Full_CMYK_Teal-2.png" alt="" style="width: 150px"></a>
                 </div>
 
                 <div class="nav_bar">

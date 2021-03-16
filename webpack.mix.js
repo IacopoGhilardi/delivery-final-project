@@ -16,4 +16,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/adminLayout.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/guestMainLayout.scss', 'public/css')
+    .sass('resources/sass/dishLayout.scss', 'public/css')
     .sass('resources/sass/homepageGuest.scss', 'public/css');
