@@ -13,7 +13,7 @@
         {{ session('status') }}
     </div>
   @endif
-  <a class="btn btn-info" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
+  <a class="btn btn-info shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
 
   <div class="d-flex justify-content-around mt-3 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
@@ -31,11 +31,11 @@
             </div>
 
             <div class="card_bottom">
-              <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica Piatto</a>
+              <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica </a>
               <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
                 @csrf
                 @method('DELETE')
-                <input type="submit" class="btn btn-danger" value="Elimina Piatto">
+                <input type="submit" class="btn btn-danger" value="Elimina">
               </form>
             </div>
 

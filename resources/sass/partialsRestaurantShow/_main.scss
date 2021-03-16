@@ -1,0 +1,35 @@
+.restaurant_box{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    .left_box{
+        width:50%;
+    }    
+    .right_box{
+        width:50%;
+
+        .img-fluid{
+            width: 60px;
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 150px;
+    margin: 10px;
+    color: white;
+    background-color:orange;
+    overflow-y: auto;
+
+
+    .card_body {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

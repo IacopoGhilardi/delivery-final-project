@@ -14,16 +14,22 @@
     color: white;
     border: 1px solid orange;
     background-color: orange;
+    
     &:hover {
         border: 1px solid orange;
         background-color: darkorange;
     }
+    &:active{
+        border: 1px solid orange !important;
+        background-color: darkorange !important;
+    }
 }
+
 
 .card {
     display: flex;
     flex-direction: column;
-    width: calc(100% / 4 - 20px);
+    width: calc(100% / 4 - 10px);
     height: 400px;
     margin: 10px;
     color: white;
