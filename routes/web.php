@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.homepage');
 });
 
 Auth::routes();
@@ -37,3 +37,11 @@ Route::prefix('admin')
         Route::get('menu/edit/{id}', 'DishController@edit')->name('menu.edit');
         Route::delete('menu/destroy/{id}', 'DishController@destroy')->name('menu.destroy');
  });    
+
+
+ Route::prefix('guest')
+    ->namespace('Guest')
+    ->name('guest.') 
+    ->group(function () {
+        Route::get('deliverboo', 'GuestController@index')->name('homepage');
+    });

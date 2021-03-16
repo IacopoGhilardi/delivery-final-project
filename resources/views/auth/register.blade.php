@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest.main')
 
 @section('content')
 <div class="container">
@@ -74,6 +74,9 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        
+                        {{-- dati ristorante --}}
+                        <h2 class="text-center">Dati Ristorante</h2>
 
                         <div class="form-group row">
                             <label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __('Business Name') }}</label>
