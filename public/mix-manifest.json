@@ -1,10 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-<<<<<<< HEAD
-    "/css/adminLayout.css": "/css/adminLayout.css"
-=======
     "/css/guestMainLayout.css": "/css/guestMainLayout.css",
-    "/css/homepageGuest.css": "/css/homepageGuest.css"
->>>>>>> guests-routes
+    "/css/homepageGuest.css": "/css/homepageGuest.css",
+    "/css/adminLayout.css": "/css/adminLayout.css"
 }

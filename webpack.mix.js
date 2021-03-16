@@ -13,11 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .vue({ version: 2 })
-<<<<<<< HEAD
     .sass('resources/sass/adminLayout.scss', 'public/css')
-    .sass('resources/sass/app.scss', 'public/css');
-=======
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/guestMainLayout.scss', 'public/css')
     .sass('resources/sass/homepageGuest.scss', 'public/css');
->>>>>>> guests-routes
