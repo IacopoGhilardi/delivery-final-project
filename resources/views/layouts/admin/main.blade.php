@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Deliverboo</title>
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/adminLayout.css')}}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -31,22 +31,37 @@
 
                 <div class="nav_bar">
                     <ul class="nav_list">
-                        <li><a href="{{ route('admin.deliverboo.index') }}">I miei Ristoranti</a></li>
-                        <li><a href="{{ route('admin.deliverboo.create') }}">Aggiungi Nuovo Ristorante</a></li>
-                        <li><a href="">Visualizza Statistiche</a></li>
-                        <li>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                @method('POST')
-                                <input type="submit" value="Log Out">
-                            </form>
-                        </li>
+                        <li class="{{Route::currentRouteName() == 'admin.deliverboo.index' ? 'active' : ''}}"><a href="{{ route('admin.deliverboo.index') }}"><i class="fas fa-utensils"></i><span>I miei Ristoranti</span></a></li>
+                        <li class="{{Route::currentRouteName() == 'admin.deliverboo.create' ? 'active' : ''}}"><a href="{{ route('admin.deliverboo.create') }}"><i class="fas fa-store"></i><span>Aggiungi Ristorante</span></a></li>
+                        <li><a href=""><i class="fas fa-chart-pie"></i><span>Visualizza Statistiche</span></a></li>
+        
                     </ul>
                 </div>
             </aside>
 
-            <section class="body_pannel container">
-                @yield('content')
+            <section class="body_pannel">
+               <div class="pannel_header">
+                    <p>@if (Route::currentRouteName() == 'admin.deliverboo.index')
+                        I Miei Ristoranti @elseif(Route::currentRouteName() == 'admin.deliverboo.create')
+                        Aggiungi Ristorante @elseif(Route::currentRouteName() == 'admin.deliverboo.show')
+                        I Miei Ristoranti > Info @elseif(Route::currentRouteName() == 'admin.deliverboo.edit')
+                        I Miei Ristoranti > Modifica @elseif(Route::currentRouteName() == 'admin.menu.index')
+                        I Miei Ristoranti > Menu @elseif(Route::currentRouteName() == 'admin.menu.edit')
+                        I Miei Ristoranti > Menu > Modifica Piatto
+                    @endif</p>
+                    <div class="user_info">
+                        <p>{{Auth::user()->firstName}}</p>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <input type="submit" value="Log Out">
+                        </form>
+                    </div>
+               </div>
+
+               <div class="pannel_content_container">
+                   @yield('content')
+               </div>
             </section>
         </main>
 
