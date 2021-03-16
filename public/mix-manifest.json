@@ -3,5 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/guestMainLayout.css": "/css/guestMainLayout.css",
     "/css/homepageGuest.css": "/css/homepageGuest.css",
-    "/css/adminLayout.css": "/css/adminLayout.css"
+    "/css/adminLayout.css": "/css/adminLayout.css",
+    "/css/dishCreateLayout.css": "/css/dishCreateLayout.css",
+    "/css/dishLayout.css": "/css/dishLayout.css"
 }

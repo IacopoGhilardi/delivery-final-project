@@ -7,6 +7,8 @@
         <title>Deliverboo</title>
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/adminLayout.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/dishLayout.css')}}"> --}}
+        @yield('links')
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,7 +27,7 @@
         
         <main>
             <aside class="side_menu">
-                <div class="logo_box">
+                <div class="logo_box" style="text-align: center">
                     <a class="logo" href="{{route('guest.homepage')}}"><img src="https://www.maredentrosicilia.com/wp-content/uploads/2016/12/PREFERRED-VERSION-Deliveroo-Logo_Full_CMYK_Teal-2.png" alt="" style="width: 150px"></a>
                 </div>
 

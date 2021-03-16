@@ -1,0 +1,38 @@
+body {
+  background-image: url("https://i.pinimg.com/originals/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg");
+}
+
+.pannel_header {
+  background-color: orange;
+  border-left: 1px solid black;
+}
+
+.pannel_content_container {
+  padding: 0 !important;
+}
+
+.form_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_container form {
+  width: 500px;
+  padding-left: 50px;
+}
+.form_container form .radio_box {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+.form_container form .btn {
+  border: none;
+  background-color: orange;
+}
+.form_container form .btn:hover {
+  border: none;
+  background-color: darkorange;
+}

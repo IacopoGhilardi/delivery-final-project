@@ -1,0 +1,62 @@
+::-webkit-scrollbar {
+  width:7px
+}
+::-webkit-scrollbar-track {
+  background: lightgrey;
+//   border-radius: 10px
+}
+::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px
+}
+
+.btn-info {
+    color: white;
+    border: 1px solid orange;
+    background-color: orange;
+    &:hover {
+        border: 1px solid orange;
+        background-color: darkorange;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 4 - 20px);
+    height: 400px;
+    margin: 10px;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    &:hover {
+        background-color: rgba(0,0,0,0.7);
+        transition: 1.0s;
+    }
+    
+
+    .card_body {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+    .card_top {
+        height: 80%;
+        overflow: hidden;
+        &:hover {
+            overflow-y: auto;
+        }
+    }
+
+    .card_bottom {
+        height: 10%;
+        display: flex;
+        align-items: flex-end;
+        form {
+            margin-left: 5px;
+        }
+    }
+    
+}
