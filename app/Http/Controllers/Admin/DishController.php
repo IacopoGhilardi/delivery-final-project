@@ -88,13 +88,6 @@ class DishController extends Controller
             $data["dish_img_path"] = Storage::disk('public')->put('images', $data["dish_img_path"]);
         }
 
-
-        // if(empty($data['dish_img_path'])) {
-        //     $dish->dishes()->detach();
-        // } else{
-        //     $dish->dishes()->sync($data['dish_img_path']);
-        // }
-
         $dish->update($data);
 
         $slug = $dish->restaurant->slug;
