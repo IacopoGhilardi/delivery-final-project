@@ -1,0 +1,52 @@
+main {
+  
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #F96F5A, #F86A5A, #F8B64A, #FFFFFF);
+	background-size: 400% 400%;
+	animation: gradientbg 10s ease infinite;
+}
+
+.card_shadow{
+  box-shadow: -5px 5px rgb(197, 197, 156);
+  overflow: hidden;
+  animation: showForm 1s ease ;
+}
+.bounce-change {  
+  opacity: 1;  
+  animation: bounce 0.5s infinite alternate; 
+  animation-iteration-count: 4;
+  background-color: orange;
+  border-color: orange;
+  color: #fff;
+  &:hover {
+    box-shadow: inset -1px -1px 7px yellow;
+    color: #fff;
+  }
+}
+
+@keyframes bounce {
+  to { transform: scale(1.2); }
+}
+
+
+@keyframes gradientbg {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes showForm {
+	0% {
+		height: 0;
+	}
+	
+	100% {
+		height: 275px;
+	}
+}
