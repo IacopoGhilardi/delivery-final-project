@@ -9,7 +9,8 @@ class Type extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name'
+        'name',
+        'img_path'
     ];
 
     public function restaurants() {

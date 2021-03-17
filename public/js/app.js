@@ -34495,6 +34495,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/sass/homepageGuest.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/homepageGuest.scss ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/sass/adminLayout.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/adminLayout.scss ***!
@@ -34534,10 +34547,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/homepageGuest.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/homepageGuest.scss ***!
-  \*******************************************/
+/***/ "./resources/sass/dishLayout.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/dishLayout.scss ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -49769,11 +49782,12 @@ Vue.compile = compileToFunctions;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/homepageGuest","css/adminLayout"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/homepageGuest","css/adminLayout"], () => (__webpack_require__("./resources/sass/adminLayout.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/homepageGuest","css/adminLayout"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/homepageGuest","css/adminLayout"], () => (__webpack_require__("./resources/sass/guestMainLayout.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/homepageGuest","css/adminLayout"], () => (__webpack_require__("./resources/sass/homepageGuest.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/dishLayout","css/adminLayout","css/homepageGuest"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/dishLayout","css/adminLayout","css/homepageGuest"], () => (__webpack_require__("./resources/sass/adminLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/dishLayout","css/adminLayout","css/homepageGuest"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/dishLayout","css/adminLayout","css/homepageGuest"], () => (__webpack_require__("./resources/sass/guestMainLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/dishLayout","css/adminLayout","css/homepageGuest"], () => (__webpack_require__("./resources/sass/dishLayout.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/dishLayout","css/adminLayout","css/homepageGuest"], () => (__webpack_require__("./resources/sass/homepageGuest.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

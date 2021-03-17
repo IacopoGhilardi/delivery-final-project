@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/guestMainLayout.css": "/css/guestMainLayout.css",
-    "/css/homepageGuest.css": "/css/homepageGuest.css",
-    "/css/adminLayout.css": "/css/adminLayout.css"
+    "/css/dishLayout.css": "/css/dishLayout.css",
+    "/css/adminLayout.css": "/css/adminLayout.css",
+    "/css/homepageGuest.css": "/css/homepageGuest.css"
 }

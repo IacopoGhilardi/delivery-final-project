@@ -4628,38 +4628,6 @@ ul {
   align-items: center;
 }
 
-header {
-  background-color: orange;
-  height: 100px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-}
-header #logo {
-  height: 100px;
-  max-width: 100%;
-}
-header .main_nav {
-  width: 80%;
-  margin: 0 auto;
-  height: 100%;
-  max-width: 1600px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-header .main_nav .nav_links {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-main {
-  margin-top: 100px;
-}
-
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
