@@ -10,6 +10,13 @@ use App\Restaurant;
 
 class DishController extends Controller
 {
+    private $dishValidation = [
+        'name' => 'required|max:50',
+        'ingredients' => 'required|max:50',
+        'price' => 'required|numeric',
+        'visibility' => 'required',
+        'dish_img_path' => 'image'
+    ];
 
     public function index($slug) {
 
@@ -34,6 +41,9 @@ class DishController extends Controller
         $restaurant = Restaurant::where('slug', $slug)->first();
 
         $data = $request->all();
+
+        $request->validate($this->dishValidation);
+
         $data['restaurant_id'] = $restaurant->id;
         $newDish = new Dish();
 
@@ -63,6 +73,8 @@ class DishController extends Controller
 
     public function update(Request $request, $id) {
         $data = $request->all();
+
+        $request->validate($this->dishValidation);
 
         $dish = Dish::find($id);
         $dish->update($data);

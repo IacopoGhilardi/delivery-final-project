@@ -5,6 +5,15 @@
 @endsection
 
 @section('content')
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endForeach
+      </ul>
+    </div>
+  @endif
 
   <div class="form_container">
     <form action="{{ route('admin.menu.store', $slug) }}" method="post">

@@ -1,6 +1,15 @@
 @extends('layouts.admin.main')
 
 @section('content')
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endForeach
+      </ul>
+    </div>
+  @endif
 
   <div class="container mt-4">
       <form action="{{ route('admin.menu.update', $dish->id) }}" method="post">
