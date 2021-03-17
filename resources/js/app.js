@@ -32,23 +32,42 @@ import Vue from 'vue';
 const app = new Vue({
     el: '#app',
     data: {
+        firstSearch: true,
         type: '',
         filteredRestaurants: [],
     },
     methods: {
         restaurants() {
-            axios.get(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
+            axios.post(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
                 .then(response => {
-                    console.log(response.data);
+                    this.firstSearch = false;
                     this.filteredRestaurants = response.data;
+                    this.type = '';
+                    this.scrollToEnd();
                 })
+                .catch((error) => {
+                    this.type = '';
+                    this.firstSearch = false;
+                      // when you throw error this will also fetch error.
+                       throw error;
+                  });
         },
         filterOnType(tipo) {
-            axios.get(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
+            axios.post(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
                 .then(response => {
-                    console.log(response.data);
                     this.filteredRestaurants = response.data;
+                    this.scrollToEnd();
                 })
-        },   
+                .catch((error) => {
+                    this.type = '';
+                    this.firstSearch = false;
+                      // when you throw error this will also fetch error.
+                       throw error;
+                  });
+        },
+        scrollToEnd: function() {    	
+            var container = this.$el.querySelector(".main_container");
+            container.scrollTop = container.scrollHeight;
+          },
     }
 });

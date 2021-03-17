@@ -83,6 +83,9 @@
                     @{{ restaurant.business_name }}
                </div>
            </div>
+           <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
+                 Non sono stati trovati Ristoranti per questa categoria
+        </div>
         </div>
     </div>
 @endsection

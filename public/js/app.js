@@ -1910,6 +1910,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('example-component', __webpac
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#app',
   data: {
+    firstSearch: true,
     type: '',
     filteredRestaurants: []
   },
@@ -1917,18 +1918,36 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     restaurants: function restaurants() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/restaurants/".concat(this.type)).then(function (response) {
-        console.log(response.data);
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/restaurants/".concat(this.type)).then(function (response) {
+        _this.firstSearch = false;
         _this.filteredRestaurants = response.data;
+        _this.type = '';
+
+        _this.scrollToEnd();
+      })["catch"](function (error) {
+        _this.type = '';
+        _this.firstSearch = false; // when you throw error this will also fetch error.
+
+        throw error;
       });
     },
     filterOnType: function filterOnType(tipo) {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/restaurants/".concat(tipo)).then(function (response) {
-        console.log(response.data);
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/restaurants/".concat(tipo)).then(function (response) {
         _this2.filteredRestaurants = response.data;
+
+        _this2.scrollToEnd();
+      })["catch"](function (error) {
+        _this2.type = '';
+        _this2.firstSearch = false; // when you throw error this will also fetch error.
+
+        throw error;
       });
+    },
+    scrollToEnd: function scrollToEnd() {
+      var container = this.$el.querySelector(".main_container");
+      container.scrollTop = container.scrollHeight;
     }
   }
 });
