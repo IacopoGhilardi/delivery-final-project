@@ -5,11 +5,17 @@ main {
 	background-size: 400% 400%;
 	animation: gradientbg 10s ease infinite;
 }
+.card_on_register{
+  animation: showFormRegister 1s linear ;
+}
 
+.card_on_login {
+  animation: showFormlogin 1s linear ;
+}
 .card_shadow{
   box-shadow: -5px 5px rgb(197, 197, 156);
   overflow: hidden;
-  animation: showForm 1s linear ;
+ 
   color: orange;
   font-weight: bold;
   label {

@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row justify-content-center align-items-center py-5">
         <div class="col-md-8">
-            <div class="card card_shadow">
+            <div class="card card_shadow card_on_register">
                 <div class="card-header text-center">{{ __('Register') }}</div>
 
                 <div class="card-body">

@@ -11,7 +11,7 @@
  
     <div class="row justify-content-center align-items-center pt-4">
         <div class="col-md-8">
-            <div class="card card_shadow">
+            <div class="card card_shadow card_on_login">
                 <div class="card-header text-center">{{ __('Login') }}</div>
                 
                 <div class="card-body">

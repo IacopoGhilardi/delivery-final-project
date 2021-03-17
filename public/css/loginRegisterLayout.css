@@ -30,7 +30,7 @@
     background-position: 0% 50%;
   }
 }
-@-webkit-keyframes showForm {
+@-webkit-keyframes showFormlogin {
   0% {
     height: 0;
   }
@@ -38,12 +38,28 @@
     height: 275px;
   }
 }
-@keyframes showForm {
+@keyframes showFormlogin {
   0% {
     height: 0;
   }
   100% {
     height: 275px;
+  }
+}
+@-webkit-keyframes showFormRegister {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100vh;
+  }
+}
+@keyframes showFormRegister {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100vh;
   }
 }
 main {
@@ -54,11 +70,19 @@ main {
           animation: gradientbg 10s ease infinite;
 }
 
+.card_on_register {
+  -webkit-animation: showFormRegister 1s linear;
+          animation: showFormRegister 1s linear;
+}
+
+.card_on_login {
+  -webkit-animation: showFormlogin 1s linear;
+          animation: showFormlogin 1s linear;
+}
+
 .card_shadow {
   box-shadow: -5px 5px #c5c59c;
   overflow: hidden;
-  -webkit-animation: showForm 1s linear;
-          animation: showForm 1s linear;
   color: orange;
   font-weight: bold;
   background-color: #EAE0C8;
