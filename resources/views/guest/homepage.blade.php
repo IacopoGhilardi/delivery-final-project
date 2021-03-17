@@ -71,6 +71,7 @@
         </div>
 
         <div class="categories_container">
+            <a href="{{ route('guest.restaurant.show', 1) }}">link</a>
            <div class="wrapper_categories">
                 @foreach ($types as $type)
                     <div class="category" @click="filterOnType(`{{($type->name)}}`)">

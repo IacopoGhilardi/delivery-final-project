@@ -44,4 +44,5 @@ Route::prefix('admin')
     ->name('guest.') 
     ->group(function () {
         Route::get('deliverboo', 'GuestController@index')->name('homepage');
+        Route::get('restaurant/{id}', 'GuestController@show')->name('restaurant.show');
     });
