@@ -12,7 +12,7 @@
   @endif
 
   <div class="container mt-4">
-      <form action="{{ route('admin.menu.update', $dish->id) }}" method="post">
+      <form action="{{ route('admin.menu.update', $dish->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group row">
