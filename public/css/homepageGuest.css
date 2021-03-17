@@ -97,8 +97,6 @@
 }
 .main_container .categories_container {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .main_container .categories_container .wrapper_categories {
   display: flex;

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="main_container">
+    <div class="main_container" id="app">
         <div class="wrapper">
             <div class="left_main_box">
                 <div class="logo_login">
@@ -56,8 +56,8 @@
                     <p>N°<span>1</span> Delivery in <span>Milan</span></p>
                     <h3>Di cosa hai voglia oggi?</h3>
                     <div class="input_field">
-                        <input type="search" placeholder="Cerca per Categoria">
-                        <button>Cerca</button>
+                        <input type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
+                        <button  @click="restaurants()">Cerca</button>
                     </div>
                 </div>
             </div>
@@ -71,18 +71,22 @@
         </div>
 
         <div class="categories_container">
-           <div class="wrapper_categories" id="app">
-                <p>@{{ saluto }}</p>
+           <div class="wrapper_categories">
                 @foreach ($types as $type)
-                    <div class="category">
+                    <div class="category" @click="filterOnType(type.name)">
                         <img src="{{asset($type->img_path)}}" alt="{{$type->name}}">
+                        <p>{{$type->name}}</p>
                     </div>
                 @endforeach
+                {{-- <div v-for="type in alltypes" class="category">
+                    <img src="{{asset()}}" alt="@{{type.name}}">
+                </div> --}}
+           </div>
+           <div class="all-restaurants" v-if="filteredRestaurants.length > 0">
+               <div v-for="restaurant in filteredRestaurants" class="restaurant">
+                    @{{ restaurant.business_name }}
+               </div>
            </div>
         </div>
     </div>
-@endsection
-
-@section('script')
-    <script src="{{ asset('js/app.js') }}"></script>
 @endsection

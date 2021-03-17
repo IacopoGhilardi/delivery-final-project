@@ -30,6 +30,5 @@
         <p>bellissimo</p>
     </footer>
 
-    @yield('script')
 </body>
 </html>

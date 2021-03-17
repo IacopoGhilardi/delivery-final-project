@@ -20,6 +20,8 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+import axios from 'axios';
+import Vue from 'vue';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,6 +32,30 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        saluto: 'ciao'
+        type: '',
+        filteredRestaurants: [],
+        alltypes: []
+    },
+    mounted() {
+        axios.get(`http://127.0.0.1:8000/api/types`)
+        .then(response => {
+            this.alltypes = response.data;
+        })
+    },
+    methods: {
+        restaurants() {
+            axios.get(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
+                .then(response => {
+                    console.log(response.data);
+                    this.filteredRestaurants = response.data;
+                })
+        },
+        filterOnType(tipo) {
+            axios.get(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
+                .then(response => {
+                    console.log(response.data);
+                    this.filteredRestaurants = response.data;
+                })
+        }
     }
 });
