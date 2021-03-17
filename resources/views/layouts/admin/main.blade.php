@@ -33,8 +33,8 @@
 
                 <div class="nav_bar">
                     <ul class="nav_list">
-                        <li class="{{Route::currentRouteName() == 'admin.deliverboo.index' ? 'active' : ''}}"><a href="{{ route('admin.deliverboo.index') }}"><i class="fas fa-utensils"></i><span>I miei Ristoranti</span></a></li>
-                        <li class="{{Route::currentRouteName() == 'admin.deliverboo.create' ? 'active' : ''}}"><a href="{{ route('admin.deliverboo.create') }}"><i class="fas fa-store"></i><span>Aggiungi Ristorante</span></a></li>
+                        <li class="{{Route::currentRouteName() == 'admin.restaurant.index' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.index') }}"><i class="fas fa-utensils"></i><span>I miei Ristoranti</span></a></li>
+                        <li class="{{Route::currentRouteName() == 'admin.restaurant.create' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.create') }}"><i class="fas fa-store"></i><span>Aggiungi Ristorante</span></a></li>
                         <li><a href=""><i class="fas fa-chart-pie"></i><span>Visualizza Statistiche</span></a></li>
         
                     </ul>
@@ -43,10 +43,10 @@
 
             <section class="body_pannel">
                <div class="pannel_header">
-                    <p>@if (Route::currentRouteName() == 'admin.deliverboo.index')
-                        I Miei Ristoranti @elseif(Route::currentRouteName() == 'admin.deliverboo.create')
-                        Aggiungi Ristorante @elseif(Route::currentRouteName() == 'admin.deliverboo.show')
-                        I Miei Ristoranti > Info @elseif(Route::currentRouteName() == 'admin.deliverboo.edit')
+                    <p>@if (Route::currentRouteName() == 'admin.restaurant.index')
+                        I Miei Ristoranti @elseif(Route::currentRouteName() == 'admin.restaurant.create')
+                        Aggiungi Ristorante @elseif(Route::currentRouteName() == 'admin.restaurant.show')
+                        I Miei Ristoranti > Info @elseif(Route::currentRouteName() == 'admin.restaurant.edit')
                         I Miei Ristoranti > Modifica @elseif(Route::currentRouteName() == 'admin.menu.index')
                         I Miei Ristoranti > Menu @elseif(Route::currentRouteName() == 'admin.menu.edit')
                         I Miei Ristoranti > Menu > Modifica Piatto

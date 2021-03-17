@@ -88,6 +88,8 @@
   height: 400px;
   background-color: #F8B64A;
   background-size: cover;
+  background: #f8585e;
+  background: linear-gradient(153deg, #f8585e 20%, #f8b64a 80%);
 }
 .main_container .banner .wrapper {
   display: flex;

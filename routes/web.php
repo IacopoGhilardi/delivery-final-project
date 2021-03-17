@@ -27,7 +27,7 @@ Route::prefix('admin')
     ->middleware('auth')
     ->name('admin.') 
     ->group(function () {
-        Route::resource('deliverboo', 'RestaurantController');
+        Route::resource('restaurant', 'RestaurantController');
 
         // Route::resource('menu', 'DishController');
         Route::get('menu/{slug}', 'DishController@index')->name('menu.index');

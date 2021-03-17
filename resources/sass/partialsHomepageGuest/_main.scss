@@ -82,6 +82,8 @@
         height: 400px;
         background-color: #F8B64A;
         background-size: cover;
+        background: rgb(248,88,94);
+        background: linear-gradient(153deg, rgba(248,88,94,1) 20%, rgba(248,182,74,1) 80%);
         .wrapper {
             display: flex;
             justify-content: space-between;

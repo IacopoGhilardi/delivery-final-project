@@ -28,7 +28,7 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::where('user_id', Auth::id())->get();
 
-        return view('admin.deliverboo.index', compact('restaurants'));
+        return view('admin.restaurant.index', compact('restaurants'));
     }
 
     /**
@@ -39,7 +39,7 @@ class RestaurantController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.deliverboo.create', compact('types'));
+        return view('admin.restaurant.create', compact('types'));
     }
 
     /**
@@ -72,7 +72,7 @@ class RestaurantController extends Controller
             $newRestaurant->types()->attach($data["types"]);
         };
         
-        return redirect()->route('admin.deliverboo.index');
+        return redirect()->route('admin.restaurant.index');
     }
 
     /**
@@ -83,7 +83,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        return view('admin.deliverboo.show', ['restaurant' => Restaurant::findOrFail($id)]);
+        return view('admin.restaurant.show', ['restaurant' => Restaurant::findOrFail($id)]);
     }
 
     /**
@@ -97,7 +97,7 @@ class RestaurantController extends Controller
         $restaurant = Restaurant::findOrFail($id);
         $types = Type::all();
 
-        return view('admin.deliverboo.edit', compact('restaurant', 'types'));
+        return view('admin.restaurant.edit', compact('restaurant', 'types'));
     }
 
     /**
@@ -128,7 +128,7 @@ class RestaurantController extends Controller
             $restaurant->types()->sync($data['types']);
         }
 
-        return redirect()->route('admin.deliverboo.index')->with('status', $restaurant->business_name .' updated!');
+        return redirect()->route('admin.restaurant.index')->with('status', $restaurant->business_name .' updated!');
     }
 
     /**
@@ -143,6 +143,6 @@ class RestaurantController extends Controller
         Storage::disk('public')->delete($restaurant->img_path);
         $restaurant->delete();
 
-        return redirect()->route('admin.deliverboo.index')->with('status', $restaurant->business_name .' deleted!');
+        return redirect()->route('admin.restaurant.index')->with('status', $restaurant->business_name .' deleted!');
     }
 }

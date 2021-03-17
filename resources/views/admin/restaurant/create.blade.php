@@ -12,7 +12,7 @@
         </div>
       @endif
 
-      <form action="{{route('admin.deliverboo.store')}}" method="post" enctype="multipart/form-data">
+      <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="form-group row">
