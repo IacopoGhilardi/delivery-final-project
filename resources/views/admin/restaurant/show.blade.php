@@ -14,7 +14,7 @@
                 @else
                     <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
                 @endif
-                <h2 class="my-2">INFO</h2>
+                <h2 class="mt-4">INFO</h2>
                 <div class="card mt-2">
                     <div class="card-body">
                         <h2>{{ $restaurant->business_name }}</h2>
