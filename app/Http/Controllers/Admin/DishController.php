@@ -13,7 +13,7 @@ class DishController extends Controller
 {
     private $dishValidation = [
         'name' => 'required|max:50',
-        'ingredients' => 'required|max:50',
+        'ingredients' => 'required|max:500',
         'price' => 'required|numeric',
         'visibility' => 'required',
         'dish_img_path' => 'image'

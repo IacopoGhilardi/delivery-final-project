@@ -17,34 +17,42 @@
 
   <div class="d-flex justify-content-around mt-3 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
-        <div class="card mt-5 ">
-          <div class="card-body">
+          <div class="card mt-5 ">
 
-            <div class="card_top">
-              <h4>{{$dish->name}}</h4>
-              <p>{{$dish->price}}&euro;</p>
-              <p>{{$dish->ingredients}}</p>
-            </div>
-
+            <div class="card-body">
+              <div class="dish_img">
               @if (!empty($dish->dish_img_path))
                 <img class="img-fluid" src="{{ asset('storage/' . $dish->dish_img_path) }}" alt="{{ $dish->name }}">
               @else
                 <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $dish->name }}">
               @endif
+            </div>
+
+            <div class="position_absolute">
+              <div class="card_top">
+                <h4>{{$dish->name}}</h4>
+                <p>{{$dish->price}}&euro;</p>
+                <p>{{$dish->ingredients}}</p>
+              </div>
+
+              <div>
+                  <p>Visible? {{ $dish->visibility == 1 ? 'Si' : 'No' }}</p>
+              </div>
+
+              <div class="card_bottom">
+                <div>
+                  <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica </a>
+                </div>
+                <div>
+                  <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
+                  @csrf
+                  @method('DELETE')
+                  <input type="submit" class="btn btn-danger" value="Elimina">
+                  </form>
+                </div>
+              </div>
+            </div>
             
-            <div>
-                <p>Visible? {{ $dish->visibility == 1 ? 'Si' : 'No' }}</p>
-            </div>
-
-            <div class="card_bottom">
-              <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica </a>
-              <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="btn btn-danger" value="Elimina">
-              </form>
-            </div>
-
           </div>
         </div>
     @endforeach
