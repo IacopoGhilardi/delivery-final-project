@@ -73,14 +73,10 @@
         <div class="categories_container">
            <div class="wrapper_categories">
                 @foreach ($types as $type)
-                    <div class="category" @click="filterOnType(type.name)">
+                    <div class="category" @click="filterOnType(`{{($type->name)}}`)">
                         <img src="{{asset($type->img_path)}}" alt="{{$type->name}}">
-                        <p>{{$type->name}}</p>
                     </div>
                 @endforeach
-                {{-- <div v-for="type in alltypes" class="category">
-                    <img src="{{asset()}}" alt="@{{type.name}}">
-                </div> --}}
            </div>
            <div class="all-restaurants" v-if="filteredRestaurants.length > 0">
                <div v-for="restaurant in filteredRestaurants" class="restaurant">

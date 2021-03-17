@@ -34,13 +34,6 @@ const app = new Vue({
     data: {
         type: '',
         filteredRestaurants: [],
-        alltypes: []
-    },
-    mounted() {
-        axios.get(`http://127.0.0.1:8000/api/types`)
-        .then(response => {
-            this.alltypes = response.data;
-        })
     },
     methods: {
         restaurants() {
@@ -56,6 +49,6 @@ const app = new Vue({
                     console.log(response.data);
                     this.filteredRestaurants = response.data;
                 })
-        }
+        },   
     }
 });

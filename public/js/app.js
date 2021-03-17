@@ -1911,31 +1911,23 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#app',
   data: {
     type: '',
-    filteredRestaurants: [],
-    alltypes: []
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/types").then(function (response) {
-      _this.alltypes = response.data;
-    });
+    filteredRestaurants: []
   },
   methods: {
     restaurants: function restaurants() {
-      var _this2 = this;
+      var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/restaurants/".concat(this.type)).then(function (response) {
         console.log(response.data);
-        _this2.filteredRestaurants = response.data;
+        _this.filteredRestaurants = response.data;
       });
     },
     filterOnType: function filterOnType(tipo) {
-      var _this3 = this;
+      var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/restaurants/".concat(tipo)).then(function (response) {
         console.log(response.data);
-        _this3.filteredRestaurants = response.data;
+        _this2.filteredRestaurants = response.data;
       });
     }
   }

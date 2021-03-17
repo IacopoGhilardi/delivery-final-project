@@ -15,10 +15,4 @@ class RestaurantController extends Controller
         
         return response()->json($restaurants);
     }
-
-    public function allTypes() {
-        $types = Type::all();
-
-        return response()->json($types);
-    }
 }
