@@ -16,7 +16,7 @@
   @endif
 
   <div class="form_container">
-    <form action="{{ route('admin.menu.store', $slug) }}" method="post">
+    <form action="{{ route('admin.menu.store', $slug) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method('POST')
       <div class="form-group row">

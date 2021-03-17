@@ -25,6 +25,12 @@
               <p>{{$dish->price}}&euro;</p>
               <p>{{$dish->ingredients}}</p>
             </div>
+
+              @if (!empty($dish->dish_img_path))
+                <img class="img-fluid" src="{{ asset('storage/' . $dish->dish_img_path) }}" alt="{{ $dish->name }}">
+              @else
+                <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $dish->name }}">
+              @endif
             
             <div>
                 <p>Visible? {{ $dish->visibility == 1 ? 'Si' : 'No' }}</p>
