@@ -1,39 +1,8 @@
-main {
-  min-height: 100vh;
-  background: linear-gradient(-45deg, #F96F5A, #F86A5A, #F8B64A, #FFFFFF);
-  background-size: 400% 400%;
-  -webkit-animation: gradientbg 10s ease infinite;
-          animation: gradientbg 10s ease infinite;
-}
-
-.card_shadow {
-  box-shadow: -5px 5px #c5c59c;
-  overflow: hidden;
-  -webkit-animation: showForm 1s ease;
-          animation: showForm 1s ease;
-}
-
-.bounce-change {
-  opacity: 1;
-  -webkit-animation: bounce 0.5s infinite alternate;
-          animation: bounce 0.5s infinite alternate;
-  -webkit-animation-iteration-count: 4;
-          animation-iteration-count: 4;
-  background-color: orange;
-  border-color: orange;
-  color: #fff;
-}
-.bounce-change:hover {
-  box-shadow: inset -1px -1px 7px yellow;
-  color: #fff;
-}
-
 @-webkit-keyframes bounce {
   to {
     transform: scale(1.2);
   }
 }
-
 @keyframes bounce {
   to {
     transform: scale(1.2);
@@ -76,4 +45,49 @@ main {
   100% {
     height: 275px;
   }
+}
+main {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #F96F5A, #F86A5A, #F8B64A, #FFFFFF);
+  background-size: 400% 400%;
+  -webkit-animation: gradientbg 10s ease infinite;
+          animation: gradientbg 10s ease infinite;
+}
+
+.card_shadow {
+  box-shadow: -5px 5px #c5c59c;
+  overflow: hidden;
+  -webkit-animation: showForm 1s linear;
+          animation: showForm 1s linear;
+  color: orange;
+  font-weight: bold;
+  background-color: #EAE0C8;
+}
+.card_shadow label {
+  text-shadow: 2px 2px yellow;
+}
+.card_shadow .card-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+  background-color: #EAE0C8;
+  text-shadow: 2px 2px yellow;
+}
+.card_shadow .bounce-change {
+  opacity: 1;
+  -webkit-animation: bounce 0.5s infinite alternate;
+          animation: bounce 0.5s infinite alternate;
+  -webkit-animation-iteration-count: 4;
+          animation-iteration-count: 4;
+  background-color: orange;
+  border-color: orange;
+  color: #fff;
+}
+.card_shadow .bounce-change:hover {
+  box-shadow: inset -1px -1px 7px yellow;
+  color: #fff;
+}
+
+.select-cucina {
+  outline: 0px;
 }

@@ -1,21 +1,26 @@
 @extends('layouts.guest.main')
 
+@section('links')
+  <link rel="stylesheet" href="{{asset('css/loginRegisterLayout.css')}}"> 
+@endsection
+
+
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center py-5">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card card_shadow">
+                <div class="card-header text-center">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        <h2 class="text-center">Dati Utente</h2>
                         <div class="form-group row">
-                            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+                            <label for="firstName" class="col-md-12 text-center col-form-label">{{ __('First Name') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="firstName" type="text" class="form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
+                            <div class="col align-self-center">
+                                <input id="firstName" type="text" class="col-md-8 offset-md-2 form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
 
                                 @error('firstName')
                                     <span class="invalid-feedback" role="alert">
@@ -26,10 +31,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+                            <label for="lastName" class="col-md-12 text-center col-form-label">{{ __('Last Name') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="lastName" type="text" class="form-control @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
+                            <div class="col align-self-center">
+                                <input id="lastName" type="text" class="col-md-8 offset-md-2 form-control @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
 
                                 @error('lastName')
                                     <span class="invalid-feedback" role="alert">
@@ -40,10 +45,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-12 text-center col-form-label">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <div class="col align-self-center">
+                                <input id="email" type="email" class="col-md-8 offset-md-2 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -54,10 +59,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-12 text-center col-form-label">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <div class="col align-self-center">
+                                <input id="password" type="password" class="col-md-8 offset-md-2 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -68,10 +73,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-12 text-center col-form-label">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <div class="col align-self-center">
+                                <input id="password-confirm" type="password" class="col-md-8 offset-md-2 form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
                         
@@ -79,10 +84,10 @@
                         <h2 class="text-center">Dati Ristorante</h2>
 
                         <div class="form-group row">
-                            <label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __('Business Name') }}</label>
+                            <label for="business_name" class="col-md-12 text-center col-form-label">{{ __('Business Name') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" required autocomplete="business_name" autofocus>
+                            <div class="col align-self-center">
+                                <input id="business_name" type="text" class="col-md-8 offset-md-2 form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" required autocomplete="business_name" autofocus>
 
                                 @error('business_name')
                                     <span class="invalid-feedback" role="alert">
@@ -93,10 +98,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="PIVA" class="col-md-4 col-form-label text-md-right">{{ __('Vat Number') }}</label>
+                            <label for="PIVA" class="col-md-12 text-center col-form-label">{{ __('Vat Number') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="PIVA" type="text" class="form-control @error('PIVA') is-invalid @enderror" name="PIVA" value="{{ old('PIVA') }}" required autocomplete="PIVA" autofocus>
+                            <div class="col align-self-center">
+                                <input id="PIVA" type="text" class="col-md-8 offset-md-2 form-control @error('PIVA') is-invalid @enderror" name="PIVA" value="{{ old('PIVA') }}" required autocomplete="PIVA" autofocus>
 
                                 @error('PIVA')
                                     <span class="invalid-feedback" role="alert">
@@ -107,10 +112,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                            <label for="address" class="col-md-12 text-center col-form-label">{{ __('Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+                            <div class="col align-self-center">
+                                <input id="address" type="text" class="col-md-8 offset-md-2 form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -121,10 +126,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Select cuisine style') }}</label>
+                            <label for="address" class="col-md-12 text-center col-form-label">{{ __('Select cuisine style') }}</label>
 
-                            <div class="col-md-6">
-                                <select name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
+                            <div class="offset-md-2 col-8 align-self-center select-cucina">
+                                <select name="types[]" class="text-center js-example-basic-multiple" multiple="multiple" style="width: 100%">
                                     @foreach ($types as $type)
                                         <option value="{{ $type->id }}">{{ $type->name }}</option>
                                     @endforeach
@@ -134,8 +139,10 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-8 offset-md-2 text-center">
+                                <a class="btn bounce-change" href="{{route('guest.homepage')}}">Torna alla home</a>
+
+                                <button type="submit" class="btn bounce-change">
                                     {{ __('Register') }}
                                 </button>
                             </div>
