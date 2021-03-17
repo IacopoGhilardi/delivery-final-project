@@ -20,11 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/dishLayout.scss', 'public/css')
     .sass('resources/sass/dishCreateLayout.scss', 'public/css')
     .sass('resources/sass/restaurantShow.scss', 'public/css')
-<<<<<<< HEAD
-    .sass('resources/sass/guestRestaurant.scss', 'public/css');
-=======
     .sass('resources/sass/guestRestaurant.scss', 'public/css')
->>>>>>> Riccardo
     .sass('resources/sass/restaurantShow.scss', 'public/css')
     .sass('resources/sass/loginRegisterLayout.scss', 'public/css');
     
