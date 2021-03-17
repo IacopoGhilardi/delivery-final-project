@@ -24,7 +24,10 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/guestRestaurant.scss', 'public/css');
 =======
     .sass('resources/sass/guestRestaurant.scss', 'public/css')
+<<<<<<< HEAD
 >>>>>>> Riccardo
     .sass('resources/sass/restaurantShow.scss', 'public/css')
+=======
+>>>>>>> Riccardo
     .sass('resources/sass/loginRegisterLayout.scss', 'public/css');
     
