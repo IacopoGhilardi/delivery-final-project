@@ -42,7 +42,7 @@
                     <tbody>
                         @foreach ($restaurant->dishes as $dish)
                         <tr>
-                            <td><img class="img-fluid" src="{{ asset('images/food_icon.png') }}" alt="{{ $dish->name }}"></td>
+                            <td><img class="img-fluid" src="{{ asset('storage/' .$dish->dish_img_path) }}" alt="{{ $dish->name }}"></td>
                             <td>{{ $dish->name }}</td>
                         </tr>
                         @endforeach
