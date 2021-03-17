@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Select cuisine style') }}</label>
+            <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Seleziona tipologia') }}</label>
 
             <div class="col-md-6">
                 <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
