@@ -17,9 +17,9 @@ class GuestController extends Controller
         return view('guest.homepage', compact('types'));
     }
 
-    public function show($id) {
-        $restaurant = Restaurant::where('id', $id)->first();
-
+    public function show(Request $request) {
+        $data = $request->all();
+        $restaurant = Restaurant::where('business_name', $data["business_name"])->first();
         return view('guest.restaurant.show', compact('restaurant'));
     }
 }

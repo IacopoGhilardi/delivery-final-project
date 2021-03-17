@@ -81,7 +81,6 @@
            </div>
            <div class="all-restaurants" v-if="filteredRestaurants.length > 0">
                <div v-for="restaurant in filteredRestaurants" class="restaurant">
-                    <a href="">@{{ restaurant.business_name }}</a>
                </div>
            </div>
            <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
