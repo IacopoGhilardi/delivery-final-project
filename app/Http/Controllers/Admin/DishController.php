@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Dish;
 use Auth;
 use App\Restaurant;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
     private $dishValidation = [
         'name' => 'required|max:50',
-        'ingredients' => 'required|max:50',
+        'ingredients' => 'required|max:500',
         'price' => 'required|numeric',
         'visibility' => 'required',
         'dish_img_path' => 'image'
@@ -47,6 +48,10 @@ class DishController extends Controller
         $data['restaurant_id'] = $restaurant->id;
         $newDish = new Dish();
 
+        if (!empty($data["dish_img_path"])) {
+            $data["dish_img_path"] = Storage::disk('public')->put('images', $data["dish_img_path"]);
+        }
+
         $newDish->fill($data);
         $newDish->save();
 
@@ -77,6 +82,12 @@ class DishController extends Controller
         $request->validate($this->dishValidation);
 
         $dish = Dish::find($id);
+
+        if (!empty($data["dish_img_path"])) {
+            Storage::disk('public')->delete($dish->dish_img_path);
+            $data["dish_img_path"] = Storage::disk('public')->put('images', $data["dish_img_path"]);
+        }
+
         $dish->update($data);
 
         $slug = $dish->restaurant->slug;

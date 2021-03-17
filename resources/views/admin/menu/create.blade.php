@@ -16,7 +16,7 @@
   @endif
 
   <div class="form_container">
-    <form action="{{ route('admin.menu.store', $slug) }}" method="post">
+    <form action="{{ route('admin.menu.store', $slug) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method('POST')
       <div class="form-group row">
@@ -41,7 +41,7 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label col-form-label-lg " for="dish_img_path">Immagine</label>
+        {{-- <label class="col-sm-2 col-form-label col-form-label-lg " for="dish_img_path">Immagine</label> --}}
         <div class="col-sm-10">
           <input type="file" class="" name="dish_img_path" id="dish_img_path" value="{{ old('dish_img_path') }}" accept="image/*">
         </div>
@@ -61,7 +61,7 @@
         </div>
       </div>
       
-      <input class="btn btn-primary mt-4" type="submit" value="Crea">
+      <input class="btn btn-danger mt-4" type="submit" value="Crea">
     </form>  
   </div>
   

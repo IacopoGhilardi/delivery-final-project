@@ -27,28 +27,58 @@
 
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: calc(100% / 4 - 10px);
     height: 400px;
+    width: calc(100% / 4 - 20px);
     margin: 10px;
     color: white;
     background-color: rgba(0,0,0,0.4);
+    // box-shadow: 3px 3px #888888;
     &:hover {
         background-color: rgba(0,0,0,0.7);
         transition: 1.0s;
     }
+    .dish_img {
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
     
 
-    .card_body {
-        height: 400px;
+    .card-body {
+        // height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
+        padding: 0 !important;
+        z-index: 1;
+    }
+
+    .position_absolute {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 400px;
+        width: 100%;
+        padding: 20px;
+        // text-align: center;
+        background-color: rgba(0,0,0,0.4);
+        &:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
     }
 
     .card_top {
+        z-index: 3;
+        word-break: break-all;
+        width: 100%;
         height: 80%;
         overflow: hidden;
         &:hover {
@@ -57,11 +87,13 @@
     }
 
     .card_bottom {
+        z-index: 3;
+        width: 100%;
         height: 10%;
         display: flex;
-        align-items: flex-end;
+        justify-content: center;
         form {
-            margin-left: 5px;
+            margin-left: 20px;
         }
     }
     
