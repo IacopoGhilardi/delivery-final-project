@@ -71,43 +71,21 @@
         </div>
 
         <div class="categories_container">
+            <a href="{{ route('guest.restaurant.show', 1) }}">link</a>
            <div class="wrapper_categories">
-                <h2>Tutte le nostre categorie</h2>
-                <div class="categories">
-                    @foreach ($types as $type)
-                        <div class="category" @click="filterOnType(`{{($type->name)}}`)">
-                            <img src="{{asset($type->img_path)}}" alt="{{$type->name}}">
-                            <div @click="filterOnType(`{{($type->name)}}`)" class="category_name">
-                                <p>{{$type->name}}</p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                @foreach ($types as $type)
+                    <div class="category" @click="filterOnType(`{{($type->name)}}`)">
+                        <img src="{{asset($type->img_path)}}" alt="{{$type->name}}">
+                    </div>
+                @endforeach
            </div>
+           <div class="all-restaurants" v-if="filteredRestaurants.length > 0">
+               <div v-for="restaurant in filteredRestaurants" class="restaurant">
+               </div>
+           </div>
+           <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
+                 Non sono stati trovati Ristoranti per questa categoria
         </div>
-        <div class="all_restaurants" v-if="filteredRestaurants.length > 0">
-            <div class="restaurants_wrapper">
-                 <h2>@{{filteredRestaurants.length}} Ristoranti</h2>
-                 <div class="restaurants_container">
-                     <div v-for="restaurant in filteredRestaurants" class="restaurant">
-                        <form action="" method="post">
-                            @csrf
-                            @method('POST')
-                            <input name="business_name" type="hidden" :value="restaurant.business_name">
-                            <div class="restaurant_image_box">
-                                <img :src="`../storage/${restaurant.img_path}`" alt="">
-                            </div>
-                            <div class="restaurant_info">
-                                {{-- <a href="{{route('guest.restaurant.show', )}}">@{{ restaurant.business_name }}</a> --}}
-                            </div>
-                            <button type="submit"></button>
-                        </form>
-                     </div>
-                 </div>
-            </div>
         </div>
-        <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
-              Non sono stati trovati Ristoranti per questa categoria
-         </div>
     </div>
 @endsection

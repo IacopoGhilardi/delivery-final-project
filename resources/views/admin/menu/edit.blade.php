@@ -12,7 +12,7 @@
   @endif
 
   <div class="container mt-4">
-      <form action="{{ route('admin.menu.update', $dish->id) }}" method="post">
+      <form action="{{ route('admin.menu.update', $dish->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group row">
@@ -23,7 +23,7 @@
         </div>
     
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label col-form-label-lg" for="price">prezzo</label>
+          <label class="col-sm-2 col-form-label col-form-label-lg" for="price">Prezzo</label>
           <div class="col-sm-10">
               <input type="text" class="form-control" name="price" id="price"  value="{{$dish->price}}">
           </div>
@@ -33,6 +33,13 @@
           <label class="col-sm-2 col-form-label col-form-label-lg" for="ingredients">Lista ingredienti</label>
           <div class="col-sm-10">
             <textarea class="form-control" name="ingredients" id="ingredients" rows="10">{{$dish->ingredients}}</textarea>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label col-form-label-lg " for="dish_img_path">Scegli nuova immagine</label>
+          <div class="col-sm-10">
+            <input type="file" class="" name="dish_img_path" id="dish_img_path"  accept="image/*">
           </div>
         </div>
     

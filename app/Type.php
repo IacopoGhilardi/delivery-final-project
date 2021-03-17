@@ -8,8 +8,6 @@ class Type extends Model
 {   
     public $timestamps = false;
 
-    // protected $with = ['restaurants'];
-
     protected $fillable = [
         'name',
         'img_path'

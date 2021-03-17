@@ -26,10 +26,11 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: calc(100% / 4 - 10px);
   height: 400px;
+  width: calc(100% / 4 - 20px);
   margin: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
@@ -38,13 +39,41 @@
   background-color: rgba(0, 0, 0, 0.7);
   transition: 1s;
 }
-.card .card_body {
-  height: 400px;
+.card .dish_img {
+  width: 100%;
+  height: 100%;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.card .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0 !important;
+  z-index: 1;
+}
+.card .position_absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.card .position_absolute:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .card .card_top {
+  z-index: 3;
+  word-break: break-all;
+  width: 100%;
   height: 80%;
   overflow: hidden;
 }
@@ -52,10 +81,12 @@
   overflow-y: auto;
 }
 .card .card_bottom {
+  z-index: 3;
+  width: 100%;
   height: 10%;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
 }
 .card .card_bottom form {
-  margin-left: 5px;
+  margin-left: 20px;
 }

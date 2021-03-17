@@ -14,7 +14,7 @@
                 @else
                     <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
                 @endif
-                <h2 class="my-2">INFO</h2>
+                <h2 class="mt-4">INFO</h2>
                 <div class="card mt-2">
                     <div class="card-body">
                         <h2>{{ $restaurant->business_name }}</h2>
@@ -42,7 +42,7 @@
                     <tbody>
                         @foreach ($restaurant->dishes as $dish)
                         <tr>
-                            <td><img class="img-fluid" src="{{ asset('images/food_icon.png') }}" alt="{{ $dish->name }}"></td>
+                            <td><img class="img-fluid" src="{{ asset('storage/' .$dish->dish_img_path) }}" alt="{{ $dish->name }}"></td>
                             <td>{{ $dish->name }}</td>
                         </tr>
                         @endforeach
