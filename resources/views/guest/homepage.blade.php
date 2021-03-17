@@ -71,6 +71,7 @@
         </div>
 
         <div class="categories_container">
+            <a href="{{ route('guest.restaurant.show', 1) }}">link</a>
            <div class="wrapper_categories">
                 @foreach ($types as $type)
                     <div class="category" @click="filterOnType(`{{($type->name)}}`)">
@@ -80,7 +81,6 @@
            </div>
            <div class="all-restaurants" v-if="filteredRestaurants.length > 0">
                <div v-for="restaurant in filteredRestaurants" class="restaurant">
-                    <a href="">@{{ restaurant.business_name }}</a>
                </div>
            </div>
            <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
