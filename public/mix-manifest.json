@@ -2,7 +2,9 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/guestMainLayout.css": "/css/guestMainLayout.css",
-    "/css/dishLayout.css": "/css/dishLayout.css",
+    "/css/homepageGuest.css": "/css/homepageGuest.css",
     "/css/adminLayout.css": "/css/adminLayout.css",
-    "/css/homepageGuest.css": "/css/homepageGuest.css"
+    "/css/restaurantShow.css": "/css/restaurantShow.css",
+    "/css/dishCreateLayout.css": "/css/dishCreateLayout.css",
+    "/css/dishLayout.css": "/css/dishLayout.css"
 }
