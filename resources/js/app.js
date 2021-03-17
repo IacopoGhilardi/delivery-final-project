@@ -42,8 +42,8 @@ const app = new Vue({
                 .then(response => {
                     this.firstSearch = false;
                     this.filteredRestaurants = response.data;
+                    console.log(this.filteredRestaurants);
                     this.type = '';
-                    this.scrollToEnd();
                 })
                 .catch((error) => {
                     this.type = '';
@@ -56,7 +56,7 @@ const app = new Vue({
             axios.post(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
                 .then(response => {
                     this.filteredRestaurants = response.data;
-                    this.scrollToEnd();
+                    // this.scrollToEnd();
                 })
                 .catch((error) => {
                     this.type = '';
@@ -65,9 +65,9 @@ const app = new Vue({
                        throw error;
                   });
         },
-        scrollToEnd: function() {    	
-            var container = this.$el.querySelector(".main_container");
-            container.scrollTop = container.scrollHeight;
-          },
+        // scrollToEnd: function() {    	
+        //     var container = this.$el.querySelector(".main_container");
+        //     container.scrollTop = container.scrollHeight;
+        //   },
     }
 });

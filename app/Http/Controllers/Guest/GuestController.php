@@ -12,7 +12,7 @@ class GuestController extends Controller
     public function index() {
 
         $types = Type::all();
-
+        
         return view('guest.homepage', compact('types'));
     }
 }
