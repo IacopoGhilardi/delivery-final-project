@@ -90,7 +90,7 @@
                   <h2>@{{filteredRestaurants.length}} Ristoranti</h2>
                   <div class="restaurants_container">
                       <div v-for="restaurant in filteredRestaurants" class="restaurant">
-                         <form action="" method="post">
+                         <form action="{{ route('guest.restaurant.show') }}" method="post">
                              @csrf
                              @method('POST')
                              <input name="business_name" type="hidden" :value="restaurant.business_name">
