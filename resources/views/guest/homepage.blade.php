@@ -10,7 +10,7 @@
             <div class="left_main_box">
                 <div class="logo_login">
                     <div class="logo">
-                        <a href="{{ url('/') }}"><img src="{{ asset('images/logo/APPETIDO.png') }}" alt="" id="logo"></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('images/logo/APPETIDO (1).png') }}" alt="" id="logo"></a>
                     </div>
                     <div class="login_box">
                         <nav class="main_nav">

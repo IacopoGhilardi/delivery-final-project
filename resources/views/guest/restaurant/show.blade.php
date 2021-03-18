@@ -9,7 +9,7 @@
        <div class="wrapper">
            <div class="header_container">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo/Deliverboo.png') }}" alt="" id="logo"></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo/APPETIDO (1).png') }}" alt="" id="logo"></a>
                 </div>
                 <div class="nav_links">
                     <ul class="inline_list">
