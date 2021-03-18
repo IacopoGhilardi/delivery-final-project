@@ -27,7 +27,41 @@
     </main>
 
     <footer style="display: block" class="">
-       @yield('footer')
+        <div class="layout_footer">
+            <div class="footer_layout_wrapper">
+        
+                <div class="footer_box">
+                    <ul>
+                        <li>Qualcosa</li>
+                        <li>Un'altra cosa</li>
+                        <li>Ancora un'altra cosa</li>
+                        <li>Una cosa in meno</li>
+                        <li>Che bella cosa!</li>
+                    </ul>
+                </div>
+            
+                <div class="footer_box">
+                    <ul>
+                        <li>Qualcosa</li>
+                        <li>Un'altra cosa</li>
+                        <li>Ancora un'altra cosa</li>
+                        <li>Una cosa in meno</li>
+                        <li>Che bella cosa!</li>
+                    </ul>
+                </div>
+            
+                <div class="footer_box">
+                    <ul>
+                        <li>Qualcosa</li>
+                        <li>Un'altra cosa</li>
+                        <li>Ancora un'altra cosa</li>
+                        <li>Una cosa in meno</li>
+                        <li>Che bella cosa!</li>
+                    </ul>
+                </div>
+            
+            </div>
+        </div>
     </footer>
 
 </body>
