@@ -54,6 +54,7 @@ const app = new Vue({
                 .catch((error) => {
                     this.type = '';
                     this.firstSearch = false;
+                    this.filteredRestaurants = [];
                       // when you throw error this will also fetch error.
                        throw error;
                   });

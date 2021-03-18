@@ -1932,7 +1932,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         _this2.type = '';
       })["catch"](function (error) {
         _this2.type = '';
-        _this2.firstSearch = false; // when you throw error this will also fetch error.
+        _this2.firstSearch = false;
+        _this2.filteredRestaurants = []; // when you throw error this will also fetch error.
 
         throw error;
       });
