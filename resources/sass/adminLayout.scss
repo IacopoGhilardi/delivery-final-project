@@ -120,42 +120,14 @@ main {
   }
 }
 
-
-// ::-webkit-scrollbar {
-//   width:7px
-// }
-// ::-webkit-scrollbar-track {
-//   background: lightgrey;
-// //   border-radius: 10px
-// }
-// ::-webkit-scrollbar-thumb {
-//   background: orange;
-//   border-radius: 10px
-// }
-
-.btn-info {
-    color: white;
-    border: 1px solid orange;
-    background-color: orange;
-    
-    &:hover {
-        border: 1px solid orange;
-        background-color: darkorange;
-    }
-    &:active{
-        border: 1px solid orange !important;
-        background-color: darkorange !important;
-    }
-}
-
-
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 200px;
   width: calc(100% / 4 - 20px);
   margin: 10px;
+  border-radius: 8px;
   color: white;
   .restaurant_img {
       width: 100%;
@@ -182,9 +154,11 @@ main {
       position: absolute;
       top: 0;
       left: 0;
-      height: 400px;
+      height: 200px;
       width: 100%;
-      padding: 20px;
+      padding: 15px;
+      border-radius: 8px;
+
       // text-align: center;
       background-color: rgba(0,0,0,0.4);
       &:hover {
@@ -207,12 +181,23 @@ main {
   .card_bottom {
       z-index: 3;
       width: 100%;
-      height: 10%;
+      height: 20%;
       display: flex;
-      justify-content: center;
-      form {
-          margin-left: 20px;
+      // justify-content: center;
+      .btn-info{
+          margin-right: 15px;
       }
+  }
+  ::-webkit-scrollbar {
+    width:7px
+  }
+  ::-webkit-scrollbar-track {
+    background: lightgrey;
+  //   border-radius: 10px
+  }
+  ::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 10px
   }
     
 }

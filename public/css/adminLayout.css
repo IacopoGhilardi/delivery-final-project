@@ -148,27 +148,14 @@ main .body_pannel .pannel_content_container {
     transform: rotate(0deg);
   }
 }
-.btn-info {
-  color: white;
-  border: 1px solid orange;
-  background-color: orange;
-}
-.btn-info:hover {
-  border: 1px solid orange;
-  background-color: darkorange;
-}
-.btn-info:active {
-  border: 1px solid orange !important;
-  background-color: darkorange !important;
-}
-
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 200px;
   width: calc(100% / 4 - 20px);
   margin: 10px;
+  border-radius: 8px;
   color: white;
 }
 .card .restaurant_img {
@@ -194,9 +181,10 @@ main .body_pannel .pannel_content_container {
   position: absolute;
   top: 0;
   left: 0;
-  height: 400px;
+  height: 200px;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
+  border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.4);
 }
 .card .position_absolute:hover {
@@ -216,10 +204,19 @@ main .body_pannel .pannel_content_container {
 .card .card_bottom {
   z-index: 3;
   width: 100%;
-  height: 10%;
+  height: 20%;
   display: flex;
-  justify-content: center;
 }
-.card .card_bottom form {
-  margin-left: 20px;
+.card .card_bottom .btn-info {
+  margin-right: 15px;
+}
+.card ::-webkit-scrollbar {
+  width: 7px;
+}
+.card ::-webkit-scrollbar-track {
+  background: lightgrey;
+}
+.card ::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px;
 }
