@@ -35,7 +35,7 @@
     height: 0;
   }
   100% {
-    height: 275px;
+    height: 350px;
   }
 }
 @keyframes showFormlogin {
@@ -43,7 +43,7 @@
     height: 0;
   }
   100% {
-    height: 275px;
+    height: 350px;
   }
 }
 @-webkit-keyframes showFormRegister {
