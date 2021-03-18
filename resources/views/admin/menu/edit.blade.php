@@ -54,7 +54,7 @@
           </label>
         </div>
         
-        <input class="btn btn-primary mt-4" type="submit" value="Crea">
+        <input class="btn btn-primary mt-4" type="submit" value="Salva">
       </form>  
   </div>
 
