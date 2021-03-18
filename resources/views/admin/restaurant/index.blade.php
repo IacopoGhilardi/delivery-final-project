@@ -34,14 +34,14 @@
               @endif
             </td>
             <td style="vertical-align: middle; text-align:center"> <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-info"><i class="far fa-eye"></i></a></td>
-            <td style="vertical-align: middle; text-align:center"> <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a> </td>
+            {{-- <td style="vertical-align: middle; text-align:center"> <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a> </td>
             <td style="vertical-align: middle; text-align:center">
               <form action="{{ route('admin.restaurant.destroy', $restaurant->id) }}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo ristorante?')">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
               </form>
-            </td>
+            </td> --}}
             <td style="vertical-align: middle; text-align:center"> <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success"><i class="fas fa-utensils"></i></a> </td>
 
           </tr>          

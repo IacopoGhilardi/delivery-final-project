@@ -49,6 +49,20 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="d-flex">
+                <td style="vertical-align: middle; text-align:center"> <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                </td>
+                <td style="vertical-align: middle; text-align:center">
+                    <form action="{{ route('admin.restaurant.destroy', $restaurant->id) }}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo ristorante?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                </td>
+            </div>
+            
+
         </div>
     </div>
 @endsection
