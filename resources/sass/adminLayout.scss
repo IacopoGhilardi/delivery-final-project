@@ -91,31 +91,128 @@ main {
 }
 
 @keyframes swing {
-    0% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(10deg);
-    }
-    30% {
-      transform: rotate(0deg);
-    }
-    40% {
-      transform: rotate(-10deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    60% {
-      transform: rotate(5deg);
-    }
-    70% {
-      transform: rotate(0deg);
-    }
-    80% {
-      transform: rotate(-5deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
+  10% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+// ::-webkit-scrollbar {
+//   width:7px
+// }
+// ::-webkit-scrollbar-track {
+//   background: lightgrey;
+// //   border-radius: 10px
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: orange;
+//   border-radius: 10px
+// }
+
+.btn-info {
+    color: white;
+    border: 1px solid orange;
+    background-color: orange;
+    
+    &:hover {
+        border: 1px solid orange;
+        background-color: darkorange;
+    }
+    &:active{
+        border: 1px solid orange !important;
+        background-color: darkorange !important;
+    }
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: calc(100% / 4 - 20px);
+  margin: 10px;
+  color: white;
+  .restaurant_img {
+      width: 100%;
+      height: 100%;
+  }
+  img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+  
+
+  .card-body {
+      // height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 !important;
+      z-index: 1;
+  }
+
+  .position_absolute {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 400px;
+      width: 100%;
+      padding: 20px;
+      // text-align: center;
+      background-color: rgba(0,0,0,0.4);
+      &:hover {
+          background-color: rgba(0,0,0,0.6);
+          transition: 0.5s;
+      }
+  }
+
+  .card_top {
+      z-index: 3;
+      word-break: break-all;
+      width: 100%;
+      height: 80%;
+      overflow: hidden;
+      &:hover {
+          overflow-y: auto;
+      }
+  }
+
+  .card_bottom {
+      z-index: 3;
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      form {
+          margin-left: 20px;
+      }
+  }
+    
+}
