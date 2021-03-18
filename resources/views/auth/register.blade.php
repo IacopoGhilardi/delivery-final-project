@@ -16,31 +16,33 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <h2 class="text-center">Dati Utente</h2>
-                        <div class="form-group row">
-                            <label for="firstName" class="col-md-12 text-center col-form-label">{{ __('First Name') }}</label>
+                        <div class="row">
+                            <div class="form-group row">
+                                <label for="firstName" class="col-md-8 offset-md-4 text-center col-form-label">{{ __('First Name') }}</label>
 
-                            <div class="col align-self-center">
-                                <input id="firstName" type="text" class="col-md-8 offset-md-2 form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
+                                <div class="col align-self-center">
+                                    <input id="firstName" type="text" class="col-md-9 offset-md-4 form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
 
-                                @error('firstName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @error('firstName')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="lastName" class="col-md-12 text-center col-form-label">{{ __('Last Name') }}</label>
+                            <div class="form-group row">
+                                <label for="lastName" class="col-md-11 offset-md-1 text-center col-form-label">{{ __('Last Name') }}</label>
 
-                            <div class="col align-self-center">
-                                <input id="lastName" type="text" class="col-md-8 offset-md-2 form-control @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
+                                <div class="col align-self-center" style="padding-left: 0;">
+                                    <input id="lastName" type="text"  class="col-md-10 offset-md-2 form-control @error('lastName') is-invalid @enderror"  name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
 
-                                @error('lastName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @error('lastName')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
 
@@ -58,25 +60,27 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-12 text-center col-form-label">{{ __('Password') }}</label>
+                        <div class="row">
+                            <div class="form-group row">
+                                <label for="password" class="col-md-8 offset-md-4 text-center col-form-label">{{ __('Password') }}</label>
 
-                            <div class="col align-self-center">
-                                <input id="password" type="password" class="col-md-8 offset-md-2 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <div class="col align-self-center">
+                                    <input id="password" type="password" class="col-md-10 offset-md-4 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-12 text-center col-form-label">{{ __('Confirm Password') }}</label>
+                            <div class="form-group row">
+                                <label for="password-confirm" class="col-md-12  text-center col-form-label">{{ __('Confirm Password') }}</label>
 
-                            <div class="col align-self-center">
-                                <input id="password-confirm" type="password" class="col-md-8 offset-md-2 form-control" name="password_confirmation" required autocomplete="new-password">
+                                <div class="col align-self-center">
+                                    <input id="password-confirm" type="password" class="col-md-8 offset-md-2 form-control" name="password_confirmation" required autocomplete="new-password">
+                                </div>
                             </div>
                         </div>
                         

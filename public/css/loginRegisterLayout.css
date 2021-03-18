@@ -64,10 +64,10 @@
 }
 main {
   min-height: 100vh;
-  background: linear-gradient(-45deg, #F96F5A, #F86A5A, #F8B64A, #FFFFFF);
+  background: linear-gradient(-45deg, #F96F5A, #F86A5A, #F8B64A, #F8B64A);
   background-size: 400% 400%;
-  -webkit-animation: gradientbg 10s ease infinite;
-          animation: gradientbg 10s ease infinite;
+  -webkit-animation: gradientbg 30s ease infinite;
+          animation: gradientbg 30s ease infinite;
 }
 
 .card_on_register {
@@ -83,19 +83,16 @@ main {
 .card_shadow {
   box-shadow: -5px 5px #c5c59c;
   overflow: hidden;
-  color: orange;
   font-weight: bold;
+  /*label {
+    text-shadow: 2px 2px yellow;   
+  }*/
   background-color: #EAE0C8;
-}
-.card_shadow label {
-  text-shadow: 2px 2px yellow;
 }
 .card_shadow .card-header {
   font-size: 24px;
   font-weight: bold;
-  color: orange;
   background-color: #EAE0C8;
-  text-shadow: 2px 2px yellow;
 }
 .card_shadow .bounce-change {
   opacity: 1;
