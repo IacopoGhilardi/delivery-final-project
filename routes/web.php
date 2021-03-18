@@ -39,10 +39,9 @@ Route::prefix('admin')
  });    
 
 
- Route::prefix('guest')
-    ->namespace('Guest')
+ Route::namespace('Guest')
     ->name('guest.')
     ->group(function () {
         Route::get('deliverboo', 'GuestController@index')->name('homepage');
-        Route::post('restaurant/show', 'GuestController@show')->name('restaurant.show');
+        Route::post('deliverboo/restaurant', 'GuestController@show')->name('restaurant.show');
     });

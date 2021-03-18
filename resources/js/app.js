@@ -35,6 +35,13 @@ const app = new Vue({
         firstSearch: true,
         type: '',
         filteredRestaurants: [],
+        allRestaurants: []
+    },
+    mounted() {
+        axios.get(`http://127.0.0.1:8000/api/allRestaurants`)
+                .then(response => {
+                    this.allRestaurants = response.data;
+                })
     },
     methods: {
         restaurants() {

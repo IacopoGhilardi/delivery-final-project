@@ -21,4 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group(function() {
     Route::post('/restaurants/{type}', 'RestaurantController@index');
     Route::post('filter/{restaurant}', 'RestaurantController@filter');
+    Route::get('allRestaurants', 'RestaurantController@allRestaurants');
 });
