@@ -22,12 +22,12 @@
         @yield('header')
     </header>
 
-    <main>
+    <main style="width: 100%">
         @yield('content')
     </main>
 
-    <footer>
-        <p>bellissimo</p>
+    <footer style="display: block" class="">
+       @yield('footer')
     </footer>
 
 </body>

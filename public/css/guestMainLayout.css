@@ -4628,6 +4628,29 @@ ul {
   align-items: center;
 }
 
+.layout_footer {
+  width: 100%;
+  height: 600px;
+  background-color: #2E3333;
+}
+.layout_footer .footer_layout_wrapper {
+  display: flex;
+  padding: 70px 0;
+  width: 85%;
+  margin: auto;
+}
+.layout_footer .footer_layout_wrapper .footer_box {
+  width: 33%;
+  height: 100%;
+}
+.layout_footer .footer_layout_wrapper .footer_box ul {
+  list-style: none;
+}
+.layout_footer .footer_layout_wrapper .footer_box ul li {
+  color: white;
+  font-size: 20px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
