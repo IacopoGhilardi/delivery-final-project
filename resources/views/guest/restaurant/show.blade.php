@@ -42,6 +42,7 @@
                                 </form>
                             </div>
                         </li>
+                        <li class="cart"><i class="fas fa-shopping-cart"></i></li>
                         @endguest
                     </ul>
                 </div>
@@ -77,16 +78,35 @@
         </div>
    </div>
 
-   <div class="restaurant_menu">
-       <div class="wrapper">
-            <h1>Seleziona i piatti che preferisci</h1>
-            @foreach ($restaurant->dishes as $dish)
-                <div class="dish">
-                    <p>{{ $dish->name }}</p>
+   <div class="central_container">
+        <div class="restaurant_menu">
+            <div class="wrapper">
+                <h1>Seleziona i piatti che preferisci</h1>
+                <div class="dishes">
+                        @foreach ($restaurant->dishes as $dish)
+                        @if($dish->visibility == 1)
+                        <div class="dish">
+                            <div class="dish_info">
+                                <p><strong>{{ $dish->name }}</strong></p>
+                                <p class="ingredients">{{ Str::substr($dish->ingredients, 0, 60) }} 
+                                @if(strlen($dish->ingredients)> 65)
+                                ...
+                                @endif</p>
+                                <span>{{ $dish->price }}&euro;</span>
+                            </div>
+                            <div class="dish_image_box">
+                                <div class="img_box">
+                                    <img src="{{ asset('storage/'. $dish->dish_img_path) }}" alt="image dish">
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                    @endforeach
                 </div>
-            @endforeach
-
-       </div>
+            </div>
+            {{-- <div class="side_cart">
+                il tuo carrello è vuoto
+            </div> --}}
+        </div>
    </div>
-
 @endsection

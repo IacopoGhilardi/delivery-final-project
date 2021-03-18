@@ -19,7 +19,9 @@ class GuestController extends Controller
 
     public function show(Request $request) {
         $data = $request->all();
+        
         $restaurant = Restaurant::where('business_name', $data["business_name"])->first();
+
         return view('guest.restaurant.show', compact('restaurant'));
     }
 }
