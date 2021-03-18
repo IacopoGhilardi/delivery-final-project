@@ -38,7 +38,7 @@ const app = new Vue({
         allRestaurants: []
     },
     mounted() {
-        axios.get(`http://127.0.0.1:8000/api/allRestaurants`)
+        axios.post(`http://127.0.0.1:8000/api/allRestaurants`)
                 .then(response => {
                     this.allRestaurants = response.data;
                 })

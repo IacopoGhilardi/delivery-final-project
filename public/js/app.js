@@ -1918,7 +1918,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   mounted: function mounted() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/allRestaurants").then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/allRestaurants").then(function (response) {
       _this.allRestaurants = response.data;
     });
   },
