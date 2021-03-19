@@ -88,6 +88,22 @@
             </div>
         </div>
     </footer>
-    @yield('script')
+
+    <script>
+        $(document).ready(function(){
+            $(this).scrollTop(0);
+        });
+
+        
+        // $(document).ready(function(){
+        //     $('html, body').scrollTop(0);
+
+        //     $(window).on('load', function() {
+        //     setTimeout(function(){
+        //         $('html, body').scrollTop(0);
+        //     }, 0);
+        // });
+        // });
+    </script>
 </body>
 </html>
