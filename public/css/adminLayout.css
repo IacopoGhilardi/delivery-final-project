@@ -65,7 +65,8 @@ main .body_pannel .pannel_header {
   align-items: center;
   width: 100%;
   height: 50px;
-  border-bottom: 1px solid black;
+  border-bottom: 0.5px solid lightgray;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
   padding: 0 20px;
 }
 main .body_pannel .pannel_header p {
