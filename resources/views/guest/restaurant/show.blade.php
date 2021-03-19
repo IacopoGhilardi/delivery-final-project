@@ -79,13 +79,13 @@
    </div>
 
    <div class="central_container">
-        <div class="restaurant_menu">
+        <div class="restaurant_menu" id="root">
             <div class="wrapper">
                 <h1>Seleziona i piatti che preferisci</h1>
                 <div class="dishes">
                         @foreach ($restaurant->dishes as $dish)
                         @if($dish->visibility == 1)
-                        <div class="dish">
+                        <div class="dish" @click="addOrder(`{{$dish->name}}`, `{{$dish->price}}`)">
                             <div class="dish_info">
                                 <p><strong>{{ $dish->name }}</strong></p>
                                 <p class="ingredients">{{ Str::substr($dish->ingredients, 0, 60) }} 
@@ -104,9 +104,13 @@
                     @endforeach
                 </div>
             </div>
-            {{-- <div class="side_cart">
-                il tuo carrello è vuoto
-            </div> --}}
+            <div class="side_cart">
+                <div class="robe" v-for="order in orders">
+                    @{{order.name}}
+                    @{{order.count}}
+                    @{{order.price}}
+                </div>
+            </div>
         </div>
    </div>
 @endsection

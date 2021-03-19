@@ -77,3 +77,63 @@ const app = new Vue({
     }
 });
 
+
+const cart = new Vue({
+    el: '#root',
+    data: {
+        orders: [],
+    },
+    mounted() {
+        if (localStorage.getItem('orders')) {
+            try {
+              this.orders = JSON.parse(localStorage.getItem('orders'));
+            } catch(e) {
+              localStorage.removeItem('orders');
+            }
+          }
+    },
+    methods: {
+        stamp(x) {
+            console.log(x);
+        },
+        addOrder(name, price) {
+            // ensure they actually typed something
+            if (!name && !price) {
+              return;
+            }
+            //salvo il nuovo ordine
+            const newOrder = {name, price, count: 1};
+            if (this.orders.length == 0) {
+                this.orders.push(newOrder);
+            }
+            //controllo se esiste e in tal caso sommo solo il prezzo
+            else if (!this.groupOrders(newOrder)) {
+                this.orders.push(newOrder);
+            }
+            this.saveOrders();
+        },
+        removeOrder(x) {
+        this.orders.splice(x, 1);
+        this.saveOrders();
+        },
+        saveOrders() {
+        const parsed = JSON.stringify(this.orders);
+        localStorage.setItem('orders', parsed);
+        },
+        //raggruppo ordini con lo stesso ordine
+        groupOrders(newOrder) {
+            let exist = false;
+            this.orders.forEach(element => {
+                if (newOrder.name == element.name && !exist) {
+                    element.price = parseFloat(element.price);
+                    element.price += parseFloat(newOrder.price);
+                    element.price = Math.round(element.price * 100) / 100;
+                    element.count++;
+                    exist = true;
+                }
+            });
+            return exist;
+        }
+    }
+});
+

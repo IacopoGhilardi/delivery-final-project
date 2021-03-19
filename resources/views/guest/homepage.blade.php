@@ -174,5 +174,12 @@
     
     </div>
 
+    <div id="root">
+        <div class="robe" v-for="order in orders">
+            @{{order.name}}
+            @{{order.price}}
+        </div>
+    </div>
+
  @endsection
 
