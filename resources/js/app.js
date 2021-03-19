@@ -50,6 +50,9 @@ const app = new Vue({
                     this.firstSearch = false;
                     this.filteredRestaurants = response.data;
                     this.type = '';
+                    var el = this.$el.getElementsByClassName("restaurant")[0];
+                    //console.log(el);
+                   el.scrollIntoView(); 
                 })
                 .catch((error) => {
                     this.type = '';

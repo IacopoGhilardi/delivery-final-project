@@ -5,6 +5,10 @@
   height: 100%;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 .main_container {
   position: relative;
   width: 100%;
