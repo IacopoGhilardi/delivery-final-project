@@ -41,7 +41,7 @@
 
               <div class="card_bottom">
                 <div>
-                  <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica </a>
+                  <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-success">Modifica</a>
                 </div>
                 <div>
                   <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
