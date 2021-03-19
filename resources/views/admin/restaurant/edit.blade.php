@@ -35,6 +35,14 @@
             <input type="text" class="form-control" name="PIVA" id="PIVA"  value="{{ $restaurant->PIVA }}">
           </div>
         </div>
+
+        <div>
+          @if (!empty($restaurant->img_path))
+            <img style="width: 150px; margin-left: 210px" class="img-fluid mb-3" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
+          @else
+            <img style="width: 150px; margin-left: 210px" class="img-fluid mb-3" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
+          @endif
+        </div>
     
         <div class="form-group row">
           <label class="col-sm-2 col-form-label col-form-label-lg " for="img_path">Scegli nuova immagine</label>
