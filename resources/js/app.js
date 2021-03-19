@@ -19,9 +19,14 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 import axios from 'axios';
 import Vue from 'vue';
+
+import Slide from './components/Slider.vue';
+const slide = new Vue({
+    render: h => h(Slide),  
+  }).$mount('#slide')
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,13 +40,15 @@ const app = new Vue({
         firstSearch: true,
         type: '',
         filteredRestaurants: [],
-        allRestaurants: []
+        allRestaurants: [],
+        
     },
     mounted() {
         axios.post(`http://127.0.0.1:8000/api/allRestaurants`)
                 .then(response => {
                     this.allRestaurants = response.data;
                 })
+      
     },
     methods: {
         restaurants() {

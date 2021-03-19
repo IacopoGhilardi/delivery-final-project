@@ -2,6 +2,7 @@
 
 @section('links')
     <link rel="stylesheet" href="{{ asset('css/homepageGuest.css') }}">
+   
 @endsection
 
 @section('content')
@@ -178,6 +179,13 @@
         <div class="robe" v-for="order in orders">
             @{{order.name}}
             @{{order.price}}
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="slide">
+          
+            
         </div>
     </div>
 

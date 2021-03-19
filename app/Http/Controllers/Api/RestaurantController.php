@@ -31,5 +31,8 @@ class RestaurantController extends Controller
         // dd($restaurants);
         return response()->json($restaurants);
     }
-    
+    public function allTypes(){
+        $types = Type::all();
+        return response()->json($types);
+    }
 }
