@@ -78,8 +78,8 @@
         </div>
    </div>
 
-   <div class="central_container">
-        <div class="restaurant_menu" id="root">
+   <div class="central_container"  id="root">
+        <div class="restaurant_menu">
             <div class="wrapper">
                 <h1>Seleziona i piatti che preferisci</h1>
                 <div class="dishes">
@@ -105,10 +105,14 @@
                 </div>
             </div>
             <div class="side_cart">
-                <div class="robe" v-for="order in orders">
-                    @{{order.name}}
-                    @{{order.count}}
-                    @{{order.price}}
+                <button>Effettua l'ordine</button>
+                <p>Totale: @{{ Math.round(finalPrice * 100) / 100 }}</p>
+                <div class="cart_info" v-for="order in orders">
+                        <p>@{{order.name}}</p>
+                        @{{order.count}}
+                        @{{Math.round(order.basePrice * order.count * 100) / 100}}
+                        <button @click="(removeOrder(order.name))">-</button>
+                        <button @click="(addOrder(order.name, order.basePrice))">+</button>
                 </div>
             </div>
         </div>

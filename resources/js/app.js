@@ -82,13 +82,17 @@ const cart = new Vue({
     el: '#root',
     data: {
         orders: [],
+        finalPrice: 0
     },
     mounted() {
-        if (localStorage.getItem('orders')) {
+        //prendo i dati dal local storage e lo salvo nei miei data
+        if (localStorage.getItem('orders') && localStorage.getItem('finalPrice')) {
             try {
               this.orders = JSON.parse(localStorage.getItem('orders'));
+              this.finalPrice = JSON.parse(localStorage.getItem('finalPrice'));
             } catch(e) {
               localStorage.removeItem('orders');
+              localStorage.removeItem('finalPrice');
             }
           }
     },
@@ -96,44 +100,50 @@ const cart = new Vue({
         stamp(x) {
             console.log(x);
         },
-        addOrder(name, price) {
+        addOrder(name, basePrice) {
             // ensure they actually typed something
             if (!name && !price) {
               return;
             }
             //salvo il nuovo ordine
-            const newOrder = {name, price, count: 1};
-            if (this.orders.length == 0) {
-                this.orders.push(newOrder);
-            }
+            const newOrder = {name, basePrice, count: 1};
             //controllo se esiste e in tal caso sommo solo il prezzo
-            else if (!this.groupOrders(newOrder)) {
+            if (!this.groupOrders(newOrder)) {
                 this.orders.push(newOrder);
+                this.finalPrice += parseFloat(newOrder.basePrice);
             }
             this.saveOrders();
         },
-        removeOrder(x) {
-        this.orders.splice(x, 1);
+        removeOrder(name) {
+        this.orders.forEach((element, index) => {
+            if (element.name == name && element.count == 1) {
+                this.orders.splice(index, 1);
+                this.finalPrice += parseFloat(element.basePrice);
+            } else if (element.name == name) {
+                element.count--;
+                this.finalPrice -= parseFloat(element.basePrice);
+            }
+        });
         this.saveOrders();
         },
         saveOrders() {
         const parsed = JSON.stringify(this.orders);
+        const parsedPrice = JSON.stringify(this.finalPrice);
         localStorage.setItem('orders', parsed);
+        localStorage.setItem('finalPrice', parsedPrice);
         },
         //raggruppo ordini con lo stesso ordine
         groupOrders(newOrder) {
             let exist = false;
             this.orders.forEach(element => {
                 if (newOrder.name == element.name && !exist) {
-                    element.price = parseFloat(element.price);
-                    element.price += parseFloat(newOrder.price);
-                    element.price = Math.round(element.price * 100) / 100;
                     element.count++;
+                    this.finalPrice += parseFloat(newOrder.basePrice);
                     exist = true;
                 }
             });
             return exist;
-        }
+        },
     }
 });
 

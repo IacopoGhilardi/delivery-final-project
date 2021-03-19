@@ -53,8 +53,6 @@
         padding: 30px 0;
         background-color: #F4F5F5;
         .dishes {
-            // display: flex;
-            // flex-wrap: wrap;
             .dish {
                 position: relative;
                 display: flex;
@@ -131,7 +129,7 @@
         right: 50px;
         min-width: 320px;
         height: 300px;
-        padding: 10px;
+        padding: 20px;
         background-color: pink;
     }
 }
