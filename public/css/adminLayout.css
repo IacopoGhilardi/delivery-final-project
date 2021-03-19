@@ -148,3 +148,75 @@ main .body_pannel .pannel_content_container {
     transform: rotate(0deg);
   }
 }
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: calc(100% / 4 - 20px);
+  margin: 10px;
+  border-radius: 8px;
+  color: white;
+}
+.card .restaurant_img {
+  width: 100%;
+  height: 100%;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 !important;
+  z-index: 1;
+}
+.card .position_absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.card .position_absolute:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.5s;
+}
+.card .card_top {
+  z-index: 3;
+  word-break: break-all;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+.card .card_top:hover {
+  overflow-y: auto;
+}
+.card .card_bottom {
+  z-index: 3;
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+.card .card_bottom .btn-info {
+  margin-right: 15px;
+}
+.card ::-webkit-scrollbar {
+  width: 7px;
+}
+.card ::-webkit-scrollbar-track {
+  background: lightgrey;
+}
+.card ::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px;
+}
