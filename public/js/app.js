@@ -1881,13 +1881,16 @@ __webpack_require__.r(__webpack_exports__);
     return {
       allTypes: [],
       settings: {
+        "arrows": true,
+        "centerPadding": "100px",
         "dots": true,
-        "focusOnSelect": true,
-        "infinite": true,
-        "speed": 500,
+        "infinite": false,
         "slidesToShow": 3,
-        "slidesToScroll": 3,
-        "touchThreshold": 5
+        "slidesToScroll": 2,
+        "autoplay": true,
+        "speed": 2000,
+        "autoplaySpeed": 2000,
+        "cssEase": "linear"
       }
     };
   },
@@ -6615,7 +6618,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*\r\n.category_box{\r\n  width: 150px;\r\n  height: 100px;\r\n}\r\n.carousel{\r\n  height: 200px;\r\n  color: black;\r\n}\r\n\r\n.img_slide{\r\n  width: 100%;\r\n  height: 100%;\r\n}*/\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*\r\n.category_box{\r\n  width: 150px;\r\n  height: 100px;\r\n}\r\n.carousel{\r\n  height: 200px;\r\n  color: black;\r\n}\r\n\r\n.img_slide{\r\n  width: 100%;\r\n  height: 100%;\r\n}*/\n.img_slide{\r\n  \r\n  height: 100px;\n}\nbutton::after{\r\n  color: black;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38216,21 +38219,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "VueSlickCarousel",
-    _vm._b({}, "VueSlickCarousel", _vm.settings, false),
-    _vm._l(_vm.allTypes, function(tipe, index) {
-      return _c("div", { key: index }, [
-        _c("h3", [_vm._v(_vm._s(tipe.name))]),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "img_slide",
-          attrs: { src: tipe.img_path, alt: "" }
-        })
-      ])
-    }),
-    0
-  )
+  return this.allTypes.length !== 0
+    ? _c(
+        "VueSlickCarousel",
+        _vm._b({}, "VueSlickCarousel", _vm.settings, false),
+        _vm._l(_vm.allTypes, function(tipe, index) {
+          return _c("div", { key: index }, [
+            _c("p", [_vm._v(_vm._s(tipe.name))]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "img_slide",
+              attrs: { src: tipe.img_path, alt: "" }
+            })
+          ])
+        }),
+        0
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

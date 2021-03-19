@@ -1,13 +1,13 @@
 <template>
  
-    <VueSlickCarousel  v-bind="settings">  
+    <VueSlickCarousel  v-if="this.allTypes.length !== 0" v-bind="settings">  
       
       
     
       
       <div  v-for="(tipe, index) in allTypes" :key="index">
-        <h3>{{tipe.name}}</h3>
-       <img class="img_slide" :src="tipe.img_path" alt="">        
+        <p>{{tipe.name}}</p>
+       <img  class="img_slide" :src="tipe.img_path" alt="">        
          
       </div> 
     </VueSlickCarousel>
@@ -30,14 +30,17 @@ export default {
     return{
       allTypes:[],      
       settings:{
+     "arrows": true,
+     "centerPadding":"100px",
   "dots": true,
-  "focusOnSelect": true,
-  "infinite": true,
-  "speed": 500,
+  "infinite": false,
   "slidesToShow": 3,
-  "slidesToScroll": 3,
-  "touchThreshold": 5
-}
+  "slidesToScroll": 2,
+  "autoplay": true,
+  "speed": 2000,
+  "autoplaySpeed": 2000,
+  "cssEase": "linear"
+      }
     }
   },
   mounted() {
@@ -68,4 +71,11 @@ export default {
   width: 100%;
   height: 100%;
 }*/
+.img_slide{
+  
+  height: 100px;
+}
+button::after{
+  color: black;
+}
 </style>
