@@ -153,11 +153,18 @@ main .body_pannel .pannel_content_container {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 200px;
-  width: calc(100% / 4 - 20px);
-  margin: 10px;
-  border-radius: 8px;
   color: white;
+  width: calc(40% - 30px);
+  height: 230px;
+  border: 0.5px solid lightgray;
+  margin: 10px 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 300ms, box-shadow 300ms;
+}
+.card:hover {
+  transform: scale(1.1);
 }
 .card .restaurant_img {
   width: 100%;
@@ -182,7 +189,7 @@ main .body_pannel .pannel_content_container {
   position: absolute;
   top: 0;
   left: 0;
-  height: 200px;
+  height: 100%;
   width: 100%;
   padding: 15px;
   border-radius: 8px;
@@ -206,7 +213,6 @@ main .body_pannel .pannel_content_container {
   z-index: 3;
   width: 100%;
   height: 20%;
-  display: flex;
 }
 .card .card_bottom .btn-info {
   margin-right: 15px;

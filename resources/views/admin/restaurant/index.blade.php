@@ -28,8 +28,8 @@
               <p>{{$restaurant->PIVA}}</p>
             </div>
             <div class="card_bottom">
-              <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-info"><i class="far fa-eye"></i></a>
-              <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success"><i class="fas fa-utensils"></i></a>
+              <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-info"><i class="far fa-eye" style="color: white"></i></a>
+              <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success"><i class="fas fa-hamburger"></i></a>
             </div>
           </div>
         </div>
