@@ -52,9 +52,9 @@
                     </div>
                 </div>
                 <div class="main_content">
-                    <h3>Affamato?</h3>
-                    <p>N°<span>1</span> Delivery in <span>Milan</span></p>
-                    <h3>Di cosa hai voglia oggi?</h3>
+                    <h1 class="mb-1">Frigorifero vuoto?</h1>
+                    <p class="mb-4">Ci pensiamo noi!</p>
+                    <h3 class="mb-4">Di cosa hai voglia oggi?</h3>
                     <div class="input_field">
                         <input type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
                         <button  @click="restaurants()">Cerca</button>
@@ -65,11 +65,14 @@
             
         </div>
         <div class="banner">
-            
+            <div class="banner_box">
+                
+            </div>
         </div>
 
-        <div class="categories_container">
-            <div class="wrapper_categories">
+        {{-- <div class="categories_container"> --}}
+        
+            {{-- <div class="wrapper_categories">
                 <h2>Tutte le nostre categorie</h2>
                 <div class="categories">
                     @foreach ($types as $type)
@@ -81,8 +84,8 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
-        </div>
+            </div> --}}
+        {{-- </div> --}}
 
         <div class="all_restaurants" v-if="filteredRestaurants.length > 0">
             <div class="restaurants_wrapper">
@@ -98,7 +101,11 @@
                                 <img :src="`../storage/${restaurant.img_path}`" alt="">
                             </div>
                             <div class="restaurant_info">
-                                 <p>@{{restaurant.business_name}}</p>
+                                <p class="businnes_name">@{{restaurant.business_name}}</p>
+                                <ul>
+                                   <li class="badge badge-secondary mx-1" v-for="type in restaurant.types">@{{type.name}}</li>
+                                </ul>
+                                <span><i class="fas fa-map-marker-alt"></i> @{{restaurant.address}}</span>
                             </div>
                             <button type="submit"></button>
                         </form>
@@ -110,8 +117,7 @@
         {{-- TUTTI I RISTORANTI --}}
         <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
-                <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
-                <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
+                <h2>Tutti i ristoranti</h2>
                 <div class="restaurants_container">
                     <div v-for="restaurant in allRestaurants" class="restaurant">
                         <form action="{{ route('guest.restaurant.show') }}" method="post">
@@ -122,7 +128,11 @@
                                 <img :src="`../storage/${restaurant.img_path}`" alt="">
                             </div>
                             <div class="restaurant_info">
-                                 <p>@{{restaurant.business_name}}</p>
+                                 <p class="businnes_name">@{{restaurant.business_name}}</p>
+                                 <ul>
+                                    <li class="badge badge-secondary mx-1" v-for="type in restaurant.types">@{{type.name}}</li>
+                                </ul>
+                                <span><i class="fas fa-map-marker-alt"></i> @{{restaurant.address}}</span>
                             </div>
                             <button type="submit"></button>
                         </form>
@@ -136,5 +146,33 @@
                Non sono stati trovati Ristoranti per questa categoria
         </div>
     </div>
+     <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            @foreach ($types as $type)
+            <div class="swiper-slide">
+                <div class="layover">
+                    <img src="{{asset($type->img_path)}}" alt="">
+                </div>
+                <p>{{$type->name}}</p>
+            </div>
+            @endforeach
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        
+
+        <!-- Swiper JS -->
+        <script src="../package/swiper-bundle.min.js"></script> 
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+    </div>
+
  @endsection
 

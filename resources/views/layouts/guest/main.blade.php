@@ -14,6 +14,9 @@
     {{-- select2 script  --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
     <link rel="stylesheet" href="{{ asset('css/guestMainLayout.css') }}">
+    {{-- SWIPERJS LIBRARY --}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     @yield('links')
     <title>Deliverboo</title>
 </head>
@@ -25,6 +28,28 @@
     <main style="width: 100%">
         @yield('content')
     </main>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            // mousewheel: true,
+            // keyboard: true,
+        });
+    </script>
 
     <footer style="display: block" class="">
         <div class="layout_footer">
@@ -63,6 +88,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

@@ -8,7 +8,7 @@
             // width: 55%;
             max-width: 1000px;
             height: 100%;
-            padding: 60px;
+            padding: 60px 120px 60px 0;
             .logo_login {
                 display: flex;
                 justify-content: space-between;
@@ -36,30 +36,30 @@
             .main_content {
                 width: 100%;
                 margin-top: 60px;
-                h3:first-child {
-                    margin: 5px 0;
-                }
                 p {
-                    margin-bottom: 30px;
+                    font-size: 30px;
+                    color: gray;
                 }
                 .input_field {
                     display: flex;
                     align-items: center;
                     width: 100%;
-                    margin-top: 25px;
+                    // margin-top: 25px;
                     input {
                         width: calc(100% - 70px);
                         outline: none;
-                        padding: 10px;
+                        padding: 20px;
                         border: 1px solid gray;
                         border-right: none;
+                        font-size: 18px;
                     }
                     button {
-                        width: 70px;
-                        padding: 10px;
+                        width: 150px;
+                        padding: 20px;
                         background-color: #F8585E;
                         color: white;
-                        border: 1px solid #F8585E;
+                        border: 2px solid #F8585E;
+                        font-weight: bold;
                     }
                 }
             }
@@ -112,8 +112,8 @@
                 width: 100%;
                 .category {
                     position: relative;
-                    width: calc(25% - 20px);
-                    height: 200px;
+                    width: calc(15% - 20px);
+                    height: 100px;
                     margin: 5px 10px;
                     border-radius: 5px;
                     overflow: hidden;
@@ -192,9 +192,16 @@
                             width: 100%;
                             height: 55%;
                             padding: 20px 10px;
-                            p {
+                            .businnes_name {
                                 color: #F8585E;
                                 font-weight: bold;
+                            }
+                            span {
+                                color: gray;
+                                i {
+                                    padding-right: 5px;
+                                    font-size: 20px;
+                                }
                             }
                         }
                         button {
@@ -211,6 +218,42 @@
                 }
               
             }
+        }
+    }
+}
+
+.swiper-container {
+    height: 500px;
+    padding: 80px 60px;
+    .swiper-slide {
+        position: relative;
+        width: 200px;
+        height: 150px;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+       .layover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 73% 27% 60% 40% / 36% 30% 70% 64% ;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+    
+        }
+        p {
+            position: absolute;
+            top: -40px;
+            left: 30%;
+            color: black;
+            font-weight: 700;
         }
     }
 }
