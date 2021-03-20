@@ -44,92 +44,136 @@
 
 .central_container {
     position: relative;
-    background-color: orange;
     h1 {
         margin-bottom: 20px;
     }
     .restaurant_menu {
         width: 100%;
+        min-height: 320px;
         padding: 30px 0;
-        background-color: #F4F5F5;
-        .dishes {
-            .dish {
-                position: relative;
-                display: flex;
-                height: 150px;
-                background-color: white;
-                box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
-                margin: 10px 10px;
-                width: 40%;
-                min-width: calc(550px - 20px);
-                padding: 20px;
-                border-radius: 10px;
-                &:hover {
-                    transform: scale(1.01);
-                    overflow: hidden;
-                    transition:  0.5s;
-                    cursor: pointer;
-                }
-                div {
-                    width: calc(50%);
-                }
-                .dish_info {
-                    p {
-                        margin-bottom: 10px;
-                    }
-                    .ingredients {
-                        color: #828585;
-                    }
-                }
-                .dish_image_box {
+        background-color: $grayBackground;
+        .wrapper {
+            display: flex;
+            .dishes {
+                width: 50%;
+                margin-right: 100px;
+                min-width: 530px;
+                .dish {
+                    position: relative;
                     display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    .img_box {
-                        width: 110px;
-                        height: 110px;
-                        position: relative;
-                        img {
-                            height: 100%;
-                            width: 100%;
-                            object-position: center;
-                            object-fit: cover;
-                            border-radius: 10px;
-                            margin-right: 20px;
-                        }
-                     }
-  
+                    height: 150px;
+                    background-color: white;
+                    box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
+                    margin: 10px 10px;
+                    padding: 20px;
+                    border-radius: 10px;
+                    &:hover {
+                        transform: scale(1.01);
+                        overflow: hidden;
+                        transition:  0.5s;
+                        cursor: pointer;
                     }
-                    #add {
-                        position: absolute;
-                        bottom: 0px;
-                        left: 0;
-                        height: 20px;
-                        width: 100%;
-                        outline: none;
-                        border: none;
-                        background-color: #4a943d;
-                        &:hover {
-                            background-color: #366d2c;
-                            transition: ease-in 0.3s;
+                    div {
+                        width: calc(50%);
+                    }
+                    .dish_info {
+                        p {
+                            margin-bottom: 10px;
+                        }
+                        .ingredients {
+                            color: $mainGray;
+                        }
+                    }
+                    .dish_image_box {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        .img_box {
+                            width: 110px;
+                            height: 110px;
+                            position: relative;
+                            img {
+                                height: 100%;
+                                width: 100%;
+                                object-position: center;
+                                object-fit: cover;
+                                border-radius: 10px;
+                                margin-right: 20px;
+                            }
+                         }
+      
+                        }
+                        #add {
+                            position: absolute;
+                            bottom: 0px;
+                            left: 0;
+                            height: 20px;
+                            width: 100%;
+                            outline: none;
+                            border: none;
+                            background-color: #4a943d;
+                            &:hover {
+                                background-color: #366d2c;
+                                transition: ease-in 0.3s;
+                                i {
+                                    color: white;
+                                }
+                            }
                             i {
                                 color: white;
                             }
                         }
-                        i {
-                            color: white;
+                }
+            }
+            .side_cart {
+                position: -webkit-sticky;
+                position: sticky;
+                min-width: 320px;
+                height: 100%;
+                top: 0;
+                .cart_content {
+                    width: 100%;
+                    min-height: 300px;
+                    background-color: white;
+                    box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
+                    padding: 20px;
+                    .order_btn {
+                        width: 100%;
+                        padding: 10px 0;
+                        background-color: $mainRed;
+                        outline: none;
+                        border: 1px solid $mainOrange;
+                        color: white;
+                        margin-bottom: 15px;
+                    }
+                    .total {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .cart_info {
+                        display: flex;
+                    }
+                    .buttons {
+                        margin-right: 10px;
+                        button {
+                            width: 25px;
+                            height: 25px;
+                            background-color: $grayBackground;
+                            border: none;
+                            i {
+                                color: $mainRed;
+                            }
                         }
                     }
+                    .recap_products {
+                        display: flex;
+                        justify-content: space-between;
+                        width: calc(100% - 65px);
+                    }
+                }
             }
         }
+        
     }
-    .side_cart {
-        position: absolute;
-        top: 0;
-        right: 50px;
-        min-width: 320px;
-        height: 300px;
-        padding: 20px;
-        background-color: pink;
-    }
+    
 }

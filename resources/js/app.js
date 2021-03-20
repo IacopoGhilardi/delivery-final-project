@@ -118,7 +118,7 @@ const cart = new Vue({
         this.orders.forEach((element, index) => {
             if (element.name == name && element.count == 1) {
                 this.orders.splice(index, 1);
-                this.finalPrice += parseFloat(element.basePrice);
+                this.finalPrice -= parseFloat(element.basePrice);
             } else if (element.name == name) {
                 element.count--;
                 this.finalPrice -= parseFloat(element.basePrice);

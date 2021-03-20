@@ -2006,7 +2006,7 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         if (element.name == name && element.count == 1) {
           _this4.orders.splice(index, 1);
 
-          _this4.finalPrice += parseFloat(element.basePrice);
+          _this4.finalPrice -= parseFloat(element.basePrice);
         } else if (element.name == name) {
           element.count--;
           _this4.finalPrice -= parseFloat(element.basePrice);
