@@ -15,6 +15,10 @@
   @endif
   <a class="btn btn-info shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
 
+  <div class="mt-3">
+    <a class="btn btn-info" style="color: white" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">Indietro</a>
+  </div>
+
   <div class="d-flex justify-content-around mt-3 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
           <div class="card mt-5 ">

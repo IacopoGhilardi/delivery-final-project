@@ -60,6 +60,9 @@
                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </td>
+                <div class="ml-3">
+                    <a class="btn btn-info" style="color: white" " href="{{ route('admin.restaurant.index') }}">Indietro</a>
+                </div>
             </div>
             
 

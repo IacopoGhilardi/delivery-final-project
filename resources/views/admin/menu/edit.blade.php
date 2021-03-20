@@ -36,6 +36,14 @@
           </div>
         </div>
 
+        <div class="my-4">
+          @if (!empty($dish->dish_img_path))
+            <img style="width: 150px; margin-left: 190px" class="img-fluid" src="{{ asset('storage/' . $dish->dish_img_path) }}" alt="{{ $dish->name }}">
+          @else
+            <img style="width: 150px; margin-left: 190px" class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $dish->name }}">
+          @endif
+        </div>
+
         <div class="form-group row">
           <label class="col-sm-2 col-form-label col-form-label-lg " for="dish_img_path">Scegli nuova immagine</label>
           <div class="col-sm-10">
@@ -54,8 +62,8 @@
           </label>
         </div>
         
-        <input class="btn btn-primary mt-4" type="submit" value="Salva">
-      </form>  
+        <input class="btn btn-primary my-5" type="submit" value="Salva">
+      </form>
   </div>
 
 @endsection

@@ -70,7 +70,11 @@
         </div>
         
         <input class="btn btn-success" type="submit" value="Modifica">
-      </form> 
+      </form>
+      
+      <div class="mt-4">
+        <a class="btn btn-info" style="color: white" " href="{{ route('admin.restaurant.show', $restaurant->id) }}">Indietro</a>
+      </div>
   </div>
 
   <script>
