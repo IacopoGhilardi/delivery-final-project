@@ -5,7 +5,7 @@ import Vue from 'vue';
 
 
 const cart = new Vue({
-    el: '#root',
+    el: '#cart',
     data: {
         orders: [],
     },

@@ -12075,7 +12075,7 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 
 var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#root',
+  el: '#cart',
   data: {
     orders: []
   },

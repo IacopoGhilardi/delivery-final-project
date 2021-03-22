@@ -22,6 +22,7 @@
                                 <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
                             </li>
                             <li class="cart"><i class="fas fa-shopping-cart"></i></li>
+                            <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                         @endif
                         @else
                         <li class="nav-item dropdown">
@@ -78,7 +79,7 @@
         </div>
    </div>
 
-   <div class="central_container"  id="root">
+   <div class="central_container">
         <div class="restaurant_menu">
             <div class="wrapper">
                 <div class="dishes">
