@@ -21,7 +21,7 @@
                             <li class="nav-item">
                                 <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
                             </li>
-                            <li v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                            <li class="cart" v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">
                                 @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
                                 <div class="cart_header">
                                     <div class="cart_content">

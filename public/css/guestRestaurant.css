@@ -4842,3 +4842,9 @@ readers do not read off random characters that represent icons */
   top: 0;
   right: 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .side_cart {
+    display: none;
+  }
+}
