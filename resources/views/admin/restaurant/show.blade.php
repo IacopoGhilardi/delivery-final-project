@@ -16,10 +16,10 @@
                 @endif
                 <h2 class="mt-4">Info</h2>
                 <div class="card mt-2">
+                    <h2 class="card-header">{{ $restaurant->business_name }}</h2>
                     <div class="card-body">
-                        <h2>{{ $restaurant->business_name }}</h2>
-                        <p>Indirizzo: {{ $restaurant->address }}</p>
-                        <p>P.IVA: {{ $restaurant->PIVA }}</p>
+                        <p><strong>Indirizzo: </strong>{{ $restaurant->address }}</p>
+                        <p><strong>P.IVA: </strong>{{ $restaurant->PIVA }}</p>
                         <ul>
                             @foreach ($restaurant->types as $type)
                                 <li>{{ $type->name }}</li>

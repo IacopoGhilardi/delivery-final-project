@@ -16,7 +16,7 @@
     }
 }
 
-.card {
+.my_card {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -27,7 +27,7 @@
     overflow-y: auto;
     box-shadow: 5px 5px #888888;
 
-    .card_body {
+    .my_card_body {
         // height: 400px;
         display: flex;
         flex-direction: column;

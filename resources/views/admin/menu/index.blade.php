@@ -16,7 +16,7 @@
 
   <div class="d-flex mt-4">
     <div>
-      <a class="btn btn-info shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
+      <a class="btn btn-info my_btn shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
     </div>
   
     <div class="ml-3">
