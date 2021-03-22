@@ -13,7 +13,17 @@
         {{ session('status') }}
     </div>
   @endif
-  <a class="btn btn-info shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
+
+  <div class="d-flex mt-4">
+    <div>
+      <a class="btn btn-info shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
+    </div>
+  
+    <div class="ml-3">
+      <a class="btn btn-primary" style="color: white" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">Indietro</a>
+    </div>
+  </div>
+  
 
   <div class="d-flex justify-content-around mt-3 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
@@ -41,13 +51,16 @@
 
               <div class="card_bottom">
                 <div>
-                  <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-info">Modifica </a>
+                  <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-success">
+                    <i class="fas fa-pencil-alt"></i>
+                  </a>
                 </div>
                 <div>
                   <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
                   @csrf
                   @method('DELETE')
-                  <input type="submit" class="btn btn-danger" value="Elimina">
+                  {{-- <input type="submit" class="btn btn-danger" value="Elimina"> --}}
+                  <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                   </form>
                 </div>
               </div>
