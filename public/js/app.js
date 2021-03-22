@@ -1960,14 +1960,18 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#root',
   data: {
-    orders: []
+    orders: [],
+    finalPrice: 0
   },
   mounted: function mounted() {
-    if (localStorage.getItem('orders')) {
+    //prendo i dati dal local storage e lo salvo nei miei data
+    if (localStorage.getItem('orders') && localStorage.getItem('finalPrice')) {
       try {
         this.orders = JSON.parse(localStorage.getItem('orders'));
+        this.finalPrice = JSON.parse(localStorage.getItem('finalPrice'));
       } catch (e) {
         localStorage.removeItem('orders');
+        localStorage.removeItem('finalPrice');
       }
     }
   },
@@ -1975,7 +1979,7 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     stamp: function stamp(x) {
       console.log(x);
     },
-    addOrder: function addOrder(name, price) {
+    addOrder: function addOrder(name, basePrice) {
       // ensure they actually typed something
       if (!name && !price) {
         return;
@@ -1984,36 +1988,47 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
       var newOrder = {
         name: name,
-        price: price,
+        basePrice: basePrice,
         count: 1
-      };
+      }; //controllo se esiste e in tal caso sommo solo il prezzo
 
-      if (this.orders.length == 0) {
+      if (!this.groupOrders(newOrder)) {
         this.orders.push(newOrder);
-      } //controllo se esiste e in tal caso sommo solo il prezzo
-      else if (!this.groupOrders(newOrder)) {
-          this.orders.push(newOrder);
-        }
+        this.finalPrice += parseFloat(newOrder.basePrice);
+      }
 
       this.saveOrders();
     },
-    removeOrder: function removeOrder(x) {
-      this.orders.splice(x, 1);
+    removeOrder: function removeOrder(name) {
+      var _this4 = this;
+
+      this.orders.forEach(function (element, index) {
+        if (element.name == name && element.count == 1) {
+          _this4.orders.splice(index, 1);
+
+          _this4.finalPrice -= parseFloat(element.basePrice);
+        } else if (element.name == name) {
+          element.count--;
+          _this4.finalPrice -= parseFloat(element.basePrice);
+        }
+      });
       this.saveOrders();
     },
     saveOrders: function saveOrders() {
       var parsed = JSON.stringify(this.orders);
+      var parsedPrice = JSON.stringify(this.finalPrice);
       localStorage.setItem('orders', parsed);
+      localStorage.setItem('finalPrice', parsedPrice);
     },
     //raggruppo ordini con lo stesso ordine
     groupOrders: function groupOrders(newOrder) {
+      var _this5 = this;
+
       var exist = false;
       this.orders.forEach(function (element) {
         if (newOrder.name == element.name && !exist) {
-          element.price = parseFloat(element.price);
-          element.price += parseFloat(newOrder.price);
-          element.price = Math.round(element.price * 100) / 100;
           element.count++;
+          _this5.finalPrice += parseFloat(newOrder.basePrice);
           exist = true;
         }
       });

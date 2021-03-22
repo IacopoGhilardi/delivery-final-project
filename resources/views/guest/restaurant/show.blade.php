@@ -78,11 +78,11 @@
         </div>
    </div>
 
-   <div class="central_container">
-        <div class="restaurant_menu" id="root">
+   <div class="central_container"  id="root">
+        <div class="restaurant_menu">
             <div class="wrapper">
-                <h1>Seleziona i piatti che preferisci</h1>
                 <div class="dishes">
+                    <h1>Seleziona i piatti che preferisci</h1>
                         @foreach ($restaurant->dishes as $dish)
                         @if($dish->visibility == 1)
                         <div class="dish" @click="addOrder(`{{$dish->name}}`, `{{$dish->price}}`)">
@@ -103,12 +103,25 @@
                         @endif
                     @endforeach
                 </div>
-            </div>
-            <div class="side_cart">
-                <div class="robe" v-for="order in orders">
-                    @{{order.name}}
-                    @{{order.count}}
-                    @{{order.price}}
+                <div class="side_cart">
+                    <div class="cart_content">
+                        <div class="total">
+                            <h5>Totale ordine:</h5>
+                            <p>@{{ Math.round(finalPrice * 100) / 100 }}&euro;</p>
+                        </div>
+                        <button class="order_btn">Effettua l'ordine</button>
+                        <div class="cart_info" v-for="order in orders">
+                            <div class="buttons">
+                                <button class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
+                                <button class="cartButtons" @click="(addOrder(order.name, order.basePrice))"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <div class="recap_products">
+                                <p><span>@{{order.count}} x</span> @{{order.name}}</p>
+                                <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
+                            </div>
+                        </div>
+                    </div>
+ 
                 </div>
             </div>
         </div>

@@ -4698,54 +4698,60 @@ readers do not read off random characters that represent icons */
 
 .central_container {
   position: relative;
-  background-color: orange;
 }
 .central_container h1 {
   margin-bottom: 20px;
 }
 .central_container .restaurant_menu {
   width: 100%;
+  min-height: 320px;
   padding: 30px 0;
   background-color: #F4F5F5;
 }
-.central_container .restaurant_menu .dishes .dish {
+.central_container .restaurant_menu .wrapper {
+  display: flex;
+}
+.central_container .restaurant_menu .wrapper .dishes {
+  width: 50%;
+  margin-right: 100px;
+  min-width: 530px;
+}
+.central_container .restaurant_menu .wrapper .dishes .dish {
   position: relative;
   display: flex;
   height: 150px;
   background-color: white;
   box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
   margin: 10px 10px;
-  width: 40%;
-  min-width: calc(550px - 20px);
   padding: 20px;
   border-radius: 10px;
 }
-.central_container .restaurant_menu .dishes .dish:hover {
+.central_container .restaurant_menu .wrapper .dishes .dish:hover {
   transform: scale(1.01);
   overflow: hidden;
   transition: 0.5s;
   cursor: pointer;
 }
-.central_container .restaurant_menu .dishes .dish div {
+.central_container .restaurant_menu .wrapper .dishes .dish div {
   width: calc(50%);
 }
-.central_container .restaurant_menu .dishes .dish .dish_info p {
+.central_container .restaurant_menu .wrapper .dishes .dish .dish_info p {
   margin-bottom: 10px;
 }
-.central_container .restaurant_menu .dishes .dish .dish_info .ingredients {
+.central_container .restaurant_menu .wrapper .dishes .dish .dish_info .ingredients {
   color: #828585;
 }
-.central_container .restaurant_menu .dishes .dish .dish_image_box {
+.central_container .restaurant_menu .wrapper .dishes .dish .dish_image_box {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.central_container .restaurant_menu .dishes .dish .dish_image_box .img_box {
+.central_container .restaurant_menu .wrapper .dishes .dish .dish_image_box .img_box {
   width: 110px;
   height: 110px;
   position: relative;
 }
-.central_container .restaurant_menu .dishes .dish .dish_image_box .img_box img {
+.central_container .restaurant_menu .wrapper .dishes .dish .dish_image_box .img_box img {
   height: 100%;
   width: 100%;
   -o-object-position: center;
@@ -4755,7 +4761,7 @@ readers do not read off random characters that represent icons */
   border-radius: 10px;
   margin-right: 20px;
 }
-.central_container .restaurant_menu .dishes .dish #add {
+.central_container .restaurant_menu .wrapper .dishes .dish #add {
   position: absolute;
   bottom: 0px;
   left: 0;
@@ -4765,22 +4771,59 @@ readers do not read off random characters that represent icons */
   border: none;
   background-color: #4a943d;
 }
-.central_container .restaurant_menu .dishes .dish #add:hover {
+.central_container .restaurant_menu .wrapper .dishes .dish #add:hover {
   background-color: #366d2c;
   transition: ease-in 0.3s;
 }
-.central_container .restaurant_menu .dishes .dish #add:hover i {
+.central_container .restaurant_menu .wrapper .dishes .dish #add:hover i {
   color: white;
 }
-.central_container .restaurant_menu .dishes .dish #add i {
+.central_container .restaurant_menu .wrapper .dishes .dish #add i {
   color: white;
 }
-.central_container .side_cart {
-  position: absolute;
-  top: 0;
-  right: 50px;
+.central_container .restaurant_menu .wrapper .side_cart {
+  position: sticky;
   min-width: 320px;
-  height: 300px;
-  padding: 10px;
-  background-color: pink;
+  height: 100%;
+  top: 0;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content {
+  width: 100%;
+  min-height: 300px;
+  background-color: white;
+  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .order_btn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #f8585e;
+  outline: none;
+  border: 1px solid #f8b64a;
+  color: white;
+  margin-bottom: 15px;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .total {
+  display: flex;
+  justify-content: space-between;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .cart_info {
+  display: flex;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .buttons {
+  margin-right: 10px;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .buttons button {
+  width: 25px;
+  height: 25px;
+  background-color: #F4F5F5;
+  border: none;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .buttons button i {
+  color: #f8585e;
+}
+.central_container .restaurant_menu .wrapper .side_cart .cart_content .recap_products {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 65px);
 }
