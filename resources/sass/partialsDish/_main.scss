@@ -26,7 +26,7 @@
 }
 
 
-.card {
+.my_card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -37,6 +37,9 @@
     .dish_img {
         width: 100%;
         height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     img {
         width: 100%;
@@ -46,7 +49,7 @@
     }
     
 
-    .card-body {
+    .my_card_body {
         // height: 400px;
         display: flex;
         flex-direction: column;

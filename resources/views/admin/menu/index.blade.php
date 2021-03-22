@@ -27,9 +27,9 @@
 
   <div class="d-flex justify-content-around mt-3 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
-          <div class="card mt-5 ">
+          <div class="my_card mt-5 ">
 
-            <div class="card-body">
+            <div class="my_card-body">
               <div class="dish_img">
               @if (!empty($dish->dish_img_path))
                 <img class="img-fluid" src="{{ asset('storage/' . $dish->dish_img_path) }}" alt="{{ $dish->name }}">
