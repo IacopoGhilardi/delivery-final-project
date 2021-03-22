@@ -45,6 +45,7 @@
 .central_container {
     position: relative;
     h1 {
+        font-size: 35px;
         margin-bottom: 20px;
     }
     .restaurant_menu {
@@ -56,7 +57,7 @@
             display: flex;
             .dishes {
                 width: 50%;
-                margin-right: 100px;
+                margin-right: calc(50% - 320px);
                 min-width: 530px;
                 .dish {
                     position: relative;
@@ -131,46 +132,7 @@
                 min-width: 320px;
                 height: 100%;
                 top: 0;
-                .cart_content {
-                    width: 100%;
-                    min-height: 300px;
-                    background-color: white;
-                    box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
-                    padding: 20px;
-                    .order_btn {
-                        width: 100%;
-                        padding: 10px 0;
-                        background-color: $mainRed;
-                        outline: none;
-                        border: 1px solid $mainOrange;
-                        color: white;
-                        margin-bottom: 15px;
-                    }
-                    .total {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    .cart_info {
-                        display: flex;
-                    }
-                    .buttons {
-                        margin-right: 10px;
-                        button {
-                            width: 25px;
-                            height: 25px;
-                            background-color: $grayBackground;
-                            border: none;
-                            i {
-                                color: $mainRed;
-                            }
-                        }
-                    }
-                    .recap_products {
-                        display: flex;
-                        justify-content: space-between;
-                        width: calc(100% - 65px);
-                    }
-                }
+                right: 0;
             }
         }
         
