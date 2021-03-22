@@ -2,7 +2,6 @@
 
 @section('content')
 
-  <div class="d-flex justify-content-around mt-3 flex-wrap">
     {{-- gestisco il messaggio status update e destroy --}}
     @if (session('status'))
     <div class="alert alert-success">
@@ -10,7 +9,7 @@
     </div>
     @endif
 
-
+  <div class="d-flex justify-content-around mt-3 flex-wrap"> 
     @foreach ($restaurants as $restaurant)
       <div class="card mt-5">
         <div class="card-body">
