@@ -10,9 +10,9 @@
         <div class="left_box">
             <div>
                 @if (!empty($restaurant->img_path))
-                <img class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
+                    <img style="border-radius: 5px" class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
                 @else
-                    <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
+                    <img style="border-radius: 5px" class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
                 @endif
                 <h2 class="mt-4">INFO</h2>
                 <div class="card mt-2">
