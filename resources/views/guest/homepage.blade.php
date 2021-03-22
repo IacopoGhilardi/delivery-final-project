@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="main_content">
-                    <h1 class="mb-1">Frigorifero vuoto?</h1>
+                    <h1 class="mb-1">Frigo vuoto?</h1>
                     <p class="mb-4">Ci pensiamo noi!</p>
                     <h3 class="mb-4">Di cosa hai voglia oggi?</h3>
                     <div class="input_field">
@@ -60,7 +60,9 @@
                         <button  @click="restaurants()">Cerca</button>
                     </div>
                 </div>
+
             </div>
+        
             <div class="right_main_box"></div>
             
         </div>

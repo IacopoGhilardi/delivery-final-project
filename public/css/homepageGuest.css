@@ -18,6 +18,7 @@
   height: 550px;
 }
 .main_container .wrapper .left_main_box {
+  position: relative;
   max-width: 1000px;
   height: 100%;
   padding: 60px 120px 60px 0;
