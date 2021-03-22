@@ -193,10 +193,10 @@ main .body_pannel .pannel_content_container {
   width: 100%;
   padding: 15px;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .card .position_absolute:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
   transition: 0.5s;
 }
 .card .card_top {
