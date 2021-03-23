@@ -26,7 +26,7 @@
             @yield('header')
         </header>
     
-        <main style="width: 100%">
+        <main id="app">
             @yield('content')
         </main>
     
