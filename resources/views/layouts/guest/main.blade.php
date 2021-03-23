@@ -21,74 +21,77 @@
     <title>Deliverboo</title>
 </head>
 <body>
-    <header>
-        @yield('header')
-    </header>
-
-    <main id="app" style="">
-        @yield('content')
-    </main>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 5,
-            spaceBetween: 30,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-            // mousewheel: true,
-            // keyboard: true,
-        });
-    </script>
-
-    <footer style="display: block" class="">
-        <div class="layout_footer">
-            <div class="footer_layout_wrapper">
-        
-                <div class="footer_box">
-                    <ul>
-                        <li>Qualcosa</li>
-                        <li>Un'altra cosa</li>
-                        <li>Ancora un'altra cosa</li>
-                        <li>Una cosa in meno</li>
-                        <li>Che bella cosa!</li>
-                    </ul>
-                </div>
+    <div id="cart">
+        <header>
+            @yield('header')
+        </header>
+    
+        <main style="width: 100%">
+            @yield('content')
+        </main>
+    
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 5,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                // mousewheel: true,
+                // keyboard: true,
+            });
+        </script>
+    
+        <footer style="display: block" class="">
+            <div class="layout_footer">
+                <div class="footer_layout_wrapper">
             
-                <div class="footer_box">
-                    <ul>
-                        <li>Qualcosa</li>
-                        <li>Un'altra cosa</li>
-                        <li>Ancora un'altra cosa</li>
-                        <li>Una cosa in meno</li>
-                        <li>Che bella cosa!</li>
-                    </ul>
+                    <div class="footer_box">
+                        <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul>
+                    </div>
+                
+                    <div class="footer_box">
+                        <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul>
+                    </div>
+                
+                    <div class="footer_box">
+                        <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul>
+                    </div>
+                
                 </div>
-            
-                <div class="footer_box">
-                    <ul>
-                        <li>Qualcosa</li>
-                        <li>Un'altra cosa</li>
-                        <li>Ancora un'altra cosa</li>
-                        <li>Una cosa in meno</li>
-                        <li>Che bella cosa!</li>
-                    </ul>
-                </div>
-            
             </div>
-        </div>
-    </footer>
-
+        </footer>
+    
+    </div>
+  
     <script>
         $(document).ready(function(){
             $(this).scrollTop(0);

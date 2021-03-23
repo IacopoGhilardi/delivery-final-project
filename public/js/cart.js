@@ -12075,7 +12075,7 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 
 var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: '#root',
+  el: '#cart',
   data: {
     orders: []
   },
@@ -12090,9 +12090,6 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }
   },
   methods: {
-    stamp: function stamp(x) {
-      console.log(x);
-    },
     addOrder: function addOrder(name, basePrice, restaurantId) {
       // ensure they actually typed something
       if (!name && !price) {
@@ -12149,10 +12146,6 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         finalPrice += parseFloat(element.basePrice) * element.count;
       });
       finalPrice = Math.round(finalPrice * 100) / 100;
-      console.log({
-        filteredOrders: filteredOrders,
-        "finalPrice": [finalPrice]
-      });
       return {
         filteredOrders: filteredOrders,
         "finalPrice": [finalPrice]

@@ -4620,8 +4620,45 @@ readers do not read off random characters that represent icons */
   margin: 0 auto;
 }
 
-.cart {
-  font-size: 30px;
+.cart_content {
+  width: 100%;
+  min-height: 300px;
+  background-color: white;
+  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+.cart_content .order_btn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #f8585e;
+  outline: none;
+  border: 1px solid #f8b64a;
+  color: white;
+  margin-bottom: 15px;
+}
+.cart_content .total {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_content .cart_info {
+  display: flex;
+}
+.cart_content .buttons {
+  margin-right: 10px;
+}
+.cart_content .buttons button {
+  width: 25px;
+  height: 25px;
+  background-color: #F4F5F5;
+  border: none;
+}
+.cart_content .buttons button i {
+  color: #f8585e;
+}
+.cart_content .recap_products {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 65px);
 }
 
 .show_header {
@@ -4649,6 +4686,22 @@ readers do not read off random characters that represent icons */
   margin: 0;
 }
 .show_header .header_container .nav_links ul li a {
+  color: black;
+}
+.show_header .header_container .nav_links ul .cart {
+  position: relative;
+  background-color: #f8585e;
+  font-size: 15px;
+  color: white;
+  padding: 20px;
+}
+.show_header .header_container .nav_links ul .cart .cart_header {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 320px;
+  z-index: 30;
   color: black;
 }
 
@@ -4700,6 +4753,7 @@ readers do not read off random characters that represent icons */
   position: relative;
 }
 .central_container h1 {
+  font-size: 35px;
   margin-bottom: 20px;
 }
 .central_container .restaurant_menu {
@@ -4713,7 +4767,7 @@ readers do not read off random characters that represent icons */
 }
 .central_container .restaurant_menu .wrapper .dishes {
   width: 50%;
-  margin-right: 100px;
+  margin-right: calc(50% - 320px);
   min-width: 530px;
 }
 .central_container .restaurant_menu .wrapper .dishes .dish {
@@ -4786,44 +4840,11 @@ readers do not read off random characters that represent icons */
   min-width: 320px;
   height: 100%;
   top: 0;
+  right: 0;
 }
-.central_container .restaurant_menu .wrapper .side_cart .cart_content {
-  width: 100%;
-  min-height: 300px;
-  background-color: white;
-  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .order_btn {
-  width: 100%;
-  padding: 10px 0;
-  background-color: #f8585e;
-  outline: none;
-  border: 1px solid #f8b64a;
-  color: white;
-  margin-bottom: 15px;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .total {
-  display: flex;
-  justify-content: space-between;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .cart_info {
-  display: flex;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .buttons {
-  margin-right: 10px;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .buttons button {
-  width: 25px;
-  height: 25px;
-  background-color: #F4F5F5;
-  border: none;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .buttons button i {
-  color: #f8585e;
-}
-.central_container .restaurant_menu .wrapper .side_cart .cart_content .recap_products {
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% - 65px);
+
+@media screen and (max-width: 1024px) {
+  .side_cart {
+    display: none;
+  }
 }

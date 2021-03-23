@@ -5,7 +5,7 @@ import Vue from 'vue';
 
 
 const cart = new Vue({
-    el: '#root',
+    el: '#cart',
     data: {
         orders: [],
     },
@@ -20,9 +20,6 @@ const cart = new Vue({
           }
     },
     methods: {
-        stamp(x) {
-            console.log(x);
-        },
         addOrder(name, basePrice, restaurantId) {
             // ensure they actually typed something
             if (!name && !price) {
@@ -70,7 +67,6 @@ const cart = new Vue({
                 finalPrice += (parseFloat(element.basePrice) * element.count);
             });
             finalPrice =  Math.round(finalPrice * 100) / 100;
-            console.log({filteredOrders, "finalPrice" : [finalPrice]});
             return {filteredOrders, "finalPrice" : [finalPrice]};
         },
     }

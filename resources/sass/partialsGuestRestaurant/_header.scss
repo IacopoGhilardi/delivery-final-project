@@ -1,6 +1,5 @@
 .show_header {
     width: 100%;
-    // background-color: purple;
     height: 80px;
     .header_container {
         height: 100%;
@@ -23,6 +22,22 @@
                 margin: 0;
                 li {
                     a {
+                        color: black;
+                    }
+                }
+                .cart {
+                    position: relative;
+                    background-color: $mainRed;
+                    font-size: 15px;
+                    color: white;
+                    padding: 20px;
+                    .cart_header {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        min-width: 320px;
+                        z-index: 30;
                         color: black;
                     }
                 }
