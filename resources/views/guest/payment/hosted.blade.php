@@ -27,6 +27,13 @@
         <div class="container">
             <div class="col-md-6 offset-md-3">
                 <h1>Payment Form</h1>
+                <div class="menu">
+                  {{-- @dd($data) --}}
+                  @foreach ($data["orders"] as $key => $order)
+                      <p>{{ $order }}, x{{ $data["numberOfDishes"][$key] }}, {{ $data["dishPrices"][$key] }}euro</p>
+                  @endforeach
+                  <p>Totale: {{ $data["finalPrice"] }}</p>
+                </div>
                 <div class="spacer"></div>
 
                 @if (session()->has('success_message'))
@@ -47,6 +54,23 @@
                 <form action="{{ route('guest.order.payment.result') }}" method="POST" id="payment-form">
                     @csrf
                     @method('POST')
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName">
+                        </div>
+                      </div>
+                    </div>
+                  
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email" name="email">
@@ -109,7 +133,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="{{ $finalPrice }}">
+                                <input type="text" class="form-control" id="amount" name="amount" value="{{ $data["finalPrice"] }}">
                             </div>
                         </div>
                     </div>

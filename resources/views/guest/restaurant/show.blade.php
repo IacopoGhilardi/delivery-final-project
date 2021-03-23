@@ -153,6 +153,7 @@
                             <h5>Totale ordine:</h5>
                             <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                         </div>
+                       
                         <button type="submit" class="order_btn">Effettua l'ordine</button>
                         <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
                             <div class="buttons">
@@ -163,7 +164,12 @@
                                 <p><span>@{{order.count}} x</span> @{{order.name}}</p>
                                 <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
                             </div>
-                            <input type="hidden" name="finalPrice" :value="Math.round(order.basePrice * order.count * 100) / 100">
+                            {{-- <input type="hidden" name="restaurantId" value="{{$restaurant}}">
+                            <input type="hidden" name="restaurantId" value="{{$restaurant->business}}"> --}}
+                            <input type="hidden" name="orders[]" :value="order.name">
+                            <input type="hidden" name="numberOfDishes[]" :value="order.count">
+                            <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
+                            <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
                         </div>
                     </form>
                 </div>
