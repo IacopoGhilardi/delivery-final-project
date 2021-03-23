@@ -3,51 +3,51 @@
     $types = [
         [
             'name' => 'Cinese',
-            'img_path' => 'images/types/cinese.jpg'
+            'img_path' => 'images/types/chinese-illustration.png'
         ],
         [
             'name' => 'Giapponese',
-            'img_path' => 'images/types/giapponese.jpg'
+            'img_path' => 'images/types/sushi-illustration.png'
         ],
         [
             'name' => 'Messicano',
-            'img_path' => 'images/types/messicano.jfif'
+            'img_path' => 'images/types/mexican-illustration.png'
         ],
         [
             'name' => 'Thailandese',
-            'img_path' => 'images/types/thailandese.jpg'
+            'img_path' => 'images/types/thailand-illustration.png'
         ],
         [
             'name' => 'Pizza',
-            'img_path' => 'images/types/pizza.jfif'
+            'img_path' => 'images/types/pizza-illustration.png'
         ],
         [
             'name' => 'Indiano',
-            'img_path' => 'images/types/indiano.jfif'
+            'img_path' => 'images/types/pasta-illustration.png'
         ],
         [
             'name' => 'Hamburger',
-            'img_path' => 'images/types/hamburger.jpg'
+            'img_path' => 'images/types/hamburger-illustration.png'
         ],
         [
             'name' => 'Italiano',
-            'img_path' => 'images/types/italiano.jpg'
+            'img_path' => 'images/types/indiano-illustation.png'
         ],
         [
             'name' => 'Pesce',
-            'img_path' => 'images/types/pesce.jfif'
+            'img_path' => 'images/types/fish-illustration.png'
         ],
         [
             'name' => 'Carne',
-            'img_path' => 'images/types/carne.jpg'
+            'img_path' => 'images/types/steak-illustratio.png'
         ],
         [
             'name' => 'Fast Food',
-            'img_path' => 'images/types/fastfood.jpg'
+            'img_path' => 'images/types/fastfood-illustration.png'
         ],
         [
             'name' => 'Vegetariano',
-            'img_path' => 'images/types/vegetariano.jfif'
+            'img_path' => 'images/types/vegetarian-illustration.png'
         ]
     ];
 
