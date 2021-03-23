@@ -1,4 +1,4 @@
-@extends('layouts.guest.main')
+@extends('layouts.guest.show')
 
 @section('links')
     <link rel="stylesheet" href="{{ asset('css/guestRestaurant.css') }}">
@@ -63,7 +63,28 @@
                                 </form>
                             </div>
                         </li>
-                        <li class="cart"><i class="fas fa-shopping-cart"></i></li>
+                        <li class="cart" v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                            @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
+                            <div class="cart_header">
+                                <div class="cart_content">
+                                    <div class="total">
+                                        <h5>Totale ordine:</h5>
+                                        <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
+                                    </div>
+                                    <button class="order_btn">Effettua l'ordine</button>
+                                    <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
+                                        <div class="buttons">
+                                            <button class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
+                                            <button class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`))"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                        <div class="recap_products">
+                                            <p><span>@{{order.count}} x</span> @{{order.name}}</p>
+                                            <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -148,7 +169,3 @@
    </div>
 @endsection
 
-@section('scripts')
-    <script src="{{ asset('js/cart.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
-@endsection

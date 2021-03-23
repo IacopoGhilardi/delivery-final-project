@@ -12130,7 +12130,7 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     groupOrders: function groupOrders(newOrder) {
       var exist = false;
       this.orders.forEach(function (element) {
-        if (newOrder.name == element.name && !exist) {
+        if (newOrder.name == element.name && !exist && newOrder.restaurantId == element.restaurantId) {
           element.count++;
           exist = true;
         }

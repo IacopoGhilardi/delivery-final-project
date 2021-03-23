@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <div id="cart">
+    {{-- <div id="cart"> --}}
         <header>
             @yield('header')
         </header>
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </footer>
-    </div>
+    {{-- </div> --}}
   
     <script>
         $(document).ready(function(){

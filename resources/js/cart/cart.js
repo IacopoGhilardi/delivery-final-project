@@ -51,7 +51,7 @@ const cart = new Vue({
         groupOrders(newOrder) {
             let exist = false;
             this.orders.forEach(element => {
-                if (newOrder.name == element.name && !exist) {
+                if (newOrder.name == element.name && !exist && newOrder.restaurantId == element.restaurantId) {
                     element.count++;
                     exist = true;
                 }
