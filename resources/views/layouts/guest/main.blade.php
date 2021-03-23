@@ -21,15 +21,16 @@
     <title>Deliverboo</title>
 </head>
 <body>
+
     <div id="cart">
         <header>
             @yield('header')
         </header>
     
-        <main id="app">
+        <main>
             @yield('content')
         </main>
-    
+
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
@@ -51,7 +52,7 @@
                 // keyboard: true,
             });
         </script>
-    
+
         <footer style="display: block" class="">
             <div class="layout_footer">
                 <div class="footer_layout_wrapper">
@@ -89,7 +90,6 @@
                 </div>
             </div>
         </footer>
-    
     </div>
   
     <script>
