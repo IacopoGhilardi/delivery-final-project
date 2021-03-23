@@ -44,8 +44,9 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
+                <form action="{{ route('guest.order.payment.result') }}" method="POST" id="payment-form">
                     @csrf
+                    @method('POST')
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email" name="email">
@@ -108,13 +109,12 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="{{ old('amount')}}">
+                                <input type="text" class="form-control" id="amount" name="amount" value="{{ $finalPrice }}">
                             </div>
                         </div>
                     </div>
 
                     
-
                     <div class="row">
                         <div class="col-md-6">
                             <label for="cc_number">Credit Card Number</label>
