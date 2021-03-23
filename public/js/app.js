@@ -1920,21 +1920,22 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
     axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/allRestaurants").then(function (response) {
       _this.allRestaurants = response.data;
+      console.log(_this.allRestaurants);
     });
   },
   methods: {
+    ciao: function ciao() {
+      console.log("ciao");
+    },
     restaurants: function restaurants() {
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/restaurants/".concat(this.type)).then(function (response) {
         _this2.firstSearch = false;
         _this2.filteredRestaurants = response.data;
-        _this2.type = '';
-
-        var el = _this2.$el.getElementsByClassName("restaurant")[0]; //console.log(el);
-
-
-        el.scrollIntoView();
+        _this2.type = ''; // var el = this.$el.getElementsByClassName("restaurant")[0];
+        //console.log(el);
+        //    el.scrollIntoView(); 
       })["catch"](function (error) {
         _this2.type = '';
         _this2.firstSearch = false;

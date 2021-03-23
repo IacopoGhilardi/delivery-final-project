@@ -41,18 +41,22 @@ const app = new Vue({
         axios.post(`http://127.0.0.1:8000/api/allRestaurants`)
                 .then(response => {
                     this.allRestaurants = response.data;
+                    console.log(this.allRestaurants);
                 })
     },
     methods: {
+        ciao() {
+            console.log("ciao");
+        },
         restaurants() {
             axios.post(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
                 .then(response => {
                     this.firstSearch = false;
                     this.filteredRestaurants = response.data;
                     this.type = '';
-                    var el = this.$el.getElementsByClassName("restaurant")[0];
+                    // var el = this.$el.getElementsByClassName("restaurant")[0];
                     //console.log(el);
-                   el.scrollIntoView(); 
+                //    el.scrollIntoView(); 
                 })
                 .catch((error) => {
                     this.type = '';

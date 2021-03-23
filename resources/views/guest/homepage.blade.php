@@ -29,7 +29,6 @@
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->firstName }}
                                     </a>
-                
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('admin.restaurant.index') }}">I miei Ristoranti</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -37,7 +36,6 @@
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-                
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
@@ -46,7 +44,6 @@
                                 @endguest
                             </ul>
                         </div>
-                        @yield('cart')
                     </nav>
                 </div>
             </div>
@@ -65,10 +62,8 @@
                     <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
                 </svg>
             </div>
-    
         </div>
     </div>
-    
     <div class="categories">
         <h2>LE CATEGORIE PIU' AMATE</h2>
         <div class="categories_box">
@@ -166,9 +161,9 @@
                     </div>
                 </div> --}}
             {{-- </div> --}}
-    
+
             <div class="all_restaurants" v-if="filteredRestaurants.length > 0">
-                <div class="restaurants_wrapper">   
+                <div class="restaurants_wrapper">
                     <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
                     <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
                     <div class="restaurants_container">
@@ -193,28 +188,27 @@
                     </div>
                 </div>
             </div>
-        </div>
-        {{-- TUTTI I RISTORANTI --}}
-        <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
-            <div class="restaurants_wrapper">
-                <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
-                <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
-                <div class="restaurants_container">
-                    <div v-for="restaurant in allRestaurants" class="restaurant">
-                        <form action="{{ route('guest.restaurant.show') }}" method="post">
-                            @csrf
-                            @method('POST')
-                            <input name="business_name" type="hidden" :value="restaurant.business_name">
-                            <div class="restaurant_image_box">
-                                <img :src="`../storage/${restaurant.img_path}`" alt="">
-                            </div>
-                            <div class="restaurant_info">
-                                 <p>@{{restaurant.business_name}}</p>
-                            </div>
-                            <button type="submit"></button>
-                        </form>
+            {{-- TUTTI I RISTORANTI --}}
+            <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
+                <div class="restaurants_wrapper">
+                    {{-- <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
+                    <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2> --}}
+                    <div class="restaurants_container">
+                        <div v-for="restaurant in allRestaurants" class="restaurant">
+                            <form action="{{ route('guest.restaurant.show') }}" method="post">
+                                @csrf
+                                @method('POST')
+                                <input name="business_name" type="hidden" :value="restaurant.business_name">
+                                <div class="restaurant_image_box">
+                                    <img :src="`../storage/${restaurant.img_path}`" alt="">
+                                </div>
+                                <div class="restaurant_info">
+                                     <p>@{{restaurant.business_name}}</p>
+                                </div>
+                                <button type="submit"></button>
+                            </form>
+                        </div>
                     </div>
-    
                 </div>
             </div>
             {{-- TUTTI I RISTORANTI --}}
