@@ -196,7 +196,8 @@
         {{-- TUTTI I RISTORANTI --}}
         <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
-                <h2>Tutti i ristoranti</h2>
+                <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
+                <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
                 <div class="restaurants_container">
                     <div v-for="restaurant in allRestaurants" class="restaurant">
                         <form action="{{ route('guest.restaurant.show') }}" method="post">
@@ -207,11 +208,7 @@
                                 <img :src="`../storage/${restaurant.img_path}`" alt="">
                             </div>
                             <div class="restaurant_info">
-                                 <p class="businnes_name">@{{restaurant.business_name}}</p>
-                                 <ul>
-                                    <li class="badge badge-secondary mx-1" v-for="type in restaurant.types">@{{type.name}}</li>
-                                </ul>
-                                <span><i class="fas fa-map-marker-alt"></i> @{{restaurant.address}}</span>
+                                 <p>@{{restaurant.business_name}}</p>
                             </div>
                             <button type="submit"></button>
                         </form>
