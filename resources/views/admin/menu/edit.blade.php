@@ -62,7 +62,7 @@
           </label>
         </div>
         
-        <input class="btn btn-primary my-5" type="submit" value="Salva">
+        <input class="btn btn-primary my-5" type="submit" value="Modifica">
       </form>
   </div>
 

@@ -85,7 +85,7 @@
                     <h1>Seleziona i piatti che preferisci</h1>
                         @foreach ($restaurant->dishes as $dish)
                         @if($dish->visibility == 1)
-                        <div class="dish" @click="addOrder(`{{$dish->name}}`, `{{$dish->price}}`)">
+                        <div class="dish" @click="addOrder(`{{$dish->name}}`, `{{$dish->price}}`, `{{$restaurant->id}}`)">
                             <div class="dish_info">
                                 <p><strong>{{ $dish->name }}</strong></p>
                                 <p class="ingredients">{{ Str::substr($dish->ingredients, 0, 60) }} 
@@ -107,13 +107,13 @@
                     <div class="cart_content">
                         <div class="total">
                             <h5>Totale ordine:</h5>
-                            <p>@{{ Math.round(finalPrice * 100) / 100 }}&euro;</p>
+                            <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                         </div>
                         <button class="order_btn">Effettua l'ordine</button>
-                        <div class="cart_info" v-for="order in orders">
+                        <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
                             <div class="buttons">
                                 <button class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
-                                <button class="cartButtons" @click="(addOrder(order.name, order.basePrice))"><i class="fas fa-plus"></i></button>
+                                <button class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`))"><i class="fas fa-plus"></i></button>
                             </div>
                             <div class="recap_products">
                                 <p><span>@{{order.count}} x</span> @{{order.name}}</p>
@@ -126,4 +126,8 @@
             </div>
         </div>
    </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/cart.js') }}"></script>
 @endsection
