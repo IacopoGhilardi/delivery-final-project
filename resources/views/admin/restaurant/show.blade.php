@@ -10,16 +10,16 @@
         <div class="left_box">
             <div>
                 @if (!empty($restaurant->img_path))
-                <img class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
+                    <img style="border-radius: 5px" class="img-fluid" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
                 @else
-                    <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
+                    <img style="border-radius: 5px" class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
                 @endif
-                <h2 class="mt-4">INFO</h2>
+                <h2 class="mt-4">Info</h2>
                 <div class="card mt-2">
+                    <h2 class="card-header">{{ $restaurant->business_name }}</h2>
                     <div class="card-body">
-                        <h2>{{ $restaurant->business_name }}</h2>
-                        <p>Indirizzo: {{ $restaurant->address }}</p>
-                        <p>P.IVA: {{ $restaurant->PIVA }}</p>
+                        <p><strong>Indirizzo: </strong>{{ $restaurant->address }}</p>
+                        <p><strong>P.IVA: </strong>{{ $restaurant->PIVA }}</p>
                         <ul>
                             @foreach ($restaurant->types as $type)
                                 <li>{{ $type->name }}</li>

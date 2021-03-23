@@ -57,7 +57,7 @@ main .side_menu li a span {
 }
 main .body_pannel {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
 }
 main .body_pannel .pannel_header {
   display: flex;
@@ -149,7 +149,7 @@ main .body_pannel .pannel_content_container {
     transform: rotate(0deg);
   }
 }
-.card {
+.my_card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -163,14 +163,14 @@ main .body_pannel .pannel_content_container {
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
   transition: transform 300ms, box-shadow 300ms;
 }
-.card:hover {
+.my_card:hover {
   transform: scale(1.1);
 }
-.card .restaurant_img {
+.my_card .restaurant_img {
   width: 100%;
   height: 100%;
 }
-.card img {
+.my_card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -178,14 +178,14 @@ main .body_pannel .pannel_content_container {
   -o-object-position: center;
      object-position: center;
 }
-.card .card-body {
+.my_card .my_card_body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 0 !important;
   z-index: 1;
 }
-.card .position_absolute {
+.my_card .position_absolute {
   position: absolute;
   top: 0;
   left: 0;
@@ -193,37 +193,37 @@ main .body_pannel .pannel_content_container {
   width: 100%;
   padding: 15px;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.card .position_absolute:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+.my_card .position_absolute:hover {
+  background-color: rgba(0, 0, 0, 0.3);
   transition: 0.5s;
 }
-.card .card_top {
+.my_card .card_top {
   z-index: 3;
   word-break: break-all;
   width: 100%;
   height: 80%;
   overflow: hidden;
 }
-.card .card_top:hover {
+.my_card .card_top:hover {
   overflow-y: auto;
 }
-.card .card_bottom {
+.my_card .card_bottom {
   z-index: 3;
   width: 100%;
   height: 20%;
 }
-.card .card_bottom .btn-info {
+.my_card .card_bottom .btn-info {
   margin-right: 15px;
 }
-.card ::-webkit-scrollbar {
+.my_card ::-webkit-scrollbar {
   width: 7px;
 }
-.card ::-webkit-scrollbar-track {
+.my_card ::-webkit-scrollbar-track {
   background: lightgrey;
 }
-.card ::-webkit-scrollbar-thumb {
+.my_card ::-webkit-scrollbar-thumb {
   background: orange;
   border-radius: 10px;
 }

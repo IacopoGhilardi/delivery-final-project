@@ -14,7 +14,7 @@
   width: 60px;
 }
 
-.card {
+.my_card {
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -24,7 +24,7 @@
   overflow-y: auto;
   box-shadow: 5px 5px #888888;
 }
-.card .card_body {
+.my_card .my_card_body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
