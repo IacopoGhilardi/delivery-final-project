@@ -7,6 +7,8 @@ use App\Restaurant;
 use App\Type;
 use Illuminate\Http\Request;
 
+use App\Order;
+
 class RestaurantController extends Controller
 {
     //
@@ -31,5 +33,14 @@ class RestaurantController extends Controller
         // dd($restaurants);
         return response()->json($restaurants);
     }
+
+    public function order() {
+        $orders = Order::all();
+
+       
+        // dd($order);
+        return response()->json($orders);
+    }
+
     
 }

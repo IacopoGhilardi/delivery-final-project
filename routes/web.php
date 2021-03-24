@@ -38,6 +38,9 @@ Route::prefix('admin')
         Route::match(['put', 'patch'],'menu/update/{id}', 'DishController@update')->name('menu.update');
         Route::get('menu/edit/{id}', 'DishController@edit')->name('menu.edit');
         Route::delete('menu/destroy/{id}', 'DishController@destroy')->name('menu.destroy');
+
+        Route::get('/statistic', function (){ return view('/admin/restaurant/statistic'); })->name('restaurant.statistic');
+
  });    
 
 
