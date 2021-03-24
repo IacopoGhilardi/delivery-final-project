@@ -12090,7 +12090,7 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }
   },
   methods: {
-    addOrder: function addOrder(name, basePrice, restaurantId) {
+    addOrder: function addOrder(name, basePrice, restaurantId, dishId) {
       // ensure they actually typed something
       if (!name && !price) {
         return;
@@ -12101,7 +12101,8 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         name: name,
         basePrice: basePrice,
         count: 1,
-        restaurantId: restaurantId
+        restaurantId: restaurantId,
+        dishId: dishId
       }; //controllo se esiste e in tal caso sommo solo il prezzo
 
       if (!this.groupOrders(newOrder)) {

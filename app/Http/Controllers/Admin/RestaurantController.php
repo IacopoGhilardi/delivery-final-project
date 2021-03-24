@@ -52,7 +52,6 @@ class RestaurantController extends Controller
     {
         $data = $request->all();
         
-        //@dd($data );
 
         $request->validate($this->restaurantValidation);
         //@dd($data );
