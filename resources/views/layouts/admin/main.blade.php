@@ -28,7 +28,7 @@
         <main>
             <aside class="side_menu">
                 <div class="logo_box" style="text-align: center">
-                    <a class="logo" href="{{route('guest.homepage')}}"><img src="{{ asset('images/logo/APPETIDO (1).png') }}" alt="" style="width: 150px"></a>
+                    <a class="logo" href="{{route('guest.homepage')}}"><img src="{{ asset('images/logo/deliveboorichi.png') }}" alt="" style="width: 150px"></a>
                 </div>
 
                 <div class="nav_bar">

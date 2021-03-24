@@ -257,7 +257,7 @@
         
         </div>
         {{-- TUTTI I RISTORANTI --}}
-        <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
+        {{-- <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
                 <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
                 <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
@@ -281,8 +281,8 @@
             </div>
         </div>
         {{-- TUTTI I RISTORANTI --}}
-        <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
+        {{-- <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
                Non sono stati trovati Ristoranti per questa categoria
         </div>
-    </div>
+    </div>  --}}
  @endsection
