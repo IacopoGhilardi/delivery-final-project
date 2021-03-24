@@ -7,39 +7,23 @@ const statistic = new Vue({
   data: {
     amount: [],
     days: [],
-    restaurantId: ""
   },
   mounted() {
-    axios.post(`http://127.0.0.1:8000/api/statistic/${this.restaurantId}`)
+    //   console.log(window.location.href.split('/'));
+    var pageUrl = window.location.href.split('/');
+    console.log(pageUrl[pageUrl.length - 1]);
+    axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}`)
     .then(response => {
         for (let index = 0; index < response.data.length; index++) {
             this.amount.push(response.data[index].total_amount);
             this.days.push(response.data[index].date);
             
         }
-        //console.log(response.data);
-        //console.log(this.amount);
-        //console.log(this.days);
         this.charjs();
         
-    })
+    });
   },
   methods: {
-    //   stamp(id) {
-    //         axios.post(`http://127.0.0.1:8000/api/statistic/${id}`)
-    //         .then(response => {
-    //             for (let index = 0; index < response.data.length; index++) {
-    //                 this.amount.push(response.data[index].total_amount);
-    //                 this.days.push(response.data[index].date);
-                    
-    //             }
-    //             console.log(response.data);
-    //             //console.log(this.amount);
-    //             //console.log(this.days);
-    //             this.charjs();
-                
-    //         })
-    //   },
       charjs(){
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
