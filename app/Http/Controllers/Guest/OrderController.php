@@ -42,7 +42,8 @@ class OrderController extends Controller
     
         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
-    
+            
+        dd($request->email);
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
