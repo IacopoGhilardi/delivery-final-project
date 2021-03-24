@@ -1,5 +1,3 @@
-
-
 @extends('layouts.admin.main')
 
 @section('links')
@@ -8,9 +6,13 @@
 @endsection
 
 @section('content')
+    {{-- <button @click="stamp(`{{ $restaurant->id }}`)">ciao</button> --}}
     <div id="analitics" style="position: relative; width: 50%; height=50%; display: flex, justify-content:center; margin:auto">
         <canvas id="myChart" width="100px" height="100px"></canvas>
     </div>
+
+    <input type="text" v-model="restaurantId" value="{{ $restaurant->id }}">
+    {{-- <input type="hidden" :restaurantId="{{ $restaurant->id }}" v-model="restaurantId"> --}}
 
     <script src="{{ asset('js/statistic.js') }}" defer></script>
 

@@ -34,8 +34,11 @@ class RestaurantController extends Controller
         return response()->json($restaurants);
     }
 
-    public function order() {
-        $orders = Order::all();
+    public function order($id) {
+        $restaurant = Restaurant::findOrFail($id);
+        // $orders = Order::all();
+
+        $orders = $restaurant->dishes()->orders();
 
        
         // dd($order);
