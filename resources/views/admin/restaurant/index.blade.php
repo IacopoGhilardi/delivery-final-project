@@ -56,6 +56,7 @@
             </ul>
             <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary">Dettaglio</a>
             <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success">Menu</a>
+            <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">Statistiche</a>
           </div>
         </div>
         

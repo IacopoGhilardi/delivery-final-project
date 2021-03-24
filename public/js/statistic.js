@@ -12083,15 +12083,15 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   mounted: function mounted() {
     var _this = this;
 
-    axios.post("http://127.0.0.1:8000/api/statistic").then(function (response) {
+    //   console.log(window.location.href.split('/'));
+    var pageUrl = window.location.href.split('/');
+    console.log(pageUrl[pageUrl.length - 1]);
+    axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1])).then(function (response) {
       for (var index = 0; index < response.data.length; index++) {
         _this.amount.push(response.data[index].total_amount);
 
         _this.days.push(response.data[index].date);
-      } //console.log(response.data);
-      //console.log(this.amount);
-      //console.log(this.days);
-
+      }
 
       _this.charjs();
     });

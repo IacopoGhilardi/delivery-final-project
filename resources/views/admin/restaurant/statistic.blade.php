@@ -1,5 +1,3 @@
-
-
 @extends('layouts.admin.main')
 
 @section('links')
@@ -11,6 +9,7 @@
     <div id="analitics" style="position: relative; width: 50%; height=50%; display: flex, justify-content:center; margin:auto">
         <canvas id="myChart" width="100px" height="100px"></canvas>
     </div>
+
 
     <script src="{{ asset('js/statistic.js') }}" defer></script>
 
