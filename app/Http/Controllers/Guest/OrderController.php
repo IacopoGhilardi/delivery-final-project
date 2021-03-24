@@ -21,7 +21,6 @@ class OrderController extends Controller
         ]);
         
         $data = $request->all();
-        // dd($data, $restaurant);
         // $finalPrice = $data["finalPrice"];
     
         $token = $gateway->ClientToken()->generate();
@@ -52,20 +51,25 @@ class OrderController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
+        $data = $request->all();
+        $data["dishesId"] = json_decode($data["dishesId"]);
+        $data["numberOfDishes"] = json_decode($data["numberOfDishes"]);
 
         if ($result->success) {
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
-            $data = $request->all();
             $newOrder = new Order();
             $newOrder->fill($data); 
             $newOrder->total_amount = $data["amount"];
             $newOrder->status = "In preparazione";
             $newOrder->date = $faker->dateTime($max = 'now', $timezone = 'GMT');
-            $restaurant = Restaurant::where('id', $data['restaurantId'])->first();
-            dd($restaurant);
-            $newOrder->attach();
             $newOrder->save();
+            for ($i=0; $i < count($data["numberOfDishes"]); $i++) { 
+                $number = intval($data["numberOfDishes"][$i]);
+                for ($j=1; $j <= $number; $j++) { 
+                    $newOrder->dishes()->attach($data["dishesId"][$i]);
+                }
+            }
     
             return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
         } else {

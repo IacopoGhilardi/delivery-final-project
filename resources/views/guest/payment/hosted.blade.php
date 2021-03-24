@@ -28,7 +28,6 @@
             <div class="col-md-6 offset-md-3">
                 <h1>Payment Form</h1>
                 <div class="menu">
-                  {{-- @dd($data) --}}
                   @foreach ($data["orders"] as $key => $order)
                       <p>{{ $order }}, x{{ $data["numberOfDishes"][$key] }}, {{ $data["dishPrices"][$key] }}euro</p>
                   @endforeach
@@ -54,6 +53,7 @@
                 <form action="{{ route('guest.order.payment.result') }}" method="POST" id="payment-form">
                     @csrf
                     @method('POST')
+
 
                     <div class="row">
                       <div class="col-md-6">
@@ -165,6 +165,8 @@
                         </div>
 
                     </div>
+                    <input type="hidden" name="dishesId" value="{{ json_encode($data["dishes"], TRUE) }}">
+                    <input type="hidden" name="numberOfDishes" value="{{ json_encode($data["numberOfDishes"]) }}">
 
                     <div class="spacer"></div>
 

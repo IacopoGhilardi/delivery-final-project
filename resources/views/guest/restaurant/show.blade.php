@@ -127,7 +127,7 @@
                     <h1>Seleziona i piatti che preferisci</h1>
                         @foreach ($restaurant->dishes as $dish)
                         @if($dish->visibility == 1)
-                        <div class="dish" @click="addOrder(`{{$dish->name}}`, `{{$dish->price}}`, `{{$restaurant->id}}`)">
+                        <div class="dish" @click="addOrder(`{{$dish->name}}`, `{{$dish->price}}`, `{{$restaurant->id}}`, {{$dish->id}})">
                             <div class="dish_info">
                                 <p><strong>{{ $dish->name }}</strong></p>
                                 <p class="ingredients">{{ Str::substr($dish->ingredients, 0, 60) }} 
@@ -158,14 +158,13 @@
                         <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
                             <div class="buttons">
                                 <button type="button" class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
-                                <button type="button" class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`))"><i class="fas fa-plus"></i></button>
+                                <button type="button" class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`, order.dishId))"><i class="fas fa-plus"></i></button>
                             </div>
                             <div class="recap_products">
                                 <p><span>@{{order.count}} x</span> @{{order.name}}</p>
                                 <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
                             </div>
-                            {{-- <input type="hidden" name="restaurantId" value="{{$restaurant}}">
-                            <input type="hidden" name="restaurantId" value="{{$restaurant->business}}"> --}}
+                            <input type="hidden" name="dishes[]" :value="order.dishId">
                             <input type="hidden" name="orders[]" :value="order.name">
                             <input type="hidden" name="numberOfDishes[]" :value="order.count">
                             <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">

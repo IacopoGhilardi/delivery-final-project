@@ -20,13 +20,13 @@ const cart = new Vue({
           }
     },
     methods: {
-        addOrder(name, basePrice, restaurantId) {
+        addOrder(name, basePrice, restaurantId, dishId) {
             // ensure they actually typed something
             if (!name && !price) {
               return;
             }
             //salvo il nuovo ordine
-            const newOrder = {name, basePrice, count: 1, restaurantId};
+            const newOrder = {name, basePrice, count: 1, restaurantId, dishId};
             //controllo se esiste e in tal caso sommo solo il prezzo
             if (!this.groupOrders(newOrder)) {
                 this.orders.push(newOrder);
