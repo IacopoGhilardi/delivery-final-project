@@ -110,7 +110,8 @@
         <thead>
             <tr>
                 <th scope="col">Immagine Piatto</th>
-                <th scope="col">Nome Piatto</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Prezzo</th>
             </tr>
         </thead>
         <tbody>
@@ -118,6 +119,7 @@
                 <tr>
                     <td><img style="width: 100px" class="img-fluid" src="{{ asset('storage/' .$dish->dish_img_path) }}" alt="{{ $dish->name }}"></td>
                     <td>{{ $dish->name }}</td>
+                    <td>{{ $dish->price }} &euro;</td>
                 </tr>
             @endforeach
         </tbody>
