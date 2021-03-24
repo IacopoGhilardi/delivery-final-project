@@ -17,11 +17,11 @@
     
     &:hover {
         border: 1px solid orange;
-        background-color: darkorange;
+        background-color: darken(orange, 5%) !important;
     }
     &:active{
         border: 1px solid orange !important;
-        background-color: darkorange !important;
+        background-color: darken(orange, 5%)!important;
     }
 }
 

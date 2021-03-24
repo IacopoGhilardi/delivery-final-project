@@ -47,14 +47,19 @@
             background-color: white;
         }
 
-        .btn {
-            border: none;
+        .my_btn {
+            color: white;
+            border: 1px solid orange;
             background-color: orange;
+            
             &:hover {
-                border: none;
-                background-color: darkorange;
+                border: 1px solid orange;
+                background-color: darken(orange, 5%) !important;
             }
-
+            &:active{
+                border: 1px solid orange !important;
+                background-color: darken(orange, 5%)!important;
+            }
         }
     }
 }

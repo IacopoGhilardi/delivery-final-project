@@ -19,11 +19,16 @@
   border-radius: 5px;
   background-color: white;
 }
-.form_container form .btn {
-  border: none;
+.form_container form .my_btn {
+  color: white;
+  border: 1px solid orange;
   background-color: orange;
 }
-.form_container form .btn:hover {
-  border: none;
-  background-color: darkorange;
+.form_container form .my_btn:hover {
+  border: 1px solid orange;
+  background-color: #e69500 !important;
+}
+.form_container form .my_btn:active {
+  border: 1px solid orange !important;
+  background-color: #e69500 !important;
 }

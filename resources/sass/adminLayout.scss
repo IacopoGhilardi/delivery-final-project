@@ -216,3 +216,24 @@ main {
   }
     
 }
+
+.my_new_card {
+  height: 450px;
+}
+
+.my_shadow {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 300ms, box-shadow 300ms;
+  &:hover {
+      transform: scale(1.1);
+  }
+}
+
+.my_overflow {
+  height: 20%;
+  word-break: break-all;
+  overflow: hidden;
+    &:hover {
+        overflow-y: auto;
+    }
+}

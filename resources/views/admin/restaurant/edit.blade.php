@@ -73,7 +73,7 @@
       </form>
       
       <div class="mt-4">
-        <a class="btn btn-info" style="color: white" " href="{{ route('admin.restaurant.show', $restaurant->id) }}">Indietro</a>
+        <a class="btn btn-primary" style="color: white" " href="{{ route('admin.restaurant.show', $restaurant->id) }}">Indietro</a>
       </div>
   </div>
 

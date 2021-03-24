@@ -61,7 +61,7 @@
         </div>
       </div>
       
-      <input class="btn btn-danger mt-4" type="submit" value="Crea">
+      <input class="btn btn-danger my_btn mt-4" type="submit" value="Crea">
     </form>  
   </div>
   
