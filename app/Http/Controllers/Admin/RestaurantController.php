@@ -144,4 +144,10 @@ class RestaurantController extends Controller
 
         return redirect()->route('admin.restaurant.index')->with('status', $restaurant->business_name .' deleted!');
     }
+
+    public function statistics($slug) {
+        $restaurant = Restaurant::where('slug', $slug)->first();
+
+        return view('admin.restaurant.statistic', compact('restaurant'));
+    }
 }

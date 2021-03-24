@@ -30,6 +30,7 @@ Route::prefix('admin')
     ->name('admin.') 
     ->group(function () {
         Route::resource('restaurant', 'RestaurantController');
+        Route::get('statistic/{slug}', 'RestaurantController@statistics')->name('restaurant.statistic');
 
         // Route::resource('menu', 'DishController');
         Route::get('menu/{slug}', 'DishController@index')->name('menu.index');
@@ -38,6 +39,10 @@ Route::prefix('admin')
         Route::match(['put', 'patch'],'menu/update/{id}', 'DishController@update')->name('menu.update');
         Route::get('menu/edit/{id}', 'DishController@edit')->name('menu.edit');
         Route::delete('menu/destroy/{id}', 'DishController@destroy')->name('menu.destroy');
+
+        // Route::get('/statistic/{slug}', function (){ return view('/admin/restaurant/statistic'); })->name('restaurant.statistic');
+        
+
  });    
 
 
