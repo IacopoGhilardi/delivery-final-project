@@ -23,14 +23,14 @@ class OrderController extends Controller
         
         $data = $request->all();
         // $finalPrice = $data["finalPrice"];
-    
+        $restaurant = Restaurant::where('business_name', $data["business_name"])->first();    
         $token = $gateway->ClientToken()->generate();
     
         // return view('guest.payment.hosted', [
         //     'token' => $token,
         //     'finalPrice' => $data["finalPrice"]
         // ]);
-        return view('guest.payment.hosted', compact('token', 'data'));
+        return view('guest.payment.hosted', compact('token', 'data', 'restaurant'));
     }
 
     public function payment(Request $request, Faker $faker) {

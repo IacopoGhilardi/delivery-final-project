@@ -3,6 +3,34 @@
     margin-bottom: -100px;
 }
 
+.restaurant_title{
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+.restaurant_img {
+    height: 120px;
+    width: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
+}
+.restaurant_info {
+    p {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    span {
+        color: #828585;
+    }
+}
+
 .payment_wrapper {
     width: 100%;
     display: flex;
@@ -19,6 +47,10 @@
     }
 }
 
+.info_consegna {
+    margin-top: 20px;
+}
+
 #proceed {
     background-color: #f8585e;
     border: 1px solid #f8585e;
@@ -29,10 +61,13 @@
         margin-bottom: 0;
     }
     div {
-        a {
-            i {
+        form {
+            button {
                 font-size: 25px;
                 color: #f8585e;
+                outline: none;
+                background-color: white;
+                border: none;
             }
        
         }

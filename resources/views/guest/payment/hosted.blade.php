@@ -45,20 +45,22 @@
                   @method('POST')
 
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 restaurant_title">
                       <h1>Manca poco!</h1>
                     </div>
                     <div class="col-md-12 d-flex">
-                      <img src="" alt="restaurant">
+                      <div class="restaurant_img">
+                        <img src="{{ asset('storage/'. $restaurant->img_path) }}" alt="restaurant">
+                      </div>
                       <div class="restaurant_info">
-                        <p>Nome ristorante</p>
-                        <span>Indirizzo ristorante</span>
+                        <p>{{ $restaurant->business_name }}</p>
+                        <span>{{ $restaurant->address }}</span>
                       </div>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 info_consegna">
                       <h3>Informazioni di consegna</h3>
                     </div>
                   </div>
@@ -197,7 +199,14 @@
               <div class="cart_recap col-lg-4">
                 <div class="d-flex justify-content-between recap_order_title">
                   <h2 id="order_title">Il tuo ordine</h2>
-                  <div class="d-flex align-items-center"><a href="#"><i class="fas fa-pencil-alt"></i></a></div>
+                  <div class="d-flex align-items-center">
+                    <form action="{{ route('guest.restaurant.show') }}" method="post">
+                      @csrf
+                      @method('POST')
+                      <input name="business_name" type="hidden" value="{{$data['business_name']}}">
+                      <button type="submit" href="#"><i class="fas fa-pencil-alt"></i></button>
+                    </form>
+                  </div>
                 </div>
 
 
