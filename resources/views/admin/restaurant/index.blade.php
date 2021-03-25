@@ -13,7 +13,7 @@
     </div>
     @endif
 
-  <div class="index_admin_container"> 
+  <div class="d-flex justify-content-around mt-4 flex-wrap"> 
     @foreach ($restaurants as $restaurant)
         
 
@@ -36,9 +36,23 @@
                     <li class="badge badge-secondary">{{ $type->name }}</li>
                 @endforeach
             </ul>
-            <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary">Dettaglio</a>
-            <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success">Menu</a>
-            <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">Statistiche</a>
+
+            <div class="d-flex">
+              <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary mr-1">
+                {{-- Dettaglio --}}
+                <i class="far fa-eye"></i></a>
+              </a>
+              <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success mr-1">
+                {{-- Menu --}}
+                {{-- <i class="fas fa-hamburger"></i> --}}
+                <i class="fas fa-utensils"></i>
+              </a>
+              <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">
+                {{-- Statistiche --}}
+                <i class="fas fa-chart-pie"></i>
+              </a>
+            </div>
+            
           </div>
         </div>
         

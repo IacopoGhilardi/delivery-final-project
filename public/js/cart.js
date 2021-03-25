@@ -12146,7 +12146,7 @@ var cart = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       filteredOrders.forEach(function (element) {
         finalPrice += parseFloat(element.basePrice) * element.count;
       });
-      finalPrice = Math.round(finalPrice * 100) / 100;
+      finalPrice = (Math.round(finalPrice * 100) / 100).toFixed(2);
       return {
         filteredOrders: filteredOrders,
         "finalPrice": [finalPrice]

@@ -29,28 +29,31 @@ Route::prefix('admin')
     ->middleware('auth')
     ->name('admin.') 
     ->group(function () {
+
         Route::resource('restaurant', 'RestaurantController');
         Route::get('statistic/{slug}', 'RestaurantController@statistics')->name('restaurant.statistic');
 
-        // Route::resource('menu', 'DishController');
         Route::get('menu/{slug}', 'DishController@index')->name('menu.index');
         Route::get('menu/create/{slug}', 'DishController@create')->name('menu.create');
         Route::post('menu/create/{slug}/store', 'DishController@store')->name('menu.store');
         Route::match(['put', 'patch'],'menu/update/{id}', 'DishController@update')->name('menu.update');
         Route::get('menu/edit/{id}', 'DishController@edit')->name('menu.edit');
         Route::delete('menu/destroy/{id}', 'DishController@destroy')->name('menu.destroy');
-
-        // Route::get('/statistic/{slug}', function (){ return view('/admin/restaurant/statistic'); })->name('restaurant.statistic');
         
-
  });    
 
 
  Route::namespace('Guest')
     ->name('guest.')
     ->group(function () {
+
         Route::get('deliverboo', 'GuestController@index')->name('homepage');
         Route::post('deliverboo/restaurant', 'GuestController@show')->name('restaurant.show');
         Route::get('deliverboo/restaurant/order', 'OrderController@index')->name('order.payment');
         Route::post('deliverboo/restaurant/order/payment', 'OrderController@payment')->name('order.payment.result');
+        // Route::get('deliverboo/restaurant/order/payment/buh', function(){
+        //     return view('guest.payment.success');
+        // })->name('order.payment.result');
+        
+
     });

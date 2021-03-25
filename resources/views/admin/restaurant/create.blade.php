@@ -1,8 +1,19 @@
 @extends('layouts.admin.main')
 
 @section('content')
-  <div class="my-5">
-      @if ($errors->any())
+
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endForeach
+      </ul>
+    </div>
+  @endif
+
+  <div class="my-4">
+      {{-- @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -10,13 +21,15 @@
             @endForeach
           </ul>
         </div>
-      @endif
+      @endif --}}
 
-      <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
+      <h1 class="mb-5">Nuovo Ristorante</h1>
+
+      <form class="my_form" action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label col-form-label-lg" for="business_name">Nome Ristorante</label>
+          <label class="col-sm-2 col-form-label col-form-label-lg" for="business_name">Nome</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" name="business_name" id="business_name" value="{{ old('business_name') }}">
           </div>
@@ -44,7 +57,7 @@
         </div>
 
         <div class="form-group row">
-          <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Seleziona tipologia') }}</label>
+          <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Tipologia') }}</label>
 
           <div class="col-md-6">
               <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
@@ -55,8 +68,13 @@
           </div>
         </div>
         
-        <input class="btn btn-primary" type="submit" value="Crea">
-      </form> 
+        <input class="btn btn-primary my_btn" type="submit" value="CREA">
+      </form>
+      
+      <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle mt-5">
+          {{-- Indietro --}}
+          <i class="fas fa-arrow-left"></i>
+      </a>
 
   </div>
 

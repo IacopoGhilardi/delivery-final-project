@@ -10,21 +10,47 @@
   border-radius: 10px
 }
 
-.my_btn {
-    color: white;
-    border: 1px solid orange;
-    background-color: orange;
+// .my_btn {
+//     color: white;
+//     border: 1px solid orange;
+//     background-color: orange;
     
-    &:hover {
-        border: 1px solid orange;
-        background-color: darken(orange, 5%) !important;
-    }
-    &:active{
-        border: 1px solid orange !important;
-        background-color: darken(orange, 5%)!important;
-    }
+//     &:hover {
+//         border: 1px solid orange;
+//         background-color: darken(orange, 5%) !important;
+//     }
+//     &:active{
+//         border: 1px solid orange !important;
+//         background-color: darken(orange, 5%)!important;
+//     }
+// }
+
+.my_btn {
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
+  &:hover {
+    border: 1px solid #F8585E;
+    background-color: #F8585E;
+  }
+  &:active {
+    border: 1px solid #F8585E;
+    background-color: #F8585E;
+  }
 }
 
+.btn_circle {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.my_form {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+}
 
 .my_card {
     position: relative;

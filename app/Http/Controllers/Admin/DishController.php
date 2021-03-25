@@ -28,7 +28,9 @@ class DishController extends Controller
 
     public function create($slug)
     {
-        return view('admin.menu.create', compact('slug'));
+        $restaurant = Restaurant::where('slug', $slug)->first();
+
+        return view('admin.menu.create', compact('slug', 'restaurant'));
     }
 
     /**

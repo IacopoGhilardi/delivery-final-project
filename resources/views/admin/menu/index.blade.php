@@ -6,7 +6,7 @@
 
 @section('content')
 
-  <h1>Il mio menu</h1>
+  {{-- <h1>Il mio menu</h1> --}}
   {{-- gestisco il messaggio status update e destroy --}}
   @if (session('status'))
     <div class="alert alert-success">
@@ -16,16 +16,20 @@
 
   <div class="d-flex mt-4">
     <div>
-      <a class="btn btn-danger my_btn shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">Crea nuovo piatto</a>
+      <a class="btn btn-danger my_btn btn_circle shadow-none" href="{{ route('admin.menu.create', $restaurant->slug) }}">
+        <i class="fas fa-plus"></i>
+      </a>
     </div>
   
-    <div class="ml-3">
-      <a class="btn btn-primary" style="color: white" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">Indietro</a>
-    </div>
+    {{-- <div class="ml-3">
+      <a class="btn btn-primary btn_circle" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </div> --}}
   </div>
   
 
-  <div class="d-flex justify-content-around mt-5 flex-wrap">
+  <div class="d-flex justify-content-around mt-4 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
           {{-- <div class="my_card mt-5 ">
 
@@ -68,7 +72,7 @@
 
           </div> --}}
 
-        <div class="card m-3 my_new_card my_shadow" style="width: 18rem;">
+        <div class="card mr-3 mb-4 my_new_card my_shadow" style="width: 18rem;">
             {{-- <img src="..." class="card-img-top" alt="..."> --}}
             @if (!empty($dish->dish_img_path))
               <img class="card-img-top" src="{{ asset('storage/' . $dish->dish_img_path) }}" alt="{{ $dish->name }}">
@@ -82,12 +86,18 @@
               <p class="card-text">Disponibile? {{ $dish->visibility == 1 ? 'Si' : 'No' }}</p>
               
               <div class="d-flex">
-                <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-success mr-1">Modifica</a>
+                <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-success mr-1">
+                  {{-- Modifica --}}
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
               
                 <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
                 @csrf
                 @method('DELETE')
-                  <button type="submit" class="btn btn-danger">Elimina</button>
+                  <button type="submit" class="btn btn-danger">
+                    {{-- Elimina --}}
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
                 </form>
               </div>
               
@@ -95,6 +105,12 @@
         </div>
 
     @endforeach
+  </div>
+
+  <div class="mt-3">
+    <a class="btn btn-primary btn_circle" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">
+      <i class="fas fa-arrow-left"></i>
+    </a>
   </div>
 
 @endsection

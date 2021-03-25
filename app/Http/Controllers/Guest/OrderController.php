@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Guest;
 
+use App\Dish;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
@@ -23,14 +24,10 @@ class OrderController extends Controller
         
         $data = $request->all();
         // $finalPrice = $data["finalPrice"];
-    
+        $restaurant = Restaurant::where('business_name', $data["business_name"])->first();    
         $token = $gateway->ClientToken()->generate();
     
-        // return view('guest.payment.hosted', [
-        //     'token' => $token,
-        //     'finalPrice' => $data["finalPrice"]
-        // ]);
-        return view('guest.payment.hosted', compact('token', 'data'));
+        return view('guest.payment.hosted', compact('token', 'data', 'restaurant'));
     }
 
     public function payment(Request $request, Faker $faker) {
@@ -60,6 +57,8 @@ class OrderController extends Controller
             $data["dishesId"][$key]['quantity'] = $data["numberOfDishes"][$key];
         }
         $dishes = $data["dishesId"];
+        $restaurant = json_decode($data['restaurant']);
+        $address = $data['address'];
 
         $business_name = $data['business_name'];
         $address = $data['address'];
@@ -80,8 +79,7 @@ class OrderController extends Controller
                 }
             }
     
-            // return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
-            return view('guest.payment.success', compact('newOrder', 'business_name', 'dishes', 'address'));
+            return view('guest.payment.success', compact('newOrder', 'restaurant', 'dishes', 'address'));
         } else {
             $errorString = "";
             

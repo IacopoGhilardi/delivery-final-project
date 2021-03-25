@@ -30,12 +30,19 @@
                     background-color: $mainRed;
                     font-size: 15px;
                     color: white;
-                    padding: 20px;
+                    .cart_icon {
+                        padding: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                     .cart_header {
                         display: none;
                         position: absolute;
                         top: 100%;
                         right: 0;
+                        width: 50vh;
+                        height: 100vh;
                         min-width: 320px;
                         z-index: 30;
                         color: black;
