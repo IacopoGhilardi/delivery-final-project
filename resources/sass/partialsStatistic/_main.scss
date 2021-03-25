@@ -1,0 +1,18 @@
+.canvas-container {
+  position: relative;
+   width: 50%; 
+   display: flex;
+    justify-content :center; 
+    margin-left: 5%
+}
+.analitics-container {
+  display: flex; 
+  justify-content: space-around;
+}
+
+.card-direction {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

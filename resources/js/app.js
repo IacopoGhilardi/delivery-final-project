@@ -41,7 +41,7 @@ const app = new Vue({
         axios.post(`http://127.0.0.1:8000/api/allRestaurants`)
                 .then(response => {
                     this.allRestaurants = response.data;
-                    console.log(this.allRestaurants);
+                    //console.log(this.allRestaurants);
                 })
     },
     methods: {

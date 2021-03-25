@@ -1919,8 +1919,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/allRestaurants").then(function (response) {
-      _this.allRestaurants = response.data;
-      console.log(_this.allRestaurants);
+      _this.allRestaurants = response.data; //console.log(this.allRestaurants);
     });
   },
   methods: {
@@ -34623,6 +34622,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/statistic.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/statistic.scss ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/sass/adminRestaurantIndex.scss":
 /*!**************************************************!*\
   !*** ./resources/sass/adminRestaurantIndex.scss ***!
@@ -49922,17 +49934,18 @@ Vue.compile = compileToFunctions;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/adminLayout.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/homepageGuest.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/guestMainLayout.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/dishLayout.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/dishCreateLayout.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/restaurantShow.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/guestRestaurant.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/loginRegisterLayout.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/adminRestaurantIndex.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/adminLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/homepageGuest.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/guestMainLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/dishLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/dishCreateLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/restaurantShow.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/guestRestaurant.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/loginRegisterLayout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/statistic.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/guestMainLayout","css/guestRestaurant","css/homepageGuest","css/adminLayout","css/adminRestaurantIndex","css/statistic","css/loginRegisterLayout","css/restaurantShow","css/dishCreateLayout","css/dishLayout"], () => (__webpack_require__("./resources/sass/adminRestaurantIndex.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
