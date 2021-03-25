@@ -40,8 +40,9 @@
                             </a>
                         </li>
                         <li class="{{Route::currentRouteName() == 'admin.restaurant.create' ? 'active' : ''}}">
-                            <a href="{{ route('admin.restaurant.create') }}"><i class="fas fa-store">
-                                </i><span>AGGIUNGI</span>
+                            <a href="{{ route('admin.restaurant.create') }}">
+                                <i class="fas fa-store"></i>
+                                <span>AGGIUNGI</span>
                             </a>
                         </li>
                         {{-- <li class="{{Route::currentRouteName() == 'admin.restaurant.statistic' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.statistic') }}"><i class="fas fa-chart-pie"></i><span>Visualizza Statistiche</span></a></li> --}}
