@@ -54,7 +54,7 @@ const app = new Vue({
                     this.firstSearch = false;
                     this.filteredRestaurants = response.data;
                     this.type = '';
-                    var el = this.$el.getElementsByClassName("restaurant")[0];
+                    var el = this.$el.getElementsByClassName("all_restaurants")[0];
                     //console.log(el);
                    el.scrollIntoView(); 
                 })
@@ -70,6 +70,9 @@ const app = new Vue({
             axios.post(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
                 .then(response => {
                     this.filteredRestaurants = response.data;
+                    var el = this.$el.getElementsByClassName("all_restaurants")[0];
+                    //console.log(el);
+                   el.scrollIntoView();
                 })
                 .catch((error) => {
                     this.type = '';

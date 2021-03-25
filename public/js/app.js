@@ -1935,7 +1935,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         _this2.filteredRestaurants = response.data;
         _this2.type = '';
 
-        var el = _this2.$el.getElementsByClassName("restaurant")[0]; //console.log(el);
+        var el = _this2.$el.getElementsByClassName("all_restaurants")[0]; //console.log(el);
 
 
         el.scrollIntoView();
@@ -1952,6 +1952,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/restaurants/".concat(tipo)).then(function (response) {
         _this3.filteredRestaurants = response.data;
+
+        var el = _this3.$el.getElementsByClassName("all_restaurants")[0]; //console.log(el);
+
+
+        el.scrollIntoView();
       })["catch"](function (error) {
         _this3.type = '';
         _this3.firstSearch = false; // when you throw error this will also fetch error.

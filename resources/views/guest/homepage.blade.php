@@ -9,6 +9,49 @@
     <div class="main_container">
         <div class="wrapper">
             <div class="jumbotron_content">
+                {{-- <div class="menu_wrap">
+                    <input type="checkbox" class="toggle">
+                    <div class="hamburger">
+                        <div></div>
+                    </div>
+                    <div class="menu">
+                        <nav class="main_nav">
+                            <div class="nav_links">
+                                <ul class="inline_list">
+                                    @guest
+                                    <li class="nav-item">
+                                        <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                    @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                                        </li>
+                                    @endif
+                                    @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->firstName }}
+                                        </a>
+                    
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('admin.restaurant.index') }}">I miei Ristoranti</a>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                    
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                    @endguest
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div> --}}
                 <a href="{{ url('/') }}"><img src="{{ asset('images/logo/deliveboorichi.png') }}" alt="" id="logo"></a>
                 <h1>FRIGORIFERO VUOTO? CI PENSIAMO NOI!</h1>
                 <div class="register_btn_box">
@@ -21,12 +64,12 @@
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                                        <a class="nav-link btn_gold register" href="{{ route('register') }}">{{ __('Sign up') }}</a>
                                     </li>
                                 @endif
                                 @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle logged_name" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->firstName }}
                                     </a>
                 
@@ -50,31 +93,37 @@
                                         @csrf
                                     </form> --}}
                                 {{-- </div> --}}
-                            </li>
-                            @endguest
-                        </ul>
+                                </li>
+                                @endguest
+                            </ul>
+                        </div>
                     </nav>
                 </div>
                 <div class="image_container_small">
                     <h2>Di cosa hai voglia oggi?</h2>
-                    <p>Inserisci una categoria per trovare i piatti che preferisci</p>
-                    <div class="input_field">
-                        <input type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
-                        <button @click="restaurants()">Cerca</button>
+                    <div class="input_container">
+                        <p>Inserisci una categoria per trovare i piatti che preferisci</p>
+                        <div class="input_field">
+                            <input class="category_search" type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
+                            <button @click="restaurants()">Cerca</button>
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="custom-shape-divider-bottom-1616418170">
                 <div class="image_container">
                     <h2>Di cosa hai voglia oggi?</h2>
-                    <p>Inserisci una categoria per trovare i piatti che preferisci</p>
-                    <div class="input_field">
-                        <input type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
-                        <button @click="restaurants()">Cerca</button>
+                    <div class="input_container">
+                        <p>Inserisci una categoria per trovare i piatti che preferisci</p>
+                        <div class="input_field">
+                            <input class="category_search" type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
+                            <button @click="restaurants()">Cerca</button>
+                        </div>
                     </div>
                 </div>
-                <img class="moto" src="{{ asset('images/hero.png') }}" alt="">
-                <img class="fruits" src="{{ asset('images/frutta.png') }}" alt="">
+                {{-- <img class="moto" src="{{ asset('images/hero.png') }}" alt="">
+                <img class="fruits" src="{{ asset('images/frutta.png') }}" alt=""> --}}
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
                 </svg>
@@ -179,7 +228,7 @@
                 </div> --}}
             {{-- </div> --}}
 
-            <div class="all_restaurants" v-if="filteredRestaurants.length > 0">
+            <div v-cloak class="all_restaurants" v-if="filteredRestaurants.length > 0">
                 <div class="restaurants_wrapper">
                     <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
                     <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
@@ -207,8 +256,9 @@
             </div>
         </div>
         {{-- TUTTI I RISTORANTI --}}
-        <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
+        <div v-cloak class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
+                <h2>Tutti i Ristoranti</h2>
                 {{-- <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
                 <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2> --}}
                 <div class="restaurants_container">
