@@ -28,7 +28,12 @@
         <main>
             <aside class="side_menu">
                 <div class="logo_box" style="text-align: center">
-                    <a class="logo" href="{{route('guest.homepage')}}"><img src="{{ asset('images/logo/deliveboorichi.png') }}" alt="" style="width: 150px"></a>
+                    <a class="logo" href="{{route('guest.homepage')}}">
+                        <img src="{{ asset('images/logo/deliveboorichi.png') }}" alt="logo" style="width: 150px">
+                    </a>
+                    <a class="logo_resp" href="{{route('guest.homepage')}}">
+                        <img src="{{ asset('images/logo/deliveboo-resp.png') }}" alt="logo" style="width: 50px">
+                    </a>
                 </div>
 
                 <div class="nav_bar">

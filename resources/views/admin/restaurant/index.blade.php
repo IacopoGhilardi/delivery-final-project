@@ -9,7 +9,7 @@
     </div>
     @endif
 
-  <div class="d-flex justify-content-around mt-5 flex-wrap"> 
+  <div class="d-flex justify-content-around mt-4 flex-wrap"> 
     @foreach ($restaurants as $restaurant)
       {{-- <div class="my_card mt-5">
         <div class="my_card_body">

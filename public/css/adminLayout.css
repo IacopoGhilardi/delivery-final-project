@@ -27,7 +27,7 @@ main .side_menu li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 45px;
 }
 main .side_menu li a {
   width: 115px;
@@ -252,7 +252,14 @@ main .body_pannel .pannel_content_container {
   background-color: #F8585E;
 }
 
-@media screen and (max-width: 430px) {
+.logo_resp {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  main .side_menu {
+    padding: 0;
+  }
   main .side_menu li a {
     width: 45px;
     height: 45px;
@@ -260,5 +267,11 @@ main .body_pannel .pannel_content_container {
   }
   main .side_menu li a span {
     display: none;
+  }
+  main .side_menu .logo_box .logo {
+    display: none;
+  }
+  main .side_menu .logo_box .logo_resp {
+    display: block;
   }
 }
