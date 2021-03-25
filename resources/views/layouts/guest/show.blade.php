@@ -25,6 +25,44 @@
         <main>
             @yield('content')
         </main>
+
+        <footer style="display: block" class="">
+            <div class="layout_footer">
+                <div class="footer_layout_wrapper">
+            
+                    <div class="footer_box">
+                        <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul>
+                    </div>
+                
+                    <div class="footer_box">
+                        <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul>
+                    </div>
+                
+                    <div class="footer_box">
+                        <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright">© 2021 - deliveboo Srl - All Rights Reserved - Via Ciovassino 3/A 20121 Milan - PIVA 03833390966</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

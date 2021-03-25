@@ -31,28 +31,6 @@
             @yield('content')
         </main>
 
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 5,
-                spaceBetween: 30,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-                // mousewheel: true,
-                // keyboard: true,
-            });
-        </script>
-
         <footer style="display: block" class="">
             <div class="layout_footer">
                 <div class="footer_layout_wrapper">

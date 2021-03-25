@@ -52,6 +52,29 @@
                         </nav>
                     </div>
                 </div> --}}
+                <div id="burger_icon">
+                    <div id="rotate-1"></div>
+                    <div id="rotate-2"></div>
+                    <div id="rotate-3"></div>
+                </div>
+                <div class="nav_menu_small">
+                    @guest
+                    <div class="links">
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                    </div>
+                    @else
+                    <div class="links">
+                        <h2>{{ Auth::user()->firstName }}</h2>
+                        <a href="{{ route('admin.restaurant.index') }}">I miei Ristoranti</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <input type="submit" value="Logout">
+                        </form>
+                    </div>
+                    @endguest
+                </div>
+
                 <a href="{{ url('/') }}"><img src="{{ asset('images/logo/deliveboorichi.png') }}" alt="" id="logo"></a>
                 <h1>FRIGORIFERO VUOTO? CI PENSIAMO NOI!</h1>
                 <div class="register_btn_box">
@@ -287,57 +310,7 @@
             <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
                    Non sono stati trovati Ristoranti per questa categoria
             </div>
-         <!-- Slider main container -->
-        {{-- <div class="swiper-container"> --}}
-            <!-- Additional required wrapper -->
-            {{-- <div class="swiper-wrapper">
-                <!-- Slides -->
-                @foreach ($types as $type)
-                <div class="swiper-slide">
-                    <div class="layover">
-                        <img src="{{asset($type->img_path)}}" alt="">
-                    </div>
-                    <p>{{$type->name}}</p>
-                </div>
-                @endforeach
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div> --}}
-        
-            
     
-            {{-- <!-- Swiper JS -->
-            <script src="../package/swiper-bundle.min.js"></script> 
-    
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        
-        </div>
-        {{-- TUTTI I RISTORANTI --}}
-        {{-- <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
-            <div class="restaurants_wrapper">
-                <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
-                <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
-                <div class="restaurants_container">
-                    <div v-for="restaurant in allRestaurants" class="restaurant">
-                        <form action="{{ route('guest.restaurant.show') }}" method="post">
-                            @csrf
-                            @method('POST')
-                            <input name="business_name" type="hidden" :value="restaurant.business_name">
-                            <div class="restaurant_image_box">
-                                <img :src="`../storage/${restaurant.img_path}`" alt="">
-                            </div>
-                            <div class="restaurant_info">
-                                 <p>@{{restaurant.business_name}}</p>
-                            </div>
-                            <button type="submit"></button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
         {{-- TUTTI I RISTORANTI --}}
         <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
@@ -366,5 +339,10 @@
         <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
                Non sono stati trovati Ristoranti per questa categoria
         </div>
-    </div>  --}}
+    </div> 
+ 
+ @endsection
+
+ @section('scripts')
+    <script src="{{ asset('js/burger.js') }}"></script>
  @endsection
