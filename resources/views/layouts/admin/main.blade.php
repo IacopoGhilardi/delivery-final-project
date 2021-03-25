@@ -35,13 +35,15 @@
                     <ul class="nav_list">
                         <li class="{{Route::currentRouteName() == 'admin.restaurant.index' ? 'active' : ''}}">
                             <a href="{{ route('admin.restaurant.index') }}">
-                                <i class="fas fa-utensils"></i>
+                                {{-- <i class="fas fa-utensils"></i> --}}
+                                <i class="fas fa-store"></i>
                                 <span>RISTORANTI</span>
                             </a>
                         </li>
                         <li class="{{Route::currentRouteName() == 'admin.restaurant.create' ? 'active' : ''}}">
                             <a href="{{ route('admin.restaurant.create') }}">
-                                <i class="fas fa-store"></i>
+                                {{-- <i class="fas fa-store"></i> --}}
+                                <i class="fas fa-plus"></i>
                                 <span>AGGIUNGI</span>
                             </a>
                         </li>
