@@ -14,12 +14,19 @@ const statistic = new Vue({
     console.log(pageUrl[pageUrl.length - 1]);
     axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}`)
     .then(response => {
+        console.log(response.data);
         for (let index = 0; index < response.data.length; index++) {
             this.amount.push(response.data[index].total_amount);
             this.days.push(response.data[index].date);
             
         }
         this.charjs();
+        
+    });
+    axios.get(`http://127.0.0.1:8000/api/dish/${pageUrl[pageUrl.length - 1]}`)
+    .then(response1 => {
+        console.log(response1.data);
+        
         
     });
   },

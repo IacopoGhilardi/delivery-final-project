@@ -12087,6 +12087,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     var pageUrl = window.location.href.split('/');
     console.log(pageUrl[pageUrl.length - 1]);
     axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1])).then(function (response) {
+      console.log(response.data);
+
       for (var index = 0; index < response.data.length; index++) {
         _this.amount.push(response.data[index].total_amount);
 
@@ -12094,6 +12096,9 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       }
 
       _this.charjs();
+    });
+    axios.get("http://127.0.0.1:8000/api/dish/".concat(pageUrl[pageUrl.length - 1])).then(function (response1) {
+      console.log(response1.data);
     });
   },
   methods: {
