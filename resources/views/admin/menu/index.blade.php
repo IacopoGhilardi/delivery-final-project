@@ -21,15 +21,15 @@
       </a>
     </div>
   
-    <div class="ml-3">
-      <a class="btn btn-primary btn_circle" style="color: white" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">
+    {{-- <div class="ml-3">
+      <a class="btn btn-primary btn_circle" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">
         <i class="fas fa-arrow-left"></i>
       </a>
-    </div>
+    </div> --}}
   </div>
   
 
-  <div class="d-flex justify-content-around mt-5 flex-wrap">
+  <div class="d-flex justify-content-around mt-4 flex-wrap">
     @foreach ($restaurant->dishes as $dish)
           {{-- <div class="my_card mt-5 ">
 
@@ -86,12 +86,18 @@
               <p class="card-text">Disponibile? {{ $dish->visibility == 1 ? 'Si' : 'No' }}</p>
               
               <div class="d-flex">
-                <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-success mr-1">Modifica</a>
+                <a href="{{route('admin.menu.edit', $dish)}}" class="btn btn-success mr-1">
+                  {{-- Modifica --}}
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
               
                 <form action="{{route('admin.menu.destroy', $dish->id)}}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo piatto?')">
                 @csrf
                 @method('DELETE')
-                  <button type="submit" class="btn btn-danger">Elimina</button>
+                  <button type="submit" class="btn btn-danger">
+                    {{-- Elimina --}}
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
                 </form>
               </div>
               
@@ -99,6 +105,12 @@
         </div>
 
     @endforeach
+  </div>
+
+  <div class="mt-3">
+    <a class="btn btn-primary btn_circle" " href="{{ route('admin.restaurant.index', $restaurant->slug) }}">
+      <i class="fas fa-arrow-left"></i>
+    </a>
   </div>
 
 @endsection

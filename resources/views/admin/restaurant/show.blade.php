@@ -69,6 +69,8 @@
         </div>
     </div> --}}
 
+    {{-- <h1 class="my-4">Dettaglio</h1> --}}
+
     <div class="d-flex direction">
 
         <div class="card mr-5" style="width: 18rem; box-shadow: 0 5px 25px rgb(0 0 0 / 35%)">
@@ -92,15 +94,24 @@
                 </ul>
 
                 <div class="d-flex">
-                    <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success mr-1">Modifica</a>
+                    <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success mr-1">
+                        {{-- Modifica --}}
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
 
                     <form action="{{ route('admin.restaurant.destroy', $restaurant->id) }}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo ristorante?')">
                     @csrf
                     @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Elimina</button>
+                        <button type="submit" class="btn btn-danger">
+                            {{-- Elimina --}}
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
                     </form>
 
-                    <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary ml-1">Indietro</a>
+                    {{-- <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary ml-1">
+                        Indietro
+                        <i class="fas fa-arrow-left"></i>
+                    </a> --}}
                 </div>
             </div>
         </div>
@@ -126,6 +137,9 @@
 
     </div>
 
-    
+    <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle mt-5">
+        {{-- Indietro --}}
+        <i class="fas fa-arrow-left"></i>
+    </a>
 
 @endsection

@@ -15,8 +15,12 @@
     </div>
   @endif
 
-  <div class="container my-5">
-    <form action="{{ route('admin.menu.store', $slug) }}" method="post" enctype="multipart/form-data">
+
+  <div class="container my-4">
+
+    <h1 class="mb-4">Nuovo Piatto</h1>
+
+    <form class="my_form" action="{{ route('admin.menu.store', $slug) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method('POST')
       <div class="form-group row">
@@ -36,7 +40,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label col-form-label-lg" for="ingredients">Ingredienti</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="ingredients" id="ingredients" rows="10" placeholder="">{{ old('ingredients') }}</textarea>
+          <textarea style="resize: none" class="form-control" name="ingredients" id="ingredients" rows="8" placeholder="">{{ old('ingredients') }}</textarea>
         </div>
       </div>
 
@@ -65,10 +69,18 @@
         </div>
       </div>
   
-      
-      
-      <input class="btn btn-danger my_btn mt-4" type="submit" value="Crea">
-    </form>  
+      <input class="btn btn-danger my_btn mt-4" type="submit" value="CREA">
+    </form>
+    
+    <div>
+      <a href="{{route('admin.menu.index', $restaurant->slug)}}" class="btn btn-primary btn_circle mt-5">
+        {{-- Indietro --}}
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </div>
+
   </div>
+
+  
   
 @endsection
