@@ -72,6 +72,13 @@
 
         <input class="btn btn-success mt-5" type="submit" value="MODIFICA">
       </form>
+
+      <div>
+        <a href="{{route('admin.menu.index', $dish->restaurant->slug)}}" class="btn btn-primary btn_circle mt-5">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
   </div>
 
 @endsection
