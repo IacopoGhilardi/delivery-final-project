@@ -1,0 +1,12 @@
+.canvas-container {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.analitics-container {
+  display: flex;
+  justify-content: space-between;
+}

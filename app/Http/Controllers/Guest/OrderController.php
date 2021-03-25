@@ -71,7 +71,7 @@ class OrderController extends Controller
             $newOrder->fill($data); 
             $newOrder->total_amount = $data["amount"];
             $newOrder->status = "In preparazione";
-            $newOrder->date = $faker->dateTime($max = 'now', $timezone = 'GMT');
+            $newOrder->date = $faker->dateTimeInInterval($startDate = '-2 years', $interval = '+ 5 days');
             $newOrder->save();
             for ($i=0; $i < count($data["numberOfDishes"]); $i++) { 
                 $number = intval($data["numberOfDishes"][$i]);

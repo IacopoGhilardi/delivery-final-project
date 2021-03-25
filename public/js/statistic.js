@@ -12078,7 +12078,10 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#analitics',
   data: {
     amount: [],
-    days: []
+    days: [],
+    bgColor: [],
+    venditaMax: '',
+    imgUrlMax: ''
   },
   mounted: function mounted() {
     var _this = this;
@@ -12087,27 +12090,41 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     var pageUrl = window.location.href.split('/');
     console.log(pageUrl[pageUrl.length - 1]);
     axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1])).then(function (response) {
-      for (var index = 0; index < response.data.length; index++) {
-        _this.amount.push(response.data[index].total_amount);
+      var sorting = response.data.sort(function compare(a, b) {
+        var dateA = new Date(a.date);
+        var dateB = new Date(b.date);
+        return dateB - dateA;
+      }); //console.log(response.data);
+      //console.log(sorting);
 
-        _this.days.push(response.data[index].date);
+      for (var index = 0; index < sorting.length; index++) {
+        _this.amount.push(sorting[index].total_amount);
+
+        _this.days.push(sorting[index].date);
+
+        _this.bgColor.push('rgba(255, 159, 64, 0.2)');
       }
 
       _this.charjs();
+    });
+    axios.get("http://127.0.0.1:8000/api/dish/".concat(pageUrl[pageUrl.length - 1])).then(function (response1) {
+      _this.imgUrlMax = response1.data[0].dish_img_path;
+      _this.venditaMax = response1.data[0].name;
+      console.log(response1.data);
     });
   },
   methods: {
     charjs: function charjs() {
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
           labels: this.days,
           datasets: [{
             label: '# Amount',
             data: this.amount,
-            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+            backgroundColor: this.bgColor,
+            borderColor: this.bgColor,
             borderWidth: 1
           }]
         },
