@@ -182,6 +182,7 @@
                   </div>
                   <input type="hidden" name="dishesId" value="{{ json_encode($data["dishes"], TRUE) }}">
                   <input type="hidden" name="numberOfDishes" value="{{ json_encode($data["numberOfDishes"]) }}">
+                  <input type="hidden" name="business_name" value="{{$data['business_name']}}">
 
                   <div class="spacer"></div>
 
