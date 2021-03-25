@@ -80,7 +80,7 @@ class OrderController extends Controller
                 }
             }
     
-            return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+            return view('guest.payment.success', compact('newOrder', 'business_name', 'dishes', 'address'));
         } else {
             $errorString = "";
             
