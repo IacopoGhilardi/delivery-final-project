@@ -1,5 +1,9 @@
-@extends('layouts.guest.show')
+@extends('layouts.guest.payment')
 
+@section('links')
+    <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/success.css') }}">
+@endsection
 @section('content')
     <div class="recap_container">
        <div class="info_order_success">
