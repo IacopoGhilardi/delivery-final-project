@@ -9,7 +9,7 @@
     
     <div id="analitics" class="container">
         <div class="analitics-container" >
-            <div class="card ">
+            <div class="card card-direction">
                 <h3 style="text-transform: uppercase">il più venduto è il piatto: @{{venditaMax}}</h3>
                 <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt="">
             </div>
