@@ -32,6 +32,12 @@
   font-size: 20px;
 }
 
+.my_form {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+}
+
 .my_card {
   position: relative;
   display: flex;

@@ -13,8 +13,8 @@
   @endif
 
 
-  <div class="my-5">
-      <form action="{{ route('admin.restaurant.update', $restaurant->id) }}" method="post" enctype="multipart/form-data">
+  <div class="my-4">
+      <form class="my_form" action="{{ route('admin.restaurant.update', $restaurant->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group row">
@@ -68,11 +68,14 @@
             </div>
         </div>
         
-        <input class="btn btn-success" type="submit" value="Modifica">
+        <input class="btn btn-success" type="submit" value="MODIFICA">
       </form>
       
-      <div class="mt-4">
-        <a class="btn btn-primary" style="color: white" " href="{{ route('admin.restaurant.show', $restaurant->id) }}">Indietro</a>
+      <div class="mt-5">
+        <a class="btn btn-primary btn_circle" href="{{ route('admin.restaurant.show', $restaurant->id) }}">
+          {{-- Indietro --}}
+          <i class="fas fa-arrow-left"></i>
+        </a>
       </div>
   </div>
 

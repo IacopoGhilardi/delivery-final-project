@@ -1,8 +1,19 @@
 @extends('layouts.admin.main')
 
 @section('content')
-  <div class="my-5">
-      @if ($errors->any())
+
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endForeach
+      </ul>
+    </div>
+  @endif
+
+  <div class="my-4">
+      {{-- @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -10,9 +21,11 @@
             @endForeach
           </ul>
         </div>
-      @endif
+      @endif --}}
 
-      <form action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
+      <h1 class="mb-5">Nuovo Ristorante</h1>
+
+      <form class="my_form" action="{{route('admin.restaurant.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="form-group row">
@@ -55,8 +68,13 @@
           </div>
         </div>
         
-        <input class="btn btn-primary my_btn" type="submit" value="Crea">
-      </form> 
+        <input class="btn btn-primary my_btn" type="submit" value="CREA">
+      </form>
+      
+      <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle mt-5">
+          {{-- Indietro --}}
+          <i class="fas fa-arrow-left"></i>
+      </a>
 
   </div>
 

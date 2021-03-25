@@ -34,6 +34,14 @@
   width: 70%;
 }
 
+.btn_circle {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
 @media screen and (max-width: 430px) {
   .direction {
     flex-direction: column;

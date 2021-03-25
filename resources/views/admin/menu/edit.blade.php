@@ -12,7 +12,7 @@
   @endif
 
   <div class="container mt-4">
-      <form action="{{ route('admin.menu.update', $dish->id) }}" method="post" enctype="multipart/form-data">
+      <form class="my_form" action="{{ route('admin.menu.update', $dish->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group row">
@@ -32,7 +32,7 @@
         <div class="form-group row">
           <label class="col-sm-2 col-form-label col-form-label-lg" for="ingredients">Ingredienti</label>
           <div class="col-sm-10">
-            <textarea class="form-control" name="ingredients" id="ingredients" rows="10">{{$dish->ingredients}}</textarea>
+            <textarea style="resize: none" class="form-control" name="ingredients" id="ingredients" rows="8">{{$dish->ingredients}}</textarea>
           </div>
         </div>
 
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <input class="btn btn-success my-5" type="submit" value="Modifica">
+        <input class="btn btn-success mt-5" type="submit" value="MODIFICA">
       </form>
   </div>
 
