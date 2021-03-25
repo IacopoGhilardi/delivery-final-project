@@ -5,6 +5,7 @@
 .main_container {
     position: relative;
     width: 100%;
+    height: 100vh;
     padding: 0 10px;
     .wrapper {
         position: relative;
@@ -49,6 +50,10 @@
                     color: #8FD8D4;
                 }
             }
+            .image_container_small {
+                display: none;
+                
+            }
         }
         .custom-shape-divider-bottom-1616418170 {
             display: flex;
@@ -68,7 +73,7 @@
                 flex-direction: column;
                 position: relative;
                 width: 45%;
-                height: 300px;
+                max-height: 300px;
                 background-color: white;
                 z-index: 3;
                 margin-bottom: -12%;
@@ -106,12 +111,13 @@
                         border-radius: 0 3px 3px 0 ;
                     }
                 }
-                img {
-                    width: 250px;
-                    position: absolute;
-                    bottom: -5%;
-                    left: -20%;
-                }
+            }
+            .moto {
+                max-width: 250px;
+                position: absolute;
+                bottom: -5%;
+                left: 18%;
+                z-index: 5;
             }
             .fruits {
                 width: 200px;
@@ -215,7 +221,9 @@
                      justify-content: center;
                      width: 100%;
                      .restaurant {
-                         width: calc(23% - 30px);
+                         width: 23%;
+                         min-width: 300px;
+                         max-width: 400px;
                          height: 330px;
                          border: 0.5px solid lightgray;
                          margin: 10px 15px;
@@ -271,263 +279,92 @@
              }
          }
 
-// .main_container {
-//     position: relative;
-//     width: 100%;
-//     .wrapper {
-//         padding-right: 30%;
-//         height: 550px;
-//         .left_main_box {
-//             position: relative;
-//             // width: 55%;
-//             max-width: 1000px;
-//             height: 100%;
-//             padding: 60px 120px 60px 0;
-//             .logo_login {
-//                 display: flex;
-//                 justify-content: space-between;
-//                 align-items: center;
-//                 .logo > a >img {
-//                     width: 150px;
-//                 }
-//                 .login_box {
-//                     display: flex;
-//                     a {
-//                         color: black;
-//                     }
-//                     .login:hover {
-//                         color: #F8585E;
-//                     }
-//                     .btn_gold {
-//                         width: 90px;
-//                         height: 40px;
-//                         background-color: #F8585E;//rgb(235, 189, 48);
-//                         color: white;
-//                         font-weight: bold;
-//                     }
-//                 }
-//             }
-//             .main_content {
-//                 width: 100%;
-//                 margin-top: 60px;
-//                 p {
-//                     font-size: 30px;
-//                     color: gray;
-//                 }
-//                 .input_field {
-//                     display: flex;
-//                     align-items: center;
-//                     width: 100%;
-//                     // margin-top: 25px;
-//                     input {
-//                         width: calc(100% - 70px);
-//                         outline: none;
-//                         padding: 20px;
-//                         border: 1px solid gray;
-//                         border-right: none;
-//                         font-size: 18px;
-//                     }
-//                     button {
-//                         width: 150px;
-//                         padding: 20px;
-//                         background-color: #F8585E;
-//                         color: white;
-//                         border: 2px solid #F8585E;
-//                         font-weight: bold;
-//                     }
-//                 }
-//             }
-//         }
-        
-//     }
-//     .right_main_box {
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//         height: 550px;
-//         width: 45%;
-//         background-image: url(https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         background-size: cover;
-//     }
-//     .banner {
-//         width: 100%;
-//         height: 400px;
-//         background-color: #F8B64A;
-//         background-size: cover;
-//         background: rgb(248,88,94);
-//         background: linear-gradient(153deg, rgba(248,88,94,1) 20%, rgba(248,182,74,1) 80%);
-//         .wrapper {
-//             display: flex;
-//             justify-content: space-between;
-//             align-items: center;
-//             padding: 0;
-//         }
-//     }
+         @media screen and (max-width: 576px) { 
+            // .main_container .wrapper .custom-shape-divider-bottom-1616418170 .image_container {
+                 
+            //  }
+            .main_container {
+                height: 60vh;
+                margin-bottom: 100px;
+                .wrapper {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    border-bottom-left-radius: 50%;
+                    .jumbotron_content {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        img {
+                            width: 150px;
+                            margin-top: 30px;
+                            margin-bottom: 20px;
+                        }
+                        h1 {
+                            font-size: 24px;
+                            margin-bottom: 40px;
+                        }
+                        .register_btn_box {
+                            display: none;
+                        }
+                        .image_container_small {
+                            position: absolute;
+                            bottom: -70px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            color: black;
+                            width: 95%;
+                            height: 70%;
+                            background-color: white;
+                            border-radius: 10px;
+                            padding: 20px 10px;
+                            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+                            h2 {
+                                font-size: 26px;
+                                margin-bottom: 20px;
+                            }
+                            p {
+                                font-size: 15px;
+                                color: gray;
+                                margin-bottom: 10px;
+                            }
+                            .input_field {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 85%;
+                                input {
+                                    width: 100%;
+                                    outline: none;
+                                    padding: 10px;
+                                    border: 1px solid transparent;
+                                    border-right: none;
+                                    font-size: 13px;
+                                    border-radius: 3px 0 0 3px;
+                                    border: 1px solid gray;
+                                }
+                                button {
+                                    width: 80px;
+                                    padding: 10px;
+                                    background-color: #F8585E;
+                                    color: white;
+                                    border: 1px solid #F8585E;
+                                    font-weight: bold;
+                                    font-size: 13px;
+                                    border-radius: 0 3px 3px 0 ;
+                                }
+                            }
+                            
+                        }
+                    }
+                    .custom-shape-divider-bottom-1616418170 {
+                        display: none;
+                    }
+                }
+            }
 
-//     .categories_container {
-//         padding-top: 80px;
-//         padding-bottom: 60px;
-//         width: 100%;
-//         background-color: #f4f4f8;
-//         .wrapper_categories {
-//             width: 85%;
-//             margin: auto;
-//             padding: 0;
-//             text-align: center;
-//             h2 {
-//                 margin-bottom: 50px;
-//             }
-//             .categories {
-//                 display: flex;
-//                 justify-content: space-between;
-//                 flex-wrap: wrap;
-//                 width: 100%;
-//                 .category {
-//                     position: relative;
-//                     width: calc(15% - 20px);
-//                     height: 100px;
-//                     margin: 5px 10px;
-//                     border-radius: 5px;
-//                     overflow: hidden;
-//                     cursor: pointer;
-//                     img {
-//                         width: 100%;
-//                         height: 100%;
-//                     }
-//                     .category_name {
-//                         display: flex;
-//                         justify-content: center;
-//                         align-items: center;
-//                         position: absolute;
-//                         top: 0;
-//                         left: 0;
-//                         width: 100%;
-//                         height: 10%;
-//                         background: rgb(248,88,94);
-//                         background: linear-gradient(153deg, rgba(248,88,94,0.8) 20%, rgba(248,182,74,0.8) 80%);
-//                         transition: height 0.5s ease-in-out;
-//                         &:hover {
-//                             height: 100%;
-//                             background: rgb(248,88,94);
-//                             background: linear-gradient(153deg, rgba(248,88,94,0.5) 20%, rgba(248,182,74,0.5) 80%);
-//                         }
-//                         p {
-//                             margin: 0;
-//                             color: white;
-//                             font-weight: bold;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
 
-//     .all_restaurants {
-//         width: 100%;
-//         padding: 80px 0 60px 0;
-//         .restaurants_wrapper {
-//             width: 85%;
-//             margin: auto;
-//             h2 {
-//                 padding-bottom: 60px;
-//             }
-//             .restaurants_container {
-//                 display: flex;
-//                 flex-wrap: wrap;
-//                 justify-content: flex-start;
-//                 width: 100%;
-//                 .restaurant {
-//                     width: calc(25% - 30px);
-//                     height: 330px;
-//                     border: 0.5px solid lightgray;
-//                     margin: 10px 15px;
-//                     border-radius: 5px;
-//                     overflow: hidden;
-//                     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-//                     transition: transform 300ms, box-shadow 300ms;
-//                     &:hover {
-//                         transform: scale(1.1);
-//                     }
-//                     form {
-//                         position: relative;
-//                         width: 100%;
-//                         height: 100%;
-//                         .restaurant_image_box {
-//                             width: 100%;
-//                             height: 45%;
-//                             img {
-//                                 width: 100%;
-//                                 height: 100%;
-//                             }
-//                         }
-//                         .restaurant_info {
-//                             width: 100%;
-//                             height: 55%;
-//                             padding: 20px 10px;
-//                             .businnes_name {
-//                                 color: #F8585E;
-//                                 font-weight: bold;
-//                             }
-//                             span {
-//                                 color: gray;
-//                                 i {
-//                                     padding-right: 5px;
-//                                     font-size: 20px;
-//                                 }
-//                             }
-//                         }
-//                         button {
-//                             position: absolute;
-//                             top: 0;
-//                             left: 0;
-//                             width: 100%;
-//                             height: 100%;
-//                             border: 0;
-//                             outline: none;
-//                             background-color: transparent;
-//                         }
-//                     }
-//                 }
-              
-//             }
-//         }
-//     }
-// }
-
-// .swiper-container {
-//     height: 500px;
-//     padding: 80px 60px;
-//     .swiper-slide {
-//         position: relative;
-//         width: 200px;
-//         height: 150px;
-//         background-color: transparent;
-//         border: none;
-//         text-align: center;
-//        .layover {
-//             position: absolute;
-//             top: 0;
-//             left: 0;
-//             width: 100%;
-//             height: 100%;
-//             border-radius: 73% 27% 60% 40% / 36% 30% 70% 64% ;
-//             overflow: hidden;
-//             img {
-//                 width: 100%;
-//                 height: 100%;
-//                 object-fit: cover;
-//                 object-position: center;
-//             }
-    
-//         }
-//         p {
-//             position: absolute;
-//             top: -40px;
-//             left: 30%;
-//             color: black;
-//             font-weight: 700;
-//         }
-//     }
-// }
+        }

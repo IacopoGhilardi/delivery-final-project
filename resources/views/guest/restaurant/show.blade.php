@@ -169,6 +169,7 @@
                             <input type="hidden" name="numberOfDishes[]" :value="order.count">
                             <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
                             <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                            <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                         </div>
                     </form>
                 </div>

@@ -9,6 +9,7 @@ use Faker\Generator as Faker;
 
 use App\Order;
 use App\Restaurant;
+use App\Dish;
 
 class OrderController extends Controller
 {
@@ -54,6 +55,14 @@ class OrderController extends Controller
         $data = $request->all();
         $data["dishesId"] = json_decode($data["dishesId"]);
         $data["numberOfDishes"] = json_decode($data["numberOfDishes"]);
+        foreach ($data["dishesId"] as $key => $dishId) {
+            $data["dishesId"][$key] = Dish::where('id', $dishId)->first();
+            $data["dishesId"][$key]['quantity'] = $data["numberOfDishes"][$key];
+        }
+        $dishes = $data["dishesId"];
+
+        $business_name = $data['business_name'];
+        $address = $data['address'];
 
         if ($result->success) {
             $transaction = $result->transaction;
@@ -71,7 +80,8 @@ class OrderController extends Controller
                 }
             }
     
-            return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+            // return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+            return view('guest.payment.success', compact('newOrder', 'business_name', 'dishes', 'address'));
         } else {
             $errorString = "";
             
@@ -85,4 +95,5 @@ class OrderController extends Controller
         }
         
     }
+
 }
