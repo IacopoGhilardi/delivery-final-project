@@ -57,6 +57,7 @@
   background-color: #b6363a;
   transform: translateY(-100%);
   transition: 0.4s;
+  z-index: 98;
 }
 .main_container .wrapper .jumbotron_content .nav_menu_small .links {
   width: 100%;
