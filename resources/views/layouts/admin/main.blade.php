@@ -36,12 +36,12 @@
                         <li class="{{Route::currentRouteName() == 'admin.restaurant.index' ? 'active' : ''}}">
                             <a href="{{ route('admin.restaurant.index') }}">
                                 <i class="fas fa-utensils"></i>
-                                <span>Ristoranti</span>
+                                <span>RISTORANTI</span>
                             </a>
                         </li>
                         <li class="{{Route::currentRouteName() == 'admin.restaurant.create' ? 'active' : ''}}">
                             <a href="{{ route('admin.restaurant.create') }}"><i class="fas fa-store">
-                                </i><span>Aggiungi</span>
+                                </i><span>AGGIUNGI</span>
                             </a>
                         </li>
                         {{-- <li class="{{Route::currentRouteName() == 'admin.restaurant.statistic' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.statistic') }}"><i class="fas fa-chart-pie"></i><span>Visualizza Statistiche</span></a></li> --}}
