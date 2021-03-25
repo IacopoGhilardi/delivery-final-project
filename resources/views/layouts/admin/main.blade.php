@@ -33,30 +33,38 @@
 
                 <div class="nav_bar">
                     <ul class="nav_list">
-                        <li class="{{Route::currentRouteName() == 'admin.restaurant.index' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.index') }}"><i class="fas fa-utensils"></i><span>I miei Ristoranti</span></a></li>
-                        <li class="{{Route::currentRouteName() == 'admin.restaurant.create' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.create') }}"><i class="fas fa-store"></i><span>Aggiungi Ristorante</span></a></li>
+                        <li class="{{Route::currentRouteName() == 'admin.restaurant.index' ? 'active' : ''}}">
+                            <a href="{{ route('admin.restaurant.index') }}">
+                                <i class="fas fa-utensils"></i>
+                                <span>Ristoranti</span>
+                            </a>
+                        </li>
+                        <li class="{{Route::currentRouteName() == 'admin.restaurant.create' ? 'active' : ''}}">
+                            <a href="{{ route('admin.restaurant.create') }}"><i class="fas fa-store">
+                                </i><span>Aggiungi</span>
+                            </a>
+                        </li>
                         {{-- <li class="{{Route::currentRouteName() == 'admin.restaurant.statistic' ? 'active' : ''}}"><a href="{{ route('admin.restaurant.statistic') }}"><i class="fas fa-chart-pie"></i><span>Visualizza Statistiche</span></a></li> --}}
-        
                     </ul>
                 </div>
             </aside>
 
             <section class="body_pannel">
                <div class="pannel_header">
-                    <p>@if (Route::currentRouteName() == 'admin.restaurant.index')
+                    {{-- <p>@if (Route::currentRouteName() == 'admin.restaurant.index')
                         I Miei Ristoranti @elseif(Route::currentRouteName() == 'admin.restaurant.create')
                         Aggiungi Ristorante @elseif(Route::currentRouteName() == 'admin.restaurant.show')
                         I Miei Ristoranti > Info @elseif(Route::currentRouteName() == 'admin.restaurant.edit')
                         I Miei Ristoranti > Modifica @elseif(Route::currentRouteName() == 'admin.menu.index')
                         I Miei Ristoranti > Menu @elseif(Route::currentRouteName() == 'admin.menu.edit')
                         I Miei Ristoranti > Menu > Modifica Piatto
-                    @endif</p>
+                    @endif</p> --}}
                     <div class="user_info">
-                        <p>{{Auth::user()->firstName}}</p>
+                        {{-- <p>{{Auth::user()->firstName}}</p> --}}
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             @method('POST')
-                            <input type="submit" value="Log Out">
+                            <button type="submit" class="btn btn-danger my_btn">Log Out</button>
                         </form>
                     </div>
                </div>

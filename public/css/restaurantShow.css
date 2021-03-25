@@ -29,3 +29,17 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.my_table {
+  width: 70%;
+}
+
+@media screen and (max-width: 430px) {
+  .direction {
+    flex-direction: column;
+  }
+  .direction .my_table {
+    width: 85%;
+    margin-top: 40px;
+  }
+}
