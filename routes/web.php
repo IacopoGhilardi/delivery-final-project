@@ -51,6 +51,9 @@ Route::prefix('admin')
         Route::post('deliverboo/restaurant', 'GuestController@show')->name('restaurant.show');
         Route::get('deliverboo/restaurant/order', 'OrderController@index')->name('order.payment');
         Route::post('deliverboo/restaurant/order/payment', 'OrderController@payment')->name('order.payment.result');
+        // Route::get('deliverboo/restaurant/order/payment/buh', function(){
+        //     return view('guest.payment.success');
+        // })->name('order.payment.result');
         
 
     });

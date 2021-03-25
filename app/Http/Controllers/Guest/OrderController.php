@@ -26,10 +26,6 @@ class OrderController extends Controller
         $restaurant = Restaurant::where('business_name', $data["business_name"])->first();    
         $token = $gateway->ClientToken()->generate();
     
-        // return view('guest.payment.hosted', [
-        //     'token' => $token,
-        //     'finalPrice' => $data["finalPrice"]
-        // ]);
         return view('guest.payment.hosted', compact('token', 'data', 'restaurant'));
     }
 
@@ -60,8 +56,7 @@ class OrderController extends Controller
             $data["dishesId"][$key]['quantity'] = $data["numberOfDishes"][$key];
         }
         $dishes = $data["dishesId"];
-
-        $business_name = $data['business_name'];
+        $restaurant = json_decode($data['restaurant']);
         $address = $data['address'];
 
         if ($result->success) {
@@ -80,7 +75,7 @@ class OrderController extends Controller
                 }
             }
     
-            return view('guest.payment.success', compact('newOrder', 'business_name', 'dishes', 'address'));
+            return view('guest.payment.success', compact('newOrder', 'restaurant', 'dishes', 'address'));
         } else {
             $errorString = "";
             

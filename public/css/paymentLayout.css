@@ -20,6 +20,9 @@ header .wrapper .navbar {
   height: 100%;
   width: 100%;
 }
+header .wrapper .logo {
+  height: 100%;
+}
 header .wrapper .logo img {
   height: 100%;
   max-width: 100%;

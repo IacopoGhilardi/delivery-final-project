@@ -1,7 +1,6 @@
 @extends('layouts.guest.payment')
 
 @section('links')
-  <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <style>
       .spacer {
@@ -22,24 +21,28 @@
 
       @section('content')
         <div class="container">
+          
+          @if (session()->has('success_message'))
+              <div class="alert alert-success">
+                  {{ session()->get('success_message') }}
+              </div>
+          @endif
+
+          @if(count($errors) > 0)
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+        </div>
+
+        <div class="container">
           <div class="col-md-12 payment_wrapper">
               <div class="spacer"></div>
 
-              @if (session()->has('success_message'))
-                  <div class="alert alert-success">
-                      {{ session()->get('success_message') }}
-                  </div>
-              @endif
-
-              @if(count($errors) > 0)
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
               <form class="col-lg-8 payment_form" action="{{ route('guest.order.payment.result') }}" method="POST" id="payment-form">
                   @csrf
                   @method('POST')
@@ -109,43 +112,6 @@
                       <input type="text" class="form-control" id="name_on_card" name="name_on_card">
                   </div>
 
-                  {{-- <div class="row">
-
-                      <div class="col-md-3">
-                          <div class="form-group">
-                              <label for="city">Città</label>
-                              <input type="text" class="form-control" id="city" name="city">
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="form-group">
-                              <label for="province">Provincia</label>
-                              <input type="text" class="form-control" id="province" name="province">
-                          </div>
-                      </div>
-
-                  </div> --}}
-{{-- 
-                  <div class="row">
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="postalcode">Cap</label>
-                              <input type="text" class="form-control" id="postalcode" name="postalcode">
-                          </div>
-                      </div>
-
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="country">Paese</label>
-                              <input type="text" class="form-control" id="country" name="country">
-                          </div>
-                      </div>
-
-                      
-
-                  </div> --}}
-
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
@@ -184,7 +150,7 @@
                   </div>
                   <input type="hidden" name="dishesId" value="{{ json_encode($data["dishes"], TRUE) }}">
                   <input type="hidden" name="numberOfDishes" value="{{ json_encode($data["numberOfDishes"]) }}">
-                  <input type="hidden" name="business_name" value="{{$data['business_name']}}">
+                  <input type="hidden" name="restaurant" value="{{$restaurant}}">
 
                   <div class="spacer"></div>
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
     @yield('links')
     <title>Document</title>
@@ -15,7 +16,7 @@
         <div class="container wrapper">
             <div class="navbar">
                 <div class="logo">
-                    <img src="{{ asset('images/logo/logo-black.png') }}" alt="logo deliveboo">
+                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt="logo deliveboo"></a>
                 </div>
                     <div class="nav_links">
                         <ul class="inline_list">
