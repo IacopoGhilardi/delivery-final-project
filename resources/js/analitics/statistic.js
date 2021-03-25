@@ -7,6 +7,7 @@ const statistic = new Vue({
   data: {
     amount: [],
     days: [],
+    venditaMax: '',
   },
   mounted() {
     //   console.log(window.location.href.split('/'));
@@ -25,7 +26,10 @@ const statistic = new Vue({
     });
     axios.get(`http://127.0.0.1:8000/api/dish/${pageUrl[pageUrl.length - 1]}`)
     .then(response1 => {
-        console.log(response1.data);
+        console.log(response1.data[0].name);
+        this.venditaMax = response1.data[0].name;
+
+        console.log(response1.data[1]);
         
         
     });

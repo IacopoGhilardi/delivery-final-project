@@ -66,7 +66,14 @@ class RestaurantController extends Controller
         $ordersUniqueIds = [];
         
         
-            $ordersIds[] = DB::table('dish_order')->select('dish_id')->selectRaw('"dish_id", count("dish_id")')->from('dish_order')->groupBy('dish_id')->orderBy('count("dish_id")', 'DESC')->take(1)->get();
+            $ordersIds[] = DB::table('dish_order')
+                            ->select('dish_id')
+                            ->selectRaw('dish_id, count("dish_id")')
+                            ->from('dish_order')
+                            ->groupBy('dish_id')
+                            ->orderBy('count("dish_id")', 'DESC')
+                            ->take(1)
+                            ->get();
            // DB::table('dish_order')->select('dish_id')->count('dish_id')->from('dish_order')->groupBy('dish_id')->get();
             
             /*
@@ -106,8 +113,11 @@ class RestaurantController extends Controller
         }
         
         $order = $orders[0];
-
-        return response()->json($order);
+        
+        $dishMax = [];
+        $dishMax[] = Dish::where('id', $order->dish_id)->first();
+        $dishMax[] = $orders[0];
+        return response()->json($dishMax);
     }
 
 }
