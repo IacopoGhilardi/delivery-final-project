@@ -55,7 +55,7 @@
           </div>
         </div>
         
-        <input class="btn btn-primary" type="submit" value="Crea">
+        <input class="btn btn-primary my_btn" type="submit" value="Crea">
       </form> 
 
   </div>
