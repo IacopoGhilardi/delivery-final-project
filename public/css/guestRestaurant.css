@@ -4635,6 +4635,12 @@ readers do not read off random characters that represent icons */
   border: 1px solid #f8b64a;
   color: white;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+.cart_content .order_btn_disabled {
+  background-color: #6e6566;
+  cursor: auto;
+  border: none;
 }
 .cart_content .total {
   display: flex;
@@ -4693,13 +4699,20 @@ readers do not read off random characters that represent icons */
   background-color: #f8585e;
   font-size: 15px;
   color: white;
+}
+.show_header .header_container .nav_links ul .cart .cart_icon {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .show_header .header_container .nav_links ul .cart .cart_header {
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
+  width: 50vh;
+  height: 100vh;
   min-width: 320px;
   z-index: 30;
   color: black;
@@ -4843,8 +4856,21 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .side_cart {
     display: none;
+  }
+
+  .central_container .restaurant_menu .wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes {
+    width: calc(100% - 20px);
+    margin-right: 0;
+    min-width: 0px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes .dish {
+    width: 100%;
   }
 }

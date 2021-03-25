@@ -22,25 +22,36 @@
                                 <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
                             </li>
                             <li class="cart" v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">
-                                @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
+                                <div class="cart_icon">
+                                    @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
+                                </div>
                                 <div class="cart_header">
-                                    <div class="cart_content">
+                                    <form action="{{ route('guest.order.payment') }}" class="cart_content" method="get">
+                                        @csrf
+                                        @method('GET')
                                         <div class="total">
                                             <h5>Totale ordine:</h5>
                                             <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                                         </div>
-                                        <a href="{{ route('guest.order.payment') }}" class="order_btn">Effettua l'ordine</a>
+                                        
+                                        <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] == 0" disabled type="submit" class="order_btn order_btn_disabled">Seleziona un piatto</button>
+                                        <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] != 0" type="submit" class="order_btn">Effettua l'ordine</button>
                                         <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
                                             <div class="buttons">
-                                                <button class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
-                                                <button class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`))"><i class="fas fa-plus"></i></button>
+                                                <button type="button" class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
+                                                <button type="button" class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`, order.dishId))"><i class="fas fa-plus"></i></button>
                                             </div>
                                             <div class="recap_products">
                                                 <p><span>@{{order.count}} x</span> @{{order.name}}</p>
                                                 <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
                                             </div>
+                                            <input type="hidden" name="dishes[]" :value="order.dishId">
+                                            <input type="hidden" name="orders[]" :value="order.name">
+                                            <input type="hidden" name="numberOfDishes[]" :value="order.count">
+                                            <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
+                                            <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </li>
                         @endif
@@ -64,25 +75,36 @@
                             </div>
                         </li>
                         <li class="cart" v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">
-                            @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
+                            <div class="cart_icon">
+                                @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
+                            </div>
                             <div class="cart_header">
-                                <div class="cart_content">
+                                <form action="{{ route('guest.order.payment') }}" class="cart_content" method="get">
+                                    @csrf
+                                    @method('GET')
                                     <div class="total">
                                         <h5>Totale ordine:</h5>
                                         <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                                     </div>
-                                    <a href="{{ route('guest.order.payment') }}" class="order_btn">Effettua l'ordine</a>
+                                   
+                                    <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] == 0" disabled type="submit" class="order_btn order_btn_disabled">Seleziona un piatto</button>
+                                    <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] != 0" type="submit" class="order_btn">Effettua l'ordine</button>
                                     <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
                                         <div class="buttons">
-                                            <button class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
-                                            <button class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`))"><i class="fas fa-plus"></i></button>
+                                            <button type="button" class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
+                                            <button type="button" class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`, order.dishId))"><i class="fas fa-plus"></i></button>
                                         </div>
                                         <div class="recap_products">
                                             <p><span>@{{order.count}} x</span> @{{order.name}}</p>
                                             <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
                                         </div>
+                                        <input type="hidden" name="dishes[]" :value="order.dishId">
+                                        <input type="hidden" name="orders[]" :value="order.name">
+                                        <input type="hidden" name="numberOfDishes[]" :value="order.count">
+                                        <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
+                                        <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </li>
                         @endguest
@@ -154,7 +176,8 @@
                             <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                         </div>
                        
-                        <button type="submit" class="order_btn">Effettua l'ordine</button>
+                        <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] == 0" disabled type="submit" class="order_btn order_btn_disabled">Seleziona un piatto</button>
+                        <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] != 0" type="submit" class="order_btn">Effettua l'ordine</button>
                         <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
                             <div class="buttons">
                                 <button type="button" class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>

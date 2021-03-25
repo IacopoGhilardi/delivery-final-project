@@ -1,0 +1,19 @@
+.banner_head {
+  height: 300px;
+  margin-bottom: -100px;
+}
+
+.payment_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.payment_wrapper .payment_form,
+.payment_wrapper .cart_recap {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
+}
+.payment_wrapper .payment_form {
+  margin-right: 20px;
+}

@@ -66,7 +66,7 @@ const cart = new Vue({
             filteredOrders.forEach(element => {
                 finalPrice += (parseFloat(element.basePrice) * element.count);
             });
-            finalPrice =  Math.round(finalPrice * 100) / 100;
+            finalPrice = (Math.round(finalPrice * 100) / 100).toFixed(2);
             return {filteredOrders, "finalPrice" : [finalPrice]};
         },
     }

@@ -1,0 +1,25 @@
+
+@media (max-width: 1024px) {
+    .side_cart {
+        display: none;
+    }
+    .central_container {
+        .restaurant_menu {
+            .wrapper {
+                width: 100%;
+                padding: 0 10px;
+                .dishes {
+                    width: calc(100% - 20px);
+                    margin-right: 0;
+                    min-width: 0px;
+                    .dish {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+   
+
+  }

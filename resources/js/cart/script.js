@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    cart = document.querySelector(".cart");
+    cart = document.querySelector(".cart_icon");
     cartHeader = document.querySelector(".cart_header");
     const mediaQuery = window.matchMedia('(max-width: 1000px)')
 
