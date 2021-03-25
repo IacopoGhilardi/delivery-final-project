@@ -86,8 +86,8 @@
                             <li>Che bella cosa!</li>
                         </ul>
                     </div>
-                
                 </div>
+                <p class="copyright">© 2021 - deliveboo Srl - All Rights Reserved - Via Ciovassino 3/A 20121 Milan - PIVA 03833390966</p>
             </div>
         </footer>
     {{-- </div> --}}
