@@ -40,90 +40,115 @@
                       </ul>
                   </div>
               @endif
-              <form class="col-md-8 payment_form" action="{{ route('guest.order.payment.result') }}" method="POST" id="payment-form">
+              <form class="col-lg-8 payment_form" action="{{ route('guest.order.payment.result') }}" method="POST" id="payment-form">
                   @csrf
                   @method('POST')
 
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h1>Manca poco!</h1>
+                    </div>
+                    <div class="col-md-12 d-flex">
+                      <img src="" alt="restaurant">
+                      <div class="restaurant_info">
+                        <p>Nome ristorante</p>
+                        <span>Indirizzo ristorante</span>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h3>Informazioni di consegna</h3>
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                          <label for="firstName">First Name</label>
+                          <label for="firstName">Nome</label>
                           <input type="text" class="form-control" id="firstName" name="firstName">
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
-                          <label for="lastName">Last Name</label>
+                          <label for="lastName">Cognome</label>
                           <input type="text" class="form-control" id="lastName" name="lastName">
                       </div>
                     </div>
                   </div>
                 
                   <div class="form-group">
-                      <label for="email">Email Address</label>
+                      <label for="email">Email</label>
                       <input type="email" class="form-control" id="email" name="email">
                   </div>
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="address">Indirizzo di consegna</label>
+                        <input type="text" class="form-control" id="address" name="address">
+                      </div>
+                    </div>
+                    
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                          <label for="phone">Telefono</label>
+                          <input type="text" class="form-control" id="phone" name="phone">
+                    </div>
+                  </div>
+
+                  </div>
+              
 
                   <div class="form-group">
-                      <label for="name_on_card">Name on Card</label>
+                      <label for="name_on_card">Nome sulla carta</label>
                       <input type="text" class="form-control" id="name_on_card" name="name_on_card">
                   </div>
 
-                  <div class="row">
-                      <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="address">Address</label>
-                              <input type="text" class="form-control" id="address" name="address">
-                          </div>
-                      </div>
+                  {{-- <div class="row">
 
                       <div class="col-md-3">
                           <div class="form-group">
-                              <label for="city">City</label>
+                              <label for="city">Città</label>
                               <input type="text" class="form-control" id="city" name="city">
                           </div>
                       </div>
 
                       <div class="col-md-3">
                           <div class="form-group">
-                              <label for="province">Province</label>
+                              <label for="province">Provincia</label>
                               <input type="text" class="form-control" id="province" name="province">
                           </div>
                       </div>
 
-                  </div>
-
+                  </div> --}}
+{{-- 
                   <div class="row">
                       <div class="col-md-4">
                           <div class="form-group">
-                              <label for="postalcode">Postal Code</label>
+                              <label for="postalcode">Cap</label>
                               <input type="text" class="form-control" id="postalcode" name="postalcode">
                           </div>
                       </div>
 
                       <div class="col-md-4">
                           <div class="form-group">
-                              <label for="country">Country</label>
+                              <label for="country">Paese</label>
                               <input type="text" class="form-control" id="country" name="country">
                           </div>
                       </div>
 
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="phone">Phone</label>
-                              <input type="text" class="form-control" id="phone" name="phone">
-                          </div>
-                      </div>
+                      
 
-                  </div>
+                  </div> --}}
 
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <label for="amount">Amount</label>
-                              <input type="text" class="form-control" id="amount" name="amount" value="{{ $data["finalPrice"] }}">
+                              <h4>Totale: {{ $data["finalPrice"] }}&euro;</h4>
+                              <input type="hidden" class="form-control" id="amount" name="amount" value="{{ $data["finalPrice"] }}">
                           </div>
                       </div>
                   </div>
@@ -131,7 +156,7 @@
                   
                   <div class="row">
                       <div class="col-md-6">
-                          <label for="cc_number">Credit Card Number</label>
+                          <label for="cc_number">Numero Carta</label>
 
                           <div class="form-group" id="card-number">
 
@@ -139,7 +164,7 @@
                       </div>
 
                       <div class="col-md-3">
-                          <label for="expiry">Expiry</label>
+                          <label for="expiry">Scadenza</label>
 
                           <div class="form-group" id="expiration-date">
 
@@ -165,16 +190,29 @@
                   <div class="spacer"></div>
 
                   <input id="nonce" name="payment_method_nonce" type="hidden" />
-                  <button type="submit" class="btn btn-success">Submit Payment</button>
+                  <button type="submit" class="btn btn-success" id="proceed">Procedi</button>
               </form>
 
-              <div class="cart_recap col-md-4">
-                <h2>Il tuo ordine</h2>
+              <div class="cart_recap col-lg-4">
+                <div class="d-flex justify-content-between recap_order_title">
+                  <h2 id="order_title">Il tuo ordine</h2>
+                  <div class="d-flex align-items-center"><a href="#"><i class="fas fa-pencil-alt"></i></a></div>
+                </div>
+
+
                 <div class="menu">
-                  @foreach ($data["orders"] as $key => $order)
-                      <p>{{ $order }}, x{{ $data["numberOfDishes"][$key] }}, {{ $data["dishPrices"][$key] }}euro</p>
-                  @endforeach
-                  <p>Totale: {{ $data["finalPrice"] }}</p>
+                  <div class="orders">
+                    @foreach ($data["orders"] as $key => $order)
+                    <div class="recap_order">
+                      <div class="recap_dish">
+                        <span>x{{ $data["numberOfDishes"][$key] }}</span>
+                        <span>{{ $order }}</span>
+                      </div>
+                      <span>{{ $data["dishPrices"][$key] }}&euro;</span>
+                    </div>
+                    @endforeach
+                  </div>
+                  <h4>Totale: {{ $data["finalPrice"] }}&euro;</h4>
                 </div>
               </div>
           </div>

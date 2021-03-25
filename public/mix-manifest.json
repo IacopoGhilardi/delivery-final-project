@@ -8,10 +8,10 @@
     "/css/guestRestaurant.css": "/css/guestRestaurant.css",
     "/css/homepageGuest.css": "/css/homepageGuest.css",
     "/css/adminLayout.css": "/css/adminLayout.css",
-    "/css/hosted.css": "/css/hosted.css",
     "/css/paymentLayout.css": "/css/paymentLayout.css",
     "/css/loginRegisterLayout.css": "/css/loginRegisterLayout.css",
     "/css/restaurantShow.css": "/css/restaurantShow.css",
     "/css/dishCreateLayout.css": "/css/dishCreateLayout.css",
-    "/css/dishLayout.css": "/css/dishLayout.css"
+    "/css/dishLayout.css": "/css/dishLayout.css",
+    "/css/hosted.css": "/css/hosted.css"
 }
