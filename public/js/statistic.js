@@ -12099,7 +12099,7 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       _this.charjs();
     });
     axios.get("http://127.0.0.1:8000/api/dish/".concat(pageUrl[pageUrl.length - 1])).then(function (response1) {
-      console.log(response1.data[0].name);
+      console.log(response1.data);
       _this.venditaMax = response1.data[0].name;
       console.log(response1.data[1]);
     });
