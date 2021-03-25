@@ -16,7 +16,7 @@
         @csrf
         @method('POST')
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label col-form-label-lg" for="business_name">Nome Ristorante</label>
+          <label class="col-sm-2 col-form-label col-form-label-lg" for="business_name">Nome</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" name="business_name" id="business_name" value="{{ old('business_name') }}">
           </div>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group row">
-          <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Seleziona tipologia') }}</label>
+          <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Tipologia') }}</label>
 
           <div class="col-md-6">
               <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
@@ -55,7 +55,7 @@
           </div>
         </div>
         
-        <input class="btn btn-primary" type="submit" value="Crea">
+        <input class="btn btn-primary my_btn" type="submit" value="Crea">
       </form> 
 
   </div>

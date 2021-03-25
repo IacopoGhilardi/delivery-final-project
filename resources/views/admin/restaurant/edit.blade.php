@@ -1,22 +1,24 @@
 @extends('layouts.admin.main')
 
 @section('content')
-  <div class="my-5">
-      @if ($errors->any())
-        <div class="alert alert-danger">
-          <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{$error}}</li>
-            @endForeach
-          </ul>
-        </div>
-      @endif
 
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endForeach
+      </ul>
+    </div>
+  @endif
+
+
+  <div class="my-5">
       <form action="{{ route('admin.restaurant.update', $restaurant->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label col-form-label-lg" for="business_name">Nome Ristorante</label>
+          <label class="col-sm-2 col-form-label col-form-label-lg" for="business_name">Nome</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" name="business_name" id="business_name"  value="{{ $restaurant->business_name }}">
           </div>
@@ -36,23 +38,20 @@
           </div>
         </div>
 
-        <div>
-          @if (!empty($restaurant->img_path))
-            <img style="width: 150px; margin-left: 210px" class="img-fluid mb-3" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
-          @else
-            <img style="width: 150px; margin-left: 210px" class="img-fluid mb-3" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
-          @endif
-        </div>
-    
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label col-form-label-lg " for="img_path">Scegli nuova immagine</label>
-          <div class="col-sm-10">
+          <label class="col-sm-2 col-form-label col-form-label-lg " for="img_path">Nuova immagine</label>
+          @if (!empty($restaurant->img_path))
+            <img style="width: 150px; margin-left: 15px" class="img-fluid mb-3" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
+          @else
+            <img style="width: 150px; margin-left: 15px" class="img-fluid mb-3" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
+          @endif
+          <div class="col-sm-2">
             <input type="file" class="" name="img_path" id="img_path"  accept="image/*">
           </div>
         </div>
 
         <div class="form-group row">
-            <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Seleziona tipologia') }}</label>
+            <label for="address" class="col-sm-2 col-form-label col-form-label-lg">{{ __('Tipologia') }}</label>
 
             <div class="col-md-6">
                 <select id="type_id" name="types[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%">

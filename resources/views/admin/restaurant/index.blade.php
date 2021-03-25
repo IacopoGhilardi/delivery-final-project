@@ -9,7 +9,7 @@
     </div>
     @endif
 
-  <div class="d-flex justify-content-around mt-3 flex-wrap"> 
+  <div class="d-flex justify-content-around mt-4 flex-wrap"> 
     @foreach ($restaurants as $restaurant)
       {{-- <div class="my_card mt-5">
         <div class="my_card_body">
@@ -54,9 +54,13 @@
                     <li class="badge badge-secondary">{{ $type->name }}</li>
                 @endforeach
             </ul>
-            <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary">Dettaglio</a>
-            <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success">Menu</a>
-            <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">Statistiche</a>
+
+            <div class="d-flex">
+              <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary mr-1">Dettaglio</a>
+              <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success mr-1">Menu</a>
+              <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">Statistiche</a>
+            </div>
+            
           </div>
         </div>
         

@@ -5,10 +5,6 @@
   list-style: none;
 }
 
-.active {
-  box-shadow: inset -5px -5px 25px red;
-}
-
 a:hover > i,
 button:hover > i {
   -webkit-animation: swing ease-in-out 0.5s 1 alternate;
@@ -24,36 +20,30 @@ main {
 main .side_menu {
   width: 18%;
   height: 100%;
-  background: linear-gradient(153deg, #f8b64a 20%, #f8585e 80%);
+  background: linear-gradient(153deg, #f8585e 20%, #f8b64a 80%);
   padding: 10px 0;
 }
 main .side_menu li {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 40px;
-  border-bottom: 1px solid lightgray;
-  padding-left: 10px;
-}
-main .side_menu li:first-child {
-  border-top: 1px solid lightgray;
-}
-main .side_menu li:hover {
-  box-shadow: inset -5px -5px 25px red;
+  justify-content: center;
+  margin-top: 45px;
 }
 main .side_menu li a {
+  width: 115px;
+  height: 100px;
   display: flex;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
+  text-align: center;
   text-decoration: none;
   color: white;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
 }
 main .side_menu li a i {
-  width: 30%;
   font-size: 25px;
-}
-main .side_menu li a span {
-  width: 70%;
+  margin: 10px 0;
 }
 main .body_pannel {
   width: 100%;
@@ -61,7 +51,7 @@ main .body_pannel {
 }
 main .body_pannel .pannel_header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
   height: 50px;
@@ -247,4 +237,41 @@ main .body_pannel .pannel_content_container {
 }
 .my_overflow:hover {
   overflow-y: auto;
+}
+
+.my_btn {
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
+}
+.my_btn:hover {
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
+}
+.my_btn:active {
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
+}
+
+.logo_resp {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  main .side_menu {
+    padding: 0;
+  }
+  main .side_menu li a {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+  }
+  main .side_menu li a span {
+    display: none;
+  }
+  main .side_menu .logo_box .logo {
+    display: none;
+  }
+  main .side_menu .logo_box .logo_resp {
+    display: block;
+  }
 }

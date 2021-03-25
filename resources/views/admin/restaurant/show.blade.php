@@ -69,7 +69,7 @@
         </div>
     </div> --}}
 
-    <div class="d-flex">
+    <div class="d-flex direction">
 
         <div class="card mr-5" style="width: 18rem; box-shadow: 0 5px 25px rgb(0 0 0 / 35%)">
             {{-- <img src="..." class="card-img-top" alt="..."> --}}
@@ -78,52 +78,51 @@
             @else
             <img class="card-img-top" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
             @endif
-        <div class="card-body">
-            <h5 class="card-title">{{$restaurant->business_name}}</h5>
-            <p class="card-text">
-                <i class="fas fa-map-marker-alt"></i>
-                {{$restaurant->address}}
-            </p>
-            <p class="card-text">{{$restaurant->PIVA}}</p>
-            <ul>
-                @foreach ($restaurant->types as $type)
-                    <li class="badge badge-secondary">{{ $type->name }}</li>
-                @endforeach
-            </ul>
+            <div class="card-body">
+                <h5 class="card-title">{{$restaurant->business_name}}</h5>
+                <p class="card-text">
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{$restaurant->address}}
+                </p>
+                <p class="card-text">{{$restaurant->PIVA}}</p>
+                <ul>
+                    @foreach ($restaurant->types as $type)
+                        <li class="badge badge-secondary">{{ $type->name }}</li>
+                    @endforeach
+                </ul>
 
-            <div class="d-flex">
-                <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success mr-1">Modifica</a>
+                <div class="d-flex">
+                    <a href="{{ route('admin.restaurant.edit', $restaurant->id) }}" class="btn btn-success mr-1">Modifica</a>
 
-                <form action="{{ route('admin.restaurant.destroy', $restaurant->id) }}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo ristorante?')">
-                @csrf
-                @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Elimina</i></button>
-                </form>
+                    <form action="{{ route('admin.restaurant.destroy', $restaurant->id) }}" method="post" onSubmit="return confirm('Sei sicuro di voler eliminare questo ristorante?')">
+                    @csrf
+                    @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Elimina</button>
+                    </form>
 
-                <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary ml-1">Indietro</a>
+                    <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary ml-1">Indietro</a>
+                </div>
             </div>
-            
         </div>
-    </div>
 
-    <table style="width: 70%; box-shadow: 0 5px 25px rgb(0 0 0 / 35%)" class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Immagine Piatto</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Prezzo</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($restaurant->dishes as $dish)
+        <table style="box-shadow: 0 5px 25px rgb(0 0 0 / 35%)" class="table table-striped table-bordered my_table">
+            <thead>
                 <tr>
-                    <td><img style="width: 100px" class="img-fluid" src="{{ asset('storage/' .$dish->dish_img_path) }}" alt="{{ $dish->name }}"></td>
-                    <td>{{ $dish->name }}</td>
-                    <td>{{ $dish->price }} &euro;</td>
+                    <th scope="col">Piatto</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Prezzo</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($restaurant->dishes as $dish)
+                    <tr>
+                        <td><img style="width: 100px" class="img-fluid" src="{{ asset('storage/' .$dish->dish_img_path) }}" alt="{{ $dish->name }}"></td>
+                        <td>{{ $dish->name }}</td>
+                        <td>{{ $dish->price }} &euro;</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 
     </div>
 

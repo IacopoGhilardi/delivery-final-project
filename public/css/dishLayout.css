@@ -12,17 +12,24 @@
 }
 
 .my_btn {
-  color: white;
-  border: 1px solid orange;
-  background-color: orange;
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
 }
 .my_btn:hover {
-  border: 1px solid orange;
-  background-color: #e69500 !important;
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
 }
 .my_btn:active {
-  border: 1px solid orange !important;
-  background-color: #e69500 !important;
+  border: 1px solid #F8585E;
+  background-color: #F8585E;
+}
+
+.btn_circle {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
 }
 
 .my_card {
