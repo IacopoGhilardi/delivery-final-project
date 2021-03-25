@@ -12102,7 +12102,7 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
         _this.days.push(sorting[index].date);
 
-        _this.bgColor.push('rgba(248, 121, 86, 0.4)');
+        _this.bgColor.push('rgba(248, 121, 86, 0.6)');
       }
 
       _this.charjs();
