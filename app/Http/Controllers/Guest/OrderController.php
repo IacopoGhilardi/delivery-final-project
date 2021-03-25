@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Mail\SendNewMail;
+use Illuminate\Support\Facades\Mail;
 use Faker\Generator as Faker;
 
 
@@ -76,7 +78,8 @@ class OrderController extends Controller
                     $newOrder->dishes()->attach($data["dishesId"][$i]);
                 }
             }
-    
+
+            Mail::to('pippo@mail.it')->send(new SendNewMail());
             return view('guest.payment.success', compact('newOrder', 'restaurant', 'dishes', 'address'));
         } else {
             $errorString = "";
