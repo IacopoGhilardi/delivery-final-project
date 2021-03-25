@@ -55,6 +55,14 @@ class OrderController extends Controller
         $data = $request->all();
         $data["dishesId"] = json_decode($data["dishesId"]);
         $data["numberOfDishes"] = json_decode($data["numberOfDishes"]);
+        foreach ($data["dishesId"] as $key => $dishId) {
+            $data["dishesId"][$key] = Dish::where('id', $dishId)->first();
+            $data["dishesId"][$key]['quantity'] = $data["numberOfDishes"][$key];
+        }
+        $dishes = $data["dishesId"];
+
+        $business_name = $data['business_name'];
+        $address = $data['address'];
 
         if ($result->success) {
             $transaction = $result->transaction;
