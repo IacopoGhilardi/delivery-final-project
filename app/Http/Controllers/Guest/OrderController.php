@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Mail\SendNewMail;
+use App\Mail\ConfirmMail;
 use Illuminate\Support\Facades\Mail;
 use Faker\Generator as Faker;
 
@@ -41,7 +41,7 @@ class OrderController extends Controller
     
         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
-            
+
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
@@ -79,7 +79,7 @@ class OrderController extends Controller
                 }
             }
 
-            Mail::to('pippo@mail.it')->send(new SendNewMail());
+            Mail::to('pippo@mail.it')->send(new ConfirmMail());
             return view('guest.payment.success', compact('newOrder', 'restaurant', 'dishes', 'address'));
         } else {
             $errorString = "";
