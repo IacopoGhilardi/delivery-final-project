@@ -25,7 +25,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/restaurantShow.scss', 'public/css')
     .sass('resources/sass/guestRestaurant.scss', 'public/css')
     .sass('resources/sass/loginRegisterLayout.scss', 'public/css')
-    .sass('resources/sass/statistic.scss', 'public/css');
-    .sass('resources/sass/loginRegisterLayout.scss', 'public/css')
+    .sass('resources/sass/statistic.scss', 'public/css')   
     .sass('resources/sass/adminRestaurantIndex.scss', 'public/css');
     
