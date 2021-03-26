@@ -48,7 +48,7 @@
                                 <div class="cart_icon">
                                     @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
                                 </div>
-                                <div class="cart_header">
+                                {{-- <div class="cart_header">
                                     <form action="{{ route('guest.order.payment') }}" class="cart_content" method="get">
                                         @csrf
                                         @method('GET')
@@ -76,7 +76,7 @@
                                             <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                             </li>
                         @endif
                         @else
@@ -102,7 +102,7 @@
                             <div class="cart_icon">
                                 @{{price}}&euro; <i class="fas fa-shopping-cart cartIcon"></i>
                             </div>
-                            <div class="cart_header">
+                            {{-- <div class="cart_header">
                                 <form action="{{ route('guest.order.payment') }}" class="cart_content" method="get">
                                     @csrf
                                     @method('GET')
@@ -130,7 +130,7 @@
                                         <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                                     </div>
                                 </form>
-                            </div>
+                            </div> --}}
                         </li>
                         @endguest
                     </ul>
@@ -142,8 +142,9 @@
 @endsection
 
 @section('content')
+ {{-- banner  --}}
    <div class="restaurant_banner">
-        <div class="wrapper">
+        <div class="container wrapper">
             <div class="restaurant_info">
                 <h2>{{ $restaurant->business_name }}</h2>
                 <p>{{ $restaurant->address }}</p>
@@ -158,7 +159,7 @@
                 </div>
             </div>
         </div>
-        <div class="restaurant_image">
+        <div class="col-md-6 restaurant_image">
             @if ($restaurant->img_path != null)
                 <img src="{{ asset('storage/'. $restaurant->img_path) }}" alt="immagine">
             @else
@@ -224,6 +225,42 @@
             </div>
         </div>
    </div>
+
+   {{-- carrello fixed su mobile --}}
+    <div class="cart_mobile">
+        <div class="cart_icon cart_icon_mobile">
+            <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">@{{price}}&euro; <span><i class="fas fa-shopping-cart cartIcon"></i></span></p>
+        </div>
+        <div class="cart_mobile_container">
+            <form action="{{ route('guest.order.payment') }}" class="cart_content" method="get">
+                @csrf
+                @method('GET')
+                <div class="total">
+                    <h5>Totale ordine:</h5>
+                    <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
+                </div>
+            
+                <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] == 0" disabled type="submit" class="order_btn order_btn_disabled">Seleziona un piatto</button>
+                <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] != 0" type="submit" class="order_btn">Effettua l'ordine</button>
+                <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
+                    <div class="buttons">
+                        <button type="button" class="cartButtons" @click="(removeOrder(order.name))"><i class="fas fa-minus"></i></button>
+                        <button type="button" class="cartButtons" @click="(addOrder(order.name, order.basePrice, `{{$restaurant->id}}`, order.dishId))"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="recap_products">
+                        <p><span>@{{order.count}} x</span> @{{order.name}}</p>
+                        <p>@{{Math.round(order.basePrice * order.count * 100) / 100}}&euro;</p>
+                    </div>
+                    <input type="hidden" name="dishes[]" :value="order.dishId">
+                    <input type="hidden" name="orders[]" :value="order.name">
+                    <input type="hidden" name="numberOfDishes[]" :value="order.count">
+                    <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
+                    <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                    <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
+                </div>
+            </form>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')

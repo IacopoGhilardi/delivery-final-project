@@ -11,7 +11,7 @@
             h2 {
                 font-size: 3rem;
                 margin-bottom: 20px;
-                width: 500px;
+                max-width: 500px;
                 white-space: break-spaces;
             }
             .tags {
@@ -29,17 +29,16 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 60%;
+        padding: 0;
+        // width: 50%;
         height: 100%;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            clip-path: polygon(100% 0%, 100% 100%, calc(360px + 0%) 100%, 0% 0%);
+            clip-path: polygon(100% 0%, 100% 100%, calc(0% + 60px) 100%, 40% 0%);
         }
     }
-
-
 }
 
 .central_container {
@@ -134,17 +133,44 @@
                 top: 0;
                 right: 0;
             }
-        }
-        
+        }   
     }
-    
 }
+
+.cart_mobile {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+    background-color: white;
+    padding: 10px;
+    .cart_icon {
+        height: 50px;
+        background-color: $mainRed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        p {
+            margin: 0;
+        }
+    }
+    .cart_mobile_container {
+        width: 100%;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        transform: translateY(calc(100% + 60px));
+        transition: 0.4s;
+    }
+}
+
+
 
 @media screen and (max-width: 576px) {
     .restaurant_banner {
-        // .wrapper {
-        //     // background-color: rgba(0, 0, 0, 0.383);
-        // }
         .restaurant_image {
             width: 0;
             img {
