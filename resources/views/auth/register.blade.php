@@ -10,7 +10,7 @@
     <div class="row justify-content-center align-items-center py-5">
         <div class="col-md-8">
             <div class="card card_shadow card_on_register">
-                <div class="card-header text-center">{{ __('Register') }}</div>
+                <div class="card-header text-center">{{ __('Registrati') }}</div>
 
                 <div class="card-body">
                     <form  method="POST" action="{{ route('register') }}">
@@ -18,7 +18,7 @@
                         <h2 class="text-center">Dati Utente</h2>
                         <div class="row offset-md-1">
                             <div class="col-md-6  form-group row">
-                                <label for="firstName" class="  col-md-9 offset-md-1  text-center col-form-label">{{ __('First Name') }}</label>
+                                <label for="firstName" class="  col-md-9 offset-md-1  text-center col-form-label">{{ __('Nome') }}</label>
 
                                 <div class="col-md-12 align-self-center">
                                     <input id="firstName" type="text" class="col-md-12   of form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="col-md-6 form-group row">
-                                <label for="lastName" class="col-md-11 offset-md-1 text-center col-form-label">{{ __('Last Name') }}</label>
+                                <label for="lastName" class="col-md-11 offset-md-1 text-center col-form-label">{{ __('Cognome') }}</label>
 
                                 <div class="col-md-12 align-self-center" >
                                     <input id="lastName" type="text"  class="col-md-12 form-control @error('lastName') is-invalid @enderror"  name="lastName" value="{{ old('lastName') }}" required autocomplete="lastName" autofocus>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="col-md-12 form-group row">
-                            <label for="email" class="col-md-12 text-center col-form-label">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-12 text-center col-form-label">{{ __('Indirizzo E-Mail') }}</label>
 
                             <div class="col align-self-center">
                                 <input id="email" type="email" class="col-md-8 offset-md-2 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="col-md-6 form-group row">
-                                <label for="password-confirm" class="col-md-12  text-center col-form-label">{{ __('Confirm Password') }}</label>
+                                <label for="password-confirm" class="col-md-12  text-center col-form-label">{{ __('Conferma Password') }}</label>
 
                                 <div class="col align-self-center">
                                     <input id="password-confirm" type="password" class="col-md-12 form-control" name="password_confirmation" required autocomplete="new-password">
@@ -88,7 +88,7 @@
                         <h2 class="text-center">Dati Ristorante</h2>
 
                         <div class="form-group row">
-                            <label for="business_name" class="col-md-12 text-center col-form-label">{{ __('Business Name') }}</label>
+                            <label for="business_name" class="col-md-12 text-center col-form-label">{{ __('Nome attività') }}</label>
 
                             <div class="col align-self-center">
                                 <input id="business_name" type="text" class="col-md-8 offset-md-2 form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" required autocomplete="business_name" autofocus>
@@ -102,7 +102,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="PIVA" class="col-md-12 text-center col-form-label">{{ __('Vat Number') }}</label>
+                            <label for="PIVA" class="col-md-12 text-center col-form-label">{{ __('P.IVA') }}</label>
 
                             <div class="col align-self-center">
                                 <input id="PIVA" type="text" class="col-md-8 offset-md-2 form-control @error('PIVA') is-invalid @enderror" name="PIVA" value="{{ old('PIVA') }}" required autocomplete="PIVA" autofocus>
@@ -116,7 +116,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="address" class="col-md-12 text-center col-form-label">{{ __('Address') }}</label>
+                            <label for="address" class="col-md-12 text-center col-form-label">{{ __('Indirizzo') }}</label>
 
                             <div class="col align-self-center">
                                 <input id="address" type="text" class="col-md-8 offset-md-2 form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="address" class="col-md-12 text-center col-form-label">{{ __('Select cuisine style') }}</label>
+                            <label for="address" class="col-md-12 text-center col-form-label">{{ __('Seleziona categoria') }}</label>
 
                             <div class="offset-md-2 col-8 align-self-center select-cucina">
                                 <select name="types[]" class="text-center js-example-basic-multiple" multiple="multiple" style="width: 100%">
@@ -147,7 +147,7 @@
                                 <a class="btn bounce-change" href="{{route('guest.homepage')}}">Torna alla home</a>
 
                                 <button type="submit" class="btn bounce-change">
-                                    {{ __('Register') }}
+                                    {{ __('Registrati') }}
                                 </button>
                             </div>
                         </div>
