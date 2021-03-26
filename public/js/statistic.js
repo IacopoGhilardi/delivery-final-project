@@ -12103,7 +12103,7 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
         _this.days.push(sorting[index].date);
 
-        _this.bgColor.push('rgba(248, 121, 86, 0.4)');
+        _this.bgColor.push('rgba(154, 220, 216, 0.8)');
       }
 
       _this.charjs();
@@ -12132,6 +12132,10 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         options: {
           scales: {
             yAxes: [{
+              gridLines: {
+                display: true,
+                color: "rgba(255,99,132,0.2)"
+              },
               ticks: {
                 beginAtZero: true
               }

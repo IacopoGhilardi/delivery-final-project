@@ -3,7 +3,6 @@
   width: 50%;
   display: flex;
   justify-content: center;
-  margin-left: 5%;
   -webkit-animation: goInStatistic 1s linear;
           animation: goInStatistic 1s linear;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -12,11 +11,20 @@
   background-color: white;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
   transition: 1.5s;
+  display: flex;
+  min-width: 300px;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  background-color: #F8585E;
 }
 
 .analitics-container {
   display: flex;
   transition: 1s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container {
@@ -24,14 +32,28 @@
 }
 
 .card-direction {
-  min-width: 490px;
   transition: 1s;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  color: white;
+  background-color: #F8585E;
+  justify-content: space-between;
   border-radius: 5%;
-  align-items: center;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+  width: 60%;
+  margin: auto;
+  padding: 40px;
+}
+.card-direction .card_div {
+  display: inline-block;
+}
+.card-direction .card_div .coscia {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
 }
 .card-direction img {
   -webkit-animation-delay: 1s;
@@ -48,9 +70,14 @@
   transition: 1s;
 }
 
-h3, h4 {
+h5, h6 {
   -webkit-animation: txtshow 1s linear;
           animation: txtshow 1s linear;
+  text-transform: uppercase;
+}
+
+h5:nth-child(2) {
+  font-weight: bold;
 }
 
 @-webkit-keyframes goIn {
@@ -91,7 +118,7 @@ h3, h4 {
     margin-right: -200px;
   }
   100% {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 @keyframes goInStatistic {
@@ -99,6 +126,86 @@ h3, h4 {
     margin-right: -200px;
   }
   100% {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .card-direction .card_div .coscia {
+    font-size: 0px;
+    color: black;
+  }
+  main .card-direction .card_div h5, main .card-direction .card_div h6 {
+    font-size: 10px;
+  }
+  main .analitics-container .canvas-container h2 {
+    font-size: 10px;
+  }
+}
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 40vh;
+  width: 80vw;
+}
+
+@media screen and (max-width: 320px) {
+  main .card-direction {
+    padding: 10px;
+  }
+  main .card-direction .card_div .coscia {
+    font-size: 0px;
+    color: black;
+  }
+  main .card-direction .card_div h5, main .card-direction .card_div h6 {
+    font-size: 10px;
+  }
+  main .analitics-container {
+    width: 80%;
+    margin: auto;
     margin-left: 0;
+  }
+  main .analitics-container .canvas-container {
+    padding: 20px;
+  }
+  main .analitics-container .canvas-container h2 {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 720px) {
+  main .card-direction {
+    padding: 10px;
+  }
+  main .card-direction .card_div .coscia {
+    font-size: 0px;
+    color: black;
+  }
+  main .card-direction .card_div h5, main .card-direction .card_div h6 {
+    font-size: 14px;
+  }
+  main .analitics-container .canvas-container h2 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 375px) {
+  main .card-direction {
+    padding: 10px;
+  }
+  main .card-direction .card_div .coscia {
+    font-size: 0px;
+    color: black;
+  }
+  main .card-direction .card_div h5, main .card-direction .card_div h6 {
+    font-size: 10px;
+  }
+  main .analitics-container {
+    width: 80%;
+    margin: auto;
+    margin-left: 0;
+  }
+  main .analitics-container .canvas-container {
+    padding: 10px;
+  }
+  main .analitics-container .canvas-container h2 {
+    font-size: 10px;
   }
 }
