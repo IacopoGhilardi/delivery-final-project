@@ -88,8 +88,7 @@
                         position: absolute;
                         top: 100%;
                         right: 0;
-                        width: 50vh;
-                        height: 100vh;
+                        // height: 100vh;
                         min-width: 320px;
                         z-index: 30;
                         color: black;
@@ -111,14 +110,27 @@
 }
 
 @media screen and (max-width: 576px) {
-    .show_header {
-        .wrapper {
-            .navbar {
+    .header_container {
                 .nav_links {
-                    display: none;
+                    ul {
+                        li {
+                            &:not(:last-child) {
+                                display: none;
+                            }
+                        }
+                    }
+              
                 }
             }
-
+    
+    .header_container {
+        .logo {
+            .resp-logo {
+                display: block;
+            }
+            // .first-logo {
+            //     display: none;
+            // }
         }
-    }   
+    }
 }

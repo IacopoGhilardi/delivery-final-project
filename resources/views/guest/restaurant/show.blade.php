@@ -56,7 +56,7 @@
                                             <h5>Totale ordine:</h5>
                                             <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                                         </div>
-                                        
+                                       
                                         <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] == 0" disabled type="submit" class="order_btn order_btn_disabled">Seleziona un piatto</button>
                                         <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] != 0" type="submit" class="order_btn">Effettua l'ordine</button>
                                         <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
@@ -73,6 +73,7 @@
                                             <input type="hidden" name="numberOfDishes[]" :value="order.count">
                                             <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
                                             <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                                            <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                                         </div>
                                     </form>
                                 </div>
@@ -126,6 +127,7 @@
                                         <input type="hidden" name="numberOfDishes[]" :value="order.count">
                                         <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
                                         <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                                        <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                                     </div>
                                 </form>
                             </div>

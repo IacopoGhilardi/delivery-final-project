@@ -4762,8 +4762,6 @@ readers do not read off random characters that represent icons */
   position: absolute;
   top: 100%;
   right: 0;
-  width: 50vh;
-  height: 100vh;
   min-width: 320px;
   z-index: 30;
   color: black;
@@ -4775,8 +4773,12 @@ readers do not read off random characters that represent icons */
   }
 }
 @media screen and (max-width: 576px) {
-  .show_header .wrapper .navbar .nav_links {
+  .header_container .nav_links ul li:not(:last-child) {
     display: none;
+  }
+
+  .header_container .logo .resp-logo {
+    display: block;
   }
 }
 .restaurant_banner {
@@ -4917,6 +4919,15 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
+@media screen and (max-width: 576px) {
+  .restaurant_banner .restaurant_image {
+    width: 0;
+  }
+  .restaurant_banner .restaurant_image img {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+}
 @media (max-width: 1024px) {
   .side_cart {
     display: none;
