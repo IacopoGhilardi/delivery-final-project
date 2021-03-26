@@ -83,11 +83,11 @@
                             <ul class="inline_list">
                                 @guest
                                 <li class="nav-item">
-                                    <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link login" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link btn_gold register" href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                                        <a class="nav-link btn_gold register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                     </li>
                                 @endif
                                 @else
@@ -362,8 +362,9 @@
         {{-- TUTTI I RISTORANTI --}}
         {{-- <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
                Non sono stati trovati Ristoranti per questa categoria
-        </div> --}}
-    </div> 
+        </div>
+    </div>  --}}
+    
  
  @endsection
 

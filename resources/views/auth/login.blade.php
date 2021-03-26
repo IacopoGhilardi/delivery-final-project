@@ -12,14 +12,14 @@
     <div class="row justify-content-center align-items-center pt-4">
         <div class="col-md-8">
             <div class="card card_shadow card_on_login">
-                <div class="card-header text-center">{{ __('Login') }}</div>
+                <div class="card-header text-center">{{ __('Accedi') }}</div>
                 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-12 text-center col-form-label ">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-12 text-center col-form-label ">{{ __('Indirizzo E-Mail') }}</label>
 
                             <div class="col align-self-center ">
                                 <input id="email" type="email" class="col-md-8 offset-md-2 form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -62,12 +62,12 @@
                             <div class="col-md-8 offset-md-2 text-center">
                                 <a class="btn bounce-change" href="{{route('guest.homepage')}}">Torna alla home</a>
                                 <button type="submit" class="btn bounce-change ">
-                                    {{ __('Login') }}
+                                    {{ __('Accedi') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Hai dimenticato la password?') }}
                                     </a>
                                 @endif
                             </div>
