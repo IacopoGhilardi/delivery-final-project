@@ -9,7 +9,9 @@ const statistic = new Vue({
     days: [],
     bgColor: [],
     venditaMax: '',
-    imgUrlMax:''
+    imgUrlMax:'',
+    dishMaxSell: '',
+   
   },
   mounted() {
     //   console.log(window.location.href.split('/'));
@@ -37,9 +39,9 @@ const statistic = new Vue({
 
         this.imgUrlMax = response1.data[0].dish_img_path;
         this.venditaMax = response1.data[0].name;
+        this.dishMaxSell = response1.data[1].maxsell;     
 
-        console.log(response1.data);
-        
+        //console.log(this.venditaMax);        
         
     });
   },

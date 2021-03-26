@@ -9,8 +9,12 @@
     
     <div id="analitics" class="container">
         <div class="analitics-container" >
-            <div class="card card-direction">
-                <h3 style="text-transform: uppercase">il più venduto è il piatto: @{{venditaMax}}</h3>
+            <div v-if="bgColor.length > 0 " class="card card-direction">
+                <div v-if=" venditaMax.length != 1 ">
+                    <h3  style="text-transform: uppercase">il piatto più acquistato è :</h3>
+                    <h3  style="text-transform: uppercase; text-align: center"> @{{venditaMax}}</h3>
+                </div>                
+                <h4>per un totale di @{{dishMaxSell}} volte</h4>
                 <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt="">
             </div>
             <div class="canvas-container" >             

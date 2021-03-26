@@ -12081,7 +12081,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     days: [],
     bgColor: [],
     venditaMax: '',
-    imgUrlMax: ''
+    imgUrlMax: '',
+    dishMaxSell: ''
   },
   mounted: function mounted() {
     var _this = this;
@@ -12110,7 +12111,7 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     axios.get("http://127.0.0.1:8000/api/dish/".concat(pageUrl[pageUrl.length - 1])).then(function (response1) {
       _this.imgUrlMax = response1.data[0].dish_img_path;
       _this.venditaMax = response1.data[0].name;
-      console.log(response1.data);
+      _this.dishMaxSell = response1.data[1].maxsell; //console.log(this.venditaMax);        
     });
   },
   methods: {
