@@ -12132,10 +12132,6 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         options: {
           scales: {
             yAxes: [{
-              gridLines: {
-                display: true,
-                color: "rgba(255,99,132,0.2)"
-              },
               ticks: {
                 beginAtZero: true
               }

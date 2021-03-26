@@ -63,11 +63,7 @@ const statistic = new Vue({
             options: {
                 
                 scales: {
-                    yAxes: [{
-                        gridLines: {
-                            display: true,
-                            color: "rgba(255,99,132,0.2)"
-                          },
+                    yAxes: [{                      
                         ticks: {
                             beginAtZero: true
                         }
