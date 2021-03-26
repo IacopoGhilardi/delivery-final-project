@@ -1,6 +1,7 @@
 @extends('layouts.guest.payment')
 
 @section('links')
+    <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/success.css') }}">
 @endsection
 @section('content')
