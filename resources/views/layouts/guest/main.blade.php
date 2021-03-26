@@ -36,36 +36,56 @@
                 <div class="footer_layout_wrapper">
             
                     <div class="footer_box">
-                        <ul>
+                        {{-- <ul>
                             <li>Qualcosa</li>
                             <li>Un'altra cosa</li>
                             <li>Ancora un'altra cosa</li>
                             <li>Una cosa in meno</li>
                             <li>Che bella cosa!</li>
-                        </ul>
+                        </ul> --}}
+                        <p class="copyright">
+                            &copy; 2021 <b>DeliveBoo</b> Srl  <br> All Rights Reserved <br> Via Ciovassino 3/A 20121 Milan <br> PIVA 03833390966
+                        </p>
                     </div>
                 
                     <div class="footer_box">
-                        <ul>
+                        {{-- <ul>
                             <li>Qualcosa</li>
                             <li>Un'altra cosa</li>
                             <li>Ancora un'altra cosa</li>
                             <li>Una cosa in meno</li>
                             <li>Che bella cosa!</li>
-                        </ul>
+                        </ul> --}}
+                        <h4 class="follow-us">
+                            Seguici su
+                        </h4>
+                        <div class="social-icons">
+                            <a href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
                     </div>
                 
                     <div class="footer_box">
-                        <ul>
+                        {{-- <ul>
                             <li>Qualcosa</li>
                             <li>Un'altra cosa</li>
                             <li>Ancora un'altra cosa</li>
                             <li>Una cosa in meno</li>
                             <li>Che bella cosa!</li>
-                        </ul>
+                        </ul> --}}
+                        <a href="">
+                            <img class="app-stores" src="{{ asset('images/logo/app-stores.png') }}" alt="app-stores">
+                        </a>
                     </div>
                 </div>
-                <p class="copyright">© 2021 - deliveboo Srl - All Rights Reserved - Via Ciovassino 3/A 20121 Milan - PIVA 03833390966</p>
+                {{-- <p class="copyright">© 2021 - deliveboo Srl - All Rights Reserved - Via Ciovassino 3/A 20121 Milan - PIVA 03833390966</p> --}}
             </div>
         </footer>
     {{-- </div> --}}

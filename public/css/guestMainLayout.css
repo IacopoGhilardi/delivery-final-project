@@ -4631,11 +4631,14 @@ ul {
 .layout_footer {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 300px;
   background-color: #2E3333;
+  text-align: center;
+  color: white;
 }
 .layout_footer .footer_layout_wrapper {
   display: flex;
+  align-items: center;
   padding: 70px 0;
   width: 85%;
   margin: auto;
@@ -4651,14 +4654,32 @@ ul {
   color: white;
   font-size: 20px;
 }
-
-.copyright {
-  position: absolute;
-  bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
+.layout_footer .footer_layout_wrapper .footer_box .copyright b {
+  color: #F8585E;
+}
+.layout_footer .footer_layout_wrapper .footer_box .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+.layout_footer .footer_layout_wrapper .footer_box .social-icons a {
+  text-decoration: none;
   color: white;
+  margin: 0 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.layout_footer .footer_layout_wrapper .footer_box .social-icons a:hover {
+  color: #F8585E;
+  border: 1px solid #F8585E;
+}
+.layout_footer .footer_layout_wrapper .footer_box .app-stores {
+  width: 150px;
 }
 
 /*!
