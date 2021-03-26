@@ -8,16 +8,30 @@
 @section('content')
     
     <div id="analitics" class="container mt-4">
-        <div class="analitics-container" >
-            <div class="card card-direction">
+        <div class="my-4 card card-direction">
+            <div class="card_div">
                 <div v-if=" venditaMax.length != 1 ">
-                    <h3  style="text-transform: uppercase">il piatto più acquistato è :</h3>
-                    <h3  style="text-transform: uppercase; text-align: center"> @{{venditaMax}}</h3>
+                    <div>
+                       <h5 >il piatto più acquistato :</h5>
+                        <h5> @{{venditaMax}}</h5>
+                    </div>
+                    
                 </div>                
-                <h4>per un totale di @{{dishMaxSell}} volte</h4>
-                <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt="">
+                <h6>Totale acquisti :  @{{dishMaxSell}} </h6>
             </div>
-            <div class="canvas-container" >             
+            <div class="card_div">
+                <p class="coscia">
+                    <i class="fas fa-drumstick-bite"></i>
+                </p>
+                
+            </div>
+            
+            {{--! <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt=""> --}}
+        </div>
+        <div class="analitics-container" >
+           
+            <div  class="canvas-container" >    
+                <h2>Fatturato Totale</h2>         
                
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>

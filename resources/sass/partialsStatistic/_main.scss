@@ -1,21 +1,32 @@
 .canvas-container {
   position: relative;
-   width: 50%; 
-   display: flex;
-    justify-content :center; 
-    margin-left: 5%;
-    animation: goInStatistic 1s linear ;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 5%;
-    padding: 5%;
-    background-color: white;
-    box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
-    transition: 1.5s;
+  width: 50%; 
+  display: flex;
+  justify-content :center;   
+  animation: goInStatistic 1s linear ;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5%;
+  padding: 5%;
+  background-color: white;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
+  transition: 1.5s;
+  display: flex;
+  min-width: 300px;
+  text-align: center;
+  flex-direction: column;
+  color: white; 
+  background-color: #F8585E;;
+  h2 {
+    animation: txtshow 1s linear ; 
+  }
 }
 .analitics-container {
   display: flex; 
   //justify-content: space-around;
   transition: 1s;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
   
 }
 .container {
@@ -23,14 +34,30 @@
 }
 
 .card-direction {
-  min-width: 490px;
   transition: 1s;
   display: flex; 
-  flex-direction: column;
-  justify-content: space-around;
-  border-radius: 5%;
-  align-items: center;
+  flex-direction: row ;
+  color: white; 
+  background-color: #F8585E;;
+  justify-content: space-between;
+  border-radius: 5%;  
   box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
+  width: 60%;
+  margin: auto;
+  padding: 40px;
+  .card_div{
+    .coscia {
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 40px;
+      color: white;
+      animation: txtshow 1s linear ;   
+    }
+    display: inline-block;
+  }
+  /*
   img  {
     animation-delay: 1s;
     animation: goIn 2s linear ;
@@ -38,29 +65,32 @@
     transition: 1s;
     
   }
+  */
 }
 
 .statistic-container {
-
   border-radius: 2%;
   box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
-  transition: 1s;
+  transition: 1s;   
   //min-height: 50vh;    
 
 }
 
-h3, h4 {
+h5, h6 {
   animation: txtshow 1s linear ;
+  text-transform: uppercase
+ 
 }
 
-  
+h5:nth-child(2){
+  font-weight: bold;
+}
   
 
 
 @keyframes goIn {
 	0% {
-		margin-left: -200px;
-    
+		margin-left: -200px;    
 	}
 	
 	100% {
@@ -71,8 +101,7 @@ h3, h4 {
 
 @keyframes txtshow {
 	0% {
-		font-size: 0;
-    
+		font-size: 0;    
 	}
 	
 	100% {
@@ -83,11 +112,131 @@ h3, h4 {
 
 @keyframes goInStatistic {
 	0% {
-		margin-right: -200px;
-    
+		margin-right: -200px;    
 	}
 	
 	100% {
-		margin-left: 0;
+		margin-right: 0;
 	}
 }
+
+@media screen and (max-width: 320px) {
+ main{
+  .card-direction{
+    .card_div {
+      .coscia{
+        font-size: 0px;
+        color: black;
+      }
+      h5, h6 {
+       font-size: 10px ;
+       
+      }
+    }
+  }
+  .analitics-container{
+    
+    .canvas-container{ 
+         
+        h2 {
+          font-size: 10px ;
+        }      
+    }
+  }
+  
+ }
+}
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 40vh;
+  width: 80vw;
+}
+
+@media screen and (max-width: 320px) {
+  main{
+   .card-direction{
+    padding: 10px;
+     .card_div {
+       .coscia{
+         font-size: 0px;
+         color: black;
+       }
+       h5, h6 {
+        font-size: 10px ;
+        
+       }
+     }
+   }
+   .analitics-container{ 
+    width: 80%;
+    margin: auto;
+    margin-left: 0;         
+     .canvas-container{ 
+      padding: 20px;
+        h2 {
+          font-size: 10px ;
+        }      
+     }
+   }
+   
+  }
+ }
+
+ @media screen and (max-width: 720px) {
+  main{
+    .card-direction{
+     padding: 10px;
+      .card_div {
+        .coscia{
+          font-size: 0px;
+          color: black;
+        }
+        h5, h6 {
+          font-size: 14px ;          
+         }
+        
+      }
+    }
+    .analitics-container{               
+       .canvas-container{        
+          h2 {
+            font-size: 14px ;
+          }      
+       }
+     }
+  }
+}
+
+ @media screen and (max-width: 375px) {
+  main{
+   .card-direction{
+    padding: 10px;
+     .card_div {
+       .coscia{
+         font-size: 0px;
+         color: black;
+       }
+       h5, h6 {
+        font-size: 10px ;
+        
+       }
+     }
+   }
+   .analitics-container{  
+    width: 80%;
+    margin: auto;
+    margin-left: 0;
+         
+     .canvas-container{ 
+        padding: 10px;        
+               
+        h2 {
+          font-size: 10px ;
+        }         
+     }
+   }
+   
+  }
+ }
+

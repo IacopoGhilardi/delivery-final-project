@@ -29,7 +29,7 @@ const statistic = new Vue({
         for (let index = 0; index < sorting.length; index++) {
             this.amount.push(sorting[index].total_amount);
             this.days.push(sorting[index].date);
-            this.bgColor.push('rgba(248, 121, 86, 0.4)')
+            this.bgColor.push('rgba(154, 220, 216, 0.8)')
         }
         this.charjs();
         
@@ -61,8 +61,9 @@ const statistic = new Vue({
                     }]
             },
             options: {
+                
                 scales: {
-                    yAxes: [{
+                    yAxes: [{                      
                         ticks: {
                             beginAtZero: true
                         }
