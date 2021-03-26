@@ -53,7 +53,7 @@ const statistic = new Vue({
                 data: {
                     labels: this.days,
                     datasets: [{
-                        label: '# Amount',
+                        label: 'Totale',
                         data: this.amount,
                         backgroundColor: this.bgColor,
                         borderColor: this.bgColor,

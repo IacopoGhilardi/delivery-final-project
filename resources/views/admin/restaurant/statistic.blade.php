@@ -7,9 +7,9 @@
 
 @section('content')
     
-    <div id="analitics" class="container">
+    <div id="analitics" class="container mt-4">
         <div class="analitics-container" >
-            <div v-if="bgColor.length > 0 " class="card card-direction">
+            <div class="card card-direction">
                 <div v-if=" venditaMax.length != 1 ">
                     <h3  style="text-transform: uppercase">il piatto più acquistato è :</h3>
                     <h3  style="text-transform: uppercase; text-align: center"> @{{venditaMax}}</h3>
@@ -19,7 +19,7 @@
             </div>
             <div class="canvas-container" >             
                
-                <canvas id="myChart" width="100px" height="100px"></canvas>
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
         </div>
         

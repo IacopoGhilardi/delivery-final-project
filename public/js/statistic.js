@@ -12122,7 +12122,7 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         data: {
           labels: this.days,
           datasets: [{
-            label: '# Amount',
+            label: 'Totale',
             data: this.amount,
             backgroundColor: this.bgColor,
             borderColor: this.bgColor,
