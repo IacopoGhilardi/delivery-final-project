@@ -16,7 +16,7 @@ const statistic = new Vue({
   mounted() {
     //   console.log(window.location.href.split('/'));
     var pageUrl = window.location.href.split('/');
-    console.log(pageUrl[pageUrl.length - 1]);
+    //console.log(pageUrl[pageUrl.length - 1]);
     axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}`)
     .then(response => {
         var sorting = response.data.sort(function compare(a, b) {
