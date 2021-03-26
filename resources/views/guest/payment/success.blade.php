@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="{{ asset('css/success.css') }}">
 @endsection
 @section('content')
-    <div class="container recap_container">
+    <div class="container recap_container" id="success">
         <div class="col-lg-8 left_side">
             <div class="status">
                 <h2>Ordine {{$newOrder->status}}</h2>
-                <p>Il tuo ordine arriverà in 30 min</p>
+                <p v-if="orders.status != 'cancellato'">Il tuo ordine arriverà in <span>@{{ countDown }} minuti</span></p>
             </div>
             <div class="recap_info">
                 <div class="info_order_success">
@@ -51,9 +51,9 @@
                 <h4>Totale: {{$newOrder->total_amount}}</h4>
             </div>
         </div>
-    </div>  
+    </div>
 @endsection
 
 @section('scripts')
-    
+    <script src="{{ asset('js/success.js') }}"></script>
 @endsection

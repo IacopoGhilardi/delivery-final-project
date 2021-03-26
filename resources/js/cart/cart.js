@@ -1,7 +1,5 @@
-
 window.Vue = require('vue');
 import Vue from 'vue';
-
 
 
 const cart = new Vue({
