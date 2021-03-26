@@ -5,9 +5,6 @@
     list-style: none;
 }
 
-// .active {
-//     box-shadow: inset -5px -5px 25px red;
-// }
 
 a:hover > i,
 button:hover > i {
@@ -23,45 +20,28 @@ main {
     .side_menu {
         width: 18%;
         height: 100%;
-        //background-color: orange;
         background: linear-gradient(153deg, #f8585e 20%, #f8b64a 80%);
         padding: 10px 0;
         li {
             display: flex;
             align-items: center;
             justify-content: center;
-            // width: 100%;
-            // height: 40px;
             margin-top: 45px;
-            // border-bottom: 1px solid lightgray;
-            //padding-left: 10px;
-            // &:first-child {
-            //     border-top: 1px solid lightgray;
-            // }
-            // &:hover {
-            //     box-shadow: inset -5px -5px 25px red;
-            // }
             a {
                 width: 115px;
                 height: 100px;
                 display: flex;
                 flex-direction: column;
-                // align-items: center;
                 text-align: center;
-                //width: 100%;
                 text-decoration: none;
                 color: white;
                 border-radius: 5px;
                 padding: 15px;
                 box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
                 i {
-                    //width: 30%;
                     font-size: 25px;
                     margin: 10px 0;
                 }
-                // span {
-                //     width: 70%;
-                // }
             }
         }
     }
@@ -70,12 +50,10 @@ main {
         height: calc(100% - 50px);
         .pannel_header {
             display: flex;
-            //justify-content: space-between;
             justify-content: flex-end;
             align-items: center;
             width: 100%;
             height: 50px;
-            //border-bottom: 1px solid black;
             border-bottom: 0.5px solid lightgray;
             box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
             padding: 0 20px;
@@ -98,7 +76,7 @@ main {
             width: 100%;
             height: 100%;
             overflow-y: auto;
-            padding: 20px 30px;
+            padding: 20px;
         }
     }
 }
@@ -137,10 +115,6 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  // height: 200px;
-  // width: calc(100% / 4 - 20px);
-  // margin: 10px;
-  // border-radius: 8px;
   color: white;
 
   width: calc(40% - 30px);
@@ -168,7 +142,6 @@ main {
   
 
   .my_card_body {
-      // height: 400px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -184,8 +157,6 @@ main {
       width: 100%;
       padding: 15px;
       border-radius: 8px;
-
-      // text-align: center;
       background-color: rgba(0,0,0,0.5);
       &:hover {
           background-color: rgba(0,0,0,0.3);
@@ -208,8 +179,6 @@ main {
       z-index: 3;
       width: 100%;
       height: 20%;
-      //display: flex;
-      // justify-content: center;
       .btn-info{
           margin-right: 15px;
       }
@@ -219,7 +188,6 @@ main {
   }
   ::-webkit-scrollbar-track {
     background: lightgrey;
-  //   border-radius: 10px
   }
   ::-webkit-scrollbar-thumb {
     background: orange;
@@ -285,16 +253,19 @@ h1 {
 }
 
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 950px) {
 
   main {
     .side_menu {
       padding: 0;
       li {
         a {
-          width: 45px;
-          height: 45px;
+          width: 40px;
+          height: 40px;
           padding: 0;
+          i {
+            font-size: 20px;
+          }
           span {
             display: none;
           }
@@ -307,6 +278,28 @@ h1 {
         display: block;
       }
     }
+    .body_pannel {
+      .pannel_content_container {
+        padding: 10px;
+      }
+      .pannel_header {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .card {
+    width: 15rem !important;
+  }
+
+  .my_form {
+    padding: 10px;
+    width: 250px;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 2.00rem;
   }
 
 }
