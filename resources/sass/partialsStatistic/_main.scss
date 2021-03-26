@@ -4,40 +4,90 @@
    display: flex;
     justify-content :center; 
     margin-left: 5%;
-    animation: goIn 1s linear ;
+    animation: goInStatistic 1s linear ;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5%;
+    padding: 5%;
+    background-color: white;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
+    transition: 1.5s;
 }
 .analitics-container {
   display: flex; 
-  justify-content: space-around;
+  //justify-content: space-around;
+  transition: 1s;
   
+}
+.container {
+  transition: 1s;
 }
 
 .card-direction {
+  min-width: 490px;
+  transition: 1s;
   display: flex; 
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 5%;
   align-items: center;
   box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
-  
+  img  {
+    animation-delay: 1s;
+    animation: goIn 2s linear ;
+    border-radius: 5%;
+    transition: 1s;
+    
+  }
 }
 
 .statistic-container {
 
   border-radius: 2%;
   box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
-  min-height: 50vh;    
+  transition: 1s;
+  //min-height: 50vh;    
 
 }
 
+h3, h4 {
+  animation: txtshow 1s linear ;
+}
+
+  
+  
 
 
 @keyframes goIn {
 	0% {
-		margin: -100px;
+		margin-left: -200px;
     
 	}
 	
 	100% {
-		margin: 0;
+		margin-left: 0;
+	}
+}
+
+
+@keyframes txtshow {
+	0% {
+		font-size: 0;
+    
+	}
+	
+	100% {
+		font-size: 1.4 rem;
+	}
+}
+
+
+@keyframes goInStatistic {
+	0% {
+		margin-right: -200px;
+    
+	}
+	
+	100% {
+		margin-left: 0;
 	}
 }
