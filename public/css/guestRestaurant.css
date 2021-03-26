@@ -4613,6 +4613,10 @@ readers do not read off random characters that represent icons */
   box-sizing: border-box;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .wrapper {
   width: 70%;
   max-width: 1600px;
@@ -4671,6 +4675,50 @@ readers do not read off random characters that represent icons */
   width: 100%;
   height: 80px;
 }
+.show_header #burger_icon {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 99;
+  cursor: pointer;
+}
+.show_header #burger_icon div {
+  height: 4px;
+  width: 25px;
+  margin: 4px 0;
+  background-color: black;
+}
+.show_header .nav_menu_small {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #b6363a;
+  transform: translateY(-100%);
+  transition: 0.4s;
+  z-index: 98;
+}
+.show_header .nav_menu_small .links {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+.show_header .nav_menu_small .links a {
+  color: white;
+  font-size: 20px;
+}
+.show_header .nav_menu_small .links input {
+  color: black;
+  background-color: #92d9d5;
+  outline: none;
+  border: 1px solid #92d9d5;
+  padding: 10px 20px;
+}
 .show_header .header_container {
   height: 100%;
   display: flex;
@@ -4687,6 +4735,9 @@ readers do not read off random characters that represent icons */
 .show_header .header_container .logo img {
   max-width: 100%;
   height: 100%;
+}
+.show_header .header_container .logo .resp-logo {
+  display: none;
 }
 .show_header .header_container .nav_links ul {
   margin: 0;
@@ -4718,6 +4769,16 @@ readers do not read off random characters that represent icons */
   color: black;
 }
 
+@media screen and (min-width: 576px) {
+  .show_header #burger_icon {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .show_header .wrapper .navbar .nav_links {
+    display: none;
+  }
+}
 .restaurant_banner {
   position: relative;
   width: 100%;
