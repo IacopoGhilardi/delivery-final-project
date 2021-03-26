@@ -139,3 +139,17 @@
     }
     
 }
+
+@media screen and (max-width: 576px) {
+    .restaurant_banner {
+        // .wrapper {
+        //     // background-color: rgba(0, 0, 0, 0.383);
+        // }
+        .restaurant_image {
+            width: 0;
+            img {
+                clip-path: none;
+            }
+        }
+    }
+}

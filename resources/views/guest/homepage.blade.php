@@ -311,7 +311,7 @@
                    Non sono stati trovati Ristoranti per questa categoria
             </div>
     
-        {{-- TUTTI I RISTORANTI --}}
+        {{-- TUTTI I RISTORANTI
         <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
                 <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
@@ -331,7 +331,7 @@
                             <button type="submit"></button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
