@@ -4678,7 +4678,7 @@ readers do not read off random characters that represent icons */
 .show_header #burger_icon {
   position: absolute;
   top: 25px;
-  right: 20px;
+  right: 50px;
   z-index: 99;
   cursor: pointer;
 }
@@ -4728,15 +4728,18 @@ readers do not read off random characters that represent icons */
 .show_header .header_container .logo {
   height: 100%;
 }
-.show_header .header_container .logo a {
+.show_header .header_container .logo .first_logo {
+  height: 100%;
+}
+.show_header .header_container .logo .first_logo a {
   margin: 0;
   padding: 0;
 }
-.show_header .header_container .logo img {
+.show_header .header_container .logo .first_logo img {
   max-width: 100%;
   height: 100%;
 }
-.show_header .header_container .logo .resp-logo {
+.show_header .header_container .logo .resp_logo {
   display: none;
 }
 .show_header .header_container .nav_links ul {
@@ -4758,20 +4761,6 @@ readers do not read off random characters that represent icons */
   align-items: center;
 }
 
-@media screen and (min-width: 576px) {
-  .show_header #burger_icon {
-    display: none;
-  }
-}
-@media screen and (max-width: 576px) {
-  .header_container .nav_links ul li {
-    display: none;
-  }
-
-  .header_container .logo .resp-logo {
-    display: block;
-  }
-}
 .restaurant_banner {
   position: relative;
   width: 100%;
@@ -4840,7 +4829,7 @@ readers do not read off random characters that represent icons */
 .central_container .restaurant_menu .wrapper .dishes .dish {
   position: relative;
   display: flex;
-  height: 150px;
+  min-height: 150px;
   background-color: white;
   box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
   margin: 10px 10px;
@@ -4853,8 +4842,8 @@ readers do not read off random characters that represent icons */
   transition: 0.5s;
   cursor: pointer;
 }
-.central_container .restaurant_menu .wrapper .dishes .dish div {
-  width: calc(50%);
+.central_container .restaurant_menu .wrapper .dishes .dish .dish_info {
+  width: calc(100% - 110px);
 }
 .central_container .restaurant_menu .wrapper .dishes .dish .dish_info p {
   margin-bottom: 10px;
@@ -4866,6 +4855,8 @@ readers do not read off random characters that represent icons */
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 110px;
+  height: 110px;
 }
 .central_container .restaurant_menu .wrapper .dishes .dish .dish_image_box .img_box {
   width: 110px;
@@ -4880,7 +4871,6 @@ readers do not read off random characters that represent icons */
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-  margin-right: 20px;
 }
 .central_container .restaurant_menu .wrapper .dishes .dish #add {
   position: absolute;
@@ -4940,18 +4930,20 @@ readers do not read off random characters that represent icons */
   transition: 0.4s;
 }
 
-@media screen and (max-width: 576px) {
-  .restaurant_banner .restaurant_image {
-    width: 0;
-  }
-  .restaurant_banner .restaurant_image img {
-    -webkit-clip-path: none;
-            clip-path: none;
-  }
-}
 @media (max-width: 1024px) {
+  .restaurant_banner .wrapper .restaurant_info h2 {
+    font-size: 30px;
+  }
+  .restaurant_banner .wrapper .restaurant_info p {
+    font-size: 14px;
+  }
+  .restaurant_banner .wrapper .restaurant_info .order {
+    display: flex;
+    flex-direction: column;
+  }
+
   .side_cart {
-    display: none;
+    display: block;
   }
 
   .central_container .restaurant_menu .wrapper {
@@ -4960,10 +4952,103 @@ readers do not read off random characters that represent icons */
   }
   .central_container .restaurant_menu .wrapper .dishes {
     width: calc(100% - 20px);
-    margin-right: 0;
+    margin-right: 20px;
     min-width: 0px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes h1 {
+    font-size: 32px;
   }
   .central_container .restaurant_menu .wrapper .dishes .dish {
     width: 100%;
+    margin: 10px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cart_mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .restaurant_banner {
+    padding-top: 0;
+  }
+  .restaurant_banner .restaurant_image {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  .restaurant_banner .restaurant_image img {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+
+  .side_cart {
+    display: none;
+  }
+
+  .cart_mobile {
+    display: block;
+  }
+
+  .show_header .wrapper .header_container .logo .resp_logo {
+    display: block;
+    height: 100%;
+  }
+  .show_header .wrapper .header_container .logo .resp_logo a {
+    margin: 0;
+    padding: 0;
+  }
+  .show_header .wrapper .header_container .logo .resp_logo img {
+    max-width: 100%;
+    height: 100%;
+  }
+  .show_header .wrapper .header_container .logo .first_logo {
+    display: none;
+  }
+
+  .central_container .restaurant_menu .wrapper .dishes {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes h1 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .show_header #burger_icon {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .restaurant_banner .wrapper .restaurant_info h2 {
+    font-size: 30px;
+  }
+  .restaurant_banner .wrapper .restaurant_info p {
+    font-size: 14px;
+  }
+  .restaurant_banner .wrapper .restaurant_info .order {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header_container .nav_links ul li {
+    display: none;
+  }
+
+  .central_container .restaurant_menu .wrapper .dishes {
+    width: 100%;
+  }
+  .central_container .restaurant_menu .wrapper .dishes h1 {
+    font-size: 20px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes .dish {
+    padding: 10px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes .dish .dish_info p:first-child {
+    font-size: 14px;
+  }
+  .central_container .restaurant_menu .wrapper .dishes .dish .dish_info p:nth-child(2) {
+    font-size: 12px;
   }
 }
