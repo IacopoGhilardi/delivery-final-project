@@ -1,10 +1,12 @@
 @extends('layouts.admin.main')
 
 @section('links')
-  <link rel="stylesheet" href="{{asset('css/dishCreateLayout.css')}}"> 
+  {{-- <link rel="stylesheet" href="{{asset('css/dishCreateLayout.css')}}"> --}}
+  <link rel="stylesheet" href="{{asset('css/adminLayout.css')}}">
 @endsection
 
 @section('content')
+
   @if ($errors->any())
     <div class="alert alert-danger">
       <ul>
@@ -16,9 +18,9 @@
   @endif
 
 
-  <div class="container my-4">
+  <div class="my-4">
 
-    <h1 class="mb-4">Nuovo Piatto</h1>
+    <h1 class="mb-5">Nuovo Piatto</h1>
 
     <form class="my_form" action="{{ route('admin.menu.store', $slug) }}" method="post" enctype="multipart/form-data">
       @csrf

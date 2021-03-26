@@ -5,12 +5,52 @@
     list-style: none;
 }
 
+  ::-webkit-scrollbar {
+    width:7px
+  }
+  ::-webkit-scrollbar-track {
+    background: lightgrey;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #F8585E;
+    border-radius: 10px
+  }
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 
 a:hover > i,
 button:hover > i {
     animation: swing ease-in-out 0.5s 1 alternate;
 }
-
 
 main {
     display: flex;
@@ -70,6 +110,10 @@ main {
                     border: none;
                     background-color: transparent;
                 }
+                .fa-arrow-right {
+                  font-size: 17px;
+                  display: none;
+                }
             }
         }
         .pannel_content_container {
@@ -79,36 +123,6 @@ main {
             padding: 20px;
         }
     }
-}
-
-@keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(10deg);
-  }
-  30% {
-    transform: rotate(0deg);
-  }
-  40% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  60% {
-    transform: rotate(5deg);
-  }
-  70% {
-    transform: rotate(0deg);
-  }
-  80% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
 .my_card {
@@ -140,7 +154,6 @@ main {
       object-position: center;
   }
   
-
   .my_card_body {
       display: flex;
       flex-direction: column;
@@ -190,7 +203,7 @@ main {
     background: lightgrey;
   }
   ::-webkit-scrollbar-thumb {
-    background: orange;
+    background: #F8585E;
     border-radius: 10px
   }
     
@@ -284,6 +297,14 @@ h1 {
       }
       .pannel_header {
         padding: 0 10px;
+        .user_info {
+          span {
+            display: none;
+          }
+          .fa-arrow-right {
+            display: block;
+          }
+        }
       }
     }
   }
