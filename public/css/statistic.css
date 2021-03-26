@@ -18,6 +18,10 @@
   color: white;
   background-color: #F8585E;
 }
+.canvas-container h2 {
+  -webkit-animation: txtshow 1s linear;
+          animation: txtshow 1s linear;
+}
 
 .analitics-container {
   display: flex;
@@ -43,6 +47,15 @@
   width: 60%;
   margin: auto;
   padding: 40px;
+  /*
+  img  {
+    animation-delay: 1s;
+    animation: goIn 2s linear ;
+    border-radius: 5%;
+    transition: 1s;
+
+  }
+  */
 }
 .card-direction .card_div {
   display: inline-block;
@@ -54,14 +67,8 @@
   border-radius: 50%;
   font-size: 40px;
   color: white;
-}
-.card-direction img {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation: goIn 2s linear;
-          animation: goIn 2s linear;
-  border-radius: 5%;
-  transition: 1s;
+  -webkit-animation: txtshow 1s linear;
+          animation: txtshow 1s linear;
 }
 
 .statistic-container {

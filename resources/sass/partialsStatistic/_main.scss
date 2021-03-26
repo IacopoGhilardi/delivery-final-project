@@ -1,21 +1,24 @@
 .canvas-container {
   position: relative;
-   width: 50%; 
-   display: flex;
-    justify-content :center;   
-    animation: goInStatistic 1s linear ;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 5%;
-    padding: 5%;
-    background-color: white;
-    box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
-    transition: 1.5s;
-    display: flex;
-    min-width: 300px;
-    text-align: center;
-    flex-direction: column;
-    color: white; 
-    background-color: #F8585E;;
+  width: 50%; 
+  display: flex;
+  justify-content :center;   
+  animation: goInStatistic 1s linear ;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5%;
+  padding: 5%;
+  background-color: white;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
+  transition: 1.5s;
+  display: flex;
+  min-width: 300px;
+  text-align: center;
+  flex-direction: column;
+  color: white; 
+  background-color: #F8585E;;
+  h2 {
+    animation: txtshow 1s linear ; 
+  }
 }
 .analitics-container {
   display: flex; 
@@ -49,10 +52,12 @@
       text-align: center;
       border-radius: 50%;
       font-size: 40px;
-      color: white;   
+      color: white;
+      animation: txtshow 1s linear ;   
     }
     display: inline-block;
   }
+  /*
   img  {
     animation-delay: 1s;
     animation: goIn 2s linear ;
@@ -60,10 +65,10 @@
     transition: 1s;
     
   }
+  */
 }
 
 .statistic-container {
-
   border-radius: 2%;
   box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
   transition: 1s;   
@@ -85,8 +90,7 @@ h5:nth-child(2){
 
 @keyframes goIn {
 	0% {
-		margin-left: -200px;
-    
+		margin-left: -200px;    
 	}
 	
 	100% {
@@ -97,8 +101,7 @@ h5:nth-child(2){
 
 @keyframes txtshow {
 	0% {
-		font-size: 0;
-    
+		font-size: 0;    
 	}
 	
 	100% {
@@ -109,8 +112,7 @@ h5:nth-child(2){
 
 @keyframes goInStatistic {
 	0% {
-		margin-right: -200px;
-    
+		margin-right: -200px;    
 	}
 	
 	100% {
@@ -191,16 +193,13 @@ h5:nth-child(2){
           color: black;
         }
         h5, h6 {
-          font-size: 14px ;
-          
+          font-size: 14px ;          
          }
         
       }
     }
-    .analitics-container{ 
-              
-       .canvas-container{ 
-       
+    .analitics-container{               
+       .canvas-container{        
           h2 {
             font-size: 14px ;
           }      
