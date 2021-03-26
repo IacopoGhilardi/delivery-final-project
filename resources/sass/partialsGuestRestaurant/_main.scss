@@ -11,7 +11,7 @@
             h2 {
                 font-size: 3rem;
                 margin-bottom: 20px;
-                width: 500px;
+                max-width: 500px;
                 white-space: break-spaces;
             }
             .tags {
@@ -29,17 +29,16 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 60%;
+        padding: 0;
+        // width: 50%;
         height: 100%;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            clip-path: polygon(100% 0%, 100% 100%, calc(360px + 0%) 100%, 0% 0%);
+            clip-path: polygon(100% 0%, 100% 100%, calc(0% + 60px) 100%, 40% 0%);
         }
     }
-
-
 }
 
 .central_container {
@@ -62,7 +61,7 @@
                 .dish {
                     position: relative;
                     display: flex;
-                    height: 150px;
+                    min-height: 150px;
                     background-color: white;
                     box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
                     margin: 10px 10px;
@@ -74,10 +73,8 @@
                         transition:  0.5s;
                         cursor: pointer;
                     }
-                    div {
-                        width: calc(50%);
-                    }
                     .dish_info {
+                        width: calc(100% - 110px);
                         p {
                             margin-bottom: 10px;
                         }
@@ -89,6 +86,8 @@
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
+                        width: 110px;
+                        height: 110px;
                         .img_box {
                             width: 110px;
                             height: 110px;
@@ -99,7 +98,6 @@
                                 object-position: center;
                                 object-fit: cover;
                                 border-radius: 10px;
-                                margin-right: 20px;
                             }
                          }
       
@@ -134,22 +132,36 @@
                 top: 0;
                 right: 0;
             }
-        }
-        
+        }   
     }
-    
 }
 
-@media screen and (max-width: 576px) {
-    .restaurant_banner {
-        // .wrapper {
-        //     // background-color: rgba(0, 0, 0, 0.383);
-        // }
-        .restaurant_image {
-            width: 0;
-            img {
-                clip-path: none;
-            }
+.cart_mobile {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+    background-color: white;
+    padding: 10px;
+    .cart_icon {
+        height: 50px;
+        background-color: $mainRed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        p {
+            margin: 0;
         }
+    }
+    .cart_mobile_container {
+        width: 100%;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        transform: translateY(calc(100% + 60px));
+        transition: 0.4s;
     }
 }

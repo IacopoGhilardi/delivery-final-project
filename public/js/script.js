@@ -4,18 +4,21 @@ var __webpack_exports__ = {};
   !*** ./resources/js/cart/script.js ***!
   \*************************************/
 document.addEventListener("DOMContentLoaded", function () {
-  cart = document.querySelector(".cart_icon");
-  cartHeader = document.querySelector(".cart_header");
+  cart = document.querySelector(".cart_icon_mobile");
+  cartMobile = document.querySelector(".cart_mobile_container");
   var mediaQuery = window.matchMedia('(max-width: 1000px)');
   cart.addEventListener('click', function () {
+    console.log(cartMobile.style.transform);
+    console.log(cartMobile);
+
     if (mediaQuery.matches) {
-      if (cartHeader.style.display == "none") {
-        cartHeader.style.display = "block";
+      if (cartMobile.style.transform == "translateY(calc(100% + 60px))") {
+        cartMobile.style.transform = "translateY(calc(0%)";
       } else {
-        cartHeader.style.display = "none";
+        cartMobile.style.transform = "translateY(calc(100% + 60px))";
       }
     } else {
-      cartHeader.style.display = "none";
+      cartMobile.style.transform = "translateY(calc(100% + 60px))";
     }
   });
 });

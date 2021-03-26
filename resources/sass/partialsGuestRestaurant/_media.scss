@@ -1,7 +1,23 @@
 
 @media (max-width: 1024px) {
+    .restaurant_banner {
+        .wrapper {
+            .restaurant_info {
+                h2 {
+                    font-size: 30px;
+                }
+                p {
+                    font-size: 14px;
+                }
+                .order {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
     .side_cart {
-        display: none;
+        display: block;
     }
     .central_container {
         .restaurant_menu {
@@ -10,16 +26,143 @@
                 padding: 0 10px;
                 .dishes {
                     width: calc(100% - 20px);
-                    margin-right: 0;
+                    margin-right: 20px;
                     min-width: 0px;
+                    h1 {
+                        font-size: 32px;
+                    }
                     .dish {
                         width: 100%;
+                        margin: 10px 0;
                     }
                 }
             }
-
         }
     }
-   
+}
 
-  }
+@media screen and (min-width: 768px) {
+    .cart_mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .restaurant_banner {
+        padding-top: 0;
+        .restaurant_image {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            img {
+                clip-path: none;
+            }
+        }
+    }
+    .side_cart {
+        display: none;
+    }
+    .cart_mobile {
+        display: block;
+    }
+    .show_header {
+        .wrapper {
+            .header_container {
+                .logo {
+                    .resp_logo {
+                        display: block;
+                        height: 100%;
+                        a {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        img {
+                            max-width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .first_logo {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .central_container {
+        .restaurant_menu {
+            .wrapper {
+                .dishes {
+                    width: 100%;
+                    margin-right: 0px;
+                    h1 {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .show_header {
+        #burger_icon {
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .restaurant_banner {
+        .wrapper {
+            .restaurant_info {
+                h2 {
+                    font-size: 30px;
+                }
+                p {
+                    font-size: 14px;
+                }
+                .order {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .header_container {
+                .nav_links {
+                    ul {
+                        li {
+                                display: none;
+                        }
+                    }
+              
+                }
+            }
+    .central_container {
+        .restaurant_menu {
+            .wrapper {
+                .dishes {
+                    width: 100%;
+                    h1 {
+                        font-size: 20px;
+                    }
+                    .dish {
+                        padding: 10px;
+                        .dish_info {
+                            p {
+                                &:first-child {
+                                    font-size: 14px;
+                                }
+                                &:nth-child(2) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
