@@ -2,16 +2,19 @@
 
 @section('content')
 
-  @if ($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{$error}}</li>
-        @endForeach
-      </ul>
-    </div>
-  @endif
-
+  <div style="overflow-x: hidden">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endForeach
+        </ul>
+      </div>
+    @endif
+  </div>
+  
+  
   <div class="my-4">
       
       <h1 class="mb-5">Nuovo Ristorante</h1>

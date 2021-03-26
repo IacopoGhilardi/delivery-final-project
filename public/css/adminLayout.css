@@ -156,87 +156,18 @@ main .body_pannel .pannel_content_container {
   padding: 20px;
 }
 
-.my_card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  width: calc(40% - 30px);
-  height: 230px;
-  border: 0.5px solid lightgray;
-  margin: 10px 15px;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-  transition: transform 300ms, box-shadow 300ms;
+.card {
+  height: 480px;
 }
-.my_card:hover {
-  transform: scale(1.1);
-}
-.my_card .restaurant_img {
-  width: 100%;
-  height: 100%;
-}
-.my_card img {
-  width: 100%;
-  height: 100%;
+.card .card-img-top {
+  height: 40%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
-.my_card .my_card_body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 !important;
-  z-index: 1;
-}
-.my_card .position_absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.my_card .position_absolute:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: 0.5s;
-}
-.my_card .card_top {
-  z-index: 3;
-  word-break: break-all;
-  width: 100%;
-  height: 80%;
-  overflow: hidden;
-}
-.my_card .card_top:hover {
-  overflow-y: auto;
-}
-.my_card .card_bottom {
-  z-index: 3;
-  width: 100%;
-  height: 20%;
-}
-.my_card .card_bottom .btn-info {
-  margin-right: 15px;
-}
-.my_card ::-webkit-scrollbar {
-  width: 7px;
-}
-.my_card ::-webkit-scrollbar-track {
-  background: lightgrey;
-}
-.my_card ::-webkit-scrollbar-thumb {
-  background: #F8585E;
-  border-radius: 10px;
-}
-
-.my_new_card {
-  height: 450px;
+.card .buttons {
+  padding: 1.25rem;
 }
 
 .my_shadow {

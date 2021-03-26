@@ -1,22 +1,22 @@
 // @import 'partialsRestaurantShow/_main.scss';
 
-.restaurant_box{
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
+// .restaurant_box{
+//     width: 100%;
+//     display: flex;
+//     align-items: flex-start;
 
-    .left_box{
-        width:50%;
-        margin: 0 20px 0 0;
-    }    
-    .right_box{
-        width:50%;
+//     .left_box{
+//         width:50%;
+//         margin: 0 20px 0 0;
+//     }    
+//     .right_box{
+//         width:50%;
 
-        .img-fluid{
-            width: 60px;
-        }
-    }
-}
+//         .img-fluid{
+//             width: 60px;
+//         }
+//     }
+// }
 
 
 .my_table {
@@ -32,18 +32,38 @@
 }
 
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 768px) {
 
-    .d-flex {
-        // flex-direction: column;
+    .my_column {
+        flex-direction: column;
+        //justify-content: center;
+        align-items: center;
         .my_table {
-            width: 15rem !important;
-            margin-top: 40px;
+            //width: 15rem !important;
+            // margin-top: 40px;
+            margin-left: 0 !important;
+            .ingredients {
+                display: none;
+            }
         }
     }
 
-    .card {
-        margin-right: 0 !important;
-    }
+    // .card {
+    //     margin-right: 0 !important;
+    // }
 
+}
+
+@media screen and (max-width: 425px) {
+  .my_column {
+        flex-direction: column;
+        //justify-content: center;
+        align-items: center;
+        .my_table {
+            //width: 15rem !important;
+            // margin-top: 40px;
+            margin-left: 0 !important;
+            width: 15rem !important;
+        }
+    }
 }
