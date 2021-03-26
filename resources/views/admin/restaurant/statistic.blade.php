@@ -33,7 +33,7 @@
             <div  class="canvas-container" >    
                 <h2>Fatturato Totale</h2>         
                
-                <canvas id="myChart" ></canvas>
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
         </div>
         
