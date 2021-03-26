@@ -12088,8 +12088,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     var _this = this;
 
     //   console.log(window.location.href.split('/'));
-    var pageUrl = window.location.href.split('/');
-    console.log(pageUrl[pageUrl.length - 1]);
+    var pageUrl = window.location.href.split('/'); //console.log(pageUrl[pageUrl.length - 1]);
+
     axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1])).then(function (response) {
       var sorting = response.data.sort(function compare(a, b) {
         var dateA = new Date(a.date);
