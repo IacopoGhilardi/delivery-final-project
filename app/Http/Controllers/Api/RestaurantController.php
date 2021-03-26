@@ -69,10 +69,10 @@ class RestaurantController extends Controller
             $ordersIds[] = DB::table('dish_order')
                             ->select('dish_id')
                             ->where('dish_id', $dish->id)
-                            ->selectRaw('dish_id, count("dish_id")' )
+                            ->selectRaw('dish_id, count("dish_id") as maxsell' )
                             ->from('dish_order')
                             ->groupBy('dish_id')
-                            ->orderBy('count("dish_id")', 'DESC')
+                            ->orderBy('maxsell', 'DESC')
                             ->take(1)
                             ->get();
         }

@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   margin-left: 5%;
+  -webkit-animation: goIn 1s linear;
+          animation: goIn 1s linear;
 }
 
 .analitics-container {
@@ -16,4 +18,29 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+}
+
+.statistic-container {
+  border-radius: 2%;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+  min-height: 50vh;
+}
+
+@-webkit-keyframes goIn {
+  0% {
+    margin: -100px;
+  }
+  100% {
+    margin: 0;
+  }
+}
+
+@keyframes goIn {
+  0% {
+    margin: -100px;
+  }
+  100% {
+    margin: 0;
+  }
 }

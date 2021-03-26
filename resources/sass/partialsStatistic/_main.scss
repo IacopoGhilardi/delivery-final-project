@@ -3,11 +3,13 @@
    width: 50%; 
    display: flex;
     justify-content :center; 
-    margin-left: 5%
+    margin-left: 5%;
+    animation: goIn 1s linear ;
 }
 .analitics-container {
   display: flex; 
   justify-content: space-around;
+  
 }
 
 .card-direction {
@@ -15,4 +17,27 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
+  
+}
+
+.statistic-container {
+
+  border-radius: 2%;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 35%);
+  min-height: 50vh;    
+
+}
+
+
+
+@keyframes goIn {
+	0% {
+		margin: -100px;
+    
+	}
+	
+	100% {
+		margin: 0;
+	}
 }
