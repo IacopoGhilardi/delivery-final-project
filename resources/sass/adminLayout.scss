@@ -315,7 +315,7 @@ h1 {
 
   .my_form {
     padding: 15px;
-    width: 250px;
+    //width: 700px;
     overflow: hidden;
   }
 
@@ -325,3 +325,20 @@ h1 {
 
 }
 
+@media screen and (max-width: 425px) {
+  .my_form {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .my_form {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .my_form {
+    width: 250px;
+  }
+}
