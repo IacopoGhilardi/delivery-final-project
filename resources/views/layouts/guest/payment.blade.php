@@ -18,8 +18,30 @@
                 <div class="logo">
                     <a href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt="logo deliveboo"></a>
                 </div>
+                <div id="burger_icon">
+                    <div id="rotate-1"></div>
+                    <div id="rotate-2"></div>
+                    <div id="rotate-3"></div>
+                </div>
+                <div class="nav_menu_small">
+                    @guest
+                    <div class="links">
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                    </div>
+                    @else
+                    <div class="links">
+                        <h2>{{ Auth::user()->firstName }}</h2>
+                        <a href="{{ route('admin.restaurant.index') }}">I miei Ristoranti</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <input type="submit" value="Logout">
+                        </form>
+                    </div>
+                    @endguest
+                </div>
                     <div class="nav_links">
-                        <ul class="inline_list">
+                        <ul class="inline_list d-flex">
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -99,5 +121,6 @@
     </footer>
 
     @yield('scripts')
+    <script src="{{ asset('js/burger.js') }}"></script>
 </body>
 </html>

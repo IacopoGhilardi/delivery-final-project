@@ -6,10 +6,33 @@
 
 @section('header')
    <div class="show_header">
+        <div id="burger_icon">
+            <div id="rotate-1"></div>
+            <div id="rotate-2"></div>
+            <div id="rotate-3"></div>
+        </div>
+        <div class="nav_menu_small">
+            @guest
+            <div class="links">
+                <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a href="{{ route('register') }}">{{ __('Sign up') }}</a>
+            </div>
+            @else
+            <div class="links">
+                <h2>{{ Auth::user()->firstName }}</h2>
+                <a href="{{ route('admin.restaurant.index') }}">I miei Ristoranti</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input type="submit" value="Logout">
+                </form>
+            </div>
+            @endguest
+        </div>
        <div class="wrapper">
            <div class="header_container">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt="" id="logo"></a>
+                    <a class="first-logo" href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt="" id="logo"></a>
+                    <a class="resp-logo" href="{{ url('/') }}"><img src="{{ asset('images/logo/deliveboo-resp-black.png') }}" alt="" id="logo"></a>
                 </div>
                 <div class="nav_links">
                     <ul class="inline_list">
@@ -33,7 +56,7 @@
                                             <h5>Totale ordine:</h5>
                                             <p v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice"> @{{price}}&euro;</p>
                                         </div>
-                                        
+                                       
                                         <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] == 0" disabled type="submit" class="order_btn order_btn_disabled">Seleziona un piatto</button>
                                         <button v-if="findMyOrders(`{{$restaurant->id}}`).finalPrice[0] != 0" type="submit" class="order_btn">Effettua l'ordine</button>
                                         <div class="cart_info" v-for="order in findMyOrders(`{{$restaurant->id}}`).filteredOrders">
@@ -50,6 +73,7 @@
                                             <input type="hidden" name="numberOfDishes[]" :value="order.count">
                                             <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
                                             <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                                            <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                                         </div>
                                     </form>
                                 </div>
@@ -103,6 +127,7 @@
                                         <input type="hidden" name="numberOfDishes[]" :value="order.count">
                                         <input type="hidden" name="dishPrices[]" :value="Math.round(order.basePrice * order.count * 100) / 100">
                                         <input type="hidden" name="finalPrice" :value="findMyOrders(`{{$restaurant->id}}`).finalPrice">
+                                        <input type="hidden" name="business_name" value="{{$restaurant->business_name}}">
                                     </div>
                                 </form>
                             </div>
@@ -199,5 +224,9 @@
             </div>
         </div>
    </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/burger.js') }}"></script>
 @endsection
 

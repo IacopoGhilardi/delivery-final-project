@@ -311,6 +311,30 @@
                    Non sono stati trovati Ristoranti per questa categoria
             </div>
     
+        {{-- TUTTI I RISTORANTI
+        <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
+            <div class="restaurants_wrapper">
+                <h2 v-if="filteredRestaurants.length > 1">@{{filteredRestaurants.length}} Ristoranti</h2>
+                <h2 v-if="filteredRestaurants.length == 1">@{{filteredRestaurants.length}} Ristorante</h2>
+                <div class="restaurants_container">
+                    <div v-for="restaurant in allRestaurants" class="restaurant">
+                        <form action="{{ route('guest.restaurant.show') }}" method="post">
+                            @csrf
+                            @method('POST')
+                            <input name="business_name" type="hidden" :value="restaurant.business_name">
+                            <div class="restaurant_image_box">
+                                <img :src="`../storage/${restaurant.img_path}`" alt="">
+                            </div>
+                            <div class="restaurant_info">
+                                 <p>@{{restaurant.business_name}}</p>
+                            </div>
+                            <button type="submit"></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         {{-- TUTTI I RISTORANTI --}}
         <div class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">

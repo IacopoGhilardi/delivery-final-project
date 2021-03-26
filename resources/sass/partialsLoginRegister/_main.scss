@@ -13,7 +13,7 @@ main {
   animation: showFormlogin 1s linear ;
 }
 .card_shadow{
-  box-shadow: -5px 5px rgb(197, 197, 156);
+  box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
   overflow: hidden;
  
   //color: orange;
@@ -21,12 +21,12 @@ main {
   /*label {
     text-shadow: 2px 2px yellow;   
   }*/
-  background-color: #EAE0C8;
+  background-color: white;
   .card-header{
     font-size: 24px;
     font-weight: bold;
     //color: orange;
-    background-color: #EAE0C8;
+    background-color:  white;
     //text-shadow: 2px 2px yellow;
     
   }
@@ -34,11 +34,11 @@ main {
     opacity: 1;  
     animation: bounce 0.5s infinite alternate; 
     animation-iteration-count: 4;
-    background-color: orange;
-    border-color: orange;
+    background-color: #F8585E;
+    border-color: #F8585E;
     color: #fff;
     &:hover {
-      box-shadow: inset -1px -1px 7px yellow;
+      box-shadow: inset -1px -1px 7px #F8585E;
       color: #fff;
     }
   }
