@@ -26,44 +26,44 @@
 //     border-right: 1px solid black;
 // }
 
-.pannel_content_container {
-    padding: 0 !important;
-}
+// .pannel_content_container {
+//     padding: 0 !important;
+// }
 
-.form_container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// .form_container {
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
 
-    form {
-        width: 500px;
-        padding-left: 50px;
-        .radio_box {
-            width: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: white;
-        }
+//     form {
+//         width: 500px;
+//         padding-left: 50px;
+//         .radio_box {
+//             width: 100px;
+//             padding: 10px;
+//             border-radius: 5px;
+//             background-color: white;
+//         }
 
-        .my_btn {
-            color: white;
-            border: 1px solid orange;
-            background-color: orange;
+//         .my_btn {
+//             color: white;
+//             border: 1px solid orange;
+//             background-color: orange;
             
-            &:hover {
-                border: 1px solid orange;
-                background-color: darken(orange, 5%) !important;
-            }
-            &:active{
-                border: 1px solid orange !important;
-                background-color: darken(orange, 5%)!important;
-            }
-        }
-    }
-}
+//             &:hover {
+//                 border: 1px solid orange;
+//                 background-color: darken(orange, 5%) !important;
+//             }
+//             &:active{
+//                 border: 1px solid orange !important;
+//                 background-color: darken(orange, 5%)!important;
+//             }
+//         }
+//     }
+// }
 
-h1 {
-    color: #F8585E;
-}
+// h1 {
+//     color: #F8585E;
+// }

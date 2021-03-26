@@ -1,6 +1,7 @@
 @extends('layouts.admin.main')
 
 @section('content')
+
   @if ($errors->any())
     <div class="alert alert-danger">
       <ul>
@@ -11,7 +12,7 @@
     </div>
   @endif
 
-  <div class="container mt-4">
+  <div class="mt-4">
       <form class="my_form" action="{{ route('admin.menu.update', $dish->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')

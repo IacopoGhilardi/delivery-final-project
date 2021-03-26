@@ -1,8 +1,8 @@
 @extends('layouts.admin.main')
 
-@section('links')
+{{-- @section('links')
     <link rel="stylesheet" href="{{asset('css/adminRestaurantIndex.css')}}">
-@endsection
+@endsection --}}
 
 @section('content')
 
@@ -13,11 +13,11 @@
     </div>
     @endif
 
-  <div class="d-flex justify-content-around mt-4 flex-wrap"> 
+  <div class="d-flex justify-content-around my-4 flex-wrap"> 
     @foreach ($restaurants as $restaurant)
         
 
-        <div class="card my_shadow" style="width: 18rem;">
+        <div class="card mb-4 my_shadow" style="width: 18rem;">
             {{-- <img src="..." class="card-img-top" alt="..."> --}}
             @if (!empty($restaurant->img_path))
             <img class="card-img-top" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">

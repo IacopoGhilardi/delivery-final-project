@@ -1,124 +1,39 @@
-::-webkit-scrollbar {
-  width:7px
-}
-::-webkit-scrollbar-track {
-  background: lightgrey;
+// ::-webkit-scrollbar {
+//   width:7px
+// }
+// ::-webkit-scrollbar-track {
+//   background: lightgrey;
+// //   border-radius: 10px
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: #F8585E;
 //   border-radius: 10px
-}
-::-webkit-scrollbar-thumb {
-  background: orange;
-  border-radius: 10px
-}
-
-// .my_btn {
-//     color: white;
-//     border: 1px solid orange;
-//     background-color: orange;
-    
-//     &:hover {
-//         border: 1px solid orange;
-//         background-color: darken(orange, 5%) !important;
-//     }
-//     &:active{
-//         border: 1px solid orange !important;
-//         background-color: darken(orange, 5%)!important;
-//     }
 // }
 
-.my_btn {
-  border: 1px solid #F8585E;
-  background-color: #F8585E;
-  &:hover {
-    border: 1px solid #F8585E;
-    background-color: #F8585E;
-  }
-  &:active {
-    border: 1px solid #F8585E;
-    background-color: #F8585E;
-  }
-}
 
-.btn_circle {
-    width: 45px;
-    height: 45px;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 20px;
-}
+// .my_btn {
+//   border: 1px solid #F8585E;
+//   background-color: #F8585E;
+//   &:hover {
+//     border: 1px solid #F8585E;
+//     background-color: #F8585E;
+//   }
+//   &:active {
+//     border: 1px solid #F8585E;
+//     background-color: #F8585E;
+//   }
+// }
 
-.my_form {
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-}
+// .btn_circle {
+//     width: 45px;
+//     height: 45px;
+//     text-align: center;
+//     border-radius: 50%;
+//     font-size: 20px;
+// }
 
-.my_card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: calc(100% / 4 - 20px);
-    margin: 10px;
-    color: white;
-    .dish_img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-
-    .my_card_body {
-        // height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0 !important;
-        z-index: 1;
-    }
-
-    .position_absolute {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 400px;
-        width: 100%;
-        padding: 20px;
-        // text-align: center;
-        background-color: rgba(0,0,0,0.5);
-        &:hover {
-            background-color: rgba(0,0,0,0.3);
-            transition: 0.5s;
-        }
-    }
-
-    .card_top {
-        z-index: 3;
-        word-break: break-all;
-        width: 100%;
-        height: 80%;
-        overflow: hidden;
-        &:hover {
-            overflow-y: auto;
-        }
-    }
-
-    .card_bottom {
-        z-index: 3;
-        width: 100%;
-        height: 10%;
-        display: flex;
-        // justify-content: center;
-        form {
-            margin-left: 20px;
-        }
-    }
-    
-}
+// .my_form {
+//   padding: 30px;
+//   border-radius: 5px;
+//   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+// }

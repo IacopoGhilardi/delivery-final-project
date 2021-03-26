@@ -1,4 +1,4 @@
-@extends('layouts.admin.main')
+{{-- @extends('layouts.admin.main')
 
 @section('content')
 
@@ -15,4 +15,4 @@
       <img class="img-fluid" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $dish->name }}">
   @endif
 
-@endsection
+@endsection --}}
