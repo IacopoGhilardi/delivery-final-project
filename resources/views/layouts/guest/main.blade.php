@@ -31,24 +31,86 @@
             @yield('content')
         </main>
 
-        <footer style="display: block" class="">
+        <footer style="" class="">
             <div class="layout_footer">
                 <div class="footer_layout_wrapper">
-            
-                    <div class="footer_box">
-                        {{-- <ul>
-                            <li>Qualcosa</li>
-                            <li>Un'altra cosa</li>
-                            <li>Ancora un'altra cosa</li>
-                            <li>Una cosa in meno</li>
-                            <li>Che bella cosa!</li>
-                        </ul> --}}
-                        <p class="copyright">
-                            &copy; 2021 <b>DeliveBoo</b> Srl  <br> All Rights Reserved <br> Via Ciovassino 3/A 20121 Milan <br> PIVA 03833390966
-                        </p>
-                    </div>
+                    <p class="copyright">
+                        &copy; 2021 <b>DeliveBoo</b> Srl All Rights Reserved  Via Ciovassino 3/A 20121 Milan PIVA 03833390966
+                    </p>
                 
-                    <div class="footer_box">
+            
+            
+                    <div class="our_cards">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
+                                <h3 style="color: white">AVATAR</h3>
+                              </div>
+                              <div class="flip-card-back">
+                                <h1>John Doe</h1> 
+                                <p>Architect & Engineer</p> 
+                                <p>We love that guy</p>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
+                                <h3 style="color: white">AVATAR</h3>
+                              </div>
+                              <div class="flip-card-back">
+                                <h1>John Doe</h1> 
+                                <p>Architect & Engineer</p> 
+                                <p>We love that guy</p>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
+                                <h3 style="color: white">AVATAR</h3>
+                              </div>
+                              <div class="flip-card-back">
+                                <h1>John Doe</h1> 
+                                <p>Architect & Engineer</p> 
+                                <p>We love that guy</p>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
+                                <h3 style="color: white">AVATAR</h3>
+                              </div>
+                              <div class="flip-card-back">
+                                <h1>John Doe</h1> 
+                                <p>Architect & Engineer</p> 
+                                <p>We love that guy</p>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
+                                <h3 style="color: white">AVATAR</h3>
+                              </div>
+                              <div class="flip-card-back">
+                                <h1>John Doe</h1> 
+                                <p>Architect & Engineer</p> 
+                                <p>We love that guy</p>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                         {{-- <ul>
                             <li>Qualcosa</li>
                             <li>Un'altra cosa</li>
@@ -56,7 +118,15 @@
                             <li>Una cosa in meno</li>
                             <li>Che bella cosa!</li>
                         </ul> --}}
-                        <h4 class="follow-us">
+                        
+                        {{-- <ul>
+                            <li>Qualcosa</li>
+                            <li>Un'altra cosa</li>
+                            <li>Ancora un'altra cosa</li>
+                            <li>Una cosa in meno</li>
+                            <li>Che bella cosa!</li>
+                        </ul> --}}
+                        {{-- <h4 class="follow-us">
                             Seguici su
                         </h4>
                         <div class="social-icons">
@@ -69,21 +139,8 @@
                             <a href="">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                        </div>
-                    </div>
-                
-                    <div class="footer_box">
-                        {{-- <ul>
-                            <li>Qualcosa</li>
-                            <li>Un'altra cosa</li>
-                            <li>Ancora un'altra cosa</li>
-                            <li>Una cosa in meno</li>
-                            <li>Che bella cosa!</li>
-                        </ul> --}}
-                        <a href="">
-                            <img class="app-stores" src="{{ asset('images/logo/app-stores.png') }}" alt="app-stores">
-                        </a>
-                    </div>
+                        </div> --}}
+                    
                 </div>
                 {{-- <p class="copyright">© 2021 - deliveboo Srl - All Rights Reserved - Via Ciovassino 3/A 20121 Milan - PIVA 03833390966</p> --}}
             </div>
