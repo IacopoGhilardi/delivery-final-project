@@ -87,3 +87,26 @@
     display: block;
   }
 }
+@media screen and (max-width: 576px) {
+  .payment_container .payment_wrapper .payment_form .first_row .restaurant_title h1 {
+    font-size: 30px;
+  }
+  .payment_container .payment_wrapper .payment_form .first_row .restaurant_info_container {
+    display: block !important;
+  }
+  .payment_container .payment_wrapper .payment_form .first_row .restaurant_info_container .restaurant_img {
+    width: 100%;
+  }
+  .payment_container .payment_wrapper .payment_form .first_row .restaurant_info_container .restaurant_info p {
+    font-size: 18px;
+  }
+  .payment_container .payment_wrapper .payment_form .second_row div h3 {
+    font-size: 18px;
+  }
+  .payment_container .cart_recap .recap_order_title h2 {
+    font-size: 25px;
+  }
+  .payment_container .cart_recap .menu .orders .recap_order span {
+    font-size: 14px;
+  }
+}

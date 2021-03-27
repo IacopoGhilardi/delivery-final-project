@@ -39,7 +39,7 @@
           @endif
         </div>
 
-        <div class="container">
+        <div class="container payment_container">
           <div class="col-md-12 payment_wrapper">
               <div class="spacer"></div>
 
@@ -47,11 +47,11 @@
                   @csrf
                   @method('POST')
 
-                  <div class="row">
+                  <div class="row first_row">
                     <div class="col-md-12 restaurant_title">
                       <h1>Manca poco!</h1>
                     </div>
-                    <div class="col-md-12 d-flex">
+                    <div class="col-md-12 d-flex restaurant_info_container">
                       <div class="restaurant_img">
                         <img src="{{ asset('storage/'. $restaurant->img_path) }}" alt="restaurant">
                       </div>
@@ -62,9 +62,9 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row second_row">
                     <div class="col-md-12 info_consegna">
-                      <h3>Informazioni di consegna</h3>
+                      <h3>Informazioni di consegna:</h3>
                     </div>
                   </div>
                   <div class="row">

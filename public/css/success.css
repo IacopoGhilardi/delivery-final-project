@@ -11,7 +11,6 @@
 }
 .recap_container .status {
   margin-bottom: 30px;
-  padding-left: 20px;
   color: white;
 }
 .recap_container .status h2 {
@@ -76,5 +75,50 @@
 @media (max-width: 992px) {
   .recap_container {
     display: block;
+  }
+  .recap_container .left_side .recap_info {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .recap_container .left_side .status h2 {
+    font-size: 35px;
+  }
+  .recap_container .left_side .status p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .recap_container .left_side .status h2 {
+    font-size: 26px;
+  }
+  .recap_container .left_side .status p {
+    font-size: 14px;
+  }
+  .recap_container .left_side .recap_info .info_order_success h2 {
+    font-size: 20px;
+  }
+  .recap_container .left_side .recap_info .info_order_success .info_order {
+    display: block !important;
+    padding: 0;
+  }
+  .recap_container .left_side .recap_info .info_order_success .restaurant_info_container {
+    display: block !important;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  .recap_container .left_side .recap_info .info_order_success .restaurant_info_container .restaurant_img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .recap_container .left_side .recap_info .info_order_success .restaurant_info_container .restaurant_info p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .recap_container .left_side .recap_info .info_order_success h3 {
+    font-size: 20px;
+  }
+  .recap_container .right_side .cart_recap .order_recap {
+    margin: 5px 0;
   }
 }

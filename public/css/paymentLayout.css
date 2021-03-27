@@ -34,9 +34,9 @@ header .wrapper .navbar #burger_icon div {
   background-color: black;
 }
 header .wrapper .navbar .nav_menu_small {
-  width: 100%;
+  width: 100vw;
   height: 300px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #b6363a;
@@ -67,7 +67,14 @@ header .wrapper .navbar .nav_menu_small .links input {
 header .wrapper .logo {
   height: 100%;
 }
-header .wrapper .logo img {
+header .wrapper .logo .first_logo img {
+  height: 100%;
+  max-width: 100%;
+}
+header .wrapper .logo .resp_logo {
+  display: none;
+}
+header .wrapper .logo .resp_logo img {
   height: 100%;
   max-width: 100%;
 }
@@ -87,6 +94,10 @@ header .wrapper .inline_list li a {
   margin-bottom: -250px;
 }
 
+main {
+  background-color: #F4F5F5;
+}
+
 @media screen and (min-width: 576px) {
   header .wrapper .navbar #burger_icon {
     display: none;
@@ -96,7 +107,11 @@ header .wrapper .inline_list li a {
   header .wrapper .navbar .nav_links {
     display: none;
   }
-}
-main {
-  background-color: #F4F5F5;
+  header .wrapper .logo .first_logo {
+    display: none;
+  }
+  header .wrapper .logo .resp_logo {
+    display: block;
+    height: 100%;
+  }
 }

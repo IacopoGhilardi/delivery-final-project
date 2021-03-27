@@ -16,7 +16,8 @@
         <div class="container wrapper">
             <div class="navbar">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt="logo deliveboo"></a>
+                    <a class="first_logo" href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt=""></a>
+                    <a class="resp_logo" href="{{ url('/') }}"><img src="{{ asset('images/logo/deliveboo-resp-black.png') }}" alt=""></a>
                 </div>
                 <div id="burger_icon">
                     <div id="rotate-1"></div>

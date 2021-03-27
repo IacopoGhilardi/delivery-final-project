@@ -1,0 +1,34 @@
+@media screen and (min-width: 576px) {
+    header {
+        .wrapper {
+            .navbar {
+                #burger_icon {
+                    display: none;
+                }
+            }
+
+        }
+    }   
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        .wrapper {
+            .navbar {
+                .nav_links {
+                    display: none;
+                }
+            }
+            .logo {
+                .first_logo  {
+                    display: none;
+                }
+                .resp_logo {
+                    display: block;
+                    height: 100%;
+                }
+    
+            }
+        }
+    }   
+}
