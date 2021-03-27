@@ -17,7 +17,8 @@ class RestaurantController extends Controller
         'business_name' => 'required|max:50',
         'address' => 'required|max:50',
         'PIVA' => 'required|string|max:11|min:11',
-        'img_path' => 'image'
+        'img_path' => 'image',
+        'types' => 'required'
     ];
     /**
      * Display a listing of the resource.
