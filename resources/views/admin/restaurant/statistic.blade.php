@@ -19,6 +19,7 @@
                 </div>                
                 <h6>Totale acquisti :  @{{dishMaxSell}} </h6>
             </div>
+            
             <div class="card_div">
                 <p class="coscia">
                     <i class="fas fa-drumstick-bite"></i>
@@ -28,10 +29,21 @@
             
             {{--! <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt=""> --}}
         </div>
+        
         <div class="analitics-container" >
            
             <div  class="canvas-container" >    
-                <h2>Fatturato Totale</h2>         
+                <h2>Fatturato Totale</h2> 
+                <div>
+                    <select @change="onChangeYears($event)" style="min-width: 100px" name="anni" id="">
+                        <option value=""> </option>
+                        <option style="min-width: 100px" v-for="year in years" :value="year"> @{{year}}</option>
+                    </select>
+                    <select @change="onChangeMonth($event)" style="min-width: 100px" name="mesi" id="">
+                        <option value=""> </option>
+                        <option style="min-width: 100px" v-for="month in months" :value="month"> @{{month}}</option>
+                    </select>
+                </div>        
                
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>

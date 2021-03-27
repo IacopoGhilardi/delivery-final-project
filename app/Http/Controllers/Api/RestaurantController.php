@@ -92,4 +92,51 @@ class RestaurantController extends Controller
         return response()->json($dishMax);
     }
 
+    public function years($slug , $years) {
+
+        $restaurant = Restaurant::where('slug', $slug)->first();
+        $dishes = $restaurant->dishes;
+        $ordersUniqueIds = [];
+        
+        foreach ($dishes as $key => $dish) {
+            $ordersIds[] = DB::table('dish_order')->select('order_id')->where('dish_id', $dish->id)->get();
+
+            foreach ($ordersIds[$key] as $value) {
+                if(!in_array($value, $ordersUniqueIds)) {
+                    $ordersUniqueIds[] = $value;
+                }
+            }
+        }
+        $orders = [];
+        foreach ($ordersUniqueIds as $value) {
+           $orders[] = Order::where('id', $value->order_id)->whereYear('date', '=' , $years)->first();
+        }
+
+        return response()->json($orders);
+    }
+
+    public function month($slug , $month) {
+
+        $restaurant = Restaurant::where('slug', $slug)->first();
+        $dishes = $restaurant->dishes;
+        $ordersUniqueIds = [];
+        
+        foreach ($dishes as $key => $dish) {
+            $ordersIds[] = DB::table('dish_order')->select('order_id')->where('dish_id', $dish->id)->get();
+
+            foreach ($ordersIds[$key] as $value) {
+                if(!in_array($value, $ordersUniqueIds)) {
+                    $ordersUniqueIds[] = $value;
+                }
+            }
+        }
+        $orders = [];
+        foreach ($ordersUniqueIds as $value) {
+           $orders[] = Order::where('id', $value->order_id)->whereMonth('date', '=' , $month)->first();
+        }
+
+        return response()->json($orders);
+    }
+
+
 }
