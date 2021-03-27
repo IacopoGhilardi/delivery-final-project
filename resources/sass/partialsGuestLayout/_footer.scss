@@ -50,6 +50,9 @@
                         backface-visibility: hidden;
                     }
                     .flip-card-front {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         background-color: 2E3333b;
                         color: black;
                       }

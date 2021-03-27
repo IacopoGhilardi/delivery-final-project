@@ -4683,6 +4683,9 @@ ul {
   backface-visibility: hidden;
 }
 .layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: Infinityb;
   color: black;
 }

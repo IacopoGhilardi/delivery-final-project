@@ -45,8 +45,7 @@
                         <div class="flip-card">
                             <div class="flip-card-inner">
                               <div class="flip-card-front">
-                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
-                                <h3 style="color: white">AVATAR</h3>
+                                <img src="{{asset('images/avatars/AvatarMaker (1) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                               </div>
                               <div class="flip-card-back">
                                 <h1>John Doe</h1> 
@@ -59,8 +58,7 @@
                           <div class="flip-card">
                             <div class="flip-card-inner">
                               <div class="flip-card-front">
-                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
-                                <h3 style="color: white">AVATAR</h3>
+                                <img src="{{asset('images/avatars/AvatarMaker (2) (1).png')}}" alt="Avatar" style="width:50%;height:50%;"> 
                               </div>
                               <div class="flip-card-back">
                                 <h1>John Doe</h1> 
@@ -73,8 +71,7 @@
                           <div class="flip-card">
                             <div class="flip-card-inner">
                               <div class="flip-card-front">
-                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
-                                <h3 style="color: white">AVATAR</h3>
+                                <img src="{{asset('images/avatars/AvatarMaker (3) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                               </div>
                               <div class="flip-card-back">
                                 <h1>John Doe</h1> 
@@ -87,8 +84,7 @@
                           <div class="flip-card">
                             <div class="flip-card-inner">
                               <div class="flip-card-front">
-                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
-                                <h3 style="color: white">AVATAR</h3>
+                                <img src="{{asset('images/avatars/AvatarMaker (4) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                               </div>
                               <div class="flip-card-back">
                                 <h1>John Doe</h1> 
@@ -101,8 +97,7 @@
                           <div class="flip-card">
                             <div class="flip-card-inner">
                               <div class="flip-card-front">
-                                {{-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"> --}}
-                                <h3 style="color: white">AVATAR</h3>
+                                <img src="{{asset('images/avatars/AvatarMaker (5).png')}}" alt="Avatar" style="width:50%;height:50%;">
                               </div>
                               <div class="flip-card-back">
                                 <h1>John Doe</h1> 
