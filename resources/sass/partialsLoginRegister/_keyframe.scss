@@ -35,3 +35,14 @@
 		height: 100vh;
 	}
 }
+
+
+@keyframes textMov {
+	0% {
+		margin-left: -100px;
+	}
+	
+	100% {
+		margin-left: 0;
+	}
+}

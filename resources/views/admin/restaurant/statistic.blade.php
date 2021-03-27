@@ -8,7 +8,7 @@
 @section('content')
     
     <div id="analitics" class="container mt-4">
-        <div class="my-4 card card-direction">
+        <div class="my-4 card-direction">
             <div class="card_div">
                 <div v-if=" venditaMax.length != 1 ">
                     <div>

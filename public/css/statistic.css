@@ -15,8 +15,7 @@
   min-width: 300px;
   text-align: center;
   flex-direction: column;
-  color: white;
-  background-color: #F8585E;
+  color: #F8585E;
 }
 .canvas-container h2 {
   -webkit-animation: txtshow 1s linear;
