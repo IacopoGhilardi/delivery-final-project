@@ -75,7 +75,8 @@
                             @method('POST')
                             <button type="submit" class="btn btn-danger my_btn mr-1">
                                 <span>Log Out</span>
-                                <i class="fas fa-arrow-right"></i>
+                                {{-- <i class="fas fa-arrow-right"></i> --}}
+                                <i class="fas fa-door-open"></i>
                             </button>
                         </form>
                     </div>

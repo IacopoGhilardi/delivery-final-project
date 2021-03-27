@@ -89,6 +89,7 @@ main {
 }
 main .side_menu {
   width: 18%;
+  min-height: 100vh;
   background: linear-gradient(153deg, #f8585e 20%, #f8b64a 80%);
   padding: 10px 0;
 }
@@ -142,7 +143,7 @@ main .body_pannel .pannel_header .user_info input {
   border: none;
   background-color: transparent;
 }
-main .body_pannel .pannel_header .user_info .fa-arrow-right {
+main .body_pannel .pannel_header .user_info .fa-door-open {
   font-size: 17px;
   display: none;
 }
@@ -154,7 +155,7 @@ main .body_pannel .pannel_content_container {
 }
 
 .card {
-  height: 480px;
+  height: 420px;
 }
 .card .card-img-top {
   height: 40%;
@@ -250,7 +251,7 @@ h1 {
   main .body_pannel .pannel_header .user_info span {
     display: none;
   }
-  main .body_pannel .pannel_header .user_info .fa-arrow-right {
+  main .body_pannel .pannel_header .user_info .fa-door-open {
     display: block;
   }
 
