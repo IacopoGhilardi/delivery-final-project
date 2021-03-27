@@ -13,7 +13,7 @@
      <link rel="stylesheet" href="{{ asset('css/guestMainLayout.css') }}">
      @yield('links')
 
-    <title>Document</title>
+    <title>DeliveBoo</title>
 </head>
 <body>
     

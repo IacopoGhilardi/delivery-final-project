@@ -39,7 +39,12 @@
         
     
     </div>
-    
+
+
+    <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle my-5">
+        {{-- Indietro --}}
+        <i class="fas fa-arrow-left"></i>
+    </a>
 
     <script src="{{ asset('js/statistic.js') }}" defer></script>
 

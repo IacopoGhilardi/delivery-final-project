@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
     @yield('links')
-    <title>Document</title>
+    <title>DeliveBoo</title>
 </head>
 <body>
     

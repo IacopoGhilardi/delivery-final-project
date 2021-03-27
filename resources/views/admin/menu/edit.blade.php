@@ -2,16 +2,18 @@
 
 @section('content')
 
-  @if ($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{$error}}</li>
-        @endForeach
-      </ul>
-    </div>
-  @endif
-
+  <div style="overflow-x: hidden">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endForeach
+        </ul>
+      </div>
+    @endif
+  </div>
+  
   <div class="mt-4">
       <form class="my_form" action="{{ route('admin.menu.update', $dish->id) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -75,7 +77,7 @@
       </form>
 
       <div>
-        <a href="{{route('admin.menu.index', $dish->restaurant->slug)}}" class="btn btn-primary btn_circle mt-5">
+        <a href="{{route('admin.menu.index', $dish->restaurant->slug)}}" class="btn btn-primary btn_circle my-5">
           <i class="fas fa-arrow-left"></i>
         </a>
       </div>

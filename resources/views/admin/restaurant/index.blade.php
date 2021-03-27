@@ -6,24 +6,28 @@
 
 @section('content')
 
-    {{-- gestisco il messaggio status update e destroy --}}
+  {{-- gestisco il messaggio status update e destroy --}}
+  <div style="overflow-x: hidden">
     @if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
+      <div class="alert alert-success">
+          {{ session('status') }}
+      </div>
     @endif
-
+  </div>
+    
   <div class="d-flex justify-content-around my-4 flex-wrap"> 
     @foreach ($restaurants as $restaurant)
         
 
-        <div class="card mb-4 my_shadow" style="width: 18rem;">
-            {{-- <img src="..." class="card-img-top" alt="..."> --}}
-            @if (!empty($restaurant->img_path))
+        <div class="card mb-5 my_shadow" style="width: 18rem;">
+
+          {{-- <img src="..." class="card-img-top" alt="..."> --}}
+          @if (!empty($restaurant->img_path))
             <img class="card-img-top" src="{{ asset('storage/' . $restaurant->img_path) }}" alt="{{ $restaurant->business_name }}">
-            @else
+          @else
             <img class="card-img-top" src="{{ asset('images/restaurantDefault.png') }}" alt="{{ $restaurant->business_name }}">
-            @endif
+          @endif
+
           <div class="card-body">
             <h5 class="card-title">{{$restaurant->business_name}}</h5>
             <p class="card-text">
@@ -37,23 +41,40 @@
                 @endforeach
             </ul>
 
-            <div class="d-flex">
+            {{-- <div class="d-flex">
               <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary mr-1">
-                {{-- Dettaglio --}}
+                Dettaglio
                 <i class="far fa-eye"></i></a>
               </a>
               <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success mr-1">
-                {{-- Menu --}}
-                {{-- <i class="fas fa-hamburger"></i> --}}
+                Menu
+                <i class="fas fa-hamburger"></i>
                 <i class="fas fa-utensils"></i>
               </a>
               <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">
-                {{-- Statistiche --}}
+                Statistiche
                 <i class="fas fa-chart-pie"></i>
               </a>
-            </div>
+            </div> --}}
             
           </div>
+
+          <div class="d-flex buttons">
+            <a href="{{ route('admin.restaurant.show', $restaurant->id) }}" class="btn btn-primary mr-1">
+              {{-- Dettaglio --}}
+              <i class="far fa-eye"></i></a>
+            </a>
+            <a href="{{ route('admin.menu.index', $restaurant->slug) }}" class="btn btn-success mr-1">
+              {{-- Menu --}}
+              {{-- <i class="fas fa-hamburger"></i> --}}
+              <i class="fas fa-utensils"></i>
+            </a>
+            <a href="{{ route('admin.restaurant.statistic', $restaurant->slug) }}" class="btn btn-danger">
+              {{-- Statistiche --}}
+              <i class="fas fa-chart-pie"></i>
+            </a>
+          </div>
+
         </div>
         
 

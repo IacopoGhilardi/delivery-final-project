@@ -4,9 +4,21 @@
   <link rel="stylesheet" href="{{asset('css/loginRegisterLayout.css')}}"> 
 @endsection
 
-
 @section('content')
 <div class="container">
+
+    <div style="overflow-x: hidden">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endForeach
+            </ul>
+        </div>
+        @endif
+    </div>
+
     <div class="row justify-content-center align-items-center py-5">
         <div class="col-md-8">
             <div class="card card_shadow card_on_register">
