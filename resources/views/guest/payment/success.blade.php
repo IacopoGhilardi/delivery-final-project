@@ -14,12 +14,12 @@
             <div class="recap_info">
                 <div class="info_order_success">
                     <h2>Informazioni sul tuo ordine</h2>
-                    <div class="col-md-12 d-flex justify-content-between">
+                    <div class="col-md-12 d-flex justify-content-between info_order">
                         <p>Ordine numero: <strong>{{$newOrder->id}}</strong></p>
                         <p>Ordine effettuato: <strong>{{Carbon\Carbon::parse($newOrder->created_at)->format('d/m/Y H:i')}}</strong></p>
                     </div>
 
-                    <div class="col-md-12 d-flex">
+                    <div class="col-md-12 d-flex restaurant_info_container">
                         <div class="restaurant_img">
                           <img src="{{ asset('storage/'. $restaurant->img_path) }}" alt="restaurant">
                         </div>
@@ -36,7 +36,7 @@
             </div>
         </div>
        
-        <div class="col-lg-4">
+        <div class="col-lg-4 right_side">
             <div class="cart_recap">
                 <h2>Il tuo ordine</h2>
                 <p>Consegna presso: <strong>{{ $newOrder->address }}</strong></p>
@@ -49,7 +49,7 @@
                       <span>{{$dish->price * $dish->quantity}}&euro;</span>
                     </div>
                     @endforeach
-                <h4>Totale: {{$newOrder->total_amount}}</h4>
+                <h4>Totale: {{$newOrder->total_amount}}&euro;</h4>
             </div>
         </div>
     </div>

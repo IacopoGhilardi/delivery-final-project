@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ asset('images/logo/deliveboo-resp-black.png') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
@@ -16,7 +17,8 @@
         <div class="container wrapper">
             <div class="navbar">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt="logo deliveboo"></a>
+                    <a class="first_logo" href="{{ url('/') }}"><img src="{{ asset('images/logo/logo-black.png') }}" alt=""></a>
+                    <a class="resp_logo" href="{{ url('/') }}"><img src="{{ asset('images/logo/deliveboo-resp-black.png') }}" alt=""></a>
                 </div>
                 <div id="burger_icon">
                     <div id="rotate-1"></div>

@@ -10,7 +10,6 @@
     display: flex;
     .status {
         margin-bottom: 30px;
-        padding-left: 20px;
         color: white;
         h2 {
             font-size: 50px;
@@ -73,12 +72,6 @@
                 display: inline-block;
             }
         }
-    }
-}
-
-@media (max-width: 992px) {
-    .recap_container {
-        display: block;
     }
 }
 

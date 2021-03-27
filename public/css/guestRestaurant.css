@@ -5021,6 +5021,9 @@ readers do not read off random characters that represent icons */
   }
 }
 @media screen and (max-width: 576px) {
+  .restaurant_banner .wrapper {
+    width: 100%;
+  }
   .restaurant_banner .wrapper .restaurant_info h2 {
     font-size: 30px;
   }

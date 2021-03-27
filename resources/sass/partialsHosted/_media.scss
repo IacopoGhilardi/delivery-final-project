@@ -1,0 +1,50 @@
+@media screen and (max-width: 576px) {
+    .payment_container {
+        .payment_wrapper {
+            .payment_form {
+                .first_row {
+                    .restaurant_title {
+                        h1 {
+                            font-size: 30px;
+                        }
+                    }
+                    .restaurant_info_container {
+                        display: block !important;
+                        .restaurant_img {
+                            width: 100%;
+                        }
+                        .restaurant_info {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                .second_row {
+                    div {
+                        h3 {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+        .cart_recap {
+            .recap_order_title {
+                h2 {
+                    font-size: 25px;
+                }
+            }
+            .menu {
+               .orders {
+                   .recap_order {
+                       span {
+                           font-size: 14px;
+                       }
+                   }
+               } 
+            }
+        }
+    }
+
+}
