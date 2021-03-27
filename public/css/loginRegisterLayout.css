@@ -62,22 +62,26 @@
     height: 100vh;
   }
 }
+@-webkit-keyframes textMov {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes textMov {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
 main {
   min-height: 100vh;
   background: linear-gradient(-45deg, #F96F5A, #F86A5A, #F8B64A, #F8B64A);
   background-size: 400% 400%;
-  -webkit-animation: gradientbg 30s ease infinite;
-          animation: gradientbg 30s ease infinite;
-}
-
-.card_on_register {
-  -webkit-animation: showFormRegister 1s linear;
-          animation: showFormRegister 1s linear;
-}
-
-.card_on_login {
-  -webkit-animation: showFormlogin 1s linear;
-          animation: showFormlogin 1s linear;
 }
 
 .card_shadow {
