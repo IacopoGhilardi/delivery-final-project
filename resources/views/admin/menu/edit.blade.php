@@ -77,7 +77,7 @@
       </form>
 
       <div>
-        <a href="{{route('admin.menu.index', $dish->restaurant->slug)}}" class="btn btn-primary btn_circle mt-5">
+        <a href="{{route('admin.menu.index', $dish->restaurant->slug)}}" class="btn btn-primary btn_circle my-5">
           <i class="fas fa-arrow-left"></i>
         </a>
       </div>

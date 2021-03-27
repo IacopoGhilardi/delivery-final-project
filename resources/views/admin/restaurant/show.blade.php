@@ -71,7 +71,7 @@
 
     </div>
 
-    <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle mt-3 ml-1">
+    <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle mt-3 ml-1 mb-5">
         {{-- Indietro --}}
         <i class="fas fa-arrow-left"></i>
     </a>

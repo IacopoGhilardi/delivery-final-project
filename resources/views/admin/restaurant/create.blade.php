@@ -65,7 +65,7 @@
         <input class="btn btn-primary my_btn" type="submit" value="CREA">
       </form>
       
-      <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle mt-5">
+      <a href="{{ route('admin.restaurant.index') }}" class="btn btn-primary btn_circle my-5">
           {{-- Indietro --}}
           <i class="fas fa-arrow-left"></i>
       </a>

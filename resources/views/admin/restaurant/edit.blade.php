@@ -72,7 +72,7 @@
         <input class="btn btn-success" type="submit" value="MODIFICA">
       </form>
       
-      <div class="mt-5">
+      <div class="my-5">
         <a class="btn btn-primary btn_circle" href="{{ route('admin.restaurant.show', $restaurant->id) }}">
           {{-- Indietro --}}
           <i class="fas fa-arrow-left"></i>
