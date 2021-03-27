@@ -168,6 +168,7 @@ main .body_pannel .pannel_content_container {
 }
 .card .buttons {
   padding: 1.25rem;
+  justify-content: space-between;
 }
 
 .my_shadow {
