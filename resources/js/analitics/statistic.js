@@ -69,6 +69,29 @@ const statistic = new Vue({
             let year = event.target.value;
             const self = this;
             var pageUrl = window.location.href.split('/');
+            
+            if (year == "All") {
+                this.days = [];
+                self.amount = [];
+                axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}`)
+                    .then(response => {
+                        var sorting = response.data.sort(function compare(a, b) {
+                            var dateA = new Date(a.date);
+                            var dateB = new Date(b.date);
+                            return dateB - dateA;
+                        });
+                        //console.log(response.data);
+                        //console.log(sorting);
+                        for (let index = 0; index < sorting.length; index++) {
+                            this.amount.push(sorting[index].total_amount);
+                            this.days.push(sorting[index].date);
+                            this.bgColor.push('rgba(154, 220, 216, 0.8)')
+                            
+                        }
+                        this.charjs();
+                    })
+            };
+
             axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}/${year}`)
             .then(response => {
                 console.log(response)
@@ -95,6 +118,29 @@ const statistic = new Vue({
             console.log(month)
             const self = this;
             var pageUrl = window.location.href.split('/');
+
+            if (month == "All") {
+                this.days = [];
+                self.amount = [];
+                axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}`)
+                    .then(response => {
+                        var sorting = response.data.sort(function compare(a, b) {
+                            var dateA = new Date(a.date);
+                            var dateB = new Date(b.date);
+                            return dateB - dateA;
+                        });
+                        //console.log(response.data);
+                        //console.log(sorting);
+                        for (let index = 0; index < sorting.length; index++) {
+                            this.amount.push(sorting[index].total_amount);
+                            this.days.push(sorting[index].date);
+                            this.bgColor.push('rgba(154, 220, 216, 0.8)')
+                            
+                        }
+                        this.charjs();
+                    })
+            };
+
             axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}/${month}`)
             .then(response => {
                 console.log(response)

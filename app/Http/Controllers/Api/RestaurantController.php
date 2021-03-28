@@ -115,7 +115,7 @@ class RestaurantController extends Controller
         return response()->json($orders);
     }
 
-    public function month($slug , $month) {
+    public function months($slug , $month) {
 
         $restaurant = Restaurant::where('slug', $slug)->first();
         $dishes = $restaurant->dishes;
@@ -132,7 +132,7 @@ class RestaurantController extends Controller
         }
         $orders = [];
         foreach ($ordersUniqueIds as $value) {
-           $orders[] = Order::where('id', $value->order_id)->whereMonth('date', '=' , $month)->first();
+           $orders[] = Order::where('id', $value->order_id)->whereMonth('date','=', $month)->first();
         }
 
         return response()->json($orders);

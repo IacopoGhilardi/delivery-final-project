@@ -25,5 +25,5 @@ Route::namespace('Api')->group(function() {
     Route::get('statistic/{slug}', 'RestaurantController@order');
     Route::get('dish/{slug}', 'RestaurantController@dish');    
     Route::get('statistic/{slug}/{years}', 'RestaurantController@years');
-    Route::get('statistic/{slug}/{month}', 'RestaurantController@month');
+    Route::get('statistic/{slug}/{months}', 'RestaurantController@months');
 });

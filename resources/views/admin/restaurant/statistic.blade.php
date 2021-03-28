@@ -36,11 +36,11 @@
                 <h2>Fatturato Totale</h2> 
                 <div>
                     <select @change="onChangeYears($event)" style="min-width: 100px" name="anni" id="">
-                        <option value=""> </option>
+                        <option value="All"> Tutti gli anni </option>
                         <option style="min-width: 100px" v-for="year in years" :value="year"> @{{year}}</option>
                     </select>
                     <select @change="onChangeMonth($event)" style="min-width: 100px" name="mesi" id="">
-                        <option value=""> </option>
+                        <option value="All">Tutti i mesi </option>
                         <option style="min-width: 100px" v-for="month in months" :value="month"> @{{month}}</option>
                     </select>
                 </div>        
