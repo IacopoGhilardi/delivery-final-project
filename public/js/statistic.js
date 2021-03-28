@@ -12082,7 +12082,9 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     bgColor: [],
     venditaMax: '',
     imgUrlMax: '',
-    dishMaxSell: ''
+    dishMaxSell: '',
+    months: [],
+    years: []
   },
   mounted: function mounted() {
     var _this = this;
@@ -12107,6 +12109,25 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       }
 
       _this.charjs();
+
+      for (var _index = 0; _index < _this.days.length; _index++) {
+        if (!_this.years.includes(_this.days[_index].split('-')[0])) {
+          _this.years.push(_this.days[_index].split('-')[0]); //console.log(this.days[index].split('-')[0]);
+
+        }
+      }
+
+      for (var _index2 = 0; _index2 < _this.days.length; _index2++) {
+        if (!_this.months.includes(_this.days[_index2].split('-')[1])) {
+          _this.months.push(_this.days[_index2].split('-')[1]); //console.log(this.days[index].split('-')[1]);
+
+        }
+      }
+
+      _this.months.sort(function compare(a, b) {
+        return a - b;
+      }); //console.log(this.months);
+
     });
     axios.get("http://127.0.0.1:8000/api/dish/".concat(pageUrl[pageUrl.length - 1])).then(function (response1) {
       _this.imgUrlMax = response1.data[0].dish_img_path;
@@ -12115,6 +12136,100 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     });
   },
   methods: {
+    onChangeYears: function onChangeYears(event) {
+      var _this2 = this;
+
+      var year = event.target.value;
+      var self = this;
+      var pageUrl = window.location.href.split('/');
+
+      if (year == "All") {
+        this.days = [];
+        self.amount = [];
+        axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1])).then(function (response) {
+          var sorting = response.data.sort(function compare(a, b) {
+            var dateA = new Date(a.date);
+            var dateB = new Date(b.date);
+            return dateB - dateA;
+          }); //console.log(response.data);
+          //console.log(sorting);
+
+          for (var index = 0; index < sorting.length; index++) {
+            _this2.amount.push(sorting[index].total_amount);
+
+            _this2.days.push(sorting[index].date);
+
+            _this2.bgColor.push('rgba(154, 220, 216, 0.8)');
+          }
+
+          _this2.charjs();
+        });
+      }
+
+      ;
+      axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1], "/").concat(year)).then(function (response) {
+        //console.log(response)
+        self.days = [];
+        self.amount = [];
+
+        for (var index = 0; index < response.data.length; index++) {
+          if (response.data[index] != null) {
+            self.days.push(response.data[index].date);
+            self.amount.push(response.data[index].total_amount);
+          }
+        }
+
+        _this2.charjs();
+      }); //console.log(event.target.value)
+      //this.$forceupdate()
+    },
+    onChangeMonth: function onChangeMonth(event) {
+      var _this3 = this;
+
+      var month = event.target.value; //console.log(month)
+
+      var self = this;
+      var pageUrl = window.location.href.split('/');
+
+      if (month == "All") {
+        this.days = [];
+        self.amount = [];
+        axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1])).then(function (response) {
+          var sorting = response.data.sort(function compare(a, b) {
+            var dateA = new Date(a.date);
+            var dateB = new Date(b.date);
+            return dateB - dateA;
+          }); //console.log(response.data);
+          //console.log(sorting);
+
+          for (var index = 0; index < sorting.length; index++) {
+            _this3.amount.push(sorting[index].total_amount);
+
+            _this3.days.push(sorting[index].date);
+
+            _this3.bgColor.push('rgba(154, 220, 216, 0.8)');
+          }
+
+          _this3.charjs();
+        });
+      }
+
+      ;
+      axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1], "/month-filter/").concat(month)).then(function (response) {
+        //console.log(response)
+        self.days = [];
+        self.amount = [];
+
+        for (var index = 0; index < response.data.length; index++) {
+          if (response.data[index] != null) {
+            self.days.push(response.data[index].date);
+            self.amount.push(response.data[index].total_amount);
+          }
+        }
+
+        _this3.charjs();
+      });
+    },
     charjs: function charjs() {
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {

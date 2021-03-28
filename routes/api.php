@@ -23,5 +23,7 @@ Route::namespace('Api')->group(function() {
     Route::post('filter/{restaurant}', 'RestaurantController@filter');
     Route::post('allRestaurants', 'RestaurantController@allRestaurants');
     Route::get('statistic/{slug}', 'RestaurantController@order');
-    Route::get('dish/{slug}', 'RestaurantController@dish');
+    Route::get('dish/{slug}', 'RestaurantController@dish');    
+    Route::get('statistic/{slug}/{years}', 'RestaurantController@years');
+    Route::get('statistic/{slug}/month-filter/{months}', 'RestaurantController@months');
 });
