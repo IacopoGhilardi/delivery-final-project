@@ -17,7 +17,7 @@
         <img style="width: 200px" class="img-fluid" src="{{ asset('images/logo/logo-black.png') }}" alt="logo">
     </header>
 
-    <main style="width: 100%; height: calc(100vh - 150px); padding: 20px; color: white; background-image: url({{ asset('images/logo/home-img.png') }}); background-size: cover; background-position: top">
+    <main style="width: 100%; height: calc(100vh - 50px); padding: 20px; color: white; background-image: url({{ asset('images/logo/home-img.png') }}); background-size: cover; background-position: top">
         <h1>Ordine effettuato correttamente</h1>
         <h2>Segui i dettagli nel sito</h2>
     </main>
