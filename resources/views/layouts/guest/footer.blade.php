@@ -13,7 +13,7 @@
                     <img src="{{asset('images/avatars/AvatarMaker (1) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h5>Iacopo Ghilardi</h5> 
+                    <h5 class="mb-3">Iacopo Ghilardi</h5> 
                      <div class="personal_social_icon">
                        <a href=""><i class="fab fa-github"></i></a>
                        <a href=""><i class="fab fa-linkedin"></i></a>
@@ -28,7 +28,7 @@
                     <img src="{{asset('images/avatars/AvatarMaker (2) (1).png')}}" alt="Avatar" style="width:50%;height:50%;"> 
                   </div>
                   <div class="flip-card-back">
-                    <h5>Riccardo Ferrari</h5> 
+                    <h5 class="mb-3">Riccardo Ferrari</h5> 
                      <div class="personal_social_icon">
                        <a href=""><i class="fab fa-github"></i></a>
                        <a href=""><i class="fab fa-linkedin"></i></a>
@@ -43,7 +43,7 @@
                     <img src="{{asset('images/avatars/AvatarMaker (3) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h5>Francesco Foglia</h5> 
+                    <h5 class="mb-3">Francesco Foglia</h5> 
                      <div class="personal_social_icon">
                        <a href=""><i class="fab fa-github"></i></a>
                        <a href=""><i class="fab fa-linkedin"></i></a>
@@ -58,7 +58,7 @@
                     <img src="{{asset('images/avatars/AvatarMaker (4) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h5>Giulio Volletti</h5> 
+                    <h5 class="mb-3">Giulio Volletti</h5> 
                      <div class="personal_social_icon">
                        <a href=""><i class="fab fa-github"></i></a>
                        <a href=""><i class="fab fa-linkedin"></i></a>
@@ -73,7 +73,7 @@
                     <img src="{{asset('images/avatars/AvatarMaker (5).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h5>Marco Bottoni</h5> 
+                    <h5 class="mb-3">Marco Bottoni</h5> 
                      <div class="personal_social_icon">
                        <a href=""><i class="fab fa-github"></i></a>
                        <a href=""><i class="fab fa-linkedin"></i></a>
