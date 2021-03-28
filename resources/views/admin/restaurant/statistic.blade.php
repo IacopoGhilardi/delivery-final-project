@@ -29,13 +29,12 @@
                 <div class="card_div">
                     <div v-if=" venditaMax.length != 1 ">
                         <div>
-                           <h5 >il piatto più acquistato :</h5>
-                            <h5> @{{venditaMax}}</h5>
+                           <h5 >L'anno con gli incassi maggiori :</h5>
+                            <h5> @{{maxYear}}</h5>
                         </div>
                         
-                    </div>                
-                    <h6>Totale acquisti :  @{{dishMaxSell}} </h6>
-                    <i class="fas fa-drumstick-bite"></i>
+                    </div>           
+                    <i class="fas fa-coins"></i>                   
                 </div>
                 
                 
