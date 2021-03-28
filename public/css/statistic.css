@@ -14,7 +14,7 @@
 
 .canvas-container {
   position: relative;
-  width: 50%;
+  width: 56%;
   display: flex;
   justify-content: center;
   -webkit-animation: goInStatistic 1s linear;
