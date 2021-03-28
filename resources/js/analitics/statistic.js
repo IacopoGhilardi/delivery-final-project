@@ -14,6 +14,7 @@ const statistic = new Vue({
     dishMaxSell: '',
     months:[],
     years:[],
+    maxYear:"",
    
   },
   mounted() {
@@ -32,9 +33,9 @@ const statistic = new Vue({
         for (let index = 0; index < sorting.length; index++) {
             this.amount.push(sorting[index].total_amount);
             this.days.push(sorting[index].date);
-            this.bgColor.push('rgba(154, 220, 216, 0.8)')
-   
+            this.bgColor.push('rgba(154, 220, 216, 0.8)')   
         }
+        this.maxYear = this.annoPiuRedditizio(response.data);
         this.charjs();
         for (let index = 0; index < this.days.length; index++) {
             if (!this.years.includes(this.days[index].split('-')[0]) ) {
@@ -93,7 +94,7 @@ const statistic = new Vue({
                             this.bgColor.push('rgba(154, 220, 216, 0.8)')
                             
                         }
-                        this.charjs();
+                        this.charjs();                        
                     })
             };
 
@@ -199,11 +200,11 @@ const statistic = new Vue({
             // }
         // ]
         
-        // var merge = []
-        this.amount.forEach(element => {
-            anno = element.date.split('-')[0];
-            contenuto = false
-            merge.foreach(mergeElement => {
+        var merge = []
+        obj.forEach(element => {
+            var anno = element.date.split('-')[0];
+            var contenuto = false
+            merge.forEach(mergeElement => {
                 if (anno == mergeElement.date.split('-')[0]) {
                     mergeElement.amount += element.amount
                     contenuto = true
@@ -213,7 +214,12 @@ const statistic = new Vue({
                 merge.push(element)
             }
         });
+        merge.sort(function(a, b){return b.total_amount-a.total_amount});
+        // console.log(merge)
+        //console.log(merge[0].date.split('-')[0])
+        return merge[0].date.split('-')[0];
       }
+
   }
 
 })  

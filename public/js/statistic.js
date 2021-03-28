@@ -22992,7 +22992,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     imgUrlMax: '',
     dishMaxSell: '',
     months: [],
-    years: []
+    years: [],
+    maxYear: ""
   },
   mounted: function mounted() {
     var _this = this;
@@ -23015,6 +23016,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
         _this.bgColor.push('rgba(154, 220, 216, 0.8)');
       }
+
+      _this.maxYear = _this.annoPiuRedditizio(response.data);
 
       _this.charjs();
 
@@ -23170,11 +23173,11 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       //     amount
       // }
       // ]
-      // var merge = []
-      this.amount.forEach(function (element) {
-        anno = element.date.split('-')[0];
-        contenuto = false;
-        jquery__WEBPACK_IMPORTED_MODULE_0__.merge.foreach(function (mergeElement) {
+      var merge = [];
+      obj.forEach(function (element) {
+        var anno = element.date.split('-')[0];
+        var contenuto = false;
+        merge.forEach(function (mergeElement) {
           if (anno == mergeElement.date.split('-')[0]) {
             mergeElement.amount += element.amount;
             contenuto = true;
@@ -23182,9 +23185,15 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         });
 
         if (!contenuto) {
-          jquery__WEBPACK_IMPORTED_MODULE_0__.merge.push(element);
+          merge.push(element);
         }
       });
+      merge.sort(function (a, b) {
+        return b.total_amount - a.total_amount;
+      }); // console.log(merge)
+      //console.log(merge[0].date.split('-')[0])
+
+      return merge[0].date.split('-')[0];
     }
   }
 });
