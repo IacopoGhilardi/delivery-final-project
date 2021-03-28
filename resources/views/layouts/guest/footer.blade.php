@@ -13,9 +13,11 @@
                     <img src="{{asset('images/avatars/AvatarMaker (1) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h1>John Doe</h1> 
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
+                    <h5 class="mb-3">Iacopo Ghilardi</h5> 
+                     <div class="personal_social_icon">
+                       <a href=""><i class="fab fa-github"></i></a>
+                       <a href=""><i class="fab fa-linkedin"></i></a>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -26,9 +28,11 @@
                     <img src="{{asset('images/avatars/AvatarMaker (2) (1).png')}}" alt="Avatar" style="width:50%;height:50%;"> 
                   </div>
                   <div class="flip-card-back">
-                    <h1>John Doe</h1> 
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
+                    <h5 class="mb-3">Riccardo Ferrari</h5> 
+                     <div class="personal_social_icon">
+                       <a href=""><i class="fab fa-github"></i></a>
+                       <a href=""><i class="fab fa-linkedin"></i></a>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -39,9 +43,11 @@
                     <img src="{{asset('images/avatars/AvatarMaker (3) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h1>John Doe</h1> 
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
+                    <h5 class="mb-3">Francesco Foglia</h5> 
+                     <div class="personal_social_icon">
+                       <a href=""><i class="fab fa-github"></i></a>
+                       <a href=""><i class="fab fa-linkedin"></i></a>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -52,9 +58,11 @@
                     <img src="{{asset('images/avatars/AvatarMaker (4) (1).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h1>John Doe</h1> 
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
+                    <h5 class="mb-3">Giulio Volletti</h5> 
+                     <div class="personal_social_icon">
+                       <a href=""><i class="fab fa-github"></i></a>
+                       <a href=""><i class="fab fa-linkedin"></i></a>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -65,9 +73,11 @@
                     <img src="{{asset('images/avatars/AvatarMaker (5).png')}}" alt="Avatar" style="width:50%;height:50%;">
                   </div>
                   <div class="flip-card-back">
-                    <h1>John Doe</h1> 
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
+                    <h5 class="mb-3">Marco Bottoni</h5> 
+                     <div class="personal_social_icon">
+                       <a href=""><i class="fab fa-github"></i></a>
+                       <a href=""><i class="fab fa-linkedin"></i></a>
+                     </div>
                   </div>
                 </div>
               </div>

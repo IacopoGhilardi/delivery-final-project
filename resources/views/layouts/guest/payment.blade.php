@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('images/logo/deliveboo-resp-black.png') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
@@ -12,7 +13,7 @@
     <title>DeliveBoo</title>
 </head>
 <body>
-    
+    @yield('loader')
     <header>
         <div class="container wrapper">
             <div class="navbar">
@@ -28,8 +29,8 @@
                 <div class="nav_menu_small">
                     @guest
                     <div class="links">
-                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
-                        <a href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                        <a href="{{ route('login') }}">Accedi</a>
+                        <a href="{{ route('register') }}">Registrati</a>
                     </div>
                     @else
                     <div class="links">
@@ -46,11 +47,11 @@
                         <ul class="inline_list d-flex">
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link login" href="{{ route('login') }}">Accedi</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                                    <a class="nav-link btn_gold" href="{{ route('register') }}">Registrati</a>
                                 </li>
                             @endif
                             @else

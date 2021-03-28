@@ -61,13 +61,13 @@
           <div class="radio_box ml-5">
             <div class="form-check">
               <label class="col-sm-2 col-form-label">
-                <input type="radio" {{$dish->visible == 0 ? 'checked' : ''}} name="visibility" class="form-check-input" value="0"> NO
+                <input type="radio" {{$dish->visibility == 0 ? 'checked' : ''}} name="visibility" class="form-check-input" value="0"> NO
               </label>
             </div>
 
             <div class="form-check">
               <label class="col-sm-2 col-form-label">
-                <input type="radio" {{$dish->visible == 1 ? 'checked' : ''}} name="visibility" class="form-check-input" value="1"> SI
+                <input type="radio" {{$dish->visibility == 1 ? 'checked' : ''}} name="visibility" class="form-check-input" value="1"> SI
               </label>
             </div>
           </div>

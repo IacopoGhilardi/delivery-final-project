@@ -1,7 +1,7 @@
 
 .layout_footer {
     // margin-top: 1500px;
-    padding-top: 50px;
+    padding: 50px 0;
     position: relative;
     width: 100%;
     background-color: #2E3333;
@@ -27,8 +27,8 @@
             flex-wrap: wrap;
             .flip-card {
                 background-color: transparent;
-                width: 220px;
-                height: 250px;
+                width: 160px;
+                height: 170px;
                 margin: 5px;
                 perspective: 1000px;
                 &:hover .flip-card-inner {
@@ -41,7 +41,8 @@
                     text-align: center;
                     transition: transform 0.6s;
                     transform-style: preserve-3d;
-                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
                     .flip-card-front, .flip-card-back {
                         position: absolute;
                         width: 100%;
@@ -53,14 +54,31 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background-color: 2E3333b;
+                        background-color: #2E3333;
                         color: black;
                       }
                       
                       .flip-card-back {
-                        background-color: #2980b9;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
                         color: white;
                         transform: rotateY(180deg);
+                        .personal_social_icon {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            a {
+                                text-decoration: none;
+                                i {
+                                    margin-right: 20px;
+                                    font-size: 30px;
+                                    color: white;
+                                }
+                            }
+                        }
                       }
     
                 }
