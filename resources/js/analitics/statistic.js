@@ -49,6 +49,10 @@ const statistic = new Vue({
             }           
             
         }
+        this.months.sort(function compare(a, b) {
+          
+            return a - b;
+          });
         //console.log(this.months);
         
     });
@@ -94,7 +98,7 @@ const statistic = new Vue({
 
             axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}/${year}`)
             .then(response => {
-                console.log(response)
+                //console.log(response)
                 self.days = [];
                 self.amount = [];
                 for (let index = 0; index < response.data.length; index++) {
@@ -115,7 +119,7 @@ const statistic = new Vue({
         onChangeMonth(event) {
            
             let month = event.target.value;
-            console.log(month)
+            //console.log(month)
             const self = this;
             var pageUrl = window.location.href.split('/');
 
@@ -141,9 +145,9 @@ const statistic = new Vue({
                     })
             };
 
-            axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}/${month}`)
+            axios.get(`http://127.0.0.1:8000/api/statistic/${pageUrl[pageUrl.length - 1]}/month-filter/${month}`)
             .then(response => {
-                console.log(response)
+                //console.log(response)
                 self.days = [];
                 self.amount = [];
                 for (let index = 0; index < response.data.length; index++) {

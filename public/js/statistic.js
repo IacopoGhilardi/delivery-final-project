@@ -12122,7 +12122,11 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
           _this.months.push(_this.days[_index2].split('-')[1]); //console.log(this.days[index].split('-')[1]);
 
         }
-      } //console.log(this.months);
+      }
+
+      _this.months.sort(function compare(a, b) {
+        return a - b;
+      }); //console.log(this.months);
 
     });
     axios.get("http://127.0.0.1:8000/api/dish/".concat(pageUrl[pageUrl.length - 1])).then(function (response1) {
@@ -12164,7 +12168,7 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
       ;
       axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1], "/").concat(year)).then(function (response) {
-        console.log(response);
+        //console.log(response)
         self.days = [];
         self.amount = [];
 
@@ -12182,8 +12186,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     onChangeMonth: function onChangeMonth(event) {
       var _this3 = this;
 
-      var month = event.target.value;
-      console.log(month);
+      var month = event.target.value; //console.log(month)
+
       var self = this;
       var pageUrl = window.location.href.split('/');
 
@@ -12211,8 +12215,8 @@ var statistic = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       }
 
       ;
-      axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1], "/").concat(month)).then(function (response) {
-        console.log(response);
+      axios.get("http://127.0.0.1:8000/api/statistic/".concat(pageUrl[pageUrl.length - 1], "/month-filter/").concat(month)).then(function (response) {
+        //console.log(response)
         self.days = [];
         self.amount = [];
 
