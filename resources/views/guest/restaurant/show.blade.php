@@ -38,11 +38,11 @@
                     <ul class="inline_list">
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link login" href="{{ route('login') }}">Accedi</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                                <a class="nav-link btn_gold" href="{{ route('register') }}">Registrati</a>
                             </li>
                             <li class="cart" v-for="price in findMyOrders(`{{$restaurant->id}}`).finalPrice">
                                 <div class="cart_icon">

@@ -29,8 +29,8 @@
                 <div class="nav_menu_small">
                     @guest
                     <div class="links">
-                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
-                        <a href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                        <a href="{{ route('login') }}">Accedi</a>
+                        <a href="{{ route('register') }}">Registrati</a>
                     </div>
                     @else
                     <div class="links">
@@ -47,11 +47,11 @@
                         <ul class="inline_list d-flex">
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link login" href="{{ route('login') }}">Accedi</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn_gold" href="{{ route('register') }}">{{ __('Sign up') }}</a>
+                                    <a class="nav-link btn_gold" href="{{ route('register') }}">Registrati</a>
                                 </li>
                             @endif
                             @else
