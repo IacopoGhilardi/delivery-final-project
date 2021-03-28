@@ -5056,7 +5056,7 @@ readers do not read off random characters that represent icons */
   }
 }
 .layout_footer {
-  padding-top: 50px;
+  padding: 50px 0;
   position: relative;
   width: 100%;
   background-color: #2E3333;
@@ -5085,8 +5085,8 @@ readers do not read off random characters that represent icons */
 }
 .layout_footer .footer_layout_wrapper .our_cards .flip-card {
   background-color: transparent;
-  width: 220px;
-  height: 250px;
+  width: 160px;
+  height: 170px;
   margin: 5px;
   perspective: 1000px;
 }
@@ -5100,7 +5100,7 @@ readers do not read off random characters that represent icons */
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
 }
 .layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-front, .layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-back {
   position: absolute;
@@ -5113,11 +5113,28 @@ readers do not read off random characters that represent icons */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: Infinityb;
+  background-color: #2E3333;
   color: black;
 }
 .layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-back {
-  background-color: #2980b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: white;
   transform: rotateY(180deg);
+}
+.layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-back .personal_social_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-back .personal_social_icon a {
+  text-decoration: none;
+}
+.layout_footer .footer_layout_wrapper .our_cards .flip-card .flip-card-inner .flip-card-back .personal_social_icon a i {
+  margin-right: 20px;
+  font-size: 30px;
+  color: white;
 }
