@@ -8,27 +8,41 @@
 @section('content')
     
     <div id="analitics" class="container mt-4">
-        <div class="my-4 card-direction">
-            <div class="card_div">
-                <div v-if=" venditaMax.length != 1 ">
-                    <div>
-                       <h5 >il piatto più acquistato :</h5>
-                        <h5> @{{venditaMax}}</h5>
-                    </div>
-                    
-                </div>                
-                <h6>Totale acquisti :  @{{dishMaxSell}} </h6>
-            </div>
-            
-            <div class="card_div">
-                <p class="coscia">
+        <div class="analitics_cards_container">
+            <div class="my-4 card-direction analitic_card">
+                <div class="card_div">
+                    <div v-if=" venditaMax.length != 1 ">
+                        <div>
+                           <h5 >il piatto più acquistato :</h5>
+                            <h5> @{{venditaMax}}</h5>
+                        </div>
+                        
+                    </div>                
+                    <h6>Totale acquisti :  @{{dishMaxSell}} </h6>
                     <i class="fas fa-drumstick-bite"></i>
-                </p>
+                </div>
                 
+                
+                {{--! <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt=""> --}}
             </div>
-            
-            {{--! <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt=""> --}}
+            <div class="my-4 card-direction analitic_card second_card">
+                <div class="card_div">
+                    <div v-if=" venditaMax.length != 1 ">
+                        <div>
+                           <h5 >il piatto più acquistato :</h5>
+                            <h5> @{{venditaMax}}</h5>
+                        </div>
+                        
+                    </div>                
+                    <h6>Totale acquisti :  @{{dishMaxSell}} </h6>
+                    <i class="fas fa-drumstick-bite"></i>
+                </div>
+                
+                
+                {{--! <img style="width: 50%; " :src="`../../storage/${imgUrlMax}`" alt=""> --}}
+            </div>
         </div>
+        
         
         <div class="analitics-container" >
            
