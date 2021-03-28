@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('images/logo/deliveboo-resp-black.png') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/paymentLayout.css') }}">
@@ -12,7 +13,7 @@
     <title>DeliveBoo</title>
 </head>
 <body>
-    
+    @yield('loader')
     <header>
         <div class="container wrapper">
             <div class="navbar">

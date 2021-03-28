@@ -19,6 +19,14 @@
   <link rel="stylesheet" href="{{ asset('css/hosted.css') }}">
 @endsection
 
+@section('loader')
+  <div class="loader">
+    <div>
+      <img src="{{ asset('images/logo/loader.gif') }}" alt="">
+    </div>
+  </div>
+@endsection
+
       @section('content')
         <div class="container">
           
@@ -246,15 +254,27 @@
               }
             }, function (hostedFieldsErr, hostedFieldsInstance) {
               if (hostedFieldsErr) {
+                $(".loader").fadeOut();
                 console.error(hostedFieldsErr);
                 return;
               }
               // submit.removeAttribute('disabled');
               form.addEventListener('submit', function (event) {
+                let valid = true;
+                let requiredFields = form.querySelectorAll("[required]")
+                requiredFields.forEach(function(element) {
+                if (!valid) return;
+                if (!element.value) valid = false;
+                });
+                console.log(valid);
+                if (valid) {
+                  $(".loader").fadeIn();
+                }
                 event.preventDefault();
                 hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {
                   if (tokenizeErr) {
                     console.error(tokenizeErr);
+                    $(".loader").fadeOut();
                     return;
                   }
                   // If this was a real integration, this is where you would
