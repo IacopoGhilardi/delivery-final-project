@@ -1,5 +1,6 @@
 
 window.Vue = require('vue');
+import { merge } from 'jquery';
 import Vue from 'vue';
 
 const statistic = new Vue({
@@ -32,7 +33,7 @@ const statistic = new Vue({
             this.amount.push(sorting[index].total_amount);
             this.days.push(sorting[index].date);
             this.bgColor.push('rgba(154, 220, 216, 0.8)')
-            
+   
         }
         this.charjs();
         for (let index = 0; index < this.days.length; index++) {
@@ -187,6 +188,29 @@ const statistic = new Vue({
                         }
                     }]
                 }
+            }
+        });
+      },
+      annoPiuRedditizio(obj) {
+        // amount:[ 
+            // { 
+            //     date
+            //     amount
+            // }
+        // ]
+        
+        // var merge = []
+        this.amount.forEach(element => {
+            anno = element.date.split('-')[0];
+            contenuto = false
+            merge.foreach(mergeElement => {
+                if (anno == mergeElement.date.split('-')[0]) {
+                    mergeElement.amount += element.amount
+                    contenuto = true
+                }
+            })
+            if (!contenuto) {
+                merge.push(element)
             }
         });
       }

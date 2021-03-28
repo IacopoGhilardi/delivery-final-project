@@ -71,28 +71,28 @@
                     <div class="col-md-6">
                       <div class="form-group">
                           <label for="firstName">Nome</label>
-                          <input type="text" class="form-control" id="firstName" name="firstName">
+                          <input type="text" class="form-control" id="firstName" name="firstName" required>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                           <label for="lastName">Cognome</label>
-                          <input type="text" class="form-control" id="lastName" name="lastName">
+                          <input type="text" class="form-control" id="lastName" name="lastName" required>
                       </div>
                     </div>
                   </div>
                 
                   <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email">
+                      <input type="email" class="form-control" id="email" name="email" required>
                   </div>
                   
                   <div class="row">
                     <div class="col-md-8">
                       <div class="form-group">
                         <label for="address">Indirizzo di consegna</label>
-                        <input type="text" class="form-control" id="address" name="address">
+                        <input type="text" class="form-control" id="address" name="address" required>
                       </div>
                     </div>
                     
@@ -100,7 +100,7 @@
                     <div class="col-md-4">
                       <div class="form-group">
                           <label for="phone">Telefono</label>
-                          <input type="text" class="form-control" id="phone" name="phone">
+                          <input type="text" class="form-control" id="phone" name="phone" required>
                     </div>
                   </div>
 
@@ -109,7 +109,7 @@
 
                   <div class="form-group">
                       <label for="name_on_card">Nome sulla carta</label>
-                      <input type="text" class="form-control" id="name_on_card" name="name_on_card">
+                      <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
                   </div>
 
                   <div class="row">

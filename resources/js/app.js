@@ -45,9 +45,6 @@ const app = new Vue({
                 })
     },
     methods: {
-        ciao() {
-            console.log("ciao");
-        },
         restaurants() {
             axios.post(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
                 .then(response => {
@@ -55,13 +52,16 @@ const app = new Vue({
                     this.filteredRestaurants = response.data;
                     this.type = '';
                     var el = this.$el.getElementsByClassName("all_restaurants")[0];
-                    //console.log(el);
+                    var el = document.querySelector('.all_restaurants');
                    el.scrollIntoView(); 
                 })
                 .catch((error) => {
                     this.type = '';
                     this.firstSearch = false;
                     this.filteredRestaurants = [];
+                    var el = this.$el.getElementsByClassName("all_restaurants")[0];
+                    var el = document.querySelector('.all_restaurants');
+                    el.scrollIntoView(); 
                       // when you throw error this will also fetch error.
                        throw error;
                   });
@@ -69,14 +69,18 @@ const app = new Vue({
         filterOnType(tipo) {
             axios.post(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
                 .then(response => {
+                    this.firstSearch = false;
                     this.filteredRestaurants = response.data;
                     var el = this.$el.getElementsByClassName("all_restaurants")[0];
-                    //console.log(el);
+                    var el = document.querySelector('.all_restaurants');
                    el.scrollIntoView();
                 })
                 .catch((error) => {
                     this.type = '';
                     this.firstSearch = false;
+                    var el = this.$el.getElementsByClassName("all_restaurants")[0];
+                    var el = document.querySelector('.all_restaurants');
+                    el.scrollIntoView(); 
                       // when you throw error this will also fetch error.
                        throw error;
                   });

@@ -141,9 +141,10 @@
             </div>
         </div>
         {{-- TUTTI I RISTORANTI --}}
-        <div v-cloak class="all_restaurants" v-if="firstSearch && filteredRestaurants.length == 0">
+        <div v-cloak class="all_restaurants" v-if="filteredRestaurants.length == 0">
             <div class="restaurants_wrapper">
-                <h2>Tutti i Ristoranti</h2>
+                <h2 v-if="firstSearch">Tutti i Ristoranti</h2>
+                <h2  v-if="!firstSearch">Non è stato trovato alcun ristorante per questa categoria, scegli tra i nostri</h2>
                 <div class="restaurants_container">
                     <div v-for="restaurant in allRestaurants" class="restaurant">
                         <form action="{{ route('guest.restaurant.show') }}" method="post">
@@ -166,10 +167,10 @@
                 </div>
 
             </div>
-            {{-- TUTTI I RISTORANTI --}}
-            <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
-                   Non sono stati trovati Ristoranti per questa categoria
-            </div>
+        </div>
+        {{-- TUTTI I RISTORANTI --}}
+        <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
+            <div>Non sono stati trovati Ristoranti per questa categoria</div>
         </div>
     
  
