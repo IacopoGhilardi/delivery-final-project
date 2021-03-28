@@ -79,7 +79,7 @@ class OrderController extends Controller
                 }
             }
 
-            Mail::to('pippo@mail.it')->send(new ConfirmMail());
+            Mail::to($newOrder->email)->send(new ConfirmMail());
             return view('guest.payment.success', compact('newOrder', 'restaurant', 'dishes', 'address'));
         } else {
             $errorString = "";
