@@ -74,10 +74,30 @@
                 <div class="image_container_small">
                     <h2>Di cosa hai voglia oggi?</h2>
                     <div class="input_container">
-                        <p>Inserisci una categoria per trovare i piatti che preferisci</p>
+                        <p>Inserisci il nome del tuo ristorante preferito</p>
                         <div class="input_field">
-                            <input class="category_search" type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
-                            <button @click="restaurants()">Cerca</button>
+                            <input class="category_search" type="search" v-model="searchRestaurant" placeholder="Cerca per Ristorante">
+                            {{-- <button @click="restaurants()">Cerca</button> --}}
+                        </div>
+                        <div class="restaurants_searched" v-if="searchRestaurant.length != 0">
+                            <div class="restaurant_searched" v-for="restaurant in filterRestaurants">
+                                <form action="{{ route('guest.restaurant.show') }}" method="post">
+                                    @csrf
+                                    @method('POST')
+                                    <input name="business_name" type="hidden" :value="restaurant.business_name">
+                                    <div class="restaurant_info">
+                                        <p class="businnes_name">@{{restaurant.business_name}}</p>
+                                        {{-- <ul>
+                                           <li class="badge badge-secondary mx-1" v-for="type in restaurant.types">@{{type.name}}</li>
+                                        </ul> --}}
+                                        <span><i class="fas fa-map-marker-alt"></i> @{{restaurant.address}}</span>
+                                    </div>
+                                    <div class="restaurant_image_box">
+                                        <img :src="`../storage/${restaurant.img_path}`" alt="">
+                                    </div>
+                                    <button type="submit"></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,10 +106,30 @@
                 <div class="image_container">
                     <h2>Di cosa hai voglia oggi?</h2>
                     <div class="input_container">
-                        <p>Inserisci una categoria per trovare i piatti che preferisci</p>
+                        <p>Inserisci il nome del tuo ristorante preferito</p>
                         <div class="input_field">
-                            <input class="category_search" type="search" v-model="type" @keyup.enter="restaurants()" placeholder="Cerca per Categoria">
-                            <button @click="restaurants()">Cerca</button>
+                            <input class="category_search" type="search" v-model="searchRestaurant" placeholder="Cerca per Ristorante">
+                            {{-- <button @click="restaurants()">Cerca</button> --}}
+                        </div>
+                        <div class="restaurants_searched" v-if="searchRestaurant.length != 0">
+                            <div class="restaurant_searched" v-for="restaurant in filterRestaurants">
+                                <form action="{{ route('guest.restaurant.show') }}" method="post">
+                                    @csrf
+                                    @method('POST')
+                                    <input name="business_name" type="hidden" :value="restaurant.business_name">
+                                    <div class="restaurant_info">
+                                        <p class="businnes_name">@{{restaurant.business_name}}</p>
+                                        {{-- <ul>
+                                           <li class="badge badge-secondary mx-1" v-for="type in restaurant.types">@{{type.name}}</li>
+                                        </ul> --}}
+                                        <span><i class="fas fa-map-marker-alt"></i> @{{restaurant.address}}</span>
+                                    </div>
+                                    <div class="restaurant_image_box">
+                                        <img :src="`../storage/${restaurant.img_path}`" alt="">
+                                    </div>
+                                    <button type="submit"></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

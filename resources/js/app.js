@@ -35,37 +35,45 @@ const app = new Vue({
         firstSearch: true,
         type: '',
         filteredRestaurants: [],
-        allRestaurants: []
+        allRestaurants: [],
+        searchRestaurant: ''
     },
     mounted() {
         axios.post(`http://127.0.0.1:8000/api/allRestaurants`)
                 .then(response => {
                     this.allRestaurants = response.data;
-                    //console.log(this.allRestaurants);
+                    console.log(this.allRestaurants);
                 })
     },
-    methods: {
-        restaurants() {
-            axios.post(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
-                .then(response => {
-                    this.firstSearch = false;
-                    this.filteredRestaurants = response.data;
-                    this.type = '';
-                    var el = this.$el.getElementsByClassName("all_restaurants")[0];
-                    var el = document.querySelector('.all_restaurants');
-                   el.scrollIntoView(); 
-                })
-                .catch((error) => {
-                    this.type = '';
-                    this.firstSearch = false;
-                    this.filteredRestaurants = [];
-                    var el = this.$el.getElementsByClassName("all_restaurants")[0];
-                    var el = document.querySelector('.all_restaurants');
-                    el.scrollIntoView(); 
-                      // when you throw error this will also fetch error.
-                       throw error;
-                  });
+    computed: {
+        filterRestaurants() {
+            return this.allRestaurants.filter(restaurant => {
+              return restaurant.business_name.toLowerCase().includes(this.searchRestaurant.toLowerCase())
+            })
         },
+    },
+    methods: {
+        // restaurants() {
+        //     axios.post(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
+        //         .then(response => {
+        //             this.firstSearch = false;
+        //             this.filteredRestaurants = response.data;
+        //             this.type = '';
+        //             var el = this.$el.getElementsByClassName("all_restaurants")[0];
+        //             var el = document.querySelector('.all_restaurants');
+        //            el.scrollIntoView(); 
+        //         })
+        //         .catch((error) => {
+        //             this.type = '';
+        //             this.firstSearch = false;
+        //             this.filteredRestaurants = [];
+        //             var el = this.$el.getElementsByClassName("all_restaurants")[0];
+        //             var el = document.querySelector('.all_restaurants');
+        //             el.scrollIntoView(); 
+        //               // when you throw error this will also fetch error.
+        //                throw error;
+        //           });
+        // },
         filterOnType(tipo) {
             axios.post(`http://127.0.0.1:8000/api/restaurants/${tipo}`)
                 .then(response => {

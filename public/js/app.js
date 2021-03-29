@@ -1913,41 +1913,48 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     firstSearch: true,
     type: '',
     filteredRestaurants: [],
-    allRestaurants: []
+    allRestaurants: [],
+    searchRestaurant: ''
   },
   mounted: function mounted() {
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/allRestaurants").then(function (response) {
-      _this.allRestaurants = response.data; //console.log(this.allRestaurants);
+      _this.allRestaurants = response.data;
+      console.log(_this.allRestaurants);
     });
   },
-  methods: {
-    restaurants: function restaurants() {
+  computed: {
+    filterRestaurants: function filterRestaurants() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().post("http://127.0.0.1:8000/api/restaurants/".concat(this.type)).then(function (response) {
-        _this2.firstSearch = false;
-        _this2.filteredRestaurants = response.data;
-        _this2.type = '';
-
-        var el = _this2.$el.getElementsByClassName("all_restaurants")[0];
-
-        var el = document.querySelector('.all_restaurants');
-        el.scrollIntoView();
-      })["catch"](function (error) {
-        _this2.type = '';
-        _this2.firstSearch = false;
-        _this2.filteredRestaurants = [];
-
-        var el = _this2.$el.getElementsByClassName("all_restaurants")[0];
-
-        var el = document.querySelector('.all_restaurants');
-        el.scrollIntoView(); // when you throw error this will also fetch error.
-
-        throw error;
+      return this.allRestaurants.filter(function (restaurant) {
+        return restaurant.business_name.toLowerCase().includes(_this2.searchRestaurant.toLowerCase());
       });
-    },
+    }
+  },
+  methods: {
+    // restaurants() {
+    //     axios.post(`http://127.0.0.1:8000/api/restaurants/${this.type}`)
+    //         .then(response => {
+    //             this.firstSearch = false;
+    //             this.filteredRestaurants = response.data;
+    //             this.type = '';
+    //             var el = this.$el.getElementsByClassName("all_restaurants")[0];
+    //             var el = document.querySelector('.all_restaurants');
+    //            el.scrollIntoView(); 
+    //         })
+    //         .catch((error) => {
+    //             this.type = '';
+    //             this.firstSearch = false;
+    //             this.filteredRestaurants = [];
+    //             var el = this.$el.getElementsByClassName("all_restaurants")[0];
+    //             var el = document.querySelector('.all_restaurants');
+    //             el.scrollIntoView(); 
+    //               // when you throw error this will also fetch error.
+    //                throw error;
+    //           });
+    // },
     filterOnType: function filterOnType(tipo) {
       var _this3 = this;
 
