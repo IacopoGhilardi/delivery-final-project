@@ -52,7 +52,7 @@
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle logged_name" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->firstName }}
                                     </a>
-                
+
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('admin.restaurant.index') }}">I miei Ristoranti</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -60,7 +60,7 @@
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-                
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
@@ -209,11 +209,11 @@
             </div>
         </div>
         {{-- TUTTI I RISTORANTI --}}
-        <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
+        <!-- <div class="all-restaurants" v-if="!firstSearch && filteredRestaurants.length == 0">
             <div>Non sono stati trovati Ristoranti per questa categoria</div>
-        </div>
-    
- 
+        </div> -->
+
+
  @endsection
 
  @section('scripts')

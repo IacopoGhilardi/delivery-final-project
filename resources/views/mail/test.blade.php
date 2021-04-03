@@ -8,7 +8,7 @@
     <style type="text/css">
 
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
@@ -42,10 +42,14 @@
             text-align: center;
         }
 
+        h1, h2, h3 {
+          margin-top: 20px;
+        }
+
     </style>
 </head>
 <body>
-    
+
     <header>
         <img class="img-fluid" src="{{ asset('images/logo/logo-black.png') }}" alt="logo">
     </header>
@@ -53,7 +57,16 @@
     <main>
         <div>
             <h1>Ordine effettuato correttamente</h1>
-            <h2>Segui i dettagli nel sito</h2>
+            <!-- <h2>Segui i dettagli nel sito</h2> -->
+
+            <h2>{{ $order->firstName }}</h2>
+            <h2>{{ $order->lastName }}</h2>
+            <h2>{{ $order->email }}</h2>
+
+            <h3>{{ $order->status }}</h3>
+            <h3>{{ $order->total_amount }} €</h3>
+            <h3>{{ $order->created_at }}</h3>
+
         </div>
     </main>
 

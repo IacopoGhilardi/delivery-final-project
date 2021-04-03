@@ -7,18 +7,23 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
+use App\User;
+use App\Order;
+
 class ConfirmMail extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $order;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Order $order)
     {
-        // return $this->view('mail.test');
+        $this->order = $order;
     }
 
     /**

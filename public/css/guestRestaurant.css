@@ -5068,7 +5068,7 @@ readers do not read off random characters that represent icons */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 95%;
+  width: 100%;
 }
 .layout_footer .footer_layout_wrapper .copyright {
   text-align: center;

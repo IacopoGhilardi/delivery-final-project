@@ -11,7 +11,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 95%;
+        //width: 95%;
+        width: 100%;
         .copyright {
             text-align: center;
             margin-bottom: 30px;
@@ -57,7 +58,7 @@
                         background-color: #2E3333;
                         color: black;
                       }
-                      
+
                       .flip-card-back {
                         display: flex;
                         justify-content: center;
@@ -80,7 +81,7 @@
                             }
                         }
                       }
-    
+
                 }
             }
         }
@@ -114,24 +115,24 @@
             //     }
             // }
 
-           
-    
-      
-        
-            
-        
+
+
+
+
+
+
 
     }
-    
+
 
 }
 
 // .copyright{
 //     position: absolute;
 //     bottom:0;
-//     margin-left: auto; 
-//     margin-right: auto; 
+//     margin-left: auto;
+//     margin-right: auto;
 //     padding-left: 20px;
-  
+
 //     color: white;
 // }
